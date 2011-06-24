@@ -1,0 +1,71 @@
+Mon Feb 21 19:12:48 2011				Page     1
+
+
+ 
+Update Symbols/Modules Logfile
+	Mon Feb 21 19:12:48 2011
+
+------ Module Refresh Messages ------
+
+SUMMARY:    Updated 0 out of 0 modules
+
+------ End Module Messages     ------
+
+
+
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Refresh Symbol                                                   )
+(                                                                     )
+(    Drawing          : gumstix_breakout.brd                          )
+(    Software Version : 16.3p003                                      )
+(    Date/Time        : Mon Feb 21 19:12:48 2011                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Mon Feb 21 19:12:48 2011				Page     1
+
+
+------ Symbol Refresh Directives ------
+
+OLD_LAYOUT_NAME = 'F:/tdp4/trunk/circuit/breakout/allegro/gumstix_breakout.brd';
+NEW_LAYOUT_NAME = '';
+REFRESH_MECHANICAL_SYMBOLS = 'NO';
+REFRESH_FORMAT_SYMBOLS = 'NO';
+REFRESH_PACKAGE_SYMBOLS = 'NO';
+REFRESH_SHAPE_SYMBOLS = 'NO';
+REFRESH_SYMBOL_PAD_STACKS = 'NO';
+REFRESH_SYMBOL_TEXT_LOCATIONS = 'NO';
+REFRESH_CUSTOM_DRILL_DATA = 'NO';
+SYMBOL_LIST = 'C:/Users/Adraen/AppData/Local/Temp/#Taaaaam02532.tmp';
+
+
+------ Library Paths ------
+PSMPATH =  F:\TDP4\TRUNK\CIRCUIT\PCB\ 
+           . 
+           symbols 
+           .. 
+           ../symbols 
+           D:/Cadence/SPB_16.3/share/local/pcb/symbols 
+           D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols 
+           D:/Cadence/SPB_16.3/share/pcb/allegrolib/symbols 
+
+PADPATH =  F:\TDP4\TRUNK\CIRCUIT\PCB\ 
+           . 
+           symbols 
+           .. 
+           ../symbols 
+           D:/Cadence/SPB_16.3/share/local/pcb/padstacks 
+           D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols 
+           D:/Cadence/SPB_16.3/share/pcb/allegrolib/symbols 
+
+
+------ Symbol Refresh Messages ------
+
+'SWITCH'  symbol refreshed successfully.
+
+
+----- Symbol Update Summary ----
+
+Completed refreshing all symbols successfully.

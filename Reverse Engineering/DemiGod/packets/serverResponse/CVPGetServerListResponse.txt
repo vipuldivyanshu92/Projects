@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CVPGetServerListResponse>
+	<ResponseCode>0</ResponseCode>
+	<ResponseMessage>Success</ResponseMessage>
+	<Servers>
+		<Server>
+			<Address>cvp1.stardock.com</Address>
+			<Port>0</Port>
+		</Server>
+	</Servers>
+</CVPGetServerListResponse>

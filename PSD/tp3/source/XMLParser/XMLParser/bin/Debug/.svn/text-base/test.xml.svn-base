@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+	<name>Test Module</name>
+	<description>Just a example to layout a module</description>
+	<author>Simon JOUET</author>
+	<creationDate>2009-11-05</creationDate>
+	<modifiedDate>2009-11-05</modifiedDate>
+	<version>1.0</version>
+
+	<!-- Module CAN interface properties -->
+	<CAN>
+		<IDfields>
+			<top type="decimal">8</top>
+			<middle type="binary">100</middle>
+			<low type="mask">010</low>
+		</IDfields>
+	
+		<format>8B</format>
+	</CAN>
+	
+	<!-- Module GUI properties -->
+	<GUI>
+		<width>100</width>
+		<height>100</height>
+		<method>TimeGraphic</method>
+		<params>
+			<param name="Yunit">mph</param>
+			<param name="Xunit">mdfph</param>
+		</params>
+	</GUI>
+	
+	<!-- Module dependencies, by example images -->
+	<files>
+		<filename name="foo">foo.png</filename>
+		<filename name="foobaar">foobar.png</filename>
+	</files>
+</module>

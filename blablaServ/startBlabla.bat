@@ -1,0 +1,1 @@
+java -jar BlablaServ.jar 18000

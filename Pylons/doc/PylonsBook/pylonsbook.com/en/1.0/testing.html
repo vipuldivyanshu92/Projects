@@ -1,0 +1,828 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from pylonsbook.com/en/1.0/testing.html by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 11 Jun 2009 15:42:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Chapter 12: Testing &mdash; Pylons Book v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Pylons Book v1.0 documentation" href="index.html" />
+    <link rel="next" title="Chapter 13: Documentation" href="documentation.html" />
+    <link rel="prev" title="Chapter 11: Internationalization and Localization" href="internationalization-and-localization.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="documentation.html" title="Chapter 13: Documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="internationalization-and-localization.html" title="Chapter 11: Internationalization and Localization"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Pylons Book v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="chapter-12-testing">
+<h1>Chapter 12: Testing<a class="headerlink" href="#chapter-12-testing" title="Permalink to this headline">¶</a></h1>
+<p id="index-1105">Testing is the process of ensuring that the code you write performs in the way it was intended. Testing encompasses many different aspects that are relevant to a Pylons application. For example, it is important the libraries do what they are supposed to, that the controllers return the correct HTML pages for the actions they are performing, and that the application behaves in a way that the users find intuitive.</p>
+<p>Here are some of the many reasons why writing effective tests is a very good idea when developing a Pylons application:</p>
+<dl class="docutils">
+<dt><em>Fast refactoring</em></dt>
+<dd>Over the course of most software development projects you’ll find that a lot of the code you wrote at the very start of the project is modified before the final release. This isn’t necessarily because the code contains bugs; it could be because requirements have changed or because you’ve spotted a better way of implementing the same functionality. If you have already written tests for the code you need to refactor and the tests pass after you’ve updated the code, then you can be confident that the changes you made are unlikely to have introduced any unexpected bugs.</dd>
+<dt><em>Ensuring simple design</em></dt>
+<dd>If writing unit tests for a particular set of classes, methods, or functions turns out to be a difficult process, it is likely that the code is too complicated and not adequately exposing the API that another developer interacting with your code might eventually need. The fact you are able to write a unit test for a piece of code goes some way to ensuring it is correctly designed.</dd>
+<dt><em>Use case documentation</em></dt>
+<dd>A set of tests serves to define the use cases for the code that is being tested. This means the tests also form very effective documentation of how the code should work.</dd>
+</dl>
+<p>At its heart, testing is about having confidence in the code you have written. If you have written good tests, you can have a good degree of confidence that your code works as it should. Having confidence is especially important if you are using beta or prerelease code in your application. As long as you write tests to ensure the features of the product you are using behave as you require, then you can have a degree of confidence that it is OK to use those particular features in your application.</p>
+<p>Although writing effective tests does take time, it is often better to spend time writing tests early in the project than debugging problems later. If you have written tests, every time you make a change to the code, then you can run the tests to see whether any of them fail. This gives you instant feedback about any unforeseen consequences your code change has had. Without the tests, bugs that are introduced might not be picked up for a long time, allowing for the possibility that new code you write might depend on the code working in the incorrect way. If this happens, fixing the bug would then break the new code you had written. This is why later in a project fixing minor bugs can sometimes create major problems. By failing to write effective tests, you can sometimes end up with a system that is difficult to maintain.</p>
+<p id="index-1106">It is worth noting that Pylons and all the components that make up Pylons have their own automated test suites. The Pylons tests are run every night on the latest development source using a tool called Buildbot, and the results are published online. Without these extensive test suites, the Pylons developers would not be able to have the confidence in Pylons that they do.</p>
+<div class="section" id="types-of-testing-and-the-development-process">
+<h2>Types of Testing and the Development Process<a class="headerlink" href="#types-of-testing-and-the-development-process" title="Permalink to this headline">¶</a></h2>
+<p id="index-1107">In this chapter, I’ll describe three types of testing you can use to help avoid introducing bugs into your Pylons project during the course of development:</p>
+<blockquote>
+<ul class="simple">
+<li>Unit testing</li>
+<li>Functional testing</li>
+<li>User testing</li>
+</ul>
+</blockquote>
+<p>If you are interested in reading more about other types of software testing, the Wikipedia page is a good place to start: <a class="reference external" href="http://en.wikipedia.org/wiki/Portal:Software_Testing">http://en.wikipedia.org/wiki/Portal:Software_Testing</a>.</p>
+<p id="index-1108">The most common form of testing is <em>unit testing</em>. A unit test is a procedure used to validate that individual units of your source code produce the expected output given a known input. In Python, the smallest testable parts of a library or application are typically functions or methods. Unit tests are written from a programmer’s perspective to ensure that a particular set of methods or functions successfully perform a set of tasks. In the context of a Pylons application, you would usually write unit tests for any helpers or other libraries you have written. You might also use a unit test to ensure your model classes and methods work correctly. Your Pylons project has a <tt class="docutils literal"><span class="pre">test_models.py</span></tt> file in the <tt class="docutils literal"><span class="pre">tests</span></tt> directory for precisely this purpose.</p>
+<p id="index-1109">While unit tests are designed to ensure individual units of code work properly, <em>functional tests</em> ensure that the higher-level code you have written functions in the way that users of your Pylons application would expect. For example, a functional test might ensure that the correct form was displayed when a user visited a particular URL or that when a user clicked a link, a particular entry was added to the database. Functional tests are usually used in the context of a Pylons application to test controller actions.</p>
+<p>Some people would argue that the best time to write unit and functional tests is before you have written the code that they would test, and this might be an approach you could take when developing your Pylons application. The advantages of this approach are the following:</p>
+<blockquote>
+<ul class="simple">
+<li>You can be confident the code you have written fulfils your requirements.</li>
+<li>It is likely the code you have written is not overengineered, because you have concentrated on getting the test suite to pass rather than future-proofing your code against possible later changes.</li>
+<li>You know when the code is finished once the test suite passes.</li>
+</ul>
+</blockquote>
+<p id="index-1110">Another approach that helps you write code that meets your requirements without being overengineered is to write the documentation for your Pylons project first and include code samples. Python comes with a library called <tt class="docutils literal"><span class="pre">doctest</span></tt> that can analyze the documentation and run the code samples to check that they work in the way you have documented. You’ll learn more about <tt class="docutils literal"><span class="pre">doctest</span></tt> in Chapter 13.</p>
+<p id="index-1111">The final type of testing you should strongly consider integrating into your development process is <em>user testing</em>. User testing doesn’t involve writing any automated tests at all but instead typically involves getting together a willing and representative group of the intended users of your product and giving them tasks in order to watch how they interact with the system. You then make notes of any tasks they struggle with or any occasions where the software breaks because of their actions and update your Pylons application accordingly, attributing any problems to deficiencies in your software rather than the incompetence of your users.</p>
+<p>The end users of your product are often very good people to test your application on because they will have a similar (or greater) knowledge of the business rules for the tasks they are trying to use the system for, but they might not have the technical knowledge you do. This means they are much more likely to do unusual things during the course of their interaction with your application—things you have learned from experience not to do. For example, they might use the Back button after a POST request or copy unusual characters from software such as Microsoft Word that might be in an unexpected encoding. This behavior helps highlight deficiencies in your software that you may not have noticed yourself.</p>
+<p>If you are developing a commercial product for a specific set of users, then there is a secondary reason for involving them in the testing of your prototype. It can help familiarize them with the system and give them a chance to highlight any gaps in the software as you are developing it; this in turn vastly reduces the chance of the software not being accepted at the end of the development process because the users have been involved all along the way. Ultimately, if the users of your application are happy with the way your Pylons application works, then it fulfils its goal.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p id="index-1112">Of course, user testing is a topic in its own right, and I won’t go into it further here. User testing is also an important part of many software development methodologies that can be used with Pylons.</p>
+<p>If you are interested in development methodologies, the Wikipedia articles on agile and iterative development are good places to start and are often useful methodologies to choose for a Pylons project. You might also be interested to read about the Waterfall method, which is a methodology frequently used in larger IT projects but that many people argue often doesn’t work in practice.</p>
+<ul class="last simple">
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Agile_software_development">http://en.wikipedia.org/wiki/Agile_software_development</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Iterative_and_incremental_development">http://en.wikipedia.org/wiki/Iterative_and_incremental_development</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Waterfall_model">http://en.wikipedia.org/wiki/Waterfall_model</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="unit-testing-with-nose">
+<h2>Unit Testing with nose<a class="headerlink" href="#unit-testing-with-nose" title="Permalink to this headline">¶</a></h2>
+<p id="index-1113">Writing unit tests without a testing framework can be a difficult process. The Python community is fortunate to have access to many good quality unit testing libraries including the <tt class="docutils literal"><span class="pre">unittest</span></tt> module from the Python standard library, <tt class="docutils literal"><span class="pre">py.test</span></tt>, and nose. Pylons uses nose to run the test suite for your Pylons application because it currently has a slightly more advanced feature set than the others. nose is installed automatically when you install Pylons, so it is ready to go.</p>
+<p>Before you learn about how to write unit tests specifically for Pylons, let’s start by writing some simple tests and using nose to test them.</p>
+<div class="section" id="introducing-nose">
+<h3>Introducing nose<a class="headerlink" href="#introducing-nose" title="Permalink to this headline">¶</a></h3>
+<p id="index-1114">Here’s what a very simple unit test written using nose might look like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="mf">1</span><span class="o">+</span><span class="mf">1</span> <span class="o">==</span> <span class="mf">2</span>
+
+<span class="k">def</span> <span class="nf">test_subtract</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">1</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mf">1</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">b</span><span class="o">-</span><span class="mf">1</span>
+    <span class="k">assert</span> <span class="n">b</span><span class="o">-</span><span class="n">a</span> <span class="o">==</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p id="index-1115">The example uses the Python keyword <tt class="docutils literal"><span class="pre">assert</span></tt> to test whether a particular condition is <tt class="xref docutils literal"><span class="pre">True</span></tt> or <tt class="xref docutils literal"><span class="pre">False</span></tt>. Using the <tt class="docutils literal"><span class="pre">assert</span></tt> statement in this way is equivalent to raising an <tt class="docutils literal"><span class="pre">AssertionError</span></tt> but is just a little easier to write. You could replace the <tt class="docutils literal"><span class="pre">test_add()</span></tt> function with this if you prefer:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="mf">1</span><span class="o">+</span><span class="mf">1</span> <span class="o">==</span> <span class="mf">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>nose differentiates between assertion errors and other exceptions. Exceptions as a result of a failed assertion are called <em>failures</em>, whereas any other type of exception is treated as an <em>error</em>.</p>
+<p>To test the example code, save it as <tt class="docutils literal"><span class="pre">test_maths.py</span></tt>, and run the following command:</p>
+<div class="highlight-python"><pre>$ nosetests test_maths.py</pre>
+</div>
+<p>You’ll see the following output:</p>
+<div class="highlight-python"><pre>..
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK</pre>
+</div>
+<p>For every test that passes, a <tt class="docutils literal"><span class="pre">.</span></tt> character is displayed. In this case, since there are only two tests, there are two <tt class="docutils literal"><span class="pre">.</span></tt> characters before the summary. Now if you change the line <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></tt> to <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">3</span></tt> in the <tt class="docutils literal"><span class="pre">test_subtract()</span></tt> function and run the test again, the assertion will fail, so nose tells you about the failure and displays <tt class="docutils literal"><span class="pre">F</span></tt> instead of the <tt class="docutils literal"><span class="pre">.</span></tt> for the second test:</p>
+<div class="highlight-python"><pre>.F
+======================================================================
+FAIL: test_maths.test_subtract
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/james/lib/python2.5/site-packages/nose-0.10.3-py2.4.egg/
+nose/case.py", line 182, in runTest
+    self.test(*self.arg)
+  File "/home/james/Desktop/test_maths.py", line 8, in test_subtract
+    assert b-a == c
+AssertionError
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+FAILED (failures=1)</pre>
+</div>
+<p id="index-1116">This isn’t too helpful because you can’t see the values of <tt class="docutils literal"><span class="pre">a</span></tt>, <tt class="docutils literal"><span class="pre">b</span></tt>, or <tt class="docutils literal"><span class="pre">c</span></tt> from the error message, but you can augment this result by adding a message after the <tt class="docutils literal"><span class="pre">assert</span></tt> statement to clarify what you are testing like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">assert</span> <span class="n">b</span><span class="o">-</span><span class="n">a</span> <span class="o">==</span> <span class="n">c</span><span class="p">,</span> <span class="s">&quot;The value of b-a does not equal c&quot;</span>
+</pre></div>
+</div>
+<p>which results in the following:</p>
+<div class="highlight-python"><pre>.F
+======================================================================
+FAIL: test_maths.test_subtract
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/james/lib/python2.4/site-packages/nose-0.10.3
+-py2.5.egg/nose/case.py", line 182, in runTest
+    self.test(*self.arg)
+  File "/home/james/Desktop/test_maths.py", line 8, in test_subtract
+    assert b-a == c
+AssertionError: The value of b-a does not equal c
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+FAILED (failures=1)</pre>
+</div>
+<p id="index-1117">This is better but still not particularly helpful because you still can’t tell the values of <tt class="docutils literal"><span class="pre">a</span></tt>, <tt class="docutils literal"><span class="pre">b</span></tt>, or <tt class="docutils literal"><span class="pre">c</span></tt> from the output. nose has three different ways to help you solve this problem, covered in the following three sections.</p>
+<div class="section" id="debug-messages">
+<h4>Debug Messages<a class="headerlink" href="#debug-messages" title="Permalink to this headline">¶</a></h4>
+<p id="index-1118">Any <tt class="docutils literal"><span class="pre">print</span></tt> statements you add to your tests are displayed only if the test fails or results in an error. Try modifying the <tt class="docutils literal"><span class="pre">test_subtract()</span></tt> function so that it looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_subtract</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">3</span>
+    <span class="k">print</span> <span class="s">&quot;a is </span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="n">a</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mf">1</span>
+    <span class="k">print</span> <span class="s">&quot;b is </span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="n">b</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">b</span><span class="o">-</span><span class="mf">1</span>
+    <span class="k">print</span> <span class="s">&quot;c is </span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="n">c</span>
+    <span class="k">assert</span> <span class="n">b</span><span class="o">-</span><span class="n">a</span> <span class="o">==</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p>If you run the test again, you’ll see the following extra information displayed after the <tt class="docutils literal"><span class="pre">AssertionError</span></tt>:</p>
+<div class="highlight-python"><pre>-------------------- &gt;&gt; begin captured stdout &lt;&lt; ---------------------
+a is 3
+b is 4
+c is 3
+
+--------------------- &gt;&gt; end captured stdout &lt;&lt; ----------------------</pre>
+</div>
+<p>From this you can easily see that <tt class="docutils literal"><span class="pre">4-3</span> <span class="pre">!=</span> <span class="pre">3</span></tt>, but the test output wouldn’t be cluttered with these debug messages unless the test failed. If you would prefer nose to always print debug messages like these, you can use the <tt class="docutils literal"><span class="pre">-s</span></tt> option so that it doesn’t capture the standard output stream.</p>
+</div>
+<div class="section" id="detailed-errors">
+<h4>Detailed Errors<a class="headerlink" href="#detailed-errors" title="Permalink to this headline">¶</a></h4>
+<p id="index-1119">If you run nose with the <tt class="docutils literal"><span class="pre">-d</span></tt> flag, it will try to display the values of the variables in the <tt class="docutils literal"><span class="pre">assert</span></tt> statement:</p>
+<div class="highlight-python"><pre>$ nosetests -d test_maths.py</pre>
+</div>
+<p>In this case, the output also contains the following line, so you can immediately see the mistake:</p>
+<div class="highlight-python"><pre>&gt;&gt;  assert 4-3 == 3</pre>
+</div>
+</div>
+<div class="section" id="command-line-debugging">
+<h4>Command-Line Debugging<a class="headerlink" href="#command-line-debugging" title="Permalink to this headline">¶</a></h4>
+<p id="index-1120">If you want even more flexibility to debug the output from your tests, you can start nose with the <tt class="docutils literal"><span class="pre">--pdb</span></tt> and <tt class="docutils literal"><span class="pre">--pdb-failures</span></tt> options, which drop nose into debugging mode if it encounters any errors or failures, respectively. As the option names suggest, nose invokes <tt class="docutils literal"><span class="pre">pdb</span></tt> (the Python debugger), so you can use the full range of commands supported by the <tt class="docutils literal"><span class="pre">pdb</span></tt> module.</p>
+<p>Let’s give it a try—start by running the test again with the new flags set:</p>
+<div class="highlight-python"><pre>$ nosetests --pdb --pdb-failures test_maths.py</pre>
+</div>
+<p>Now when the failure occurs, you’ll see the <tt class="docutils literal"><span class="pre">pdb</span></tt> prompt:</p>
+<div class="highlight-python"><pre>.&gt; /home/james/Desktop/test_maths.py(11)test_subtract()
+-&gt; assert b-a == c
+(Pdb)</pre>
+</div>
+<p>You can display a list of commands with <tt class="docutils literal"><span class="pre">h</span></tt>:</p>
+<div class="highlight-python"><pre>Documented commands (type help &lt;topic&gt;):
+========================================
+EOF    break  condition  disable  help    list  q       step     w
+a      bt     cont       down     ignore  n     quit    tbreak   whatis
+alias  c      continue   enable   j       next  r       u        where
+args   cl     d          exit     jump    p     return  unalias
+b      clear  debug      h        l       pp    s       up
+
+Miscellaneous help topics:
+==========================
+exec  pdb
+
+Undocumented commands:
+======================
+retval  rv</pre>
+</div>
+<p>Of these, some of the most important are <tt class="docutils literal"><span class="pre">l</span></tt>, which lists the code nearby, and <tt class="docutils literal"><span class="pre">q</span></tt>, which exits the debugger so that the tests can continue. The prompt also works a bit like a Python shell, allowing you to enter commands. Here’s an example session where you print some variables, obtain help on the <tt class="docutils literal"><span class="pre">l</span></tt> command, and then exit the debugger with <tt class="docutils literal"><span class="pre">q</span></tt>:</p>
+<div class="highlight-python"><pre>(Pdb) print b-a
+1
+(Pdb) print c
+3
+(Pdb) h l
+l(ist) [first [,last]]
+List source code for the current file.
+Without arguments, list 11 lines around the current line
+or continue the previous listing.
+With one argument, list 11 lines starting at that line.
+With two arguments, list the given range;
+if the second argument is less than the first, it is a count.
+(Pdb) l
+  6         print "a is %s"%a
+  7         b = a + 1
+  8         print "b is %s"%b
+  9         c = b-1
+ 10         print "c is %s"%c
+ 11  -&gt;     assert b-a == c
+ 12
+[EOF]
+(Pdb) q;</pre>
+</div>
+<p id="index-1121">The <tt class="docutils literal"><span class="pre">pdb</span></tt> module and all its options are documented at <a class="reference external" href="http://docs.python.org/lib/module-pdb.html">http://docs.python.org/lib/module-pdb.html</a>.</p>
+</div>
+</div>
+<div class="section" id="search-locations">
+<h3>Search Locations<a class="headerlink" href="#search-locations" title="Permalink to this headline">¶</a></h3>
+<p id="index-1122">nose uses a set of rules to determine which tests it should run. Its behavior is best described by the text from the nose documentation:</p>
+<blockquote>
+<p>nose collects tests automatically from python source files, directories and packages found in its working directory (which defaults to the current working directory). Any python source file, directory or package that matches the <tt class="docutils literal"><span class="pre">testMatch</span></tt> regular expression (by default: <tt class="docutils literal"><span class="pre">(?:^|[\b\.-])[Tt]est</span></tt>) will be collected as a test (or source for collection of tests). In addition, all other packages found in the working directory will be examined for python source files or directories that match <tt class="docutils literal"><span class="pre">testMatch</span></tt>. Package discovery descends all the way down the tree, so <tt class="docutils literal"><span class="pre">package.tests</span></tt> and <tt class="docutils literal"><span class="pre">package.sub.tests</span></tt> and <tt class="docutils literal"><span class="pre">package.sub.sub2.tests</span></tt> will all be collected.</p>
+<p>Within a test directory or package, any python source file matching <tt class="docutils literal"><span class="pre">testMatch</span></tt> will be examined for test cases. Within a test module, functions and classes whose names match <tt class="docutils literal"><span class="pre">testMatch</span></tt> and <tt class="docutils literal"><span class="pre">TestCase</span></tt> subclasses with any name will be loaded and executed as tests.</p>
+</blockquote>
+<p>To specify which tests you want to run, you can pass test names on the command line. Here’s an example that will search <tt class="docutils literal"><span class="pre">dir1</span></tt> and <tt class="docutils literal"><span class="pre">dir2</span></tt> for test cases and will also run the <tt class="docutils literal"><span class="pre">test_b()</span></tt> function in the module <tt class="docutils literal"><span class="pre">test_a.py</span></tt> in the <tt class="docutils literal"><span class="pre">tests</span></tt> directory. All these tests will be looked for in the <tt class="docutils literal"><span class="pre">some_place</span></tt> directory instead of the current working directory because the code uses the <tt class="docutils literal"><span class="pre">-w</span></tt> flag:</p>
+<div class="highlight-python"><pre>$ nosetests -w some_place dir1 dir2 tests/test_a.py:test_b</pre>
+</div>
+<p id="index-1123">When you are developing a Pylons application, you would normally run <tt class="docutils literal"><span class="pre">nosetests</span></tt> from the Pylons project directory (the directory containing the <tt class="docutils literal"><span class="pre">setup.py</span></tt> file) so that nose can automatically find your tests.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For more information about nose, see the wiki at <a class="reference external" href="http://code.google.com/p/python-nose/wiki/NoseFeatures">http://code.google.com/p/python-nose/wiki/NoseFeatures</a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="functional-testing">
+<h2>Functional Testing<a class="headerlink" href="#functional-testing" title="Permalink to this headline">¶</a></h2>
+<p id="index-1124">Pylons provides powerful unit testing capabilities for your web application utilizing <tt class="docutils literal"><span class="pre">paste.fixture</span></tt> (documented at <a class="reference external" href="http://pythonpaste.org/testing-applications.html#the-tests-themselves">http://pythonpaste.org/testing-applications.html#the-tests-themselves</a>) to emulate requests to your web application. Pylons integrates <tt class="docutils literal"><span class="pre">paste.fixture</span></tt> with nose so that you can test Pylons applications using the same techniques you learned for nose in the previous section.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is likely that at some point Pylons will switch to using the newer WebTest package, but since WebTest is simply an upgrade of <tt class="docutils literal"><span class="pre">paste.fixture</span></tt> with some better support for Pylons’ newer <tt class="docutils literal"><span class="pre">request</span></tt> and <tt class="docutils literal"><span class="pre">response</span></tt> objects, the upgrade shouldn’t introduce huge changes, and therefore the contents of this section should still largely apply.</p>
+</div>
+<p id="index-1125">To demonstrate functional testing with <tt class="docutils literal"><span class="pre">paste.fixture</span></tt>, let’s write some tests for the SimpleSite application. If you look at the SimpleSite project, you’ll notice the <tt class="docutils literal"><span class="pre">tests</span></tt> directory. Within it is a <tt class="docutils literal"><span class="pre">functional</span></tt> directory for functional tests that should contain one file for each controller in your application. These are generated automatically when you use the <tt class="docutils literal"><span class="pre">paster</span> <span class="pre">controller</span></tt> command to add a controller to a Pylons project. To get started, update the <tt class="docutils literal"><span class="pre">tests/functional/test_page.py</span></tt> file that was generated when you created the <tt class="docutils literal"><span class="pre">page</span></tt> controller so that it looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">simplesite.tests</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">TestPageController</span><span class="p">(</span><span class="n">TestController</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="s">&#39;Home&#39;</span> <span class="ow">in</span> <span class="n">response</span>
+</pre></div>
+</div>
+<p>The page controller doesn’t have an <tt class="docutils literal"><span class="pre">index()</span></tt> action because you replaced it as part of the tutorial in Chapter 8, so the previous example tests the <tt class="docutils literal"><span class="pre">view()</span></tt> action instead.</p>
+<p id="index-1126">The <tt class="docutils literal"><span class="pre">self.app</span></tt> object is a Web Server Gateway Interface application representing the whole Pylons application, but it is wrapped in a <tt class="docutils literal"><span class="pre">paste.fixture.TestApp</span></tt> object (documented at <a class="reference external" href="http://pythonpaste.org/modules/fixture.html">http://pythonpaste.org/modules/fixture.html</a>). This means the <tt class="docutils literal"><span class="pre">self.app</span></tt> object has the methods <tt class="docutils literal"><span class="pre">get()</span></tt>, <tt class="docutils literal"><span class="pre">post()</span></tt>, <tt class="docutils literal"><span class="pre">put()</span></tt>, <tt class="docutils literal"><span class="pre">delete()</span></tt>, <tt class="docutils literal"><span class="pre">do_request()</span></tt>, <tt class="docutils literal"><span class="pre">encode_multipart()</span></tt>, and <tt class="docutils literal"><span class="pre">reset()</span></tt>. Unless you are doing something particularly clever, you would usually just use <tt class="docutils literal"><span class="pre">get()</span></tt> and <tt class="docutils literal"><span class="pre">post()</span></tt>, which simulate GET and POST requests, respectively.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">get(url,</span> <span class="pre">params=None,</span> <span class="pre">headers=None,</span> <span class="pre">extra_environ=None,</span> <span class="pre">status=None,</span> <span class="pre">expect_errors=False)</span></tt></dt>
+<dd><p class="first">This gets the URL path specified by <tt class="docutils literal"><span class="pre">url</span></tt> using a GET request and returns a response object.</p>
+<dl class="last docutils">
+<dt><tt class="docutils literal"><span class="pre">params</span></tt></dt>
+<dd>A query string, or a dictionary that will be encoded into a query string. You may also include a query string on the <tt class="docutils literal"><span class="pre">url</span></tt> argument.</dd>
+<dt><tt class="docutils literal"><span class="pre">headers</span></tt></dt>
+<dd>A dictionary of extra headers to send.</dd>
+<dt><tt class="docutils literal"><span class="pre">extra_environ</span></tt></dt>
+<dd>A dictionary of environmental variables that should be added to the request.</dd>
+<dt><tt class="docutils literal"><span class="pre">status</span></tt></dt>
+<dd>The integer status code you expect (if not 200 or 3xx). If you expect a 404 response, for instance, you must give <tt class="docutils literal"><span class="pre">status=404</span></tt>, or an exception will be raised. You can also give a wildcard, like <tt class="docutils literal"><span class="pre">'3*'</span></tt> or <tt class="docutils literal"><span class="pre">'*'</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">expect_errors</span></tt></dt>
+<dd>If this is not <tt class="xref docutils literal"><span class="pre">True</span></tt>, then if anything is written to <tt class="docutils literal"><span class="pre">wsgi.errors</span></tt>, an exception wlll be raised. You’ll learn about <tt class="docutils literal"><span class="pre">wsgi.errors</span></tt> in Chapters 16 and 20. If the value is set to <tt class="xref docutils literal"><span class="pre">True</span></tt>, then non-200/3xx responses are OK.</dd>
+</dl>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">post(url,</span> <span class="pre">params='',</span> <span class="pre">headers=None,</span> <span class="pre">extra_environ=None,</span> <span class="pre">status=None,</span> <span class="pre">upload_files=None,</span> <span class="pre">expect_errors=False)</span></tt></dt>
+<dd><p class="first">This is very similar to the <tt class="docutils literal"><span class="pre">get()</span></tt> method, but it performs a POST request, so <tt class="docutils literal"><span class="pre">params</span></tt> are put in the body of the request rather than the query string. It takes similar arguments and returns a response object.</p>
+<dl class="last docutils">
+<dt><tt class="docutils literal"><span class="pre">upload_files</span></tt></dt>
+<dd>Should be a list of <tt class="docutils literal"><span class="pre">[(fieldname,</span> <span class="pre">filename,</span> <span class="pre">file_content)]</span></tt> representing files to upload. You can also use just <tt class="docutils literal"><span class="pre">[(fieldname,</span> <span class="pre">filename)]</span></tt>, and the file content will be read from disk.</dd>
+</dl>
+</dd>
+</dl>
+<p>The example you’ve just added to <tt class="docutils literal"><span class="pre">tests/functional/test_page.py</span></tt> uses the <tt class="docutils literal"><span class="pre">get()</span></tt> method to simulate a GET request to the URL <tt class="docutils literal"><span class="pre">/page/view/1</span></tt>. Because a fully configured Pylons environment is set up in the <tt class="docutils literal"><span class="pre">simplesite.tests</span></tt> module, you are able to use <tt class="docutils literal"><span class="pre">url_for()</span></tt> to generate the URL in the same way you would in a Pylons controller. The <tt class="docutils literal"><span class="pre">get()</span></tt> method returns a <tt class="docutils literal"><span class="pre">paste.fixture</span> <span class="pre">response</span></tt> object. You can then use this to check the response returned was the one you expected. In this case, you check that the home page contains the text <tt class="docutils literal"><span class="pre">'Home'</span></tt> somewhere in the response.</p>
+<p id="index-1127">In addition to the methods on the <tt class="docutils literal"><span class="pre">self.app()</span></tt> object, Pylons also gives you access to some of the Pylons globals that have been created during the request. They are assigned as attributes of the <tt class="docutils literal"><span class="pre">paste.fixture</span> <span class="pre">response</span></tt> object:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">response.session</span></tt></dt>
+<dd>Session object</dd>
+<dt><tt class="docutils literal"><span class="pre">response.req</span></tt></dt>
+<dd>The Pylons <tt class="docutils literal"><span class="pre">request</span></tt> object based on the WebOb <tt class="docutils literal"><span class="pre">Request</span></tt></dd>
+<dt><tt class="docutils literal"><span class="pre">response.c</span></tt></dt>
+<dd>The template context global containing variables passed to templates</dd>
+<dt><tt class="docutils literal"><span class="pre">response.g</span></tt></dt>
+<dd>The Pylons app globals object</dd>
+<dt><tt class="docutils literal"><span class="pre">response.response</span></tt></dt>
+<dd>The Pylons <tt class="docutils literal"><span class="pre">response</span></tt> global</dd>
+</dl>
+<p>To use them, just access the attributes of the response <em>after</em> you’ve used a <tt class="docutils literal"><span class="pre">get()</span></tt> or <tt class="docutils literal"><span class="pre">post()</span></tt> method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">))</span>
+    <span class="k">assert</span> <span class="s">&#39;Home&#39;</span> <span class="ow">in</span> <span class="n">response</span>
+    <span class="k">assert</span> <span class="s">&#39;REQUEST_METHOD&#39;</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">req</span><span class="o">.</span><span class="n">environ</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">paste.fixture</span></tt> response object already has its own request object assigned to it as the <tt class="docutils literal"><span class="pre">.request</span></tt> attribute, which is why the Pylons request global is assigned to the <tt class="docutils literal"><span class="pre">.req</span></tt> attribute instead.</p>
+</div>
+<p>For simple cases, it is fine to work with the <tt class="docutils literal"><span class="pre">paste.fixture</span></tt> response object, but for more complicated cases, you will probably prefer to work with the more familiar Pylons response global available as <tt class="docutils literal"><span class="pre">response.response</span></tt>.</p>
+<p id="index-1128">Before you test the previous method, you really need to understand exactly how the test setup works because, as it stands, it could damage your development setup. Let’s see why in the next section.</p>
+<div class="section" id="how-does-the-test-setup-work">
+<h3>How Does the Test Setup Work?<a class="headerlink" href="#how-does-the-test-setup-work" title="Permalink to this headline">¶</a></h3>
+<p id="index-1129">To run the test, you would execute the <tt class="docutils literal"><span class="pre">nosetests</span></tt> command, but before you do, let’s consider what this command actually does.</p>
+<p>When the <tt class="docutils literal"><span class="pre">nosetests</span></tt> command is executed, it reads some of its configuration from the project’s <tt class="docutils literal"><span class="pre">setup.cfg</span></tt> file. This file contains a section that looks like this:</p>
+<div class="highlight-python"><pre>[nosetests]
+with-pylons=test.ini</pre>
+</div>
+<p>This tells nose to use the <tt class="docutils literal"><span class="pre">test.ini</span></tt> file to create a Pylons application rather than the <tt class="docutils literal"><span class="pre">development.ini</span></tt> file you’ve been using so far.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>You can also choose the config file to use for the tests by specifying the <tt class="docutils literal"><span class="pre">--with-pylons</span></tt> option on the command line. Likewise, you can also put other <tt class="docutils literal"><span class="pre">nosetests</span></tt> command-line options in the <tt class="docutils literal"><span class="pre">setup.cfg</span></tt> file if that is more convenient. Here are some examples of options you could set:</p>
+<div class="last highlight-python"><pre>[nosetests]
+verbose=True
+verbosity=2
+with-pylons=test.ini
+detailed-errors=1</pre>
+</div>
+</div>
+<p id="index-1130">The <tt class="docutils literal"><span class="pre">test.ini</span></tt> file is specifically for your testing configuration and (if properly configured) allows you to keep your testing and development setups completely separate. It looks like this:</p>
+<div class="highlight-python"><pre>#
+# SimpleSite - Pylons testing environment configuration
+#
+# The %(here)s variable will be replaced with the parent directory of this file
+#
+[DEFAULT]
+debug = true
+# Uncomment and replace with the address which should receive any error reports
+#email_to = you@yourdomain.com
+smtp_server = localhost
+error_email_from = paste@localhost
+
+[server:main]
+use = egg:Paste #http
+host = 0.0.0.0
+port = 5000
+
+[app:main]
+use = config:development.ini
+
+# Add additional test specific configuration options as necessary.</pre>
+</div>
+<p id="index-1131">This should seem very familiar, but notice the line <tt class="docutils literal"><span class="pre">use</span> <span class="pre">=</span> <span class="pre">config:development.ini</span></tt> in the <tt class="docutils literal"><span class="pre">[app:main]</span></tt> section. This causes the <tt class="docutils literal"><span class="pre">test.ini</span> <span class="pre">[app:main]</span></tt> section to use <em>exactly</em> the same configuration as the <tt class="docutils literal"><span class="pre">development.ini</span></tt> file’s <tt class="docutils literal"><span class="pre">[app:main]</span></tt> section. Although this can save you some effort in some circumstances, it can also cause your tests to interfere with your development setup if you are not careful.</p>
+<p>Once <tt class="docutils literal"><span class="pre">nosetests</span></tt> has correctly parsed the <tt class="docutils literal"><span class="pre">test.ini</span></tt> file, it will look for available tests. In doing so, it imports the <tt class="docutils literal"><span class="pre">tests/__init__.py</span></tt> module, which executes this line:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SetupCommand</span><span class="p">(</span><span class="s">&#39;setup-app&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;__file__&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>Although it looks fairly innocuous, this results in the equivalent of this command being executed:</p>
+<div class="highlight-python"><pre>$ paster setup-app test.ini</pre>
+</div>
+<p>You’ll recall from Chapter 8 that this will run the project <tt class="docutils literal"><span class="pre">websetup.py</span></tt> file’s <tt class="docutils literal"><span class="pre">setup_app()</span></tt> function with the configuration from <tt class="docutils literal"><span class="pre">test.ini</span></tt>, but because the <tt class="docutils literal"><span class="pre">test.ini</span></tt> file currently uses the configuration from the <tt class="docutils literal"><span class="pre">[app:main]</span></tt> section of the <tt class="docutils literal"><span class="pre">development.ini</span></tt> file, it will be called with the same <tt class="docutils literal"><span class="pre">sqlalchemy.url</span></tt> as your development setup. If your <tt class="docutils literal"><span class="pre">websetup.py</span></tt> was badly written, this could damage the data in your development database.</p>
+<p>To make matters worse, the <tt class="docutils literal"><span class="pre">test.ini</span></tt> file doesn’t come with the <tt class="docutils literal"><span class="pre">development.ini</span></tt> file’s logging configuration, so you can’t even see what is happening behind the scenes. Copy all the logging lines from the <tt class="docutils literal"><span class="pre">development.ini</span></tt> file to the end of <tt class="docutils literal"><span class="pre">test.ini</span></tt> starting with <tt class="docutils literal"><span class="pre">#</span> <span class="pre">Logging</span> <span class="pre">configuration</span></tt> and ending at the end of the file. If you run <tt class="docutils literal"><span class="pre">nosetests</span></tt> again, you will see what has been happening behind the scenes:</p>
+<div class="highlight-python"><pre>$ nosetests
+20:14:02,807 INFO  [simplesite.websetup] Adding home page...
+20:14:02,918 INFO  [simplesite.websetup] Successfully set up.
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.347s
+
+OK</pre>
+</div>
+<p>As you can see, every time the test suite was run, a new home page was accidentally added to the database. You can confirm this by starting the Paste HTTP server and visiting <a class="reference external" href="http://localhost:5000/page/list">http://localhost:5000/page/list</a> to verify that an extra home page has been added.</p>
+<p>Now that you understand what is happening, update the <tt class="docutils literal"><span class="pre">test.ini</span></tt> file with its own configuration so the <tt class="docutils literal"><span class="pre">[app:main]</span></tt> section looks like this:</p>
+<div class="highlight-python"><pre>[app:main]
+use = egg:SimpleSite
+full_stack = true
+cache_dir = %(here)s/data
+beaker.session.key = simplesite
+beaker.session.secret = somesecret
+
+# SQLAlchemy database URL
+sqlalchemy.url = sqlite:///%(here)s/test.db</pre>
+</div>
+<p id="index-1132">Notice that <tt class="docutils literal"><span class="pre">sqlalchemy.url</span></tt> has been changed to use <tt class="docutils literal"><span class="pre">test.db</span></tt>. This still doesn’t prevent a new home page from being added each time the tests run, so you should update <tt class="docutils literal"><span class="pre">websetup.py</span></tt> too. Ideally, you want a completely fresh database each time the tests are run so that they are consistent each time. To achieve this, you need to know which config file is being used to run the tests. The <tt class="docutils literal"><span class="pre">setup_app()</span></tt> function takes a <tt class="docutils literal"><span class="pre">conf</span></tt> object as its second argument. This object has a <tt class="docutils literal"><span class="pre">.filename</span></tt> attribute that contains the name of the file used to invoke the <tt class="docutils literal"><span class="pre">setup_app()</span></tt> function.</p>
+<p>Update the <tt class="docutils literal"><span class="pre">setup_app()</span></tt> function in <tt class="docutils literal"><span class="pre">websetup.py</span></tt> to look like this. Notice the import of <tt class="docutils literal"><span class="pre">os.path</span></tt> on line 3 as well as the code to drop existing tables if using the <tt class="docutils literal"><span class="pre">test.ini</span></tt> file in lines 16-20.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></td><td class="code"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;Setup the SimpleSite application&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">from</span> <span class="nn">simplesite</span> <span class="kn">import</span> <span class="n">model</span>
+
+<span class="kn">from</span> <span class="nn">simplesite.config.environment</span> <span class="kn">import</span> <span class="n">load_environment</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">setup_app</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="nb">vars</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Place any commands to setup simplesite here&quot;&quot;&quot;</span>
+    <span class="n">load_environment</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">global_conf</span><span class="p">,</span> <span class="n">conf</span><span class="o">.</span><span class="n">local_conf</span><span class="p">)</span>
+    <span class="c"># Load the models</span>
+    <span class="kn">from</span> <span class="nn">simplesite.model</span> <span class="kn">import</span> <span class="n">meta</span>
+    <span class="n">meta</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">bind</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">engine</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">filename</span><span class="p">)[</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">filename</span> <span class="o">==</span> <span class="s">&#39;test.ini&#39;</span><span class="p">:</span>
+        <span class="c"># Permanently drop any existing tables</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Dropping existing tables...&quot;</span><span class="p">)</span>
+        <span class="n">meta</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">drop_all</span><span class="p">(</span><span class="n">checkfirst</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="c"># Continue as before</span>
+    <span class="c"># Create the tables if they aren&#39;t there already</span>
+    <span class="n">meta</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">create_all</span><span class="p">(</span><span class="n">checkfirst</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Adding home page...&quot;</span><span class="p">)</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">Page</span><span class="p">()</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">title</span><span class="o">=</span><span class="s">u&#39;Homepage&#39;</span>
+    <span class="n">page</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="s">u&#39;Welcome to the SimpleSite home page.&#39;</span>
+    <span class="n">meta</span><span class="o">.</span><span class="n">Session</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+    <span class="n">meta</span><span class="o">.</span><span class="n">Session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Successfully set up.&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>With these changes in place, let’s run the test again. Notice that the <tt class="docutils literal"><span class="pre">Dropping</span> <span class="pre">existing</span> <span class="pre">tables...</span></tt> log message appears in the output:</p>
+<div class="highlight-python"><pre>$ nosetests
+14:02:58,646 INFO  [simplesite.websetup] Dropping existing tables...
+... some lines of output ommitted ...
+14:02:59,603 INFO  [simplesite.websetup] Adding homepage...
+14:02:59,617 INFO  [sqlalchemy.engine.base.Engine.0x...26ec] BEGIN
+14:02:59,622 INFO  [sqlalchemy.engine.base.Engine.0x...26ec] INSERT INTO page (content, posted, title, heading) VALUES (?, ?, ?, ?)
+14:02:59,623 INFO  [sqlalchemy.engine.base.Engine.0x...26ec] [u'Welcome to the SimpleSite home page.', '2008-11-04 14:02:59.622472', u'Home Page', None]
+14:02:59,629 INFO  [sqlalchemy.engine.base.Engine.0x...26ec] COMMIT
+14:02:59,775 INFO  [simplesite.websetup] Successfully set up
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.814s
+
+OK</pre>
+</div>
+<p id="index-1135">This time the <tt class="docutils literal"><span class="pre">setup_app()</span></tt> function can determine that it is being called with the <tt class="docutils literal"><span class="pre">test.ini</span></tt> config setup, so it drops all the tables before performing the normal setup. Because you updated the <tt class="docutils literal"><span class="pre">test.ini</span></tt> file with a new SQLite database, you’ll notice the test database <tt class="docutils literal"><span class="pre">test.db</span></tt> has been created in the same directory as <tt class="docutils literal"><span class="pre">test.ini</span></tt>.</p>
+</div>
+<div class="section" id="testing-the-save-action">
+<h3>Testing the save() Action<a class="headerlink" href="#testing-the-save-action" title="Permalink to this headline">¶</a></h3>
+<p id="index-1136">The page controller’s <tt class="docutils literal"><span class="pre">save()</span></tt> action currently looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@restrict</span><span class="p">(</span><span class="s">&#39;POST&#39;</span><span class="p">)</span>
+<span class="nd">@validate</span><span class="p">(</span><span class="n">schema</span><span class="o">=</span><span class="n">NewPageForm</span><span class="p">(),</span> <span class="n">form</span><span class="o">=</span><span class="s">&#39;edit&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">page_q</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">Session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Page</span><span class="p">)</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">page_q</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">page</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">abort</span><span class="p">(</span><span class="mf">404</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">form_result</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">!=</span> <span class="n">v</span><span class="p">:</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="n">meta</span><span class="o">.</span><span class="n">Session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">session</span><span class="p">[</span><span class="s">&#39;flash&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Page successfully updated.&#39;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="c"># Issue an HTTP redirect</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">status_int</span> <span class="o">=</span> <span class="mf">302</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span>
+        <span class="nb">id</span><span class="o">=</span><span class="n">page</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s">&quot;Moved temporarily&quot;</span>
+</pre></div>
+</div>
+<p>Let’s write a test to check that this action behaves in the correct way:</p>
+<blockquote>
+<ul class="simple">
+<li>GET requests are disallowed by the <tt class="docutils literal"><span class="pre">&#64;restrict</span></tt> decorator.</li>
+<li>The action returns a 404 Not Found response if no ID is specified.</li>
+<li>The action returns a 404 Not Found response for IDs that don’t exist.</li>
+<li>Invalid data should result in the form being displayed.</li>
+<li>The action saves the updated data in the database.</li>
+<li>The action sets a flash message in the session.</li>
+<li>The action returns a redirect response to redirect to the create action.</li>
+</ul>
+</blockquote>
+<p id="index-1137">You could write the tests for each of these in a single method of the <tt class="docutils literal"><span class="pre">TestPageController</span></tt> class, but if one of the tests failed for any reason, nose would not continue with the rest of the method. On the other hand, some of the tests are dependent on other tests passing, so you cannot write them all as separate methods either. For example, you can’t test whether a flash message was set if saving the page failed. To set up the tests correctly, let’s create the following methods:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_save_prohibit_get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Tests to ensure that GET requests are prohibited&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">test_save_404_invalid_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Tests that a 404 response is returned if no ID is specified</span>
+<span class="sd">    or if the ID doesn&#39;t exist&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">test_save_invalid_form_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Tests that invalid data results in the form being returned with</span>
+<span class="sd">    error messages&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">test_save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Tests that valid data is saved to the database, that the response redirects</span>
+<span class="sd">    to the view() action and that a flash message is set in the session&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>These tests will require some imports, so add the following lines to the top of <tt class="docutils literal"><span class="pre">tests/functional/test_page.py</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">routes</span> <span class="kn">import</span> <span class="n">url_for</span>
+<span class="kn">from</span> <span class="nn">simplesite.model</span> <span class="kn">import</span> <span class="n">meta</span>
+<span class="kn">from</span> <span class="nn">urlparse</span> <span class="kn">import</span> <span class="n">urlparse</span>
+</pre></div>
+</div>
+<p id="index-1138">Now let’s implement the test methods starting with <tt class="docutils literal"><span class="pre">test_save_prohibit_get()</span></tt>, which looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">TestPageController</span><span class="p">(</span><span class="n">TestController</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_save_prohibit_get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Tests to ensure that GET requests are prohibited&quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;save&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">),</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">&#39;heading&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Heading&#39;</span><span class="p">,</span>
+                <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Title&#39;</span><span class="p">,</span>
+                <span class="s">&#39;content&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Content&#39;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="mf">405</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1139">As you can see, the example uses the <tt class="docutils literal"><span class="pre">get()</span></tt> method of <tt class="docutils literal"><span class="pre">self.app</span></tt> to simulate a GET request to the <tt class="docutils literal"><span class="pre">save()</span></tt> action with some sample <tt class="docutils literal"><span class="pre">params</span></tt>, which will be sent as part of the query string. By default, the <tt class="docutils literal"><span class="pre">get()</span></tt> and <tt class="docutils literal"><span class="pre">post()</span></tt> methods expect either a 200 response or a response in the 300s and will consider anything else an error. In this case, you expect the request to be denied with a 405 Method Not Allowed response, so to prevent <tt class="docutils literal"><span class="pre">paste.fixture</span></tt> from raising an exception, you have to specify the <tt class="docutils literal"><span class="pre">status</span></tt> parameter explicitly. Because <tt class="docutils literal"><span class="pre">paste.fixture</span></tt> checks that the status will be 405, you don’t have to add another check on the <tt class="docutils literal"><span class="pre">response</span></tt> object.</p>
+<p id="index-1140">Now let’s look at the <tt class="docutils literal"><span class="pre">test_save_404_invalid_id()</span></tt> method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_save_404_invalid_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="sd">&quot;&quot;&quot;Tests that a 404 response is returned if no ID is specified</span>
+<span class="sd">      or if the ID doesn’t exist&quot;&quot;&quot;</span>
+      <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+          <span class="n">url</span><span class="o">=</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;save&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">),</span>
+          <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+             <span class="s">&#39;heading&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Heading&#39;</span><span class="p">,</span>
+             <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Title&#39;</span><span class="p">,</span>
+             <span class="s">&#39;content&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Content&#39;</span><span class="p">,</span>
+          <span class="p">},</span>
+          <span class="n">status</span><span class="o">=</span><span class="mf">404</span>
+      <span class="p">)</span>
+      <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+          <span class="n">url</span><span class="o">=</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;save&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s">&#39;2&#39;</span><span class="p">),</span>
+          <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+              <span class="s">&#39;heading&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Heading&#39;</span><span class="p">,</span>
+              <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Title&#39;</span><span class="p">,</span>
+              <span class="s">&#39;content&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Content&#39;</span><span class="p">,</span>
+          <span class="p">},</span>
+          <span class="n">status</span><span class="o">=</span><span class="mf">404</span>
+      <span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1141">As you can see, this code is similar but uses the <tt class="docutils literal"><span class="pre">post()</span></tt> method and performs two tests rather than one. In the first, no ID is specified, and in the second the ID specified doesn’t exist. In both cases, you expect a 404 HTTP response, so the <tt class="docutils literal"><span class="pre">status</span></tt> parameter is set to <tt class="docutils literal"><span class="pre">404</span></tt>.</p>
+<p id="index-1142">The <tt class="docutils literal"><span class="pre">test_save_invalid_form_data()</span></tt> method is more interesting. Once again a POST request is triggered, but this time the <tt class="docutils literal"><span class="pre">title</span></tt> is empty, so the <tt class="docutils literal"><span class="pre">&#64;validate</span></tt> decorator should cause the page to be redisplayed with the error message <tt class="docutils literal"><span class="pre">Please</span> <span class="pre">enter</span> <span class="pre">a</span> <span class="pre">value</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_save_invalid_form_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Tests that invalid data results in the form being returned with</span>
+<span class="sd">    error messages&quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;save&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">),</span>
+        <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+            <span class="s">&#39;heading&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Heading&#39;</span><span class="p">,</span>
+            <span class="c"># title is required so this next entry is invalid</span>
+            <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">u&#39;&#39;</span><span class="p">,</span>
+            <span class="s">&#39;content&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Content&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="s">&#39;Please enter a value&#39;</span> <span class="ow">in</span> <span class="n">response</span>
+</pre></div>
+</div>
+<p>As you can see from the last line, the presence of the error message in the response is tested. Because you expect a 200 HTTP response, there is no need to specify the <tt class="docutils literal"><span class="pre">status</span></tt> argument, but you can if you like.</p>
+<p id="index-1143">Finally, let’s look at the <tt class="docutils literal"><span class="pre">test_save()</span></tt> method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Tests that valid data is saved to the database, that the response redirects</span>
+<span class="sd">    to the view() action and that a flash message is set in the session&quot;&quot;&quot;</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;save&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">),</span>
+        <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+            <span class="s">&#39;heading&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Heading&#39;</span><span class="p">,</span>
+            <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Title&#39;</span><span class="p">,</span>
+            <span class="s">&#39;content&#39;</span><span class="p">:</span> <span class="s">u&#39;Updated Content&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c"># Test the data is saved in the database (we use the engine API to</span>
+    <span class="c"># ensure that all the data really has been saved and isn&#39;t being returned</span>
+    <span class="c"># from the session)</span>
+    <span class="n">connection</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        SELECT heading, title, content</span>
+<span class="sd">        FROM page</span>
+<span class="sd">        WHERE id=?</span>
+<span class="sd">        &quot;&quot;&quot;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">1</span><span class="p">,)</span>
+    <span class="p">)</span>
+    <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">row</span><span class="o">.</span><span class="n">heading</span> <span class="o">==</span> <span class="s">u&#39;Updated Heading&#39;</span>
+    <span class="k">assert</span> <span class="n">row</span><span class="o">.</span><span class="n">title</span> <span class="o">==</span> <span class="s">u&#39;Updated Title&#39;</span>
+    <span class="k">assert</span> <span class="n">row</span><span class="o">.</span><span class="n">content</span> <span class="o">==</span> <span class="s">u&#39;Updated Content&#39;</span>
+
+    <span class="c"># Test the flash message is set in the session</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s">&#39;flash&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;Page successfully updated.&#39;</span>
+
+    <span class="c"># Check the respone will redirect to the view action</span>
+    <span class="k">assert</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">location</span><span class="p">)</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="n">url_for</span><span class="p">(</span>
+        <span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mf">302</span>
+</pre></div>
+</div>
+<p id="index-1144">The first part of this test generates a <tt class="docutils literal"><span class="pre">paste.fixture</span> <span class="pre">response</span></tt> after posting some valid data to the <tt class="docutils literal"><span class="pre">save()</span></tt> action. A SQLAlchemy <tt class="docutils literal"><span class="pre">connection</span></tt> object is then created to perform a SQL <tt class="docutils literal"><span class="pre">SELECT</span></tt> operation directly on the database to check the data really has been updated. Next you check the session contains the flash message. You’ll remember from earlier in the chapter that certain Pylons globals including <tt class="docutils literal"><span class="pre">session</span></tt> are available as attributes of the <tt class="docutils literal"><span class="pre">response</span></tt> object. In this example, <tt class="docutils literal"><span class="pre">response.session</span></tt> is tested to ensure the flash message is present. Finally, you want to check the HTTP response headers contain the <tt class="docutils literal"><span class="pre">Location</span></tt> header with the correct URL to redirect the browser to the <tt class="docutils literal"><span class="pre">view()</span></tt> action. Here we are using the Pylons <tt class="docutils literal"><span class="pre">response</span></tt> object because it has a <tt class="docutils literal"><span class="pre">.location</span></tt> attribute specifying the location header rather than the <tt class="docutils literal"><span class="pre">paste.fixture</span> <span class="pre">response</span></tt> object. The location header contains the whole URL, so you use <tt class="docutils literal"><span class="pre">urlparse()</span></tt> to just compare that the path component matches the path to the <tt class="docutils literal"><span class="pre">view()</span></tt> action.</p>
+<p id="index-1145">Once you’ve implemented the tests, you can check they pass by running <tt class="docutils literal"><span class="pre">nosetests</span></tt> in your main project directory:</p>
+<div class="highlight-python"><pre>$ nosetests simplesite/tests/functional/test_page.py
+... log output omitted ...
+..
+----------------------------------------------------------------------
+Ran 4 tests in 0.391s
+
+OK</pre>
+</div>
+<p>The tests all pass successfully, so you can be confident the <tt class="docutils literal"><span class="pre">save()</span></tt> action functions as it is supposed to function.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last" id="index-1146">The <tt class="docutils literal"><span class="pre">TestPageController</span></tt> is derived from the <tt class="docutils literal"><span class="pre">TestController</span></tt> class, which itself subclasses the standard Python <tt class="docutils literal"><span class="pre">unittest.TestCase</span></tt> class. This means you can also use its helper methods in your tests. The <tt class="docutils literal"><span class="pre">unittest.TestCase</span></tt> object is documented at <a class="reference external" href="http://docs.python.org/lib/testcase-objects.html">http://docs.python.org/lib/testcase-objects.html</a>. This is well worth a read if you plan to write anything more than simple tests.</p>
+</div>
+</div>
+<div class="section" id="testing-your-own-objects">
+<h3>Testing Your Own Objects<a class="headerlink" href="#testing-your-own-objects" title="Permalink to this headline">¶</a></h3>
+<p id="index-1147">As you saw earlier in the chapter, Pylons adds certain objects to the <tt class="docutils literal"><span class="pre">response</span></tt> object returned by <tt class="docutils literal"><span class="pre">paste.fixture</span></tt> when you call the <tt class="docutils literal"><span class="pre">self.app</span></tt> object with one of the HTTP methods such as <tt class="docutils literal"><span class="pre">get()</span></tt> or <tt class="docutils literal"><span class="pre">post()</span></tt>. You can also set up your own objects to be added to the <tt class="docutils literal"><span class="pre">response</span></tt> object. If a test is being run, Pylons makes available a <tt class="docutils literal"><span class="pre">paste.testing_variables</span></tt> dictionary in the <tt class="docutils literal"><span class="pre">request.environ</span></tt> dictionary. Any objects you add to this dictionary are automatically added as attributes to the <tt class="docutils literal"><span class="pre">paste.fixture</span> <span class="pre">response</span></tt> object. For example, if you had a custom <tt class="docutils literal"><span class="pre">Cache</span></tt> object that you wanted to make available in the tests, you might modify the <tt class="docutils literal"><span class="pre">__call__()</span></tt> method in the <tt class="docutils literal"><span class="pre">BaseController</span></tt> in your project’s <tt class="docutils literal"><span class="pre">lib/base.py</span></tt> file to look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BaseController</span><span class="p">(</span><span class="n">WSGIController</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">):</span>
+        <span class="c"># Add the custom cache object</span>
+        <span class="k">if</span> <span class="s">&#39;paste.testing_variables&#39;</span> <span class="ow">in</span> <span class="n">environ</span><span class="p">:</span>
+            <span class="n">environ</span><span class="p">[</span><span class="s">&#39;paste.testing_variables&#39;</span><span class="p">][</span><span class="s">&#39;cache&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CustomCacheObj</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">WSGIController</span><span class="o">.</span><span class="n">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">meta</span><span class="o">.</span><span class="n">Session</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In the <tt class="docutils literal"><span class="pre">TestPageController</span></tt> you would now find the <tt class="docutils literal"><span class="pre">response</span></tt> object has a <tt class="docutils literal"><span class="pre">.cache</span></tt> attribute:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">))</span>
+    <span class="k">assert</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s">&#39;cache&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p id="index-1148">For more details on running tests using <tt class="docutils literal"><span class="pre">paste.fixture</span></tt>, visit <a class="reference external" href="http://pythonpaste.org/testing-applications.html#the-tests-themselves">http://pythonpaste.org/testing-applications.html#the-tests-themselves</a>.</p>
+</div>
+</div>
+<div class="section" id="interactive-shell">
+<h2>Interactive Shell<a class="headerlink" href="#interactive-shell" title="Permalink to this headline">¶</a></h2>
+<p id="index-1149">Sometimes it is useful to be able to test your application from the command line. As you saw earlier in the chapter, one method for doing this is to use the <tt class="docutils literal"><span class="pre">--pdb</span></tt> and <tt class="docutils literal"><span class="pre">--pdb-failures</span></tt> options with nose to debug a failing test, but what if you want to quickly see how a particular part of your Pylons application behaves to help you work out how you should write your test? In that case, you might find the Pylons interactive shell useful.</p>
+<p>The Pylons interactive shell enables you to use all the tools you would usually use in your tests but in an interactive way. This is also particularly useful if you can’t understand why a particular test is giving you the result it is. The following command starts the interactive shell with the test setup, but you could equally well specify <tt class="docutils literal"><span class="pre">development.ini</span></tt> if you wanted to test your development setup:</p>
+<div class="highlight-python"><pre>$ paster shell test.ini</pre>
+</div>
+<p>Here’s the output you receive:</p>
+<div class="highlight-python"><pre>Pylons Interactive Shell
+Python 2.5.1 (r251:54863, Apr 15 2008, 22:57:26)
+[GCC 4.0.1 (Apple Inc. build 5465)]
+
+  All objects from simplesite.lib.base are available
+  Additional Objects:
+  mapper     -  Routes mapper object
+  wsgiapp    -  This project's WSGI App instance
+  app        -  paste.fixture wrapped around wsgiapp
+
+&gt;&gt;&gt;</pre>
+</div>
+<p>As you can see, the shell provides access to the same objects as you have access to in the actions of your functional test classes.</p>
+<p>You can use the Pylons interactive shell in the same way you would usually use a Python shell. Here are some examples of its use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;/page/view/1&#39;</span><span class="p">)</span>
+<span class="go">13:24:31,824 INFO  [sqlalchemy.engine.base.Engine.0x..90] BEGIN</span>
+<span class="go">13:24:31,828 INFO  [sqlalchemy.engine.base.Engine.0x..90] SELECT page.id AS page_id, page.content AS page_content, page.posted AS page_posted, page.title AS page_title, page.heading AS page_heading</span>
+<span class="go">FROM page</span>
+<span class="go">WHERE page.id = ?</span>
+<span class="go"> LIMIT 1 OFFSET 0</span>
+<span class="go">13:24:31,828 INFO  [sqlalchemy.engine.base.Engine.0x..90] [1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="s">&#39;Updated Content&#39;</span> <span class="ow">in</span> <span class="n">response</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">response</span><span class="o">.</span><span class="n">req</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;REMOTE_USER&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p id="index-1150">Notice that you receive the same logging output because of the logging configuration you added to <tt class="docutils literal"><span class="pre">test.ini</span> <span class="pre">``earlier</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">chapter.</span> <span class="pre">Also</span> <span class="pre">notice</span> <span class="pre">that</span> <span class="pre">because</span> <span class="pre">you’ve</span> <span class="pre">already</span> <span class="pre">run</span> <span class="pre">the</span> <span class="pre">``nosetests</span></tt> command, the database currently has the text <tt class="docutils literal"><span class="pre">Updated</span> <span class="pre">Content</span></tt> for the content rather than the message <tt class="docutils literal"><span class="pre">Welcome</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">SimpleSite</span> <span class="pre">home</span> <span class="pre">page.</span></tt>, which was the original value.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter, you saw how nose, <tt class="docutils literal"><span class="pre">paste.fixture</span></tt>, and the Pylons interactive shell work together to allow you to test Pylons applications. You’ve seen how to use some of the more common options available to nose to customize the output from the tests and how to debug failures and errors with Python’s <tt class="docutils literal"><span class="pre">pdb</span></tt> module. You also learned the difference between unit testing, functional testing, and user testing and saw why all of them are important. You also now know exactly how Pylons sets up your tests so that you can customize their behavior by changing the <tt class="docutils literal"><span class="pre">websetup.py</span></tt> file or adding new objects to the <tt class="docutils literal"><span class="pre">paste.fixture</span> <span class="pre">response</span></tt> object.</p>
+<p id="index-1151">In the next chapter, you’ll look at some of the recommended ways to document a Pylons project, and you’ll learn about one more type of testing known as a <em>doctest</em>, which allows examples from within the documentation to be tested directly.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Chapter 12: Testing</a><ul>
+<li><a class="reference external" href="#types-of-testing-and-the-development-process">Types of Testing and the Development Process</a></li>
+<li><a class="reference external" href="#unit-testing-with-nose">Unit Testing with nose</a><ul>
+<li><a class="reference external" href="#introducing-nose">Introducing nose</a><ul>
+<li><a class="reference external" href="#debug-messages">Debug Messages</a></li>
+<li><a class="reference external" href="#detailed-errors">Detailed Errors</a></li>
+<li><a class="reference external" href="#command-line-debugging">Command-Line Debugging</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#search-locations">Search Locations</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#functional-testing">Functional Testing</a><ul>
+<li><a class="reference external" href="#how-does-the-test-setup-work">How Does the Test Setup Work?</a></li>
+<li><a class="reference external" href="#testing-the-save-action">Testing the save() Action</a></li>
+<li><a class="reference external" href="#testing-your-own-objects">Testing Your Own Objects</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#interactive-shell">Interactive Shell</a></li>
+<li><a class="reference external" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="internationalization-and-localization.html"
+                                  title="previous chapter">Chapter 11: Internationalization and Localization</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="documentation.html"
+                                  title="next chapter">Chapter 13: Documentation</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/testing.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="http://pylonsbook.com/en/1.0/search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="documentation.html" title="Chapter 13: Documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="internationalization-and-localization.html" title="Chapter 11: Internationalization and Localization"
+             >previous</a> |</li>
+        <li><a href="index.html">Pylons Book v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, James Gardner.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+
+<!-- Mirrored from pylonsbook.com/en/1.0/testing.html by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 11 Jun 2009 15:43:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

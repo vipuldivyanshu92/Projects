@@ -1,0 +1,392 @@
+<<<<<<< .mine
+\t (00:00:05) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:05) 
+=======
+\t (00:00:02) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:02) 
+>>>>>>> .r85
+
+<<<<<<< .mine
+\t (00:00:06) Opening existing drawing...
+\d (00:00:07) Database opened: I:/tdp4/trunk/circuit/pcb/header_line_5.dra
+\i (00:00:07) trapsize 137
+\i (00:00:07) trapsize 132
+\i (00:00:07) trapsize 130
+\i (00:00:07) trapsize 109
+\i (00:00:07) trapsize 109
+\i (00:00:08) generaledit 
+\i (00:00:14) open 
+\i (00:00:50) fillin "menu_cancel"
+\i (00:00:50) generaledit 
+\i (00:00:51) exit 
+=======
+\t (00:00:04) Opening existing drawing...
+\d (00:00:04) Database opened: E:/tdp4/trunk/circuit/pcb/tja1040_SO8.dra
+\i (00:00:05) trapsize 96
+\i (00:00:05) trapsize 93
+\i (00:00:05) trapsize 92
+\i (00:00:06) trapsize 76
+\i (00:00:06) trapsize 76
+\i (00:00:07) generaledit 
+\i (00:00:24) open 
+\i (00:00:45) fillin "E:\tdp4\trunk\circuit\final\allegro\gumstix_expansion_v2r7.brd"
+\i (00:00:45) cd "E:\tdp4\trunk\circuit\final\allegro"
+\t (00:00:46) Opening existing drawing...
+\t (00:00:46) Grids are drawn 64.00, 64.00 apart for enhanced viewability.
+\i (00:00:46) trapsize 3005
+\i (00:00:46) trapsize 3084
+\i (00:00:46) trapsize 3291
+\d (00:00:47) Database opened: E:/tdp4/trunk/circuit/final/allegro/gumstix_expansion_v2r7.brd
+\i (00:00:49) generaledit 
+\i (00:00:51) trapsize 2400
+\i (00:00:52) zoom in 1 
+\i (00:00:52) setwindow pcb
+\i (00:00:52) zoom in -1286.32 584.85
+\t (00:00:52) Grids are drawn 16.00, 16.00 apart for enhanced viewability.
+\i (00:00:52) trapsize 1200
+\i (00:00:53) roam start
+\i (00:00:53) roam x 16
+\i (00:00:53) roam y -16
+\i (00:00:54) roam end
+\i (00:10:25) new 
+\i (00:10:39) newdrawfillin "1213.dra" "Package Symbol"
+\t (00:10:39) Starting new drawing...
+\i (00:10:40) trapsize 3352
+\i (00:10:41) trapsize 3416
+\i (00:10:41) trapsize 5428
+\i (00:10:41) trapsize 5428
+\i (00:10:41) generaledit 
+\i (00:12:18) add pin 
+\i (00:23:36) trapsize 7444
+\i (00:25:50) zoom in 1 
+\i (00:25:50) setwindow pcb
+\i (00:25:50) zoom in -155.47 -543.07
+\i (00:25:50) trapsize 3722
+\i (00:25:51) zoom in 1 
+\i (00:25:51) setwindow pcb
+\i (00:25:51) zoom in -440.03 -639.83
+\i (00:25:51) trapsize 1861
+\i (00:25:51) roam start
+\i (00:25:51) roam y -16
+\i (00:25:51) roam y -32
+\i (00:25:52) roam x -16
+\i (00:25:52) roam y -48
+\i (00:25:52) roam x -16
+\i (00:25:52) roam y -64
+\i (00:25:52) roam end
+\i (00:25:52) zoom in 1 
+\i (00:25:52) setwindow pcb
+\i (00:25:52) zoom in 287.45 -234.14
+\i (00:25:52) trapsize 930
+\i (00:25:53) zoom in 1 
+\i (00:25:53) setwindow pcb
+\i (00:25:53) zoom in 287.46 -234.14
+\i (00:25:53) trapsize 465
+\i (00:25:53) roam start
+\i (00:25:53) roam x -80
+\i (00:25:53) roam y -48
+\i (00:25:53) roam x -48
+\i (00:25:53) roam y -32
+\i (00:25:53) roam x -48
+\i (00:25:53) roam y -32
+\i (00:25:53) roam x -32
+\i (00:25:53) roam y -16
+\i (00:25:53) roam x -16
+\i (00:25:53) roam y -32
+\i (00:25:54) roam x -32
+\i (00:25:54) roam y -16
+\i (00:25:54) roam end
+\i (00:25:55) zoom out 1 
+\i (00:25:55) setwindow pcb
+\i (00:25:55) zoom out 109.79 -78.71
+\i (00:25:55) trapsize 930
+\i (00:26:05) roam start
+\i (00:26:05) roam x 64
+\i (00:26:05) roam y 48
+\i (00:26:05) roam x 64
+\i (00:26:05) roam y 64
+\i (00:26:06) roam x -16
+\i (00:26:06) roam y -32
+\i (00:26:06) roam y -16
+\i (00:26:07) roam y -16
+\i (00:26:07) roam end
+\i (00:36:18) add pin 
+\t (00:36:18) Exiting from Add Pin.
+\i (00:36:26) add pin 
+\t (00:36:26) Exiting from Add Pin.
+\i (00:36:28) setwindow form.mini
+\i (00:36:28) FORM mini pad_browse  
+\f (00:36:28) Select a padstack:
+\t (00:36:34) No valid name selected.
+\i (00:36:36) fillin "1213_Pad"
+\w (00:36:37) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:36:37) Using '1213_PAD.pad'.
+\i (00:36:48) setwindow pcb
+\i (00:36:48) pick 5.15 y 0 
+\t (00:36:48) last pick:  5.15  0.00
+\t (00:36:48) Using '1213_PAD.pad'.
+\i (00:36:58) pick -5.15 y 0 
+\t (00:36:58) last pick:  -5.15  0.00
+\t (00:36:58) Using '1213_PAD.pad'.
+\i (00:37:00) zoom out 1 
+\i (00:37:00) setwindow pcb
+\i (00:37:00) zoom out -10.24 45.04
+\i (00:37:00) trapsize 1861
+\i (00:37:01) zoom in 1 
+\i (00:37:01) setwindow pcb
+\i (00:37:01) zoom in 0.93 37.61
+\i (00:37:01) trapsize 930
+\i (00:37:01) prepopup 218.67 5.98
+\i (00:37:02) cancel 
+\t (00:37:02) Exiting from Add Pin.
+\i (00:37:03) generaledit 
+\i (00:37:05) zoom out 1 
+\i (00:37:05) setwindow pcb
+\i (00:37:05) zoom out -600.15 486.10
+\i (00:37:05) trapsize 1861
+\i (00:37:07) prmed 
+\i (00:37:10) setwindow form.prmedit
+\i (00:37:10) FORM prmedit design  
+\i (00:37:13) FORM prmedit units Millimeter 
+\e (00:37:13) Change may cause round-off; run dbcheck.
+\i (00:37:14) FORM prmedit done  
+\w (00:37:14) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\i (00:37:14) setwindow pcb
+\i (00:37:14) trapsize 4727
+\t (00:37:15) Performing DRC...
+\t (00:37:15) No DRC errors detected.
+\i (00:37:17) generaledit 
+\i (00:37:29) add pin 
+\i (00:37:30) setwindow form.mini
+\i (00:37:30) FORM mini pad_browse  
+\f (00:37:30) Select a padstack:
+\t (00:37:37) No valid name selected.
+\i (00:37:38) fillin "1213_Pad"
+\t (00:37:38) Using '1213_PAD.pad'.
+\i (00:37:43) setwindow pcb
+\i (00:37:43) pick 5.15 y 0 
+\t (00:37:43) last pick:  5.1500  0.0000
+\t (00:37:43) Using '1213_PAD.pad'.
+\i (00:37:49) pick -5.15 y 0 
+\t (00:37:49) last pick:  -5.1500  0.0000
+\t (00:37:49) Using '1213_PAD.pad'.
+\i (00:38:12) add pin 
+\t (00:38:12) Exiting from Add Pin.
+\t (00:38:13) Using '1213_PAD.pad'.
+\i (00:38:15) setwindow form.mini
+\i (00:38:15) FORM mini pad_browse  
+\f (00:38:15) Select a padstack:
+\i (00:38:17) fillin "1213_Hold"
+\t (00:38:17) Using '1213_HOLD.pad'.
+\i (00:38:52) setwindow pcb
+\i (00:38:52) pick 0 y 4.9 
+\t (00:38:52) last pick:  0.0000  4.9000
+\t (00:38:52) Using '1213_HOLD.pad'.
+\i (00:38:59) pick 0 y -4.9 
+\t (00:38:59) last pick:  0.0000  -4.9000
+\t (00:38:59) Using '1213_HOLD.pad'.
+\i (00:39:00) prepopup -3.7103 -23.1986
+\i (00:39:01) done 
+\t (00:39:01) Exiting from Add Pin.
+\i (00:39:01) generaledit 
+\i (00:39:01) zoom out 1 
+\i (00:39:01) setwindow pcb
+\i (00:39:01) zoom out 0.0711 -14.5958
+\i (00:39:01) trapsize 9454
+\i (00:39:02) zoom in 1 
+\i (00:39:02) setwindow pcb
+\i (00:39:02) zoom in -17.7962 -20.4571
+\i (00:39:02) trapsize 4727
+\i (00:39:03) roam start
+\i (00:39:03) roam y -16
+\i (00:39:03) roam y -80
+\i (00:39:03) roam end
+\i (00:39:08) pick grid 0.5437 4.8309
+\t (00:39:08) last pick:  0.0000  5.0800
+\i (00:39:09) delete 
+\t (00:39:09) Selected item not valid for current operation, ignored: Connect Pin "1213_Hold, 3"
+\t (00:39:09) No valid items selected for the current operation, exiting.
+\i (00:39:09) generaledit 
+\i (00:39:10) pick grid 16.5202 8.2342
+\t (00:39:10) last pick:  17.7800  7.6200
+\i (00:39:10) pick grid 3.0962 4.3582
+\t (00:39:10) last pick:  2.5400  5.0800
+\i (00:39:11) delete 
+\t (00:39:11) Selected item not valid for current operation, ignored: Connect Pin "1213_Hold, 3"
+\t (00:39:11) No valid items selected for the current operation, exiting.
+\i (00:39:11) generaledit 
+\i (00:39:11) pick grid 13.4951 7.5724
+\t (00:39:11) last pick:  12.7000  7.6200
+\i (00:39:12) delete 
+\i (00:39:12) pick grid 2.0563 5.3981
+\t (00:39:12) last pick:  2.5400  5.0800
+\t (00:39:12) Connect Pin "1213_Hold, 3"
+\i (00:39:13) delete 
+\i (00:39:14) pick grid -0.1180 -4.0555
+\t (00:39:14) last pick:  0.0000  -5.0800
+\t (00:39:14) Connect Pin "1213_Hold, 4"
+\i (00:39:14) delete 
+\i (00:39:14) pick grid 24.2721 -1.1249
+\t (00:39:14) last pick:  25.4000  0.0000
+\i (00:39:16) add pin 
+\t (00:39:17) Using '1213_HOLD.pad'.
+\i (00:39:33) setwindow form.mini
+\i (00:39:33) FORM mini pintype_mechanical YES 
+\i (00:40:02) setwindow pcb
+\i (00:40:02) pick 0 y 4.9 
+\t (00:40:02) last pick:  0.0000  4.9000
+\t (00:40:02) Using '1213_HOLD.pad'.
+\i (00:40:06) pick 0 y -4.9 
+\t (00:40:06) last pick:  0.0000  -4.9000
+\t (00:40:06) Using '1213_HOLD.pad'.
+\i (00:40:08) prepopup -30.3694 10.8812
+\i (00:40:08) done 
+\t (00:40:09) Exiting from Add Pin.
+\i (00:40:09) generaledit 
+\i (00:40:09) pick grid -26.5880 10.9757
+\t (00:40:09) last pick:  -25.4000  10.1600
+\i (00:40:11) plot 
+\i (00:40:12) plotwint initialize "HP LaserJet 2100 PCL6"
+\i (00:40:12) plotwint orientation 1
+\i (00:40:12) plotwint papername "A4"
+\i (00:40:12) plotwint copies 1
+\i (00:40:12) plotwint defaultsource 15
+\i (00:40:12) plotwint printquality 600
+\i (00:40:12) plotwint color 1
+\i (00:40:12) plotwint execute
+\i (00:45:47) new 
+\f (00:45:47) Do you want to save the changes you made to 1213.dra?
+\i (00:45:50) fillin yes 
+\e (00:45:55) ERROR(SPMHGE-7): Error(s) occurred, check logfile.
+\i (00:46:02) newdrawfillin "menu_cancel"
+\i (00:46:02) generaledit 
+\i (00:46:06) label refdes 
+\t (00:46:06) Pick text location.
+\i (00:46:07) pick grid -5.4120 11.3538
+\t (00:46:07) last pick:  -5.0800  10.1600
+\t (00:46:07) Enter text string.
+\i (00:46:16) setwindow pcb
+\i (00:46:16) pick -5.0800 10.1600
+\i (00:46:17) save 
+\f (00:46:17) E:/tdp4/trunk/circuit/pcb/1213.dra: File Exists. Overwrite? 
+\i (00:46:19) fillin yes 
+\t (00:46:25) Symbol '1213.psm' created.
+\i (00:46:26) generaledit 
+\i (00:46:27) new 
+\i (00:46:44) newdrawfillin "1014.dra" "Package Symbol"
+\t (00:46:44) Starting new drawing...
+\i (00:46:44) trapsize 20178
+\i (00:46:44) trapsize 20178
+\i (00:46:44) generaledit 
+\i (00:46:49) new 
+\f (00:46:49) Do you want to save the changes you made to 1014.dra?
+\i (00:46:51) fillin menu_cancel 
+\i (00:46:51) generaledit 
+\i (00:46:55) add pin 
+\i (00:46:57) setwindow form.mini
+\i (00:46:57) FORM mini pad_browse  
+\f (00:46:57) Select a padstack:
+\i (00:47:02) fillin "1014"
+\t (00:47:02) Using '1014.pad'.
+\i (00:47:29) setwindow pcb
+\i (00:47:29) pick 4.2 y 0 
+\t (00:47:29) last pick:  4.2000  0.0000
+\t (00:47:29) Using '1014.pad'.
+\i (00:47:33) pick -4.2 y 0 
+\t (00:47:33) last pick:  -4.2000  0.0000
+\t (00:47:33) Using '1014.pad'.
+\i (00:47:36) save 
+\t (00:47:36) Exiting from Add Pin.
+\e (00:47:43) ERROR(SPMHGE-7): Error(s) occurred, check logfile.
+\i (00:47:45) generaledit 
+\i (00:47:46) setwindow text
+\i (00:47:46) close 
+\i (00:47:53) setwindow pcb
+\i (00:47:53) label refdes 
+\t (00:47:54) Pick text location.
+\i (00:47:54) pick grid -11.3707 11.0977
+\t (00:47:54) last pick:  -10.1600  10.1600
+\t (00:47:54) Enter text string.
+\i (00:47:56) setwindow pcb
+\i (00:47:56) pick -10.1600 10.1600
+\i (00:47:58) prepopup -5.7209 87.3689
+\i (00:47:59) done 
+\i (00:47:59) generaledit 
+\i (00:48:00) zoom in 1 
+\i (00:48:00) setwindow pcb
+\i (00:48:00) zoom in 28.5809 23.6077
+\i (00:48:00) trapsize 10089
+\i (00:48:00) zoom in 1 
+\i (00:48:00) setwindow pcb
+\i (00:48:00) zoom in -2.9554 12.9137
+\i (00:48:00) trapsize 5044
+\i (00:48:01) roam start
+\i (00:48:01) roam x 96
+\i (00:48:01) roam y 16
+\i (00:48:01) roam x 64
+\i (00:48:01) roam x 64
+\i (00:48:01) roam x 64
+\i (00:48:01) roam end
+\i (00:48:02) drag_start grid -9.1511 10.2905
+\i (00:48:02) move 
+\t (00:48:02) last pick:  -10.1600  10.1600
+\t (00:48:02) Pick new location for the element(s).
+\i (00:48:03) drag_stop grid -2.2908 3.5310
+\i (00:48:03) generaledit 
+\i (00:48:04) pick grid 0.9376 12.4091
+\t (00:48:04) last pick:  0.0000  12.7000
+\i (00:48:04) save 
+\f (00:48:04) E:/tdp4/trunk/circuit/pcb/1014.dra: File Exists. Overwrite? 
+\i (00:48:06) fillin yes 
+\t (00:48:12) Symbol '1014.psm' created.
+\i (00:48:12) generaledit 
+\i (00:48:15) plot 
+\i (00:48:17) plotwint initialize "HP LaserJet 2100 PCL6"
+\i (00:48:17) plotwint execute
+\e (00:49:59) Command not found: xhilite
+\i (00:49:59) xname_flush 
+\i (00:49:59) done 
+\i (00:49:59) generaledit 
+\e (00:50:26) Command not found: xdehilite
+\i (00:50:26) xname_flush 
+\i (00:50:26) done 
+\e (00:50:26) Command not found: xhilite
+\i (00:50:26) xname_flush 
+\e (00:50:26) No command active
+\i (00:50:26) done 
+\e (00:50:26) No command active
+\i (00:50:26) generaledit 
+\e (00:50:47) Command not found: xdehilite
+\i (00:50:47) xname_flush 
+\i (00:50:47) done 
+\e (00:50:47) Command not found: xhilite
+\i (00:50:47) xname_flush 
+\e (00:50:47) No command active
+\i (00:50:47) done 
+\e (00:50:47) No command active
+\i (00:50:47) generaledit 
+\e (00:51:02) Command not found: xdehilite
+\i (00:51:02) xname_flush 
+\i (00:51:02) done 
+\e (00:51:02) Command not found: xhilite
+\i (00:51:02) xname_flush 
+\e (00:51:02) No command active
+\i (00:51:02) done 
+\e (00:51:02) No command active
+\i (00:51:02) generaledit 
+\e (00:51:12) Command not found: xdehilite
+\i (00:51:12) xname_flush 
+\i (00:51:12) done 
+\e (00:51:12) Command not found: xhilite
+\i (00:51:12) xname_flush 
+\e (00:51:12) No command active
+\i (00:51:12) done 
+\e (00:51:12) No command active
+\i (00:51:12) generaledit 
+\e (00:56:45) Command not found: xhilite
+\i (00:56:45) xname_flush 
+\i (00:56:45) done 
+\i (00:56:45) generaledit 
+\e (01:10:19) Command not found: xhilite
+\i (01:10:19) xname_flush 
+\i (0>>>>>>> .r85

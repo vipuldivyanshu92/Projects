@@ -1,0 +1,270 @@
+FILE_TYPE = EXPANDEDPARTLIST;
+{ Using PSTWRITER 16.3.0 p002Apr-29-2011 at 18:19:14 }
+DIRECTIVES
+ PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
+ ROOT_DRAWING='CIRCUIT_LIGHT';
+ POST_TIME='Nov 17 2009 03:09:43';
+ SOURCE_TOOL='CAPTURE_WRITER';
+END_DIRECTIVES;
+
+PART_NAME
+ C1 'C_CAPACITOR_10U (16V)':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19063@ANALOG.C.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19063@analog.\c.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19063@analog.\c.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2 'C_CAPACITOR_100N':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19155@ANALOG.C.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19155@analog.\c.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19155@analog.\c.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C3 'C_CAPACITOR_100N':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19235@ANALOG.C.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19235@analog.\c.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19235@analog.\c.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C4 'C_ELECT_0_CAPACITOR_4.7U':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19765@CIRCUIT.C_ELECT_0.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19765@circuit.\c_elect_0.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19765@circuit.\c_elect_0.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C5 'C_CAPACITOR_10U':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19845@ANALOG.C.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19845@analog.\c.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19845@analog.\c.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D2 '1N6266/TO_0_LED_1N6266/TO':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS20345@CIRCUIT.1N6266/TO_0.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins20345@circuit.\1n6266/to_0.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins20345@circuit.\1n6266/to_0.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D3 '1N6266/TO_0_LED_1N6266/TO':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS20393@CIRCUIT.1N6266/TO_0.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins20393@circuit.\1n6266/to_0.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins20393@circuit.\1n6266/to_0.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J1 'CON6_HEADER_LINE_6_ICSP':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19103@CONNECTOR.CON6.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19103@connector.\con6.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19103@connector.\con6.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J2 'CON4_HEADER_LINE_4_CAN':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19407@CONNECTOR.CON4.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19407@connector.\con4.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19407@connector.\con4.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J3 'CON6_HEADER_LINE_6_KEYB':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS21330@CONNECTOR.CON6.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins21330@connector.\con6.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins21330@connector.\con6.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R1 'R_RESISTOR_10K':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19191@ANALOG.R.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19191@analog.\r.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19191@analog.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R16 'R_RESISTOR_1K':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS20361@ANALOG.R.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins20361@analog.\r.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins20361@analog.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R17 'R_RESISTOR_1K':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS20409@ANALOG.R.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins20409@analog.\r.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins20409@analog.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2 'R_RESISTOR_470':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19215@ANALOG.R.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19215@analog.\r.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19215@analog.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R3 'R_RESISTOR_120':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19335@ANALOG.R.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19335@analog.\r.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19335@analog.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R4 'R_RESISTOR_4.7K':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19367@ANALOG.R.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19367@analog.\r.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19367@analog.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R5 'POT_POT_20K':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19525@BREAKOUT.POT.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19525@breakout.\pot.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19525@breakout.\pot.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R6 'R_RESISTOR_330':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19793@ANALOG.R.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19793@analog.\r.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19793@analog.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R7 'R_RESISTOR_1K':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19813@ANALOG.R.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19813@analog.\r.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19813@analog.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R8 'R_RESISTOR_4.3K':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19915@ANALOG.R.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19915@analog.\r.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19915@analog.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R9 'R_RESISTOR_10K':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19931@ANALOG.R.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19931@analog.\r.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19931@analog.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U2 'MCP2551_DIP8_MCP2551':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS18963@SYMBOLS.MCP2551.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins18963@symbols.\mcp2551.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins18963@symbols.\mcp2551.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U3 'PIC18F2XK80_DIP28_PIC18F2XK80':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS18991@SYMBOLS.PIC18F2XK80.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins18991@symbols.\pic18f2xk80.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins18991@symbols.\pic18f2xk80.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U4 'LCDSCREEN_HEADER16_LCD':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19461@SYMBOLS.LCDSCREEN.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19461@symbols.\lcdscreen.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19461@symbols.\lcdscreen.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U5 'SPX1117_SOT223_SPX1117':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19737@SYMBOLS.SPX1117.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19737@symbols.\spx1117.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19737@symbols.\spx1117.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U6 'BUZZER_BUZZER_BUZZER':;
+
+SECTION_NUMBER 1
+ '@CIRCUIT_LIGHT.SCHEMATIC1(SCH_1):INS19891@SYMBOLS.BUZZER.NORMAL(CHIPS)':
+ C_PATH='@circuit_light.schematic1(sch_1):ins19891@symbols.\buzzer.normal\(chips)',
+ P_PATH='@circuit_light.schematic1(sch_1):page1_ins19891@symbols.\buzzer.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+END.

@@ -1,0 +1,26 @@
+\t (00:00:01) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:01) 
+
+\t (00:00:03) Opening existing drawing...
+\d (00:00:03) Database opened: I:/C#/MaskCreator/s08-4.brd
+\i (00:00:03) trapsize 3380
+\i (00:00:03) trapsize 3168
+\i (00:00:03) trapsize 3084
+\i (00:00:03) trapsize 2128
+\i (00:00:03) trapsize 2477
+\i (00:00:04) generaledit 
+\i (00:01:48) xhilite 
+\i (00:01:48) xname_flush 
+\i (00:01:48) done 
+\i (00:01:48) generaledit 
+\i (00:02:50) color192 
+\i (00:02:50) setwindow cvf.dialog
+\i (00:02:50) cvf layer_mode
+\i (00:02:50) setwindow pcb
+\i (00:02:50) generaledit 
+\i (00:02:56) setwindow cvf.dialog
+\i (00:02:56) cvf cancel
+\i (11:38:25) setwindow pcb
+\i (11:38:25) exit 
+\f (11:38:25) Do you want to save the changes you made to s08-4.brd?
+\i (11:38:26) fillin no 

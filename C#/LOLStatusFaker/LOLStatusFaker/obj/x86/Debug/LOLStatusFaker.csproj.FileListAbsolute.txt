@@ -1,0 +1,13 @@
+I:\C#\LOLStatusFaker\LOLStatusFaker\bin\Debug\LOLStatusFaker.exe
+I:\C#\LOLStatusFaker\LOLStatusFaker\bin\Debug\LOLStatusFaker.pdb
+I:\C#\LOLStatusFaker\LOLStatusFaker\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\C#\LOLStatusFaker\LOLStatusFaker\obj\x86\Debug\MainWindow.baml
+I:\C#\LOLStatusFaker\LOLStatusFaker\obj\x86\Debug\MainWindow.g.cs
+I:\C#\LOLStatusFaker\LOLStatusFaker\obj\x86\Debug\App.g.cs
+I:\C#\LOLStatusFaker\LOLStatusFaker\obj\x86\Debug\LOLStatusFaker_MarkupCompile.cache
+I:\C#\LOLStatusFaker\LOLStatusFaker\obj\x86\Debug\LOLStatusFaker.g.resources
+I:\C#\LOLStatusFaker\LOLStatusFaker\obj\x86\Debug\LOLStatusFaker.Properties.Resources.resources
+I:\C#\LOLStatusFaker\LOLStatusFaker\obj\x86\Debug\GenerateResource.read.1.tlog
+I:\C#\LOLStatusFaker\LOLStatusFaker\obj\x86\Debug\GenerateResource.write.1.tlog
+I:\C#\LOLStatusFaker\LOLStatusFaker\obj\x86\Debug\LOLStatusFaker.exe
+I:\C#\LOLStatusFaker\LOLStatusFaker\obj\x86\Debug\LOLStatusFaker.pdb

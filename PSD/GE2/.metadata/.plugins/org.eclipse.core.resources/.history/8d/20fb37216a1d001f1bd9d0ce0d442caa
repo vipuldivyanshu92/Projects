@@ -1,0 +1,21 @@
+package gui;
+
+import javax.swing.JFrame;
+
+import org.dyno.visual.swing.layouts.GroupLayout;
+
+//VS4E -- DO NOT REMOVE THIS LINE!
+public class MainFrame extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+
+	public MainFrame() {
+		initComponents();
+	}
+
+	private void initComponents() {
+		setLayout(new GroupLayout());
+		setSize(320, 240);
+	}
+
+}

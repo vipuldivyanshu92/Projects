@@ -1,0 +1,296 @@
+\t (00:00:02) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:02) 
+
+\t (00:00:04) Opening existing drawing...
+\d (00:00:05) Database opened: I:/aquarium/allegro/circuit_lightr1.brd
+\i (00:00:05) trapsize 1794
+\i (00:00:05) trapsize 1736
+\i (00:00:05) trapsize 1712
+\i (00:00:05) trapsize 1387
+\i (00:00:05) trapsize 1387
+\i (00:00:05) generaledit 
+\t (00:00:07) Pick to complete the window.
+\i (00:00:07) zoom fit 
+\i (00:00:07) trapsize 1390
+\i (00:00:08) prepopup -319.26 1049.12
+\i (00:00:09) cancel 
+\i (00:00:09) generaledit 
+\i (00:00:10) zoom fit 
+\i (00:00:10) trapsize 1390
+\i (00:00:14) plot setup 
+\i (00:00:16) setwindow form.fpfileplotsetup
+\i (00:00:16) FORM fpfileplotsetup fpplotmirror NO 
+\i (00:00:20) FORM fpfileplotsetup fpplotfittopage YES 
+\i (00:00:22) FORM fpfileplotsetup done  
+\i (00:00:22) setwindow pcb
+\i (00:00:22) generaledit 
+\i (00:00:24) plot 
+\i (00:00:28) plotwint initialize "Laser Pro LL2"
+\i (00:00:28) plotwint orientation 2
+\i (00:00:28) plotwint papername "A4"
+\i (00:00:28) plotwint copies 1
+\i (00:00:28) plotwint defaultsource 4
+\i (00:00:28) plotwint printquality 600
+\i (00:00:28) plotwint duplex 1
+\i (00:00:28) plotwint execute
+\i (01:28:39) trapsize 2273
+\i (01:54:47) zoom in 1 
+\i (01:54:47) setwindow pcb
+\i (01:54:47) zoom in 1272.08 -62.47
+\i (01:54:47) trapsize 1137
+\i (01:54:54) roam start
+\i (01:54:54) roam x 16
+\i (01:54:54) roam y -32
+\i (01:54:54) roam x 16
+\i (01:54:54) roam y -16
+\i (01:54:54) roam x 32
+\i (01:54:54) roam y -16
+\i (01:54:54) roam end
+\i (01:54:57) roam start
+\i (01:54:58) roam y -32
+\i (01:54:58) roam x 32
+\i (01:54:58) roam y -16
+\i (01:54:58) roam y 16
+\i (01:54:59) roam y 16
+\i (01:54:59) roam y 16
+\i (01:54:59) roam end
+\i (01:55:04) roam start
+\i (01:55:04) roam y 32
+\i (01:55:04) roam end
+\i (01:55:24) zoom in 1 
+\i (01:55:24) setwindow pcb
+\i (01:55:24) zoom in 1206.50 37.61
+\i (01:55:24) trapsize 568
+\i (01:55:30) zoom out 1 
+\i (01:55:30) setwindow pcb
+\i (01:55:30) zoom out 747.28 20.56
+\i (01:55:30) trapsize 1137
+\i (01:55:31) roam start
+\i (01:55:31) roam x -80
+\i (01:55:31) roam x -32
+\i (01:55:31) roam x -48
+\i (01:55:31) roam x -32
+\i (01:55:31) roam y -16
+\i (01:55:31) roam x -48
+\i (01:55:32) roam x -32
+\i (01:55:32) roam x -16
+\i (01:55:32) roam x -48
+\i (01:55:32) roam y -16
+\i (01:55:32) roam x -16
+\i (01:55:32) roam x -16
+\i (01:55:32) roam y -16
+\i (01:55:33) roam y -16
+\i (01:55:33) roam x -16
+\i (01:55:33) roam y -16
+\i (01:55:33) roam x -16
+\i (01:55:33) roam y -16
+\i (01:55:33) roam end
+\i (01:55:35) roam start
+\i (01:55:36) roam x -96
+\i (01:55:36) roam x -48
+\i (01:55:36) roam x -32
+\i (01:55:36) roam y -16
+\i (01:55:36) roam x -32
+\i (01:55:36) roam x -32
+\i (01:55:36) roam x -32
+\i (01:55:36) roam end
+\i (01:56:37) roam start
+\i (01:56:38) roam x 32
+\i (01:56:38) roam x 64
+\i (01:56:38) roam x 16
+\i (01:56:38) roam x 32
+\i (01:56:38) roam x 16
+\i (01:56:38) roam x 48
+\i (01:56:38) roam x 32
+\i (01:56:38) roam x 16
+\i (01:56:38) roam x 32
+\i (01:56:38) roam y 16
+\i (01:56:38) roam x 16
+\i (01:56:38) roam y 16
+\i (01:56:38) roam x 16
+\i (01:56:38) roam x 16
+\i (01:56:38) roam x 16
+\i (01:56:38) roam y 16
+\i (01:56:38) roam x 16
+\i (01:56:38) roam x 32
+\i (01:56:38) roam y 16
+\i (01:56:38) roam x 48
+\i (01:56:39) roam x 16
+\i (01:56:39) roam x 16
+\i (01:56:39) roam end
+\i (02:04:16) roam start
+\i (02:04:16) roam x -48
+\i (02:04:16) roam y -16
+\i (02:04:16) roam x -64
+\i (02:04:16) roam y -16
+\i (02:04:16) roam x -64
+\i (02:04:16) roam y -16
+\i (02:04:16) roam x -32
+\i (02:04:16) roam y -16
+\i (02:04:18) roam end
+\i (02:04:32) roam start
+\i (02:04:33) roam x 32
+\i (02:04:33) roam x 32
+\i (02:04:33) roam x 16
+\i (02:04:34) roam end
+\i (02:42:54) xhilite 
+\i (02:42:54) xname_flush 
+\i (02:42:54) done 
+\i (02:42:54) generaledit 
+\i (02:42:58) xhilite 
+\i (02:42:58) xname_flush 
+\i (02:42:58) done 
+\i (02:42:58) generaledit 
+\i (02:42:59) xhilite 
+\i (02:43:00) xname_flush 
+\i (02:43:00) done 
+\i (02:43:00) generaledit 
+\i (02:43:01) xhilite 
+\i (02:43:01) xname_flush 
+\i (02:43:01) done 
+\i (02:43:01) generaledit 
+\i (02:43:02) xhilite 
+\i (02:43:02) xname_flush 
+\i (02:43:02) done 
+\i (02:43:02) generaledit 
+\i (02:43:05) xhilite 
+\i (02:43:05) xname_flush 
+\i (02:43:05) done 
+\i (02:43:05) generaledit 
+\i (02:43:10) xhilite 
+\i (02:43:10) xname_flush 
+\i (02:43:10) done 
+\i (02:43:10) generaledit 
+\i (02:43:11) xdehilite 
+\i (02:43:11) xname_flush 
+\i (02:43:11) done 
+\i (02:43:11) generaledit 
+\i (02:43:12) xhilite 
+\i (02:43:12) xname_flush 
+\i (02:43:12) done 
+\i (02:43:12) generaledit 
+\i (02:43:13) xdehilite 
+\i (02:43:13) xname_flush 
+\i (02:43:13) done 
+\i (02:43:13) generaledit 
+\i (02:43:14) xhilite 
+\i (02:43:14) xname_flush 
+\i (02:43:14) done 
+\i (02:43:14) generaledit 
+\i (02:43:18) xhilite 
+\i (02:43:18) xname_flush 
+\i (02:43:18) done 
+\i (02:43:18) xhilite 
+\i (02:43:18) xname_flush 
+\i (02:43:18) done 
+\i (02:43:18) generaledit 
+\i (02:43:20) xdehilite 
+\i (02:43:20) xname_flush 
+\i (02:43:20) done 
+\i (02:43:20) generaledit 
+\i (02:43:26) xhilite 
+\i (02:43:26) xname_flush 
+\i (02:43:26) done 
+\i (02:43:26) generaledit 
+\i (02:43:28) xhilite 
+\i (02:43:28) xname_flush 
+\i (02:43:28) done 
+\i (02:43:28) generaledit 
+\i (02:43:28) xdehilite 
+\i (02:43:28) xname_flush 
+\i (02:43:28) done 
+\i (02:43:28) generaledit 
+\i (14:34:21) trapsize 695
+\i (14:34:22) roam start
+\i (14:34:22) roam x -64
+\i (14:34:22) roam x -96
+\i (14:34:23) roam x -96
+\i (14:34:23) roam x -64
+\i (14:34:23) roam x -32
+\i (14:34:23) roam end
+\i (14:39:05) roam start
+\i (14:39:06) roam x 80
+\i (14:39:06) roam x 32
+\i (14:39:06) roam x 32
+\i (14:39:06) roam end
+\i (14:42:16) roam start
+\i (14:42:16) roam x 112
+\i (14:42:16) roam x 48
+\i (14:42:16) roam x 48
+\i (14:42:16) roam x 48
+\i (14:42:16) roam x 32
+\i (14:42:16) roam x 32
+\i (14:42:16) roam x 32
+\i (14:42:16) roam x 16
+\i (14:42:17) roam x 32
+\i (14:42:17) roam x 16
+\i (14:42:18) roam end
+\i (14:42:21) roam start
+\i (14:42:21) roam x 96
+\i (14:42:21) roam x 48
+\i (14:42:22) roam x 16
+\i (14:42:22) roam x -16
+\i (14:42:22) roam x -16
+\i (14:42:22) roam x -16
+\i (14:42:22) roam end
+\i (14:50:48) roam start
+\i (14:50:48) roam x -64
+\i (14:50:48) roam x -80
+\i (14:50:48) roam y 32
+\i (14:50:48) roam x -128
+\i (14:50:48) roam y 32
+\i (14:50:48) roam x -80
+\i (14:50:48) roam y 32
+\i (14:50:48) roam x -48
+\i (14:50:48) roam y 32
+\i (14:50:48) roam x -48
+\i (14:50:48) roam y 16
+\i (14:50:48) roam x -48
+\i (14:50:48) roam y 32
+\i (14:50:48) roam x -16
+\i (14:50:48) roam y 16
+\i (14:50:49) roam x -16
+\i (14:50:49) roam x -32
+\i (14:50:49) roam x -80
+\i (14:50:49) roam x -96
+\i (14:50:49) roam y 16
+\i (14:50:49) roam x -112
+\i (14:50:49) roam x -48
+\i (14:50:49) roam x -32
+\i (14:50:49) roam x -64
+\i (14:50:49) roam x -64
+\i (14:50:49) roam x -16
+\i (14:50:50) roam end
+\i (23:30:14) trapsize 1137
+\i (23:30:15) trapsize 526
+\i (23:30:18) zoom out 1 
+\i (23:30:18) setwindow pcb
+\i (23:30:18) zoom out -1077.08 -168.58
+\i (23:30:18) trapsize 1052
+\i (23:33:13) roam start
+\i (23:33:14) roam x -32
+\i (23:33:14) roam x -32
+\i (23:33:14) roam end
+\i (23:33:41) roam start
+\i (23:33:41) roam y 48
+\i (23:33:41) roam y 32
+\i (23:33:42) roam x -16
+\i (23:33:42) roam y 16
+\i (23:33:42) roam x -64
+\i (23:33:42) roam y 16
+\i (23:33:42) roam x -32
+\i (23:33:42) roam y 16
+\i (23:33:42) roam x 16
+\i (23:33:42) roam y -16
+\i (23:33:42) roam x 16
+\i (23:33:42) roam x 16
+\i (23:33:42) roam y -16
+\i (23:33:42) roam y -16
+\i (23:33:43) roam end
+\i (23:36:48) roam start
+\i (23:36:48) roam y 64
+\i (23:36:49) roam y 32
+\i (23:36:49) roam end
+\i (48:44:50) exit 
+\f (48:44:50) Do you want to save the changes you made to circuit_lightr1.brd?
+\i (48:44:54) fillin yes 

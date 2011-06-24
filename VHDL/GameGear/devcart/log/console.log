@@ -1,0 +1,2525 @@
+# Design: Design devcart already active.
+# DESIGN: Default Design Language: VHDL
+# DESIGN: Default BDE Language: VHDL
+# DESIGN: C-Synthesis: Not Defined
+# DESIGN: HDL Synthesis: Not Defined
+# DESIGN: Physical Synthesis: Not Defined
+# DESIGN: Implementation: Not Defined
+# Warning: The synthesis tool has not been selected.
+# Warning: Use 'Flow Configuration Settings' option to specify this tool.
+# Warning: The synthesis tool has not been selected.
+acom -reorder -work devcart -2002  $dsn/src/mapper.vhd
+# Compile with File Reorder...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0018: mapper.vhd : (16, 2): Identifier expected.
+# Error: COMP96_0019: mapper.vhd : (31, 7): Keyword 'end' expected.
+# Error: COMP96_0019: mapper.vhd : (33, 6): Keyword 'case' expected.
+# Error: COMP96_0019: mapper.vhd : (36, 6): Keyword 'end' expected.
+# Error: COMP96_0019: mapper.vhd : (39, 6): Keyword 'end' expected.
+# Error: COMP96_0019: mapper.vhd : (41, 9): Keyword 'process' expected.
+# Error: COMP96_0015: mapper.vhd : (42, 8): ';' expected.
+# Error: COMP96_0016: mapper.vhd : (42, 10): Design unit declaration expected.
+# Compile failure 8 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -reorder -work devcart -2002  $dsn/src/mapper.vhd
+# Compile with File Reorder...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0019: mapper.vhd : (31, 7): Keyword 'end' expected.
+# Error: COMP96_0019: mapper.vhd : (33, 6): Keyword 'case' expected.
+# Error: COMP96_0019: mapper.vhd : (36, 6): Keyword 'end' expected.
+# Error: COMP96_0019: mapper.vhd : (39, 6): Keyword 'end' expected.
+# Error: COMP96_0019: mapper.vhd : (41, 9): Keyword 'process' expected.
+# Error: COMP96_0015: mapper.vhd : (42, 8): ';' expected.
+# Error: COMP96_0016: mapper.vhd : (42, 10): Design unit declaration expected.
+# Compile failure 7 Errors 0 Warnings  Analysis time :  78.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0078: mapper.vhd : (24, 10): Unknown identifier "A".
+# Error: COMP96_0348: mapper.vhd : (24, 10): Name on sensitivity list must denote a signal.
+# Error: COMP96_0078: mapper.vhd : (28, 11): Unknown identifier "A".
+# Error: COMP96_0133: mapper.vhd : (28, 11): Cannot find object declaration.
+# Error: COMP96_0584: mapper.vhd : (28, 10): Cannot determine the type of the case expression. Enumeration type, integer type, or one-dimensional array of characters expected.
+# Compile failure 5 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0301: mapper.vhd : (28, 5): The choice 'others' must be present when all alternatives are not covered.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.4 [s]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0077: mapper.vhd : (38, 16): Assignment target incompatible with right side. Expected type 'INTEGER'.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0149: mapper.vhd : (38, 24): Explicit type conversions are allowed between closely related types only.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0078: mapper.vhd : (26, 19): Unknown identifier "unsigned".
+# Error: COMP96_0064: mapper.vhd : (26, 19): Unknown type.
+# Error: COMP96_0078: mapper.vhd : (27, 19): Unknown identifier "unsigned".
+# Error: COMP96_0064: mapper.vhd : (27, 19): Unknown type.
+# Error: COMP96_0078: mapper.vhd : (28, 19): Unknown identifier "unsigned".
+# Error: COMP96_0064: mapper.vhd : (28, 19): Unknown type.
+# Compile failure 6 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (38, 28): ')' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (38, 40): ')' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  62.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0077: mapper.vhd : (26, 43): Assignment target incompatible with right side. Expected type 'UNSIGNED'.
+# Error: COMP96_0077: mapper.vhd : (27, 43): Assignment target incompatible with right side. Expected type 'UNSIGNED'.
+# Error: COMP96_0077: mapper.vhd : (28, 43): Assignment target incompatible with right side. Expected type 'UNSIGNED'.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  46.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (26, 48): ';' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (26, 48): ';' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  32.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0077: mapper.vhd : (26, 51): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  32.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  78.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  94.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  78.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+# Warning: The synthesis tool has not been selected.
+# Warning: Use 'Flow Configuration Settings' option to specify this tool.
+# Warning: The synthesis tool has not been selected.
+# There are no files to simulate. Use "Functional Simulation Options" dialog to specify file(s).
+# Top-level unit has not been specified for simulation. Use "Functional Simulation Options" dialog to specify top-level.
+# Design: Design "devcart" has been set as active.
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+asim -O5 +access +r +m+mapper_entity mapper_entity mapper_behaviour
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2158 kB (elbread=1023 elab2=786 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  19:37, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0019: mapper.vhd : (51, 9): Keyword 'end' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  15.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0019: mapper.vhd : (51, 9): Keyword 'end' expected.
+# Error: COMP96_0019: mapper.vhd : (57, 7): Keyword 'process' expected.
+# Error: COMP96_0015: mapper.vhd : (58, 6): ';' expected.
+# Error: COMP96_0016: mapper.vhd : (58, 13): Design unit declaration expected.
+# Compile failure 4 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0019: mapper.vhd : (51, 9): Keyword 'end' expected.
+# Error: COMP96_0019: mapper.vhd : (53, 6): Keyword 'end' expected.
+# Error: COMP96_0019: mapper.vhd : (55, 6): Keyword 'end' expected.
+# Error: COMP96_0019: mapper.vhd : (56, 5): Keyword 'end' expected.
+# Error: COMP96_0015: mapper.vhd : (58, 9): ';' expected.
+# Error: COMP96_0016: mapper.vhd : (58, 11): Design unit declaration expected.
+# Compile failure 6 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0019: mapper.vhd : (51, 9): Keyword 'end' expected.
+# Error: COMP96_0019: mapper.vhd : (60, 7): Keyword 'process' expected.
+# Error: COMP96_0015: mapper.vhd : (61, 6): ';' expected.
+# Error: COMP96_0016: mapper.vhd : (61, 13): Design unit declaration expected.
+# Compile failure 4 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0093: mapper.vhd : (53, 22): Actual parameter types in subprogram call do not match subprogram formal parameter types.
+# Error: COMP96_0077: mapper.vhd : (53, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0093: mapper.vhd : (55, 22): Actual parameter types in subprogram call do not match subprogram formal parameter types.
+# Error: COMP96_0077: mapper.vhd : (55, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0093: mapper.vhd : (57, 22): Actual parameter types in subprogram call do not match subprogram formal parameter types.
+# Error: COMP96_0077: mapper.vhd : (57, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 6 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (54, 5): ';' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0367: mapper.vhd : (53, 15): Improper array length. Actual length is 16. Expected length is 19.
+# Error: COMP96_0367: mapper.vhd : (55, 15): Improper array length. Actual length is 16. Expected length is 19.
+# Error: COMP96_0367: mapper.vhd : (57, 15): Improper array length. Actual length is 16. Expected length is 19.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  32.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0077: mapper.vhd : (53, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0077: mapper.vhd : (55, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0077: mapper.vhd : (57, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0078: mapper.vhd : (53, 15): Unknown identifier "to_std_logic_vector".
+# Error: COMP96_0133: mapper.vhd : (53, 15): Cannot find object declaration.
+# Error: COMP96_0289: mapper.vhd : (53, 15): Prefix of index must be an array.
+# Error: COMP96_0104: mapper.vhd : (53, 15): Undefined type of expression.
+# Error: COMP96_0077: mapper.vhd : (53, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0078: mapper.vhd : (55, 15): Unknown identifier "to_std_logic_vector".
+# Error: COMP96_0133: mapper.vhd : (55, 15): Cannot find object declaration.
+# Error: COMP96_0289: mapper.vhd : (55, 15): Prefix of index must be an array.
+# Error: COMP96_0104: mapper.vhd : (55, 15): Undefined type of expression.
+# Error: COMP96_0077: mapper.vhd : (55, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0078: mapper.vhd : (57, 15): Unknown identifier "to_std_logic_vector".
+# Error: COMP96_0133: mapper.vhd : (57, 15): Cannot find object declaration.
+# Error: COMP96_0289: mapper.vhd : (57, 15): Prefix of index must be an array.
+# Error: COMP96_0104: mapper.vhd : (57, 15): Undefined type of expression.
+# Error: COMP96_0077: mapper.vhd : (57, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 15 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  94.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+# Warning: The synthesis tool has not been selected.
+# Warning: Use 'Flow Configuration Settings' option to specify this tool.
+# Warning: The synthesis tool has not been selected.
+# Adding file k:\VHDL\GameGear\devcart\src\input_test.awc ... Done
+# 1 signal(s) traced.
+# KERNEL: Signal 'A_in' has already been traced
+# 0 signal(s) traced.
+endsim
+#  Simulation has been stopped
+# Error: Accelerated Waveform: Simulation database is not connected.
+asim -O5 +access +r +m+mapper_entity mapper_entity mapper_behaviour
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:17, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# 1 signal(s) traced.
+# 1 signal(s) traced.
+# 1 signal(s) traced.
+# 1 signal(s) traced.
+# 1 signal(s) traced.
+endsim
+#  Simulation has been stopped
+asim -O5 +access +r +m+mapper_entity mapper_entity mapper_behaviour
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:24, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+# 5 signal(s) traced.
+run
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run
+endsim
+# KERNEL: stopped at time: 119674050 ns
+#  Simulation has been stopped
+asim -O5 +access +r +m+mapper_entity mapper_entity mapper_behaviour
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:28, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+# 5 signal(s) traced.
+run
+# KERNEL: stopped at time: 14892650 ns
+run 100 ns
+# KERNEL: stopped at time: 14892750 ns
+run 100 ns
+# KERNEL: stopped at time: 14892850 ns
+run 100 ns
+# KERNEL: stopped at time: 14892950 ns
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:31, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:32, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:32, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:33, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# RUNTIME: Fatal Error: RUNTIME_0046 mapper.vhd (53): Incompatible ranges; left: (18 downto 0), right: (15 downto 0).
+# KERNEL: Time: 0 ps,  Iteration: 0,  TOP instance,  Process: line__24.
+# KERNEL: stopped at delta: 0 at time 0 ps.
+# Error: Fatal error occurred during simulation.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:34, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+#  Simulation has been stopped
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+asim -O5 +access +r +m+mapper_entity mapper_entity mapper_behaviour
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:35, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# 5 signal(s) traced.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:36, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:36, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# Cannot set breakpoint
+# Cannot set breakpoint
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:39, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+#  Simulation has been stopped
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0131: mapper.vhd : (53, 47): Illegal operand for type conversion.
+# Error: COMP96_0149: mapper.vhd : (53, 54): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0269: mapper.vhd : (53, 32): For each formal parameter of a subprogram, a subprogram call must specify exactly one corresponding actual.
+# Error: COMP96_0149: mapper.vhd : (53, 32): Explicit type conversions are allowed between closely related types only.
+# Compile failure 4 Errors 0 Warnings  Analysis time :  31.0 [ms]
+asim -O5 +access +r +m+mapper_entity mapper_entity mapper_behaviour
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:39, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# 1 signal(s) traced.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# 1 signal(s) traced.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:39, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (54, 52): ';' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:42, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# RUNTIME: Fatal Error: RUNTIME_0046 mapper.vhd (54): Incompatible ranges; left: (18 downto 0), right: (0 to 31).
+# KERNEL: Time: 0 ps,  Iteration: 0,  TOP instance,  Process: line__24.
+# KERNEL: stopped at delta: 0 at time 0 ps.
+# Error: Fatal error occurred during simulation.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:43, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+#  Simulation has been stopped
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  94.0 [ms]
+asim -O5 +access +r +m+mapper_entity mapper_entity mapper_behaviour
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:43, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# RUNTIME: Fatal Error: RUNTIME_0046 mapper.vhd (54): Incompatible ranges; left: (18 downto 0), right: (15 downto 0).
+# KERNEL: Time: 0 ps,  Iteration: 0,  TOP instance,  Process: line__24.
+# KERNEL: stopped at delta: 0 at time 0 ps.
+# Error: Fatal error occurred during simulation.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2160 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:43, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+# 1 signal(s) traced.
+run 100 ns
+#  Simulation has been stopped
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  94.0 [ms]
+asim -O5 +access +r +m+mapper_entity mapper_entity mapper_behaviour
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:43, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# 1 signal(s) traced.
+# 1 signal(s) traced.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:43, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (26, 40): ';' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:48, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+#  Simulation has been stopped
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0367: mapper.vhd : (26, 43): Improper array length. Actual length is 4. Expected length is 8.
+# Error: COMP96_0367: mapper.vhd : (27, 43): Improper array length. Actual length is 4. Expected length is 8.
+# Error: COMP96_0367: mapper.vhd : (28, 43): Improper array length. Actual length is 4. Expected length is 8.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+asim -O5 +access +r +m+mapper_entity mapper_entity mapper_behaviour
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:51, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# 2 signal(s) traced.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:52, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:53, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  20:56, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  21:02, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (55, 61): ';' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  21:09, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# RUNTIME: Fatal Error: RUNTIME_0046 mapper.vhd (55): Incompatible ranges; left: (18 downto 0), right: (37 downto 0).
+# KERNEL: Time: 0 ps,  Iteration: 0,  TOP instance,  Process: line__24.
+# KERNEL: stopped at delta: 0 at time 0 ps.
+# Error: Fatal error occurred during simulation.
+run 100 ns
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  21:24, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+#  Simulation has been stopped
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+asim -O5 +access +r +m+mapper_entity mapper_entity mapper_behaviour
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  21:24, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# RUNTIME: Fatal Error: RUNTIME_0046 mapper.vhd (57): Incompatible ranges; left: (18 downto 0), right: (37 downto 0).
+# KERNEL: Time: 0 ps,  Iteration: 0,  TOP instance,  Process: line__24.
+# KERNEL: stopped at delta: 0 at time 0 ps.
+# Error: Fatal error occurred during simulation.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+run 100 ns
+# 2 signal(s) traced.
+run 100 ns
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  21:25, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# Warning: The synthesis tool has not been selected.
+# Warning: Use 'Flow Configuration Settings' option to specify this tool.
+# Warning: The synthesis tool has not been selected.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0078: mapper.vhd : (57, 47): Unknown identifier "x4000".
+# Error: COMP96_0133: mapper.vhd : (57, 47): Cannot find object declaration.
+# Error: COMP96_0104: mapper.vhd : (57, 39): Undefined type of expression.
+# Error: COMP96_0071: mapper.vhd : (57, 39): Operator "*" is not defined for such operands.
+# Error: COMP96_0149: mapper.vhd : (57, 32): Explicit type conversions are allowed between closely related types only.
+# Compile failure 5 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0071: mapper.vhd : (57, 39): Operator "*" is not defined for such operands.
+# Error: COMP96_0104: mapper.vhd : (57, 39): Undefined type of expression.
+# Error: COMP96_0149: mapper.vhd : (57, 32): Explicit type conversions are allowed between closely related types only.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  21:29, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# 4 signal(s) traced.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  21:30, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  21:41, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (54, 54): ')' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (54, 54): ')' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0078: mapper.vhd : (54, 39): Unknown identifier "shl".
+# Error: COMP96_0133: mapper.vhd : (54, 39): Cannot find object declaration.
+# Error: COMP96_0289: mapper.vhd : (54, 39): Prefix of index must be an array.
+# Error: COMP96_0104: mapper.vhd : (54, 39): Undefined type of expression.
+# Error: COMP96_0149: mapper.vhd : (54, 32): Explicit type conversions are allowed between closely related types only.
+# Compile failure 5 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  21:54, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  21:57, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+#  Simulation has been stopped
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+asim -O5 +access +r +m+mapper_entity mapper_entity mapper_behaviour
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  21:58, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# 5 signal(s) traced.
+# 3 signal(s) traced.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0019: mapper.vhd : (26, 3): Keyword 'begin' expected.
+# Error: COMP96_0019: mapper.vhd : (27, 3): Keyword 'end' expected.
+# Error: COMP96_0016: mapper.vhd : (27, 10): Design unit declaration expected.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  62.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0110: mapper.vhd : (39, 7): Signal cannot be the target of a variable assignment.
+# Error: COMP96_0110: mapper.vhd : (42, 7): Signal cannot be the target of a variable assignment.
+# Error: COMP96_0110: mapper.vhd : (45, 7): Signal cannot be the target of a variable assignment.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:02, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+# Warning: WAVEFORM: Signal line__24/page0 not found.
+# Warning: WAVEFORM: Signal line__24/page1 not found.
+# Warning: WAVEFORM: Signal line__24/page2 not found.
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# 1 signal(s) traced.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0020: mapper.vhd : (21, 2): Variable can be declared only in a process or subprogram.
+# Error: COMP96_0020: mapper.vhd : (22, 2): Variable can be declared only in a process or subprogram.
+# Error: COMP96_0020: mapper.vhd : (23, 2): Variable can be declared only in a process or subprogram.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:05, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+# Warning: WAVEFORM: Signal page0 not found.
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:06, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:22, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0093: mapper.vhd : (54, 26): Actual parameter types in subprogram call do not match subprogram formal parameter types.
+# Error: COMP96_0077: mapper.vhd : (54, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 2 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0077: mapper.vhd : (55, 17): Assignment target incompatible with right side. Expected type 'INTEGER'.
+# Error: COMP96_0093: mapper.vhd : (56, 26): Actual parameter types in subprogram call do not match subprogram formal parameter types.
+# Error: COMP96_0077: mapper.vhd : (56, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0149: mapper.vhd : (55, 25): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0093: mapper.vhd : (56, 26): Actual parameter types in subprogram call do not match subprogram formal parameter types.
+# Error: COMP96_0077: mapper.vhd : (56, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0149: mapper.vhd : (55, 25): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0093: mapper.vhd : (56, 26): Actual parameter types in subprogram call do not match subprogram formal parameter types.
+# Error: COMP96_0077: mapper.vhd : (56, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  32.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0077: mapper.vhd : (55, 17): Assignment target incompatible with right side. Expected type 'UNSIGNED'.
+# Error: COMP96_0093: mapper.vhd : (56, 26): Actual parameter types in subprogram call do not match subprogram formal parameter types.
+# Error: COMP96_0077: mapper.vhd : (56, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0305: mapper.vhd : (55, 17): Cannot find function "shift_left" for these actuals.
+# Error: COMP96_0104: mapper.vhd : (55, 17): Undefined type of expression.
+# Error: COMP96_0093: mapper.vhd : (56, 26): Actual parameter types in subprogram call do not match subprogram formal parameter types.
+# Error: COMP96_0077: mapper.vhd : (56, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 4 Errors 0 Warnings  Analysis time :  32.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=788 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:39, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# RUNTIME: Fatal Error: RUNTIME_0046 mapper.vhd (55): Incompatible ranges; left: (18 downto 0), right: (7 downto 0).
+# KERNEL: Time: 0 ps,  Iteration: 0,  TOP instance,  Process: line__24.
+# KERNEL: stopped at delta: 0 at time 0 ps.
+# Error: Fatal error occurred during simulation.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (55, 65): ')' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  63.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  94.0 [ms]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:40, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:40, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0071: mapper.vhd : (55, 15): Operator "+" is not defined for such operands.
+# Error: COMP96_0104: mapper.vhd : (55, 15): Undefined type of expression.
+# Error: COMP96_0077: mapper.vhd : (55, 15): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0071: mapper.vhd : (55, 32): Operator "+" is not defined for such operands.
+# Error: COMP96_0149: mapper.vhd : (55, 32): Explicit type conversions are allowed between closely related types only.
+# Compile failure 2 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  93.0 [ms]
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# 4 signal(s) traced.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:43, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  93.0 [ms]
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:43, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 300 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 400 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 500 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 600 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:43, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:43, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+# Warning: The synthesis tool has not been selected.
+# Warning: Use 'Flow Configuration Settings' option to specify this tool.
+# Warning: The synthesis tool has not been selected.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 300 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 400 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 500 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:44, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  93.0 [ms]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:44, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:45, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 300 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 400 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:46, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 300 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:46, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:46, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:46, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:47, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 300 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  94.0 [ms]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:47, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+# Warning: WAVEFORM: Signal line__24/address not found.
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2161 kB (elbread=1023 elab2=789 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:50, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 300 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+run 100 ns
+# KERNEL: stopped at time: 400 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2162 kB (elbread=1023 elab2=790 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  22:53, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 300 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 400 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 500 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# Error: Advanced Dataflow is disabled.
+# Error: To enable Advanced Dataflow close the simulation session, set the Generate Data for Advanced Dataflow option in Design Settings.
+# Error: Initialize simulation from Simulation Menu or use asim macro command with -advdataflow switch.
+endsim
+#  Simulation has been stopped
+# Adding file k:\VHDL\GameGear\devcart\src\wave_bench.asdb ... Done
+# Adding file k:\VHDL\GameGear\devcart\src\wave_bench.awc ... Done
+# Error: Advanced Dataflow is disabled.
+# Error: To enable Advanced Dataflow close the simulation session, set the Generate Data for Advanced Dataflow option in Design Settings.
+# Error: Initialize simulation from Simulation Menu or use asim macro command with -advdataflow switch.
+# Top-level unit has not been specified for simulation. Use "Functional Simulation Options" dialog to specify top-level.
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# Top-level unit has not been specified for simulation. Use "Functional Simulation Options" dialog to specify top-level.
+asim -advdataflow mapper_entity
+# Warning: Verilog Optimization cannot be used when -advdataflow is in effect. Verilog Optimization disabled.
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2162 kB (elbread=1023 elab2=790 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  23:01, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+open -wave "k:\VHDL\GameGear\devcart\src\wave_bench.awc"
+asim -advdataflow mapper_entity
+# Warning: Verilog Optimization cannot be used when -advdataflow is in effect. Verilog Optimization disabled.
+#  Simulation has been stopped
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2162 kB (elbread=1023 elab2=790 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  23:02, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+open -wave "k:\VHDL\GameGear\devcart\src\wave_bench.asdb"
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0015: mapper.vhd : (62, 3): ';' expected.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  62.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0367: mapper.vhd : (61, 13): Improper array length. Actual length is 20. Expected length is 19.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  32.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0077: mapper.vhd : (61, 13): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Error: COMP96_0077: mapper.vhd : (61, 13): Assignment target incompatible with right side. Expected type 'STD_LOGIC_VECTOR'.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+# 5 signal(s) traced.
+run 100 ns
+acom -work devcart -2002  $dsn/src/mapper.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available.
+# File: k:\VHDL\GameGear\devcart\src\mapper.vhd
+# Compile Entity "MAPPER_entity"
+# Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# ELAB2: You do not have a license to run VHDL performance optimized simulation. Contact Aldec for ordering information - sales@aldec.com.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2162 kB (elbread=1023 elab2=790 kernel=348 sdf=0)
+# KERNEL: ASDB file was created in location k:\VHDL\GameGear\devcart\src\wave.asdb
+#  23:21, 21 April 2010
+#  Simulation has been initialized
+#  Selected Top-Level: mapper_entity (mapper_behaviour)
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+#  Simulation has been stopped

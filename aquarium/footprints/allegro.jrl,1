@@ -1,0 +1,1112 @@
+\t (00:00:00) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:00) 
+
+\t (00:00:02) Opening existing drawing...
+\d (00:00:02) Database opened: I:/aquarium/footprints/pot.dra
+\i (00:00:02) trapsize 137
+\i (00:00:02) trapsize 132
+\i (00:00:02) trapsize 130
+\i (00:00:02) trapsize 109
+\i (00:00:02) trapsize 109
+\i (00:00:03) generaledit 
+\i (00:00:05) open 
+\i (00:00:08) fillin "sot223.dra"
+\t (00:00:08) Opening existing drawing...
+\i (00:00:08) trapsize 122
+\d (00:00:08) Database opened: I:/aquarium/footprints/sot223.dra
+\i (00:00:08) generaledit 
+\i (00:00:09) add pin 
+\t (00:00:09) Using 'SOT223_PAD.pad'.
+\i (00:00:13) setwindow form.mini
+\i (00:00:13) FORM mini pad_browse  
+\f (00:00:13) Select a padstack:
+\t (00:00:15) No valid name selected.
+\i (00:00:17) fillin "Sot223_Pad"
+\t (00:00:17) Using 'SOT223_PAD.pad'.
+\i (00:00:22) setwindow pcb
+\i (00:00:22) prepopup -1.237 -4.311
+\i (00:00:23) cancel 
+\t (00:00:23) Exiting from Add Pin.
+\i (00:00:23) generaledit 
+\i (00:00:41) refresh padstack 
+\i (00:00:44) setwindow form.rf_pad
+\i (00:00:44) FORM rf_pad execute  
+\t (00:00:44) Starting Refreshing padstacks...
+\t (00:00:45) Opening existing drawing...
+\i (00:00:45) setwindow pcb
+\i (00:00:45) trapsize 122
+\i (00:00:47) setwindow form.rf_pad
+\i (00:00:47) FORM rf_pad cancel  
+\i (00:00:47) setwindow pcb
+\i (00:00:47) generaledit 
+\i (00:00:47) pick grid -3.220 -1.741
+\t (00:00:47) last pick:  -3.000  -1.500
+\i (00:00:48) pick grid -2.681 -5.461
+\t (00:00:48) last pick:  -2.500  -5.500
+\i (00:00:48) prepopup -2.681 -5.461
+\i (00:00:50) pop dyn_option_select @:@Move 
+\i (00:00:50) move 
+\t (00:00:50) last pick:  -2.300  -6.300
+\t (00:00:50) Pick new location for the element(s).
+\i (00:00:54) Esc 
+\i (00:00:54) prepopup -2.069 -5.632
+\i (00:00:55) cancel 
+\i (00:00:55) generaledit 
+\i (00:00:56) pick grid -1.653 -3.161
+\t (00:00:56) last pick:  -1.500  -3.000
+\i (00:01:00) roam start
+\i (00:01:00) roam y 32
+\i (00:01:00) roam y 16
+\i (00:01:00) roam y -32
+\i (00:01:00) roam y -32
+\i (00:01:01) roam end
+\i (00:01:04) drag_start grid -4.443 -4.360
+\i (00:01:05) drag_stop 4.269 -8.178
+\i (00:01:06) ipick 0 
+\t (00:01:06) last pick:  4.269  -8.178
+\i (00:01:06) ipick_to_gridunit 0 -1 
+\t (00:01:06) last pick:  4.000  -9.000
+\i (00:01:06) trapsize 122
+\i (00:01:07) ipick 0 
+\t (00:01:07) last pick:  4.000  -9.000
+\i (00:01:07) ipick_to_gridunit 0 +1 
+\t (00:01:07) last pick:  4.000  -8.500
+\i (00:01:07) trapsize 122
+\i (00:01:08) drag_start grid -6.156 -4.849
+\i (00:01:08) drag_stop 3.584 -8.055
+\i (00:01:11) move 
+\i (00:01:11) ipick_to_gridunit 0 -1 
+\t (00:01:11) last pick:  3.500  -9.000
+\t (00:01:11) Pick new location for the element(s).
+\i (00:01:11) trapsize 122
+\i (00:01:12) move 
+\i (00:01:12) ipick_to_gridunit 0 +1 
+\t (00:01:12) last pick:  3.500  -8.500
+\t (00:01:12) Pick new location for the element(s).
+\i (00:01:12) trapsize 122
+\i (00:01:12) move 
+\i (00:01:12) ipick_to_gridunit 0 +1 
+\t (00:01:12) last pick:  3.500  -8.000
+\t (00:01:12) Pick new location for the element(s).
+\i (00:01:12) trapsize 122
+\i (00:01:13) move 
+\i (00:01:13) ipick_to_gridunit 0 -1 
+\t (00:01:13) last pick:  3.500  -8.500
+\t (00:01:13) Pick new location for the element(s).
+\i (00:01:13) trapsize 122
+\i (00:01:14) move 
+\i (00:01:14) ipick_to_gridunit 0 +1 
+\t (00:01:14) last pick:  3.500  -8.000
+\t (00:01:14) Pick new location for the element(s).
+\i (00:01:14) trapsize 122
+\i (00:01:14) move 
+\i (00:01:14) ipick_to_gridunit 0 +1 
+\t (00:01:14) last pick:  3.500  -7.500
+\t (00:01:14) Pick new location for the element(s).
+\i (00:01:14) trapsize 122
+\i (00:01:16) move 
+\i (00:01:16) ipick_to_gridunit 0 -1 
+\t (00:01:16) last pick:  3.500  -8.000
+\t (00:01:16) Pick new location for the element(s).
+\i (00:01:16) trapsize 122
+\i (00:01:18) Esc 
+\i (00:01:18) prepopup 3.168 -6.562
+\i (00:01:19) cancel 
+\i (00:01:19) generaledit 
+\i (00:01:20) pick grid 4.807 -4.898
+\t (00:01:20) last pick:  5.000  -5.000
+\i (00:01:20) drag_start grid -4.419 -4.188
+\i (00:01:21) drag_stop 6.839 -9.352
+\i (00:01:22) move 
+\i (00:01:22) ipick_to_gridunit 0 +1 
+\t (00:01:22) last pick:  6.500  -8.500
+\t (00:01:22) Pick new location for the element(s).
+\i (00:01:22) trapsize 122
+\i (00:01:23) prepopup 6.839 -9.377
+\i (00:01:24) cancel 
+\i (00:01:24) generaledit 
+\i (00:01:26) move 
+\i (00:01:26) ipick_to_gridunit 0 +1 
+\t (00:01:26) last pick:  6.500  -8.000
+\t (00:01:26) Pick new location for the element(s).
+\i (00:01:26) trapsize 122
+\i (00:01:28) prepopup -1.066 -3.895
+\i (00:01:28) cancel 
+\i (00:01:29) generaledit 
+\i (00:01:29) pick grid 2.336 -2.720
+\t (00:01:29) last pick:  2.500  -2.500
+\i (00:01:29) drag_start grid -4.101 -3.821
+\i (00:01:30) drag_stop 4.587 -8.324
+\i (00:01:31) ipick 0 
+\t (00:01:31) last pick:  4.587  -8.324
+\i (00:01:31) ipick_to_gridunit 0 +1 
+\t (00:01:31) last pick:  4.500  -7.500
+\i (00:01:31) trapsize 122
+\i (00:01:32) ipick 0 
+\t (00:01:32) last pick:  4.500  -7.500
+\i (00:01:32) ipick_to_gridunit 0 -1 
+\t (00:01:32) last pick:  4.500  -8.000
+\i (00:01:32) trapsize 122
+\i (00:01:33) drag_start grid -3.293 -4.237
+\i (00:01:34) drag_stop 4.734 -8.667
+\i (00:01:40) move 
+\i (00:01:40) ipick_to_gridunit 0 +1 
+\t (00:01:40) last pick:  4.500  -8.000
+\t (00:01:40) Pick new location for the element(s).
+\i (00:01:40) trapsize 122
+\i (00:01:41) move 
+\i (00:01:41) ipick_to_gridunit 0 -1 
+\t (00:01:41) last pick:  4.500  -8.500
+\t (00:01:41) Pick new location for the element(s).
+\i (00:01:41) trapsize 122
+\i (00:01:42) move 
+\i (00:01:42) ipick_to_gridunit 0 -1 
+\t (00:01:42) last pick:  4.500  -9.000
+\t (00:01:42) Pick new location for the element(s).
+\i (00:01:42) trapsize 122
+\i (00:01:42) move 
+\i (00:01:42) ipick_to_gridunit 0 +1 
+\t (00:01:42) last pick:  4.500  -8.500
+\t (00:01:42) Pick new location for the element(s).
+\i (00:01:42) trapsize 122
+\i (00:01:42) move 
+\i (00:01:42) ipick_to_gridunit 0 +1 
+\t (00:01:42) last pick:  4.500  -8.000
+\t (00:01:42) Pick new location for the element(s).
+\i (00:01:42) trapsize 122
+\i (00:01:42) move 
+\i (00:01:42) ipick_to_gridunit 0 +1 
+\t (00:01:42) last pick:  4.500  -7.500
+\t (00:01:42) Pick new location for the element(s).
+\i (00:01:42) trapsize 122
+\i (00:01:43) prepopup -0.014 -5.021
+\i (00:01:44) cancel 
+\i (00:01:44) generaledit 
+\i (00:02:00) ipick 0 -2 
+\t (00:02:00) last pick:  4.500  -9.500
+\i (00:02:03) drag_start grid -4.761 -3.699
+\i (00:02:03) drag_stop 6.153 -9.817
+\i (00:02:06) ipick 0 -2 
+\t (00:02:06) last pick:  6.153  -11.817
+\i (00:02:08) drag_start grid -6.328 -4.115
+\i (00:02:09) drag_stop 6.667 -8.006
+\i (00:02:09) prepopup 5.468 -8.447
+\i (00:02:10) prepopup 2.262 -7.076
+\i (00:02:11) pop dyn_option_select @:@Move 
+\i (00:02:11) move 
+\t (00:02:11) Pick new location for the element(s).
+\i (00:02:14) tab 
+\i (00:02:14) setwindow pcb
+\i (00:02:14) mouse_pos 2.262 -7.076
+\i (00:02:14) tab
+\i (00:02:14) tab 
+\i (00:02:14) setwindow pcb
+\i (00:02:14) mouse_pos 2.262 -7.076
+\i (00:02:14) tab
+\i (00:02:14) tab 
+\i (00:02:14) setwindow pcb
+\i (00:02:14) mouse_pos 2.262 -7.076
+\i (00:02:14) tab
+\i (00:02:14) tab 
+\i (00:02:14) setwindow pcb
+\i (00:02:14) mouse_pos 2.262 -7.076
+\i (00:02:14) tab
+\i (00:02:14) tab 
+\i (00:02:14) setwindow pcb
+\i (00:02:14) mouse_pos 2.262 -7.076
+\i (00:02:14) tab
+\i (00:02:15) tab 
+\i (00:02:15) setwindow pcb
+\i (00:02:15) mouse_pos 2.262 -7.076
+\i (00:02:15) tab
+\i (00:02:15) tab 
+\i (00:02:15) setwindow pcb
+\i (00:02:15) mouse_pos 2.262 -7.076
+\i (00:02:15) tab
+\i (00:02:19) pick grid 2.287 -7.272
+\t (00:02:19) last pick:  2.500  -7.500
+\i (00:02:19) generaledit 
+\i (00:02:20) pick grid 5.517 -3.846
+\t (00:02:20) last pick:  5.500  -4.000
+\i (00:03:01) refresh padstack 
+\i (00:03:03) setwindow form.rf_pad
+\i (00:03:03) FORM rf_pad execute  
+\t (00:03:03) Starting Refreshing padstacks...
+\t (00:03:03) Opening existing drawing...
+\i (00:03:03) setwindow pcb
+\i (00:03:03) trapsize 122
+\i (00:03:05) setwindow form.rf_pad
+\i (00:03:05) FORM rf_pad cancel  
+\i (00:03:05) setwindow pcb
+\i (00:03:05) generaledit 
+\i (00:03:05) pick grid 3.315 2.835
+\t (00:03:05) last pick:  3.500  3.000
+\i (00:03:06) pick grid 0.647 0.731
+\t (00:03:06) last pick:  0.500  0.500
+\i (00:03:06) prepopup 0.647 0.755
+\i (00:03:07) pop dyn_option_select @:@Move 
+\i (00:03:07) move 
+\t (00:03:07) last pick:  0.000  0.500
+\t (00:03:07) Pick new location for the element(s).
+\i (00:03:11) pick grid 0.084 0.755
+\t (00:03:11) last pick:  0.000  1.000
+\i (00:03:11) generaledit 
+\i (00:03:11) pick grid 4.832 0.755
+\t (00:03:11) last pick:  5.000  1.000
+\i (00:03:13) save 
+\f (00:03:13) I:/aquarium/footprints/sot223.dra: File Exists. Overwrite? 
+\i (00:03:14) fillin yes 
+\t (00:03:14) Symbol 'sot223.psm' created.
+\i (00:03:14) generaledit 
+\i (00:03:14) pick grid 6.545 -1.374
+\t (00:03:14) last pick:  6.500  -1.500
+\i (00:03:20) plot 
+\i (00:03:21) plotwint initialize "Laser Pro LL2"
+\i (00:03:21) plotwint orientation 1
+\i (00:03:21) plotwint papername "A4"
+\i (00:03:21) plotwint copies 1
+\i (00:03:21) plotwint defaultsource 4
+\i (00:03:21) plotwint printquality 600
+\i (00:03:21) plotwint duplex 1
+\i (00:03:21) plotwint execute
+\i (00:04:22) plot 
+\i (00:04:26) plotwint initialize "Laser Pro LL2"
+\i (00:04:26) plotwint execute
+\i (00:05:46) pick grid 0.133 1.342
+\t (00:05:46) last pick:  0.000  1.500
+\i (00:05:46) prepopup 0.133 1.342
+\i (00:05:47) pop dyn_option_select @:@Move 
+\i (00:05:47) move 
+\t (00:05:47) last pick:  0.000  1.000
+\t (00:05:47) Pick new location for the element(s).
+\i (00:05:49) pick grid 0.231 0.241
+\t (00:05:49) last pick:  0.000  0.000
+\i (00:05:49) generaledit 
+\i (00:05:49) pick grid 4.318 0.877
+\t (00:05:49) last pick:  4.500  1.000
+\i (00:05:50) save 
+\f (00:05:50) I:/aquarium/footprints/sot223.dra: File Exists. Overwrite? 
+\i (00:05:51) fillin yes 
+\t (00:05:52) Symbol 'sot223.psm' created.
+\i (00:05:52) generaledit 
+\i (00:05:53) plot 
+\i (00:05:54) plotwint initialize "Laser Pro LL2"
+\i (00:05:54) plotwint execute
+\i (00:12:22) new 
+\f (00:12:28) I:/aquarium/footprints/buzzer.dra: File Exists. Overwrite? 
+\i (00:12:29) newdrawfillin "buzzer.dra" "Package Symbol (Wizard)"
+\t (00:12:29) Starting new drawing...
+\i (00:12:29) trapsize 5780
+\i (00:12:29) trapsize 5780
+\i (00:12:29) package symbol wizard 
+\i (00:12:29) generaledit 
+   (00:12:31) Loading cmds.cxt 
+   (00:12:31) Loading axlcore.cxt 
+\i (00:12:31) setwindow form.sym_wizard
+\i (00:12:31) FORM sym_wizard sip YES 
+\i (00:12:32) FORM sym_wizard wiz_next  
+\i (00:12:33) FORM sym_wizard load_template  
+\t (00:12:33) Opening existing drawing...
+\t (00:12:33) Grids are drawn 400, 400 apart for enhanced viewability.
+\i (00:12:33) setwindow pcb
+\i (00:12:33) trapsize 228
+\d (00:12:33) Database opened: D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (00:12:34) setwindow form.sym_wizard
+\i (00:12:34) FORM sym_wizard wiz_back  
+\i (00:12:39) FORM sym_wizard cancel  
+\t (00:12:39) Starting new drawing...
+\i (00:12:39) setwindow pcb
+\i (00:12:39) trapsize 177
+\i (00:12:39) trapsize 208
+\i (00:12:39) trapsize 208
+\i (00:12:39) generaledit 
+\i (00:12:41) new 
+\f (00:12:47) I:/aquarium/footprints/buzzer.dra: File Exists. Overwrite? 
+\i (00:12:48) newdrawfillin "buzzer.dra" "Package Symbol"
+\t (00:12:48) Starting new drawing...
+\i (00:12:48) trapsize 172
+\i (00:12:48) trapsize 177
+\i (00:12:48) trapsize 182
+\i (00:12:48) trapsize 228
+\i (00:12:48) trapsize 228
+\i (00:12:48) generaledit 
+\i (00:12:57) add pin 
+\i (00:12:59) setwindow form.mini
+\i (00:12:59) FORM mini pad_browse  
+\f (00:12:59) Select a padstack:
+\i (00:13:01) fillin "254"
+\w (00:13:01) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:13:01) Using '254.pad'.
+\i (00:13:04) setwindow pcb
+\i (00:13:04) zoom out 1 
+\i (00:13:04) setwindow pcb
+\i (00:13:04) zoom out 17524 17660
+\i (00:13:04) trapsize 228
+\i (00:13:04) zoom out 1 
+\i (00:13:04) setwindow pcb
+\i (00:13:04) zoom out 17524 17660
+\i (00:13:04) trapsize 228
+\i (00:13:05) zoom out 1 
+\i (00:13:05) setwindow pcb
+\i (00:13:05) zoom out 17615 17842
+\i (00:13:05) trapsize 228
+\i (00:13:05) zoom out 1 
+\i (00:13:05) setwindow pcb
+\i (00:13:05) zoom out 17478 18479
+\i (00:13:05) trapsize 228
+\i (00:13:05) zoom out 1 
+\i (00:13:05) setwindow pcb
+\i (00:13:05) zoom out 17023 20209
+\i (00:13:05) trapsize 228
+\i (00:13:05) zoom in 1 
+\i (00:13:05) setwindow pcb
+\i (00:13:05) zoom in 18206 20983
+\i (00:13:05) trapsize 114
+\i (00:13:05) zoom in 1 
+\i (00:13:05) setwindow pcb
+\i (00:13:05) zoom in 18388 21074
+\i (00:13:05) trapsize 57
+\i (00:13:05) zoom in 1 
+\i (00:13:05) setwindow pcb
+\i (00:13:05) zoom in 18502 21142
+\i (00:13:05) trapsize 28
+\i (00:13:05) zoom in 1 
+\i (00:13:05) setwindow pcb
+\i (00:13:05) zoom in 18582 21188
+\i (00:13:05) trapsize 14
+\i (00:13:05) zoom in 1 
+\i (00:13:05) setwindow pcb
+\i (00:13:05) zoom in 18633 21231
+\i (00:13:05) trapsize 7
+\i (00:13:06) zoom out 1 
+\i (00:13:06) setwindow pcb
+\i (00:13:06) zoom out 18676 21193
+\i (00:13:06) trapsize 14
+\i (00:13:07) zoom in 1 
+\i (00:13:07) setwindow pcb
+\i (00:13:07) zoom in 18710 20952
+\i (00:13:07) trapsize 7
+\i (00:13:07) zoom in 1 
+\i (00:13:07) setwindow pcb
+\i (00:13:07) zoom in 18701 20949
+\i (00:13:07) trapsize 4
+\i (00:13:08) zoom out 1 
+\i (00:13:08) setwindow pcb
+\i (00:13:08) zoom out 18694 20939
+\i (00:13:08) trapsize 7
+\i (00:13:08) zoom out 1 
+\i (00:13:08) setwindow pcb
+\i (00:13:08) zoom out 18683 20918
+\i (00:13:08) trapsize 14
+\i (00:13:09) zoom in 1 
+\i (00:13:09) setwindow pcb
+\i (00:13:09) zoom in 18678 20909
+\i (00:13:09) trapsize 7
+\i (00:13:18) pick 0 y 0 
+\t (00:13:18) last pick:  0  0
+\t (00:13:18) Using '254.pad'.
+\w (00:13:18) WARNING(SPMHA2-34): Pin(s) cannot be placed outside the drawing extents.
+\i (00:13:20) zoom out 1 
+\i (00:13:20) setwindow pcb
+\i (00:13:20) zoom out 18302 20550
+\i (00:13:20) trapsize 14
+\i (00:13:20) zoom out 1 
+\i (00:13:20) setwindow pcb
+\i (00:13:20) zoom out 18301 20553
+\i (00:13:20) trapsize 28
+\i (00:13:20) zoom out 1 
+\i (00:13:20) setwindow pcb
+\i (00:13:20) zoom out 18308 20553
+\i (00:13:20) trapsize 57
+\i (00:13:20) zoom out 1 
+\i (00:13:20) setwindow pcb
+\i (00:13:20) zoom out 18307 20564
+\i (00:13:20) trapsize 114
+\i (00:13:21) zoom out 1 
+\i (00:13:21) setwindow pcb
+\i (00:13:21) zoom out 18308 19214
+\i (00:13:21) trapsize 228
+\i (00:13:21) zoom out 1 
+\i (00:13:21) setwindow pcb
+\i (00:13:21) zoom out 9285 4506
+\i (00:13:21) trapsize 228
+\i (00:13:31) prmed 
+\t (00:13:31) Exiting from Add Pin.
+\i (00:13:32) setwindow form.prmedit
+\i (00:13:32) FORM prmedit design  
+\i (00:13:39) FORM prmedit move_x -1500 
+\i (00:13:42) FORM prmedit move_y -1500 
+\i (00:13:44) FORM prmedit done  
+\i (00:13:44) setwindow pcb
+\i (00:13:44) generaledit 
+\i (00:13:46) pick 0 y 0 
+\t (00:13:46) last pick:  0  0
+\i (00:13:48) add pin 
+\t (00:13:48) Using '254.pad'.
+\i (00:13:54) pick 0 y 0 
+\t (00:13:54) last pick:  0  0
+\t (00:13:54) Using '254.pad'.
+\w (00:13:54) WARNING(SPMHA2-34): Pin(s) cannot be placed outside the drawing extents.
+\i (00:13:57) prmed 
+\t (00:13:57) Exiting from Add Pin.
+\i (00:14:01) setwindow form.prmedit
+\i (00:14:01) FORM prmedit move_x 1500 
+\e (00:14:03) Must be a real number.
+\i (00:14:04) FORM prmedit move_y 1500 
+\i (00:14:05) FORM prmedit done  
+\i (00:14:05) setwindow pcb
+\i (00:14:05) trapsize 228
+\i (00:14:05) generaledit 
+\i (00:14:08) add pin 
+\t (00:14:08) Using '254.pad'.
+\i (00:14:13) pick 0 y 0 
+\t (00:14:13) last pick:  0  0
+\t (00:14:13) Using '254.pad'.
+\i (00:14:17) zoom in 1 
+\i (00:14:17) setwindow pcb
+\i (00:14:17) zoom in 730 7967
+\i (00:14:17) trapsize 114
+\i (00:14:19) roam x -96 
+\i (00:14:19) roam x -48
+\i (00:14:19) roam x -96 
+\i (00:14:19) roam y 96 
+\i (00:14:19) roam y 96
+\i (00:14:20) roam y 96 
+\i (00:14:20) roam y 96
+\i (00:14:20) roam y 96 
+\i (00:14:20) roam y 16
+\i (00:14:20) roam y 96 
+\i (00:14:21) zoom in 1 
+\i (00:14:21) setwindow pcb
+\i (00:14:21) zoom in 7125 6078
+\i (00:14:21) trapsize 57
+\i (00:14:21) zoom in 1 
+\i (00:14:21) setwindow pcb
+\i (00:14:21) zoom in 6602 5919
+\i (00:14:21) trapsize 28
+\i (00:14:21) zoom in 1 
+\i (00:14:21) setwindow pcb
+\i (00:14:21) zoom in 6500 5885
+\i (00:14:21) trapsize 14
+\i (00:14:21) zoom in 1 
+\i (00:14:21) setwindow pcb
+\i (00:14:21) zoom in 6474 5874
+\i (00:14:21) trapsize 7
+\i (00:14:22) zoom out 1 
+\i (00:14:22) setwindow pcb
+\i (00:14:22) zoom out 6585 5890
+\i (00:14:22) trapsize 14
+\i (00:14:22) roam x -96 
+\i (00:14:22) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:23) roam x -96 
+\i (00:14:23) roam x -96
+\i (00:14:24) roam x -96 
+\i (00:14:24) roam x -48
+\i (00:14:24) roam x -96 
+\i (00:14:24) roam x -96 
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:24) roam y 96 
+\i (00:14:24) roam y 96
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 64
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y 96 
+\i (00:14:25) roam y -96 
+\i (00:14:25) roam y -96
+\i (00:14:25) roam y -96 
+\i (00:14:25) roam y -96
+\i (00:14:26) roam x 96 
+\i (00:14:26) roam x 96
+\i (00:14:26) roam x 96 
+\i (00:14:26) roam x 96
+\i (00:14:43) ipick 6.5 
+\t (00:14:43) last pick:  6  0
+\t (00:14:43) Using '254.pad'.
+\i (00:14:45) undo 
+\t (00:14:45) Exiting from Add Pin.
+\i (00:14:45) generaledit 
+\i (00:14:47) undo 
+\i (00:14:47) generaledit 
+\i (00:14:48) pick grid 42 -15
+\t (00:14:48) last pick:  0  0
+\i (00:14:48) zoom in 1 
+\i (00:14:48) setwindow pcb
+\i (00:14:48) zoom in 85 -15
+\i (00:14:48) trapsize 7
+\i (00:14:49) zoom in 1 
+\i (00:14:49) setwindow pcb
+\i (00:14:49) zoom in 85 -15
+\i (00:14:49) trapsize 4
+\e (00:14:50) Command not found: Del
+\i (00:14:51) delete 
+\t (00:14:51) Selected item not valid for current operation, ignored: Connect Pin "254, 2"
+\t (00:14:51) No valid items selected for the current operation, exiting.
+\i (00:14:51) generaledit 
+\i (00:14:52) pick grid 82 51
+\t (00:14:52) last pick:  100  100
+\i (00:14:52) pick grid 52 30
+\t (00:14:52) last pick:  100  0
+\i (00:14:53) delete 
+\t (00:14:53) Selected item not valid for current operation, ignored: Connect Pin "254, 2"
+\t (00:14:53) No valid items selected for the current operation, exiting.
+\i (00:14:53) generaledit 
+\i (00:14:53) drag_start grid 252 116
+\i (00:14:54) drag_stop 278 129
+\i (00:14:55) pick grid 372 210
+\t (00:14:55) last pick:  400  200
+\i (00:14:56) pick grid 47 1
+\t (00:14:56) last pick:  0  0
+\i (00:14:57) delete 
+\t (00:14:57) Selected item not valid for current operation, ignored: Connect Pin "254, 2"
+\t (00:14:57) No valid items selected for the current operation, exiting.
+\i (00:14:57) generaledit 
+\i (00:14:58) delete 
+\t (00:14:58) Selected item not valid for current operation, ignored: Connect Pin "254, 2"
+\t (00:14:58) No valid items selected for the current operation, exiting.
+\i (00:14:58) generaledit 
+\i (00:14:59) pick grid 105 13
+\t (00:14:59) last pick:  100  0
+\i (00:15:01) setwindow form.find
+\i (00:15:01) FORM find all_off  
+\i (00:15:02) FORM find pins YES 
+\i (00:15:03) setwindow pcb
+\i (00:15:03) pick grid 421 126
+\t (00:15:03) last pick:  400  100
+\i (00:15:04) pick grid 42 -1
+\t (00:15:04) last pick:  0  0
+\i (00:15:04) delete 
+\t (00:15:04) Selected item not valid for current operation, ignored: Connect Pin "254, 2"
+\t (00:15:04) No valid items selected for the current operation, exiting.
+\i (00:15:04) generaledit 
+\i (00:15:05) pick grid 123 38
+\t (00:15:05) last pick:  100  0
+\i (00:15:06) pick grid 50 3
+\t (00:15:06) last pick:  100  0
+\i (00:15:07) delete 
+\t (00:15:07) Selected item not valid for current operation, ignored: Connect Pin "254, 2"
+\t (00:15:07) No valid items selected for the current operation, exiting.
+\i (00:15:07) generaledit 
+\i (00:15:07) pick grid 195 -1
+\t (00:15:07) last pick:  200  0
+\i (00:15:08) delete 
+\i (00:15:08) pick grid 50 -4
+\t (00:15:08) last pick:  100  0
+\t (00:15:08) Connect Pin "254, 2"
+\i (00:15:09) delete 
+\i (00:15:09) pick grid 108 20
+\t (00:15:09) last pick:  100  0
+\i (00:15:11) prmed 
+\i (00:15:14) setwindow form.prmedit
+\i (00:15:14) FORM prmedit units Millimeter 
+\e (00:15:14) Change may cause round-off; run dbcheck.
+\i (00:15:15) FORM prmedit done  
+\w (00:15:15) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\i (00:15:15) setwindow pcb
+\i (00:15:15) trapsize 90
+\t (00:15:15) Performing DRC...
+\t (00:15:15) No DRC errors detected.
+\i (00:15:15) generaledit 
+\i (00:15:15) pick grid 4.803 0.197
+\t (00:15:15) last pick:  5.080  0.000
+\i (00:15:17) add pin 
+\t (00:15:17) Using '254.pad'.
+\i (00:15:22) ipick 6.5 
+\t (00:15:22) last pick:  11.580  0.000
+\t (00:15:22) Using '254.pad'.
+\i (00:15:23) prepopup 2.871 -3.630
+\i (00:15:23) done 
+\t (00:15:23) Exiting from Add Pin.
+\i (00:15:24) generaledit 
+\i (00:15:25) zoom out 1 
+\i (00:15:25) setwindow pcb
+\i (00:15:25) zoom out 6.807 2.707
+\i (00:15:25) trapsize 181
+\i (00:15:28) zoom in 1 
+\i (00:15:28) setwindow pcb
+\i (00:15:28) zoom in 6.375 1.083
+\i (00:15:28) trapsize 90
+\i (00:15:30) pick grid 0.778 -0.073
+\t (00:15:30) last pick:  0.000  0.000
+\i (00:15:32) show measure 
+\i (00:15:33) pick grid -0.305 0.198
+\t (00:15:33) last pick:  0.000  0.000
+\i (00:15:35) pick grid 11.737 0.360
+\t (00:15:35) last pick:  11.430  0.635
+\i (00:15:37) setwindow text
+\i (00:15:37) close 
+\i (00:15:37) setwindow pcb
+\i (00:15:37) prepopup 9.029 1.281
+\i (00:15:38) done 
+\i (00:15:38) generaledit 
+\i (00:15:38) pick grid 7.458 1.480
+\t (00:15:38) last pick:  7.620  2.540
+\i (00:15:38) pick grid 11.177 0.397
+\t (00:15:38) last pick:  10.160  0.000
+\i (00:15:39) pick grid 8.234 0.974
+\t (00:15:39) last pick:  7.620  0.000
+\i (00:15:40) pick grid 11.611 0.180
+\t (00:15:40) last pick:  12.700  0.000
+\i (00:15:40) delete 
+\t (00:15:40) Selected item not valid for current operation, ignored: Connect Pin "254, 3"
+\t (00:15:40) No valid items selected for the current operation, exiting.
+\i (00:15:40) generaledit 
+\i (00:15:41) pick grid 9.498 0.541
+\t (00:15:41) last pick:  10.160  0.000
+\i (00:15:41) delete 
+\i (00:15:41) pick grid 11.538 0.306
+\t (00:15:41) last pick:  12.700  0.000
+\t (00:15:41) Connect Pin "254, 3"
+\i (00:15:41) delete 
+\i (00:15:42) pick grid 8.541 0.866
+\t (00:15:42) last pick:  7.620  0.000
+\i (00:15:43) pick grid 1.067 0.685
+\t (00:15:43) last pick:  0.000  0.000
+\t (00:15:43) Connect Pin "254, 1"
+\i (00:15:44) add pin 
+\t (00:15:44) Using '254.pad'.
+\i (00:15:45) prepopup 9.191 2.635
+\i (00:15:46) cancel 
+\t (00:15:46) Exiting from Add Pin.
+\i (00:15:46) generaledit 
+\i (00:15:47) undo 
+\i (00:15:47) generaledit 
+\i (00:15:48) undo 
+\i (00:15:48) generaledit 
+\i (00:15:48) undo 
+\i (00:15:48) generaledit 
+\i (00:15:49) add pin 
+\t (00:15:49) Using '254.pad'.
+\i (00:15:53) pick 0 y 0 
+\t (00:15:53) last pick:  0.000  0.000
+\t (00:15:53) Using '254.pad'.
+\i (00:15:56) ipick 6.5 
+\t (00:15:56) last pick:  6.500  0.000
+\t (00:15:56) Using '254.pad'.
+\i (00:15:57) prepopup 0.922 -3.792
+\i (00:15:58) done 
+\t (00:15:58) Exiting from Add Pin.
+\i (00:15:58) generaledit 
+\i (00:15:58) pick grid 1.338 -3.359
+\t (00:15:58) last pick:  2.540  -2.540
+\i (00:16:00) setwindow form.find
+\i (00:16:00) FORM find all_off  
+\i (00:16:01) FORM find all_on  
+\i (00:16:03) FORM find all_off  
+\i (00:16:03) FORM find text YES 
+\i (00:16:03) setwindow pcb
+\i (00:16:03) pick grid 11.629 3.628
+\t (00:16:03) last pick:  12.700  2.540
+\i (00:16:04) prepopup -1.533 0.397
+\i (00:16:05) pop dyn_option_select '@:@Text edit' 
+\i (00:16:05) text edit 
+\i (00:16:07) setwindow form.textedit
+\i (00:16:07) FORM textedit str 1 
+\i (00:16:07) setwindow pcb
+\i (00:16:07) pick 0.000 0.000
+\t (00:16:07) Pick text to edit.
+\i (00:16:07) setwindow pcb
+\i (00:16:07) generaledit 
+\i (00:16:08) pick grid 4.660 1.245
+\t (00:16:08) last pick:  5.080  0.000
+\i (00:16:08) prepopup 4.894 0.595
+\i (00:16:09) pop dyn_option_select '@:@Text edit' 
+\i (00:16:09) text edit 
+\i (00:16:11) setwindow form.textedit
+\i (00:16:11) FORM textedit str 2 
+\i (00:16:11) setwindow pcb
+\i (00:16:11) pick 0.000 0.000
+\t (00:16:11) Pick text to edit.
+\i (00:16:11) setwindow pcb
+\i (00:16:11) generaledit 
+\i (00:16:14) zoom out 1 
+\i (00:16:14) setwindow pcb
+\i (00:16:14) zoom out 4.515 0.956
+\i (00:16:14) trapsize 181
+\i (00:16:15) pick grid 1.446 2.871
+\t (00:16:15) last pick:  2.540  2.540
+\i (00:16:19) label refdes 
+\t (00:16:19) Pick text location.
+\i (00:16:20) pick grid 2.168 2.257
+\t (00:16:20) last pick:  2.540  2.540
+\t (00:16:20) Enter text string.
+\i (00:16:23) setwindow pcb
+\i (00:16:23) prepopup 9.679 1.535
+\i (00:16:24) done 
+\i (00:16:24) setwindow pcb
+\i (00:16:24) pick 2.540 2.540
+\i (00:16:24) setwindow pcb
+\i (00:16:24) generaledit 
+\i (00:16:24) pick grid 9.427 2.040
+\t (00:16:24) last pick:  10.160  2.540
+\i (00:16:36) shape add circle 
+\i (00:16:39) pick grid -1.984 4.279
+\t (00:16:39) last pick:  -2.540  5.080
+\i (00:16:40) prepopup 6.791 4.134
+\i (00:16:43) pop shape select 
+\i (00:16:44) pick grid -2.670 4.279
+\t (00:16:44) last pick:  -2.540  5.080
+\i (00:16:45) prepopup -1.045 2.365
+\i (00:16:46) cancel 
+\i (00:16:46) generaledit 
+\i (00:16:46) pick grid -1.154 5.940
+\t (00:16:46) last pick:  0.000  5.080
+\i (00:16:48) shape add circle 
+\i (00:16:49) pick grid 3.180 0.054
+\t (00:16:49) last pick:  2.540  0.000
+\i (00:16:52) pick grid 6.357 -1.463
+\t (00:16:52) last pick:  7.620  -2.540
+\i (00:16:52) prepopup 9.463 -2.329
+\i (00:16:53) done 
+\i (00:16:53) generaledit 
+\i (00:16:53) pick grid 11.015 -1.896
+\t (00:16:53) last pick:  10.160  -2.540
+\i (00:16:54) pick grid 3.071 -0.596
+\t (00:16:54) last pick:  2.540  0.000
+\i (00:16:54) prepopup 3.071 -0.596
+\i (00:16:55) drag_start grid 3.035 0.054
+\i (00:16:55) drag_stop 4.624 0.018
+\i (00:16:56) pick grid 6.393 7.348
+\t (00:16:56) last pick:  7.620  7.620
+\i (00:16:57) pick grid 2.024 5.507
+\t (00:16:57) last pick:  2.540  5.080
+\i (00:16:58) pick grid 2.060 5.687
+\t (00:16:58) last pick:  2.540  5.080
+\i (00:16:59) setwindow form.find
+\i (00:16:59) FORM find all_on  
+\i (00:17:00) setwindow pcb
+\i (00:17:00) pick grid 18.057 8.865
+\t (00:17:00) last pick:  17.780  7.620
+\i (00:17:00) pick grid 4.046 3.665
+\t (00:17:00) last pick:  5.080  2.540
+\i (00:17:01) drag_start grid 3.432 5.543
+\i (00:17:02) move 
+\t (00:17:02) last pick:  2.540  5.080
+\t (00:17:02) Element has no origin, using pick.
+\t (00:17:02) Pick new location for the element(s).
+\i (00:17:02) drag_stop grid 3.288 5.615
+\i (00:17:02) generaledit 
+\i (00:17:06) pick 0 y 0 
+\t (00:17:06) last pick:  0.000  0.000
+\i (00:17:08) pick grid -0.612 -3.774
+\t (00:17:08) last pick:  0.000  -2.540
+\i (00:17:08) pick grid 2.277 -3.124
+\t (00:17:08) last pick:  2.540  -2.540
+\i (00:17:10) pick grid 5.021 4.893
+\t (00:17:10) last pick:  5.080  5.080
+\i (00:17:12) pick 0 y 0 
+\t (00:17:12) last pick:  0.000  0.000
+\i (00:17:14) pick grid 14.193 -0.524
+\t (00:17:14) last pick:  15.240  0.000
+\i (00:17:15) pick grid 7.116 3.123
+\t (00:17:15) last pick:  7.620  2.540
+\i (00:17:15) prepopup 7.116 3.123
+\i (00:17:16) pop dyn_option_select @:@Move 
+\i (00:17:16) move 
+\t (00:17:16) last pick:  7.620  2.540
+\t (00:17:16) Element has no origin, using pick.
+\t (00:17:16) Pick new location for the element(s).
+\i (00:17:33) pick 3.25 y 0 
+\t (00:17:33) last pick:  3.250  0.000
+\i (00:17:33) generaledit 
+\i (00:17:44) pick 3.25 y 0 
+\t (00:17:44) last pick:  3.250  0.000
+\i (00:17:52) prepopup -3.501 -12.259
+\i (00:17:52) pick grid -4.331 -8.071
+\t (00:17:52) last pick:  -5.080  -7.620
+\i (00:17:53) pick grid -3.392 -5.760
+\t (00:17:53) last pick:  -2.540  -5.080
+\i (00:17:54) pick grid -6.065 -6.265
+\t (00:17:54) last pick:  -5.080  -5.080
+\i (00:17:55) prepopup -6.137 -2.943
+\i (00:17:56) pop dyn_option_select @:@Move 
+\i (00:17:56) move 
+\t (00:17:56) last pick:  -5.080  -2.540
+\t (00:17:56) Element has no origin, using pick.
+\t (00:17:56) Pick new location for the element(s).
+\i (00:17:58) pick grid -1.118 -1.246
+\t (00:17:58) last pick:  0.000  0.000
+\i (00:17:58) generaledit 
+\i (00:17:58) pick grid 11.954 -4.387
+\t (00:17:58) last pick:  12.700  -5.080
+\i (00:18:02) plot 
+\i (00:18:03) plotwint initialize "Laser Pro LL2"
+\i (00:18:03) plotwint execute
+\i (00:19:09) save 
+\f (00:19:09) I:/aquarium/footprints/buzzer.dra: File Exists. Overwrite? 
+\i (00:19:10) fillin yes 
+\t (00:19:10) Symbol 'buzzer.psm' created.
+\i (00:19:10) generaledit 
+\i (00:20:00) open 
+\i (00:20:01) fillin "switch.dra"
+\t (00:20:01) Opening existing drawing...
+\i (00:20:01) trapsize 114
+\d (00:20:01) Database opened: I:/aquarium/footprints/switch.dra
+\i (00:20:01) generaledit 
+\i (00:23:14) new 
+\i (00:23:28) newdrawfillin "header_line_3.dra" "Package Symbol (Wizard)"
+\t (00:23:28) Starting new drawing...
+\w (00:23:28) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 1200,1200
+\i (00:23:29) trapsize 167
+\i (00:23:29) trapsize 167
+\i (00:23:29) package symbol wizard 
+\i (00:23:29) generaledit 
+\i (00:23:30) setwindow form.sym_wizard
+\i (00:23:30) FORM sym_wizard sip YES 
+\i (00:23:31) FORM sym_wizard wiz_next  
+\i (00:23:32) FORM sym_wizard load_template  
+\t (00:23:32) Opening existing drawing...
+\t (00:23:32) Grids are drawn 400, 400 apart for enhanced viewability.
+\i (00:23:32) setwindow pcb
+\i (00:23:32) trapsize 228
+\d (00:23:32) Database opened: D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (00:23:33) setwindow form.sym_wizard
+\i (00:23:33) FORM sym_wizard wiz_next  
+\i (00:23:34) FORM sym_wizard pack_units Millimeter 
+\i (00:23:36) FORM sym_wizard pack_units_create Millimeter 
+\i (00:23:38) FORM sym_wizard ref_des J* 
+\i (00:23:39) FORM sym_wizard wiz_next  
+\i (00:23:42) FORM sym_wizard sip_pin_count 3 
+\i (00:23:55) FORM sym_wizard sip_len 7.620 
+\i (00:23:56) FORM sym_wizard wiz_next  
+\i (00:23:58) FORM sym_wizard default_pad_browse  
+\f (00:23:58) Package Symbol Wizard Padstack Browser
+\i (00:24:01) fillin "254"
+\i (00:24:02) FORM sym_wizard wiz_next  
+\i (00:24:02) FORM sym_wizard wiz_next  
+\i (00:24:03) FORM sym_wizard wiz_finish  
+\w (00:24:03) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:24:03) Grids are drawn 10.160, 10.160 apart for enhanced viewability.
+\i (00:24:03) setwindow pcb
+\i (00:24:03) trapsize 5780
+\t (00:24:03) Performing DRC...
+\t (00:24:03) No DRC errors detected.
+\w (00:24:03) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 15240,15240
+\w (00:24:03) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 30480,30480
+\w (00:24:03) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 60960,60960
+\w (00:24:03) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 121920,121920
+\i (00:24:03) trapsize 5780
+\w (00:24:03) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 8128,8128
+\i (00:24:03) trapsize 816
+\w (00:24:03) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 1083,1083
+\i (00:24:03) trapsize 109
+\i (00:24:03) trapsize 109
+\t (00:24:03) Creating package symbol 'I:/aquarium/footprints/header_line_3.psm'.
+\t (00:24:03) Starting Create symbol...
+\i (00:24:03) generaledit 
+\i (00:24:07) save 
+\f (00:24:07) I:/aquarium/footprints/header_line_3.dra: File Exists. Overwrite? 
+\i (00:24:09) fillin yes 
+\t (00:24:09) Symbol 'header_line_3.psm' created.
+\i (00:24:09) generaledit 
+\i (00:24:10) new 
+\i (00:24:31) newdrawfillin "header_line_4.dra" "Package Symbol (Wizard)"
+\t (00:24:31) Starting new drawing...
+\w (00:24:31) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 1524,1524
+\i (00:24:31) trapsize 153
+\i (00:24:31) trapsize 153
+\i (00:24:31) package symbol wizard 
+\i (00:24:31) generaledit 
+\i (00:24:32) setwindow form.sym_wizard
+\i (00:24:32) FORM sym_wizard sip YES 
+\i (00:24:33) FORM sym_wizard wiz_next  
+\i (00:24:34) FORM sym_wizard load_template  
+\t (00:24:34) Opening existing drawing...
+\t (00:24:34) Grids are drawn 400, 400 apart for enhanced viewability.
+\i (00:24:34) setwindow pcb
+\i (00:24:34) trapsize 228
+\d (00:24:34) Database opened: D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (00:24:35) setwindow form.sym_wizard
+\i (00:24:35) FORM sym_wizard wiz_next  
+\i (00:24:36) FORM sym_wizard pack_units Millimeter 
+\i (00:24:38) FORM sym_wizard pack_units_create Millimeter 
+\i (00:24:39) FORM sym_wizard ref_des J* 
+\i (00:24:40) FORM sym_wizard wiz_next  
+\i (00:24:43) FORM sym_wizard sip_pin_count 4 
+\i (00:24:54) FORM sym_wizard sip_len 10.160 
+\i (00:24:54) FORM sym_wizard wiz_next  
+\i (00:24:56) FORM sym_wizard default_pad_browse  
+\f (00:24:56) Package Symbol Wizard Padstack Browser
+\i (00:24:57) fillin "254"
+\i (00:24:58) FORM sym_wizard wiz_next  
+\i (00:24:59) FORM sym_wizard wiz_next  
+\i (00:24:59) FORM sym_wizard wiz_finish  
+\w (00:24:59) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:24:59) Grids are drawn 10.160, 10.160 apart for enhanced viewability.
+\i (00:24:59) setwindow pcb
+\i (00:24:59) trapsize 5780
+\t (00:24:59) Performing DRC...
+\t (00:24:59) No DRC errors detected.
+\w (00:24:59) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 15240,15240
+\w (00:24:59) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 30480,30480
+\w (00:24:59) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 60960,60960
+\w (00:24:59) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 121920,121920
+\i (00:24:59) trapsize 5780
+\w (00:24:59) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 8128,8128
+\i (00:24:59) trapsize 816
+\w (00:24:59) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 1083,1083
+\i (00:24:59) trapsize 109
+\i (00:24:59) trapsize 109
+\t (00:24:59) Creating package symbol 'I:/aquarium/footprints/header_line_4.psm'.
+\t (00:24:59) Starting Create symbol...
+\i (00:25:00) generaledit 
+\i (00:25:02) save 
+\f (00:25:02) I:/aquarium/footprints/header_line_4.dra: File Exists. Overwrite? 
+\i (00:25:03) fillin yes 
+\t (00:25:03) Symbol 'header_line_4.psm' created.
+\i (00:25:03) generaledit 
+\i (00:25:08) plot 
+\i (00:25:09) plotwint initialize "Laser Pro LL2"
+\i (00:25:09) plotwint execute
+\i (00:27:37) new 
+\i (00:27:42) newdrawfillin "header_line_6.dra" "Package Symbol (Wizard)"
+\t (00:27:42) Starting new drawing...
+\w (00:27:42) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 2032,2032
+\i (00:27:42) trapsize 204
+\i (00:27:42) trapsize 204
+\i (00:27:42) package symbol wizard 
+\i (00:27:42) generaledit 
+\i (00:27:44) setwindow form.sym_wizard
+\i (00:27:44) FORM sym_wizard sip YES 
+\i (00:27:44) FORM sym_wizard wiz_next  
+\i (00:27:45) FORM sym_wizard load_template  
+\t (00:27:45) Opening existing drawing...
+\t (00:27:45) Grids are drawn 400, 400 apart for enhanced viewability.
+\i (00:27:45) setwindow pcb
+\i (00:27:45) trapsize 228
+\d (00:27:45) Database opened: D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (00:27:46) setwindow form.sym_wizard
+\i (00:27:46) FORM sym_wizard wiz_next  
+\i (00:27:47) FORM sym_wizard pack_units Millimeter 
+\i (00:27:49) FORM sym_wizard pack_units_create Millimeter 
+\i (00:27:50) FORM sym_wizard ref_des J* 
+\i (00:27:51) FORM sym_wizard wiz_next  
+\i (00:27:53) FORM sym_wizard sip_pin_count 6 
+\i (00:28:02) FORM sym_wizard sip_len 15.240 
+\i (00:28:02) FORM sym_wizard wiz_next  
+\i (00:28:03) FORM sym_wizard default_pad_browse  
+\f (00:28:03) Package Symbol Wizard Padstack Browser
+\i (00:28:05) fillin "254"
+\i (00:28:05) FORM sym_wizard wiz_next  
+\i (00:28:07) FORM sym_wizard wiz_next  
+\i (00:28:08) FORM sym_wizard wiz_finish  
+\w (00:28:08) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:28:08) Grids are drawn 10.160, 10.160 apart for enhanced viewability.
+\i (00:28:08) setwindow pcb
+\i (00:28:08) trapsize 5780
+\t (00:28:08) Performing DRC...
+\t (00:28:08) No DRC errors detected.
+\w (00:28:08) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 15240,15240
+\w (00:28:08) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 30480,30480
+\w (00:28:08) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 60960,60960
+\w (00:28:08) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 121920,121920
+\i (00:28:08) trapsize 5780
+\w (00:28:08) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 8128,8128
+\i (00:28:08) trapsize 816
+\w (00:28:08) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 1625,1625
+\i (00:28:08) trapsize 163
+\i (00:28:08) trapsize 163
+\t (00:28:08) Creating package symbol 'I:/aquarium/footprints/header_line_6.psm'.
+\t (00:28:08) Starting Create symbol...
+\i (00:28:08) generaledit 
+\i (00:28:10) save 
+\f (00:28:10) I:/aquarium/footprints/header_line_6.dra: File Exists. Overwrite? 
+\i (00:28:11) fillin yes 
+\t (00:28:11) Symbol 'header_line_6.psm' created.
+\i (00:28:11) generaledit 
+\e (00:30:56) Command not found: xhilite
+\i (00:30:56) xname_flush 
+\i (00:30:56) done 
+\i (00:30:56) generaledit 
+\i (00:32:40) exit 

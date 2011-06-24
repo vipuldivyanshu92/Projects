@@ -1,0 +1,225 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="new" priority="12" />
+      <Item value="X509Certificate" priority="0" />
+      <Item value="X509Certificate`0" priority="4" />
+      <Item value="serverCertificate" priority="1" />
+      <Item value="Console`0" priority="19" />
+      <Item value="var" priority="13" />
+      <Item value="IPPacketInformation`0" priority="0" />
+      <Item value="List" priority="0" />
+      <Item value="listener" priority="1" />
+      <Item value="while" priority="3" />
+      <Item value="client" priority="3" />
+      <Item value="sslStream" priority="12" />
+      <Item value="false" priority="0" />
+      <Item value="Tls" priority="0" />
+      <Item value="true" priority="0" />
+      <Item value="using" priority="2" />
+      <Item value="streamReader" priority="3" />
+      <Item value="try" priority="0" />
+      <Item value="AuthenticationException`0" priority="2" />
+      <Item value="ex" priority="1" />
+      <Item value="Exception`0" priority="0" />
+      <Item value="readToEnd" priority="0" />
+      <Item value="ReadMessage`0" priority="1" />
+      <Item value="byte" priority="1" />
+      <Item value="Converter" priority="0" />
+      <Item value="ByteConverter" priority="0" />
+      <Item value="ByteConverter`0" priority="0" />
+      <Item value="bc" priority="0" />
+      <Item value="readLine" priority="2" />
+      <Item value="String`0" priority="1" />
+      <Item value="StreamWriter`0" priority="0" />
+      <Item value="streamWriter" priority="6" />
+      <Item value="b" priority="0" />
+      <Item value="buffer" priority="2" />
+      <Item value="Length" priority="0" />
+      <Item value="read" priority="2" />
+      <Item value="Decoder`0" priority="0" />
+      <Item value="Encoder`0" priority="1" />
+      <Item value="decoder" priority="2" />
+      <Item value="char" priority="0" />
+      <Item value="chars" priority="1" />
+      <Item value="Encoding`0" priority="0" />
+      <Item value="ServicePointManager`0" priority="0" />
+      <Item value="SecurityProtocolType`0" priority="1" />
+      <Item value="X509Store`0" priority="0" />
+      <Item value="StoreLocation`0" priority="0" />
+      <Item value="store" priority="5" />
+      <Item value="OpenFlags`0" priority="0" />
+      <Item value="x" priority="0" />
+      <Item value="for" priority="0" />
+      <Item value="in" priority="0" />
+      <Item value="StoreName`0" priority="0" />
+      <Item value="X509FindType`0" priority="1" />
+      <Item value="cert" priority="3" />
+      <Item value="foreach" priority="0" />
+      <Item value="certificate" priority="1" />
+      <Item value="if" priority="1" />
+      <Item value="ApplicationException`0" priority="0" />
+      <Item value="certificates" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Security.Cryptography.X509Certificates.X509Certificate">
+      <Item value="CreateFromCertFile`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Security.Cryptography.X509Certificates.X509Certificate">
+      <Item value="GetPublicKey`0" priority="0" />
+      <Item value="GetPublicKeyString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="18" />
+      <Item value="ReadKey`0" priority="1" />
+      <Item value="Write`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.IPAddress">
+      <Item value="Any" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.TcpListener">
+      <Item value="Start`0" priority="0" />
+      <Item value="AcceptTcpClient`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.TcpClient">
+      <Item value="Client" priority="1" />
+      <Item value="ToString`0" priority="0" />
+      <Item value="GetStream`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.Socket">
+      <Item value="LocalEndPoint" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Security.SslStream">
+      <Item value="AuthenticateAsServer`0" priority="0" />
+      <Item value="Write`0" priority="1" />
+      <Item value="ReadByte`0" priority="1" />
+      <Item value="Read`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamReader">
+      <Item value="ReadToEnd`0" priority="2" />
+      <Item value="ReadLine`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Security.Authentication.AuthenticationException">
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Security.Authentication.SslProtocols">
+      <Item value="Default" priority="3" />
+      <Item value="Tls" priority="0" />
+      <Item value="Ssl2" priority="0" />
+      <Item value="None" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Length" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ComponentModel.ByteConverter">
+      <Item value="ConvertFromString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.NetworkStream">
+      <Item value="Read`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="0" />
+      <Item value="IsNullOrEmpty`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamWriter">
+      <Item value="Write`0" priority="0" />
+      <Item value="WriteLine`0" priority="5" />
+      <Item value="Flush`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.Encoding">
+      <Item value="ASCII" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.Encoding">
+      <Item value="GetDecoder`0" priority="0" />
+      <Item value="GetBytes`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.Decoder">
+      <Item value="Convert`0" priority="0" />
+      <Item value="GetCharCount`0" priority="0" />
+      <Item value="GetChars`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.ServicePointManager">
+      <Item value="SecurityProtocol" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.SecurityProtocolType">
+      <Item value="Tls" priority="0" />
+      <Item value="Ssl3" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Security.Cryptography.X509Certificates.StoreLocation">
+      <Item value="LocalMachine" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Security.Cryptography.X509Certificates.X509Store">
+      <Item value="Open`0" priority="0" />
+      <Item value="Certificates" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Security.Cryptography.X509Certificates.OpenFlags">
+      <Item value="ReadOnly" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Security.Cryptography.X509Certificates.X509Certificate2Collection">
+      <Item value="Contains`0" priority="0" />
+      <Item value="Count" priority="3" />
+      <Item value="Find`0" priority="1" />
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Security.Cryptography.X509Certificates.X509Certificate2">
+      <Item value="ToString`0" priority="0" />
+      <Item value="Verify`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Security.Cryptography.X509Certificates.StoreName">
+      <Item value="My" priority="0" />
+      <Item value="CertificateAuthority" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Security.Cryptography.X509Certificates.X509FindType">
+      <Item value="FindBySubjectName" priority="1" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="d:Miscellaneous Files/f:SslStream.cs/l:C!?Users?Adraen?AppData?Local?Symbols?src?source?.NET?4?DEVDIV_TFS?Dev10?Releases?RTMRel?ndp?fx?src?Net?System?Net?SecureProtocols?SslStream.cs?1305376?SslStream.cs" caret="8250" fromTop="18" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="1983" fromTop="31" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="2898" fromTop="46" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="2898" fromTop="22" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="2898" fromTop="46" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="13" fromTop="0" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="1367" fromTop="22" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="1985" fromTop="32" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="1985" fromTop="14" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="2898" fromTop="9" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="1985" fromTop="0" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="2838" fromTop="42" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="1985" fromTop="14" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="2637" fromTop="34" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="2637" fromTop="28" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="2637" fromTop="36" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="2557" fromTop="27" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="2704" fromTop="23" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="1024" fromTop="14" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="950" fromTop="7" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="2853" fromTop="34" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="475" fromTop="14" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="881" fromTop="24" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="639" fromTop="16" />
+      <File id="980FA23B-9E1F-4695-BCA0-8D78D5DA3BA4/f:Program.cs" caret="1485" fromTop="21" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

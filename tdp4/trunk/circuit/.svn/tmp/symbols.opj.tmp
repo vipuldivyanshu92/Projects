@@ -1,0 +1,36 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\symbols.olb"
+      (Type "Schematic Library"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (NoModify))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\symbols.olb")
+<<<<<<< .mine
+      (Path "Design Resources" "Library")
+      (Select "Design Resources"))
+=======
+      (Select "Design Resources"))
+>>>>>>> .r25
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+<<<<<<< .mine
+        (Placement "44 0 1 -1 -1 -8 -30 48 344 20 441"))
+      (Tab 0)))
+  (MPSSessionName "Adraen")
+  (ISPCBBASICLICENSE "false"))
+=======
+        (Placement "44 0 1 -1 -1 -8 -30 0 296 0 421"))
+      (Tab 0)))
+  (MPSSessionName "ProjUser")
+  (ISPCBBASICLICENSE "false"))
+>>>>>>> .r25

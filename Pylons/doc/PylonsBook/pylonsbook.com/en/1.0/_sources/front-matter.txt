@@ -1,0 +1,61 @@
+Dedication
+++++++++++
+
+Dedicated to my brother, Ian, and my parents, John and Maggie, whom I love very much.
+
+
+About the Author
+++++++++++++++++
+
+.. image :: james.jpg
+   :alt: Photo of James Gardner at The Hub, Islington December 2008
+
+**James Gardner** is an Oxford University graduate in physics; cofounder of the Pylons web framework; and founder of 3aims Ltd, a knowledge interaction technology consultancy based in London. The majority of his professional experience has been in the development and support of R&D systems for three different National Health Service organizations in the United Kingdom, and he also coded the popular “What Should I Read Next?” book recommendation service. 
+
+James has been writing computer programs since he was a small boy when he first got his hands on a Sinclair ZX Spectrum and was very proud to show his grandmother the flashing colored shapes he had managed to get to appear on a black background on the TV. The excitement and satisfaction of being able to create something extraordinary from a series of carefully ordered characters in a file and a little bit of logical thinking has never left him.
+
+James is heavily involved in open source software, and in addition to his involvement in Pylons, he wrote the Python web modules AuthKit and FormBuild and has a keen interest in authentication and single sign-on systems such as OpenID. He is an advocate of building web applications with the Web Server Gateway Interface APIs that you’ll learn about in this book. 
+
+While not traveling to London or Oxford, James enjoys nothing more than discussing ideas with challenging and like-minded individuals or sitting down with a cup of tea, a pile of blank paper, a pen, and an Internet connection to think about better ways to solve complex problems using web technology.
+
+In his spare time, James enjoys everything to do with the outdoors from cycling to climbing and from astronomy to scuba diving. In fact, he recently went on a dive trip to the Farne Islands off the coast of Northumbria in the United Kingdom where he thoroughly enjoyed having his equipment nibbled by inquisitive seals. James is lucky enough to have traveled widely and enjoys meeting new people and learning about the different ways people see the world.
+
+James’ company’s web site is at http://3aims.com, and he maintains a personal blog documenting his experiments with Python and Linux, amongst other things, at http://jimmyg.org. 
+
+
+About the Technical Reviewer
+++++++++++++++++++++++++++++
+
+**Michael Orr** is one of the Pylons developers and has been writing Python web applications on several frameworks for the past ten years. Michael is the release manager for the WebHelpers component in Pylons. Previously he was the editor of Linux Gazette, a web-based ezine. Mike lives in Seattle, and his other interests include MMA fight sports, languages, and vegetarian cooking.
+
+
+Acknowledgments
++++++++++++++++
+
+Thanks must go primarily to Ben Bangert and Philip Jenvey for their work on Pylons. Ben in particular is the rock of the Pylons community and should take huge credit for its success. Thanks also go to Ian Bicking who is responsible for Paste, FormEncode, and other Pylons-related projects and who was kind enough to let me use a couple of examples from the FormEncode documentation in the book. Thanks to Mike Bayer for his work on SQLAlchemy and Mako and for reading the SQLAlchemy chapter alpha online and giving his comments at an early stage. Thanks also to Graham Higgins for all his help, particularly when the idea of writing a book was first being discussed.
+
+Thanks to all the visitors to the http://pylonsbook.com site who read the online alpha and gave comments. The following people in particular provided detailed feedback for which I am especially grateful: Chris AtLee, Christine Simms, Harri Vartiainen, Henry Miller, Mike Coyle, Nick Daly, and Krzysiek Tomaszewski. This Pylons book wouldn’t be what it is without all your efforts, and I apologize if not all of your suggestions made it into the final text.
+
+I’d like to thank Apress for sharing the vision for this book and allowing me to release it under an open source license so that it can be improved and built upon by the Pylons community, and I’d like to thank everyone at Apress who helped me with this book for their time and energy.
+
+Thanks too have to go to Mike Orr, the technical reviewer. He did an excellent job of reviewing the first draft and pushed me toward making this book more about Pylons and less about the tools and techniques I use in my own web development projects, and that can only be a good thing for you, the reader.
+
+I’d also like to thank some less obvious people. Thanks to all the people who work at the Hub in Islington, London, on social enterprise projects. Thanks to Luke, Stephen, Chris, Tom, Holly, Maria, Fred, and everyone else I’ve discussed this book with. You’ve been an inspiration and enormously fun to share a workspace with.
+
+Thanks to Richard Noble for giving me the space and support I needed to work on the book when we were both keen to start our new business venture together and for being great company when I was working on the book.
+
+Finally, I’d like to thank Beth Christmas, the project manager for this book. She, more than anyone else, can take credit for this book ever reaching the publishing stage. I haven’t made her life easy, but she was always there to support me when I needed support and push me when I needed pushing. I appreciate her efforts enormously and hope they are repaid to some small extent by you all knowing how grateful I am to her.
+
+
+Source Code and Updates
++++++++++++++++++++++++
+
+This book contains many source code examples as well as the code for a complete hierarchical wiki application called SimpleSite. All the source code is available to download from the Apress web site at http://www.apress.com or from http://pylonsbook.com. The source code includes a ``README.txt`` file that outlines what each example demonstrates. The examples were all tested in early November 2008 with Pylons 0.9.7 and SQLAlchemy 0.5 release candidates. 
+
+This book is released under the GNU Free Documentation License (the same license used by Wikipedia), so I have also been able to publish the text online. You can find the online versions of the chapters at http://pylonsbook.com. 
+
+The Pylons community is always dynamic and constantly improving, so if you find a problem in the text or source code with the version of Pylons you are using, I encourage you to report it via the http://pylonsbook.com web site so that the online chapters can be updated. It is my hope that, with your help and the help of the Pylons community, this book will continue to be a useful resource for a long time to come. If you are interested in contributing to the online version of this book or in helping me review the updates or contributions that other readers send in, I’d love to hear from you. My address is ``feedback@pylonsbook.com``.
+
+I very much hope you enjoy the book and find it a useful resource to help you learn and fully understand Pylons. I’m sure you’ll find working with Pylons very liberating, and I look forward to meeting you online if you choose to take part in the Pylons community to share your thoughts and ideas.
+
+

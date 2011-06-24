@@ -1,0 +1,8 @@
+<HttpPatchAddr> http://localhost/ </HttpPatchAddr>
+<ClientHttpPatchAddr> http://localhost/ </ClientHttpPatchAddr>
+<ControlHttpPatchAddr> http://localhost/ </ControlHttpPatchAddr>
+<HttpPatchFolder> AoCLiveEU </HttpPatchFolder>
+<UniverseAddr> aoc-eu-um.live.ageofconan.com:7000 </UniverseAddr>
+<DevName> conan </DevName>
+<UniverseVersion> 2 </UniverseVersion>
+<PatchVersion> xa8ac06ab4c0809ed22f50380eb4bf9f1 </PatchVersion>

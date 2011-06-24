@@ -1,0 +1,5 @@
+F:\c\args\args\bin\Debug\args.exe
+F:\c\args\args\bin\Debug\args.pdb
+F:\c\args\args\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\c\args\args\obj\x86\Debug\args.exe
+F:\c\args\args\obj\x86\Debug\args.pdb

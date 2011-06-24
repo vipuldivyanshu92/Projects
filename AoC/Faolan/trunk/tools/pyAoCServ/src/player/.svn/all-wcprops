@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/faolanproject/!svn/ver/32/trunk/tools/pyAoCServ/src/player
+END
+onGetStartupData.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/faolanproject/!svn/ver/32/trunk/tools/pyAoCServ/src/player/onGetStartupData.py
+END
+onAuthenticate.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/faolanproject/!svn/ver/32/trunk/tools/pyAoCServ/src/player/onAuthenticate.py
+END
+onCreateCharacter.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/faolanproject/!svn/ver/32/trunk/tools/pyAoCServ/src/player/onCreateCharacter.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/faolanproject/!svn/ver/32/trunk/tools/pyAoCServ/src/player/__init__.py
+END

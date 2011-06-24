@@ -1,0 +1,175 @@
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   1  |
+|------------------------------------------------------------------------------|
+|  F:/tdp4/trunk/circuit/pcb/bare.brd                                          |
+|                                                    Mon Feb 21 19:07:57 2011  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |                net     pins                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  COMMON_SHIELD pins ADDED TO this new net
+                                 C1.1           J3.5           J3.6           
+                                 J4.5           J4.6           J5.6           
+                                 J5.7           J5.8           J5.9           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GND          pins ADDED TO this new net
+                                 C1.2           C2.1           C3.1           
+                                 C4.1           J1.3           J1.33          
+                                 J2.56          J2.70          J3.4           
+                                 J4.4           J5.5           J6.6           
+                                 J7.3           J8.6           J9.4           
+                                 S1.1           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GPIO18       pins ADDED TO this new net
+                                 J1.38          J8.4           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GPIO19       pins ADDED TO this new net
+                                 J1.36          J8.2           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GPIO20       pins ADDED TO this new net
+                                 J1.39          J8.3           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GPIO21       pins ADDED TO this new net
+                                 J1.37          J8.5           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GPIO165_IR_RXD3 pins ADDED TO this new net
+                                 J2.31          J7.2           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GPIO166_IR_TXD3 pins ADDED TO this new net
+                                 J2.26          J7.1           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N00746       pins ADDED TO this new net
+                                 J2.1           S1.2           S1.3           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N06617       pins ADDED TO this new net
+                                 S1.4           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  SPI_CLOCK_1.8V pins ADDED TO this new net
+                                 J1.43          J6.3           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  SPI_CS_1.8V  pins ADDED TO this new net
+                                 J1.42          J6.4           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  SPI_INTERRUPT_1.8V pins ADDED TO this new net
+                                 J1.41          J6.5           
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   2  |
+|------------------------------------------------------------------------------|
+|  F:/tdp4/trunk/circuit/pcb/bare.brd                                          |
+|                                                    Mon Feb 21 19:07:57 2011  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |                net     pins                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  SPI_MISO_1.8V pins ADDED TO this new net
+                                 J1.45          J6.1           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  SPI_MOSI_1.8V pins ADDED TO this new net
+                                 J1.44          J6.2           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  USBH_DM      pins ADDED TO this new net
+                                 J1.35          J3.2           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  USBH_DP      pins ADDED TO this new net
+                                 J1.34          J3.3           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  USBH_VBUS    pins ADDED TO this new net
+                                 C2.2           C3.2           J1.32          
+                                 J3.1           J4.1           J9.3           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  USB_OTG_DM   pins ADDED TO this new net
+                                 J2.37          J5.2           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  USB_OTG_DP   pins ADDED TO this new net
+                                 J2.36          J5.3           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  USB_OTG_ID   pins ADDED TO this new net
+                                 J2.46          J5.4           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  USB_OTG_VBUS pins ADDED TO this new net
+                                 C4.2           J2.54          J5.1           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  VCC_1.8      pins ADDED TO this new net
+                                 J8.1           J9.1           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  VCC_3.3      pins ADDED TO this new net
+                                 J1.1           J1.2           J2.66          
+                                 J2.67          J9.2           
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   3  |
+|------------------------------------------------------------------------------|
+|  F:/tdp4/trunk/circuit/pcb/bare.brd                                          |
+|                                                    Mon Feb 21 19:07:57 2011  |
+|------------------------------------------------------------------------------|
+| COMPONENT DEFINITION added to board drawing                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    device type                                                               |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ CON3_DIP3_CON3
+ CON4_DIP4_CONN_CON4
+ CON6_DIP6_CONN_CON6
+ CON6_USBA_CON6
+ CON9_MUSBA_TSMT_CON9
+ C_ELECT_0_SMDCAP_1N
+ C_ELECT_0_SMDCAP_4.7U
+ GUMSTIX_J1_GUMSTIX_GUMSTIX_J1
+ GUMSTIX_J4_GUMSTIX_GUMSTIX_J4
+ SWITCH_SWITCH_SWITCH
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   4  |
+|------------------------------------------------------------------------------|
+|  F:/tdp4/trunk/circuit/pcb/bare.brd                                          |
+|                                                    Mon Feb 21 19:07:57 2011  |
+|------------------------------------------------------------------------------|
+| COMPONENTS ADDED to board drawing                                            |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        |    device type                                           |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ C1                  C_ELECT_0_SMDCAP_1N   
+ C2                  C_ELECT_0_SMDCAP_4.7U 
+ C3                  C_ELECT_0_SMDCAP_4.7U 
+ C4                  C_ELECT_0_SMDCAP_4.7U 
+ J1                  GUMSTIX_J4_GUMSTIX_GUMSTIX_J4 
+ J2                  GUMSTIX_J1_GUMSTIX_GUMSTIX_J1 
+ J3                  CON6_USBA_CON6        
+ J4                  CON6_USBA_CON6        
+ J5                  CON9_MUSBA_TSMT_CON9  
+ J6                  CON6_DIP6_CONN_CON6   
+ J7                  CON3_DIP3_CON3        
+ J8                  CON6_DIP6_CONN_CON6   
+ J9                  CON4_DIP4_CONN_CON4   
+ S1                  SWITCH_SWITCH_SWITCH  
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   5  |
+|------------------------------------------------------------------------------|
+|  F:/tdp4/trunk/circuit/pcb/bare.brd                                          |
+|                                                    Mon Feb 21 19:07:57 2011  |
+|------------------------------------------------------------------------------|
+| SLOT PROPERTIES added to board drawing                                       |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   slot_id    |   x   |   y   |   property   |             value              |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ C1.2                           PRIM_FILE      .\pstchip.dat
+ C2.2                           PRIM_FILE      .\pstchip.dat
+ C3.2                           PRIM_FILE      .\pstchip.dat
+ C4.2                           PRIM_FILE      .\pstchip.dat
+ J1.2                           PRIM_FILE      .\pstchip.dat
+ J2.67                          PRIM_FILE      .\pstchip.dat
+ J3.6                           PRIM_FILE      .\pstchip.dat
+ J4.6                           PRIM_FILE      .\pstchip.dat
+ J5.9                           PRIM_FILE      .\pstchip.dat
+ J6.6                           PRIM_FILE      .\pstchip.dat
+ J7.3                           PRIM_FILE      .\pstchip.dat
+ J8.6                           PRIM_FILE      .\pstchip.dat
+ J9.4                           PRIM_FILE      .\pstchip.dat
+ S1.4                           PRIM_FILE      .\pstchip.dat
+|------------------------------------------------------------------------------|
+|   total ECO changes reported  115                                            |
+|------------------------------------------------------------------------------|

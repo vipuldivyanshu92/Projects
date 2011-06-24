@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/tdp4/!svn/ver/34/trunk/software/LEADSoft/can
+END
+client.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tdp4/!svn/ver/34/trunk/software/LEADSoft/can/client.c
+END
+vcan_setup.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/tdp4/!svn/ver/34/trunk/software/LEADSoft/can/vcan_setup.txt
+END
+server
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/tdp4/!svn/ver/34/trunk/software/LEADSoft/can/server
+END
+server.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tdp4/!svn/ver/34/trunk/software/LEADSoft/can/server.c
+END
+testpackets.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/tdp4/!svn/ver/34/trunk/software/LEADSoft/can/testpackets.txt
+END
+client
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/tdp4/!svn/ver/34/trunk/software/LEADSoft/can/client
+END

@@ -1,0 +1,13 @@
+HTTrack3.43-5+htsswf+htsjava launched on Thu, 11 Jun 2009 16:40:47 at http://pylonsbook.com/en/1.0/index.html +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f0#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2008], %s -->" -%l "en, en, *" http://pylonsbook.com/en/1.0/index.html -O1 E:\Projects\Pylons\doc\PylonsBook +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+16:44:26	Error: 	"Not Found" (404) at link pylonsbook.com/en/1.0/modindex.html (from pylonsbook.com/en/1.0/index.html)
+16:44:30	Error: 	"Not Found" (404) at link pylonsbook.com/en/1.0/minus.png (from pylonsbook.com/en/1.0/_static/doctools.js)
+
+HTTrack Website Copier/3.43-5 mirror complete in 3 minutes 42 seconds : 119 links scanned, 116 files written (6928605 bytes overall) [6974157 bytes received at 31415 bytes/sec], 7.9 requests per connection
+(2 errors, 0 warnings, 0 messages)

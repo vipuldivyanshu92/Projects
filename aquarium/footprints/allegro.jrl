@@ -1,0 +1,92 @@
+\t (00:00:01) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:01) 
+
+\t (00:00:03) Opening existing drawing...
+\d (00:00:03) Database opened: I:/aquarium/footprints/tqfp44.dra
+\i (00:00:03) trapsize 275
+\i (00:00:03) trapsize 258
+\i (00:00:03) trapsize 251
+\i (00:00:03) trapsize 181
+\i (00:00:03) trapsize 226
+\i (00:00:04) generaledit 
+\i (00:00:06) new 
+\i (00:00:12) newdrawfillin "soic8.dra" "Package Symbol (Wizard)"
+\t (00:00:12) Starting new drawing...
+\w (00:00:12) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 3044,3044
+\i (00:00:12) trapsize 636
+\i (00:00:12) trapsize 636
+\i (00:00:12) package symbol wizard 
+\i (00:00:12) generaledit 
+   (00:00:13) Loading cmds.cxt 
+   (00:00:13) Loading axlcore.cxt 
+\i (00:00:13) setwindow form.sym_wizard
+\i (00:00:13) FORM sym_wizard soic YES 
+\i (00:00:14) FORM sym_wizard wiz_next  
+\i (00:00:15) FORM sym_wizard load_template  
+\t (00:00:15) Opening existing drawing...
+\t (00:00:15) Grids are drawn 400, 400 apart for enhanced viewability.
+\i (00:00:15) setwindow pcb
+\i (00:00:15) trapsize 474
+\d (00:00:15) Database opened: D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (00:00:15) setwindow form.sym_wizard
+\i (00:00:15) FORM sym_wizard wiz_next  
+\i (00:00:17) FORM sym_wizard pack_units Millimeter 
+\i (00:00:18) FORM sym_wizard pack_units_create Centimeter 
+\i (00:00:20) FORM sym_wizard pack_units_create Millimeter 
+\i (00:00:21) FORM sym_wizard wiz_next  
+\i (00:00:24) FORM sym_wizard sop_pin_count 8 
+\i (00:01:04) FORM sym_wizard sop_e1 6.020 
+\i (00:01:21) FORM sym_wizard sop_width 3.910 
+\i (00:01:26) FORM sym_wizard sop_len 4.900 
+\i (00:01:27) FORM sym_wizard wiz_next  
+\i (00:01:29) FORM sym_wizard default_pad_browse  
+\f (00:01:29) Package Symbol Wizard Padstack Browser
+\t (00:01:31) No valid name selected.
+\i (00:01:32) fillin "Soic"
+\i (00:01:33) FORM sym_wizard wiz_next  
+\i (00:01:34) FORM sym_wizard wiz_next  
+\i (00:01:37) FORM sym_wizard wiz_back  
+\i (00:01:43) FORM sym_wizard wiz_next  
+\i (00:01:44) FORM sym_wizard wiz_finish  
+\w (00:01:44) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:01:44) Grids are drawn 10.160, 10.160 apart for enhanced viewability.
+\i (00:01:44) setwindow pcb
+\i (00:01:44) trapsize 12028
+\t (00:01:44) Performing DRC...
+\t (00:01:44) No DRC errors detected.
+\w (00:01:44) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 15240,15240
+\w (00:01:44) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 30480,30480
+\w (00:01:44) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 60960,60960
+\w (00:01:44) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 121920,121920
+\i (00:01:44) trapsize 12028
+\w (00:01:44) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 8128,8128
+\i (00:01:44) trapsize 1698
+\w (00:01:44) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 541,541
+\i (00:01:44) trapsize 113
+\i (00:01:44) trapsize 113
+\t (00:01:44) Creating package symbol 'I:/aquarium/footprints/soic8.psm'.
+\t (00:01:44) Starting Create symbol...
+\i (00:01:44) generaledit 
+\i (00:01:48) plot 
+\i (00:01:49) plotwint initialize "Laser Pro LL2"
+\i (00:01:49) plotwint orientation 2
+\i (00:01:49) plotwint papername "A4"
+\i (00:01:49) plotwint copies 1
+\i (00:01:49) plotwint defaultsource 4
+\i (00:01:49) plotwint printquality 600
+\i (00:01:49) plotwint duplex 1
+\i (00:01:49) plotwint execute
+\i (00:02:35) plot setup 
+\i (00:02:40) setwindow form.fpfileplotsetup
+\i (00:02:40) FORM fpfileplotsetup fpplotblackwhite YES 
+\i (00:02:43) FORM fpfileplotsetup done  
+\i (00:02:43) setwindow pcb
+\i (00:02:43) generaledit 
+\i (00:02:45) plot 
+\i (00:02:50) plotwint initialize "Laser Pro LL2"
+\i (00:02:50) plotwint defaultsource 7
+\i (00:02:50) plotwint execute
+\i (00:03:57) exit 
+\f (00:03:57) Do you want to save the changes you made to I:/aquarium/footprints/soic8.dra?
+\i (00:04:01) fillin yes 
+\t (00:04:01) Symbol 'soic8.psm' created.

@@ -1,0 +1,13 @@
+package applicationLayer;
+
+public class InactivityTimer {
+	private InactivityTimer() {
+	}
+	
+	private int expirationTime;
+	
+	private void logout(){
+		
+	}
+	
+}

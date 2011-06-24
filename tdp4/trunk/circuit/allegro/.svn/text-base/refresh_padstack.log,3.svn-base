@@ -1,0 +1,112 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Refresh Padstack                                                 )
+(                                                                     )
+(    Drawing          : gumstix_expansion_v1_2.brd                    )
+(    Software Version : 16.3p003                                      )
+(    Date/Time        : Mon Feb 07 21:09:40 2011                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Mon Feb 07 21:09:40 2011				Page     1
+
+
+------ Pad Stack Refresh Options ------
+
+OLD_LAYOUT_NAME = 'f:/tdp4/trunk/circuit/allegro/gumstix_expansion_v1_2.brd';
+NEW_LAYOUT_NAME = '';
+REFRESH_SYMBOL_TEXT_LOCATIONS = 'NO';
+
+
+------ Library Paths ------
+PSMPATH =  F:\TDP4\TRUNK\CIRCUIT\PCB\ 
+           . 
+           symbols 
+           .. 
+           ../symbols 
+           D:/Cadence/SPB_16.3/share/local/pcb/symbols 
+           D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols 
+           D:/Cadence/SPB_16.3/share/pcb/allegrolib/symbols 
+
+PADPATH =  F:\TDP4\TRUNK\CIRCUIT\PCB\ 
+           . 
+           symbols 
+           .. 
+           ../symbols 
+           D:/Cadence/SPB_16.3/share/local/pcb/padstacks 
+           D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols 
+           D:/Cadence/SPB_16.3/share/pcb/allegrolib/symbols 
+
+
+------ Pad Stack Refresh Messages ------
+
+'TJA1040'  pad stack refresh starting.
+
+     'TJA1040'  pad stack refreshed successfully.
+     
+'SN74_DGG'  pad stack refresh starting.
+
+     'SN74_DGG'  pad stack refreshed successfully.
+     
+'MC9S08'  pad stack refresh starting.
+
+     'MC9S08'  pad stack refreshed successfully.
+     
+'SWITCH'  pad stack refresh starting.
+
+     'SWITCH'  pad stack refreshed successfully.
+     
+'SMD50_63'  pad stack refresh starting.
+
+     'SMD50_63'  pad stack refreshed successfully.
+     
+'UDBA_HOLE_PAD230'  pad stack refresh starting.
+
+     'UDBA_HOLE_PAD230'  pad stack refreshed successfully.
+     
+'USBA_HOLE_PAD095'  pad stack refresh starting.
+
+     'USBA_HOLE_PAD095'  pad stack refreshed successfully.
+     
+'MUSBAB_SHIELD_PAD'  pad stack refresh starting.
+
+     'MUSBAB_SHIELD_PAD'  pad stack refreshed successfully.
+     
+'MUSBAB_CONN_PAD'  pad stack refresh starting.
+
+     'MUSBAB_CONN_PAD'  pad stack refreshed successfully.
+     
+'MUSBA_GOLE_PAD090'  pad stack refresh starting.
+
+     'MUSBA_GOLE_PAD090'  pad stack refreshed successfully.
+     
+'MOLEX_HOLE_PAD300'  pad stack refresh starting.
+
+     'MOLEX_HOLE_PAD300'  pad stack refreshed successfully.
+     
+'MOLEX_HOLE_PAD180'  pad stack refresh starting.
+
+     'MOLEX_HOLE_PAD180'  pad stack refreshed successfully.
+     
+'DIP6_PAD'  pad stack refresh starting.
+
+     'DIP6_PAD'  pad stack refreshed successfully.
+     
+'GUMSTIX_HOLE_PAD'  pad stack refresh starting.
+
+     'GUMSTIX_HOLE_PAD'  pad stack refreshed successfully.
+     
+'GUMSTIX'  pad stack refresh starting.
+
+     'GUMSTIX'  pad stack refreshed successfully.
+     
+'SMD50_87'  pad stack refresh starting.
+
+     'SMD50_87'  pad stack refreshed successfully.
+     
+'VIA'  pad stack refresh starting.
+
+     'VIA'  pad stack refreshed successfully.
+     
+Completed refreshing all pad stacks successfully.

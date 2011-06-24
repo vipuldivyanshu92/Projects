@@ -1,0 +1,600 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"13 C:\Program Files\PICC\include\pic16f6x.h
+[v _INDF `Vuc 1 e@0 ]
+"14 C:\Program Files\PICC\include\pic16f6x.h
+[v _TMR0 `Vuc 1 e@1 ]
+"15 C:\Program Files\PICC\include\pic16f6x.h
+[v _PCL `Vuc 1 e@2 ]
+"16 C:\Program Files\PICC\include\pic16f6x.h
+[v _STATUS `Vuc 1 e@3 ]
+"17 C:\Program Files\PICC\include\pic16f6x.h
+[v _FSR `Vuc 1 e@4 ]
+"18 C:\Program Files\PICC\include\pic16f6x.h
+[v _PORTA `Vuc 1 e@5 ]
+"19 C:\Program Files\PICC\include\pic16f6x.h
+[v _PORTB `Vuc 1 e@6 ]
+"20 C:\Program Files\PICC\include\pic16f6x.h
+[v _PCLATH `Vuc 1 e@10 ]
+"21 C:\Program Files\PICC\include\pic16f6x.h
+[v _INTCON `Vuc 1 e@11 ]
+"22 C:\Program Files\PICC\include\pic16f6x.h
+[v _PIR1 `Vuc 1 e@12 ]
+"23 C:\Program Files\PICC\include\pic16f6x.h
+[v _TMR1L `Vuc 1 e@14 ]
+"24 C:\Program Files\PICC\include\pic16f6x.h
+[v _TMR1H `Vuc 1 e@15 ]
+"25 C:\Program Files\PICC\include\pic16f6x.h
+[v _T1CON `Vuc 1 e@16 ]
+"26 C:\Program Files\PICC\include\pic16f6x.h
+[v _TMR2 `Vuc 1 e@17 ]
+"27 C:\Program Files\PICC\include\pic16f6x.h
+[v _T2CON `Vuc 1 e@18 ]
+"28 C:\Program Files\PICC\include\pic16f6x.h
+[v _CCPR1L `Vuc 1 e@21 ]
+"29 C:\Program Files\PICC\include\pic16f6x.h
+[v _CCPR1H `Vuc 1 e@22 ]
+"30 C:\Program Files\PICC\include\pic16f6x.h
+[v _CCP1CON `Vuc 1 e@23 ]
+"31 C:\Program Files\PICC\include\pic16f6x.h
+[v _RCSTA `Vuc 1 e@24 ]
+"32 C:\Program Files\PICC\include\pic16f6x.h
+[v _TXREG `Vuc 1 e@25 ]
+"33 C:\Program Files\PICC\include\pic16f6x.h
+[v _RCREG `Vuc 1 e@26 ]
+"34 C:\Program Files\PICC\include\pic16f6x.h
+[v _CMCON `Vuc 1 e@31 ]
+"37 C:\Program Files\PICC\include\pic16f6x.h
+[v _OPTION `Vuc 1 e@129 ]
+"38 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISA `Vuc 1 e@133 ]
+"39 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISB `Vuc 1 e@134 ]
+"40 C:\Program Files\PICC\include\pic16f6x.h
+[v _PIE1 `Vuc 1 e@140 ]
+"41 C:\Program Files\PICC\include\pic16f6x.h
+[v _PCON `Vuc 1 e@142 ]
+"42 C:\Program Files\PICC\include\pic16f6x.h
+[v _PR2 `Vuc 1 e@146 ]
+"43 C:\Program Files\PICC\include\pic16f6x.h
+[v _TXSTA `Vuc 1 e@152 ]
+"44 C:\Program Files\PICC\include\pic16f6x.h
+[v _SPBRG `Vuc 1 e@153 ]
+"45 C:\Program Files\PICC\include\pic16f6x.h
+[v _EEDATA `Vuc 1 e@154 ]
+"46 C:\Program Files\PICC\include\pic16f6x.h
+[v _EEADR `Vuc 1 e@155 ]
+"47 C:\Program Files\PICC\include\pic16f6x.h
+[v _EECON1 `Vuc 1 e@156 ]
+"48 C:\Program Files\PICC\include\pic16f6x.h
+[v _EECON2 `Vuc 1 e@157 ]
+"49 C:\Program Files\PICC\include\pic16f6x.h
+[v _VRCON `Vuc 1 e@159 ]
+"52 C:\Program Files\PICC\include\pic16f6x.h
+[v _IRP `Vb 1 e@31 ]
+"53 C:\Program Files\PICC\include\pic16f6x.h
+[v _RP1 `Vb 1 e@30 ]
+"54 C:\Program Files\PICC\include\pic16f6x.h
+[v _RP0 `Vb 1 e@29 ]
+"55 C:\Program Files\PICC\include\pic16f6x.h
+[v _TO `Vb 1 e@28 ]
+"56 C:\Program Files\PICC\include\pic16f6x.h
+[v _PD `Vb 1 e@27 ]
+"57 C:\Program Files\PICC\include\pic16f6x.h
+[v _ZERO `Vb 1 e@26 ]
+"58 C:\Program Files\PICC\include\pic16f6x.h
+[v _DC `Vb 1 e@25 ]
+"59 C:\Program Files\PICC\include\pic16f6x.h
+[v _CARRY `Vb 1 e@24 ]
+"62 C:\Program Files\PICC\include\pic16f6x.h
+[v _RA7 `Vb 1 e@47 ]
+"63 C:\Program Files\PICC\include\pic16f6x.h
+[v _RA6 `Vb 1 e@46 ]
+"64 C:\Program Files\PICC\include\pic16f6x.h
+[v _RA5 `Vb 1 e@45 ]
+"65 C:\Program Files\PICC\include\pic16f6x.h
+[v _RA4 `Vb 1 e@44 ]
+"66 C:\Program Files\PICC\include\pic16f6x.h
+[v _RA3 `Vb 1 e@43 ]
+"67 C:\Program Files\PICC\include\pic16f6x.h
+[v _RA2 `Vb 1 e@42 ]
+"68 C:\Program Files\PICC\include\pic16f6x.h
+[v _RA1 `Vb 1 e@41 ]
+"69 C:\Program Files\PICC\include\pic16f6x.h
+[v _RA0 `Vb 1 e@40 ]
+"72 C:\Program Files\PICC\include\pic16f6x.h
+[v _RB7 `Vb 1 e@55 ]
+"73 C:\Program Files\PICC\include\pic16f6x.h
+[v _RB6 `Vb 1 e@54 ]
+"74 C:\Program Files\PICC\include\pic16f6x.h
+[v _RB5 `Vb 1 e@53 ]
+"75 C:\Program Files\PICC\include\pic16f6x.h
+[v _RB4 `Vb 1 e@52 ]
+"76 C:\Program Files\PICC\include\pic16f6x.h
+[v _RB3 `Vb 1 e@51 ]
+"77 C:\Program Files\PICC\include\pic16f6x.h
+[v _RB2 `Vb 1 e@50 ]
+"78 C:\Program Files\PICC\include\pic16f6x.h
+[v _RB1 `Vb 1 e@49 ]
+"79 C:\Program Files\PICC\include\pic16f6x.h
+[v _RB0 `Vb 1 e@48 ]
+"82 C:\Program Files\PICC\include\pic16f6x.h
+[v _GIE `Vb 1 e@95 ]
+"83 C:\Program Files\PICC\include\pic16f6x.h
+[v _PEIE `Vb 1 e@94 ]
+"84 C:\Program Files\PICC\include\pic16f6x.h
+[v _T0IE `Vb 1 e@93 ]
+"85 C:\Program Files\PICC\include\pic16f6x.h
+[v _INTE `Vb 1 e@92 ]
+"86 C:\Program Files\PICC\include\pic16f6x.h
+[v _RBIE `Vb 1 e@91 ]
+"87 C:\Program Files\PICC\include\pic16f6x.h
+[v _T0IF `Vb 1 e@90 ]
+"88 C:\Program Files\PICC\include\pic16f6x.h
+[v _INTF `Vb 1 e@89 ]
+"89 C:\Program Files\PICC\include\pic16f6x.h
+[v _RBIF `Vb 1 e@88 ]
+"92 C:\Program Files\PICC\include\pic16f6x.h
+[v _EEIF `Vb 1 e@103 ]
+"93 C:\Program Files\PICC\include\pic16f6x.h
+[v _CMIF `Vb 1 e@102 ]
+"94 C:\Program Files\PICC\include\pic16f6x.h
+[v _RCIF `Vb 1 e@101 ]
+"95 C:\Program Files\PICC\include\pic16f6x.h
+[v _TXIF `Vb 1 e@100 ]
+"96 C:\Program Files\PICC\include\pic16f6x.h
+[v _CCP1IF `Vb 1 e@98 ]
+"97 C:\Program Files\PICC\include\pic16f6x.h
+[v _TMR2IF `Vb 1 e@97 ]
+"98 C:\Program Files\PICC\include\pic16f6x.h
+[v _TMR1IF `Vb 1 e@96 ]
+"101 C:\Program Files\PICC\include\pic16f6x.h
+[v _T1CKPS1 `Vb 1 e@133 ]
+"102 C:\Program Files\PICC\include\pic16f6x.h
+[v _T1CKPS0 `Vb 1 e@132 ]
+"103 C:\Program Files\PICC\include\pic16f6x.h
+[v _T1OSCEN `Vb 1 e@131 ]
+"104 C:\Program Files\PICC\include\pic16f6x.h
+[v _T1SYNC `Vb 1 e@130 ]
+"105 C:\Program Files\PICC\include\pic16f6x.h
+[v _TMR1CS `Vb 1 e@129 ]
+"106 C:\Program Files\PICC\include\pic16f6x.h
+[v _TMR1ON `Vb 1 e@128 ]
+"109 C:\Program Files\PICC\include\pic16f6x.h
+[v _TOUTPS3 `Vb 1 e@150 ]
+"110 C:\Program Files\PICC\include\pic16f6x.h
+[v _TOUTPS2 `Vb 1 e@149 ]
+"111 C:\Program Files\PICC\include\pic16f6x.h
+[v _TOUTPS1 `Vb 1 e@148 ]
+"112 C:\Program Files\PICC\include\pic16f6x.h
+[v _TOUTPS0 `Vb 1 e@147 ]
+"113 C:\Program Files\PICC\include\pic16f6x.h
+[v _TMR2ON `Vb 1 e@146 ]
+"114 C:\Program Files\PICC\include\pic16f6x.h
+[v _T2CKPS1 `Vb 1 e@145 ]
+"115 C:\Program Files\PICC\include\pic16f6x.h
+[v _T2CKPS0 `Vb 1 e@144 ]
+"118 C:\Program Files\PICC\include\pic16f6x.h
+[v _CCP1X `Vb 1 e@189 ]
+"119 C:\Program Files\PICC\include\pic16f6x.h
+[v _CCP1Y `Vb 1 e@188 ]
+"120 C:\Program Files\PICC\include\pic16f6x.h
+[v _CCP1M3 `Vb 1 e@187 ]
+"121 C:\Program Files\PICC\include\pic16f6x.h
+[v _CCP1M2 `Vb 1 e@186 ]
+"122 C:\Program Files\PICC\include\pic16f6x.h
+[v _CCP1M1 `Vb 1 e@185 ]
+"123 C:\Program Files\PICC\include\pic16f6x.h
+[v _CCP1M0 `Vb 1 e@184 ]
+"126 C:\Program Files\PICC\include\pic16f6x.h
+[v _SPEN `Vb 1 e@199 ]
+"127 C:\Program Files\PICC\include\pic16f6x.h
+[v _RX9 `Vb 1 e@198 ]
+"128 C:\Program Files\PICC\include\pic16f6x.h
+[v _SREN `Vb 1 e@197 ]
+"129 C:\Program Files\PICC\include\pic16f6x.h
+[v _CREN `Vb 1 e@196 ]
+"130 C:\Program Files\PICC\include\pic16f6x.h
+[v _ADEN `Vb 1 e@195 ]
+"131 C:\Program Files\PICC\include\pic16f6x.h
+[v _FERR `Vb 1 e@194 ]
+"132 C:\Program Files\PICC\include\pic16f6x.h
+[v _OERR `Vb 1 e@193 ]
+"133 C:\Program Files\PICC\include\pic16f6x.h
+[v _RX9D `Vb 1 e@192 ]
+"136 C:\Program Files\PICC\include\pic16f6x.h
+[v _C2OUT `Vb 1 e@255 ]
+"137 C:\Program Files\PICC\include\pic16f6x.h
+[v _C1OUT `Vb 1 e@254 ]
+"138 C:\Program Files\PICC\include\pic16f6x.h
+[v _C2INV `Vb 1 e@253 ]
+"139 C:\Program Files\PICC\include\pic16f6x.h
+[v _C1INV `Vb 1 e@252 ]
+"140 C:\Program Files\PICC\include\pic16f6x.h
+[v _CIS `Vb 1 e@251 ]
+"141 C:\Program Files\PICC\include\pic16f6x.h
+[v _CM2 `Vb 1 e@250 ]
+"142 C:\Program Files\PICC\include\pic16f6x.h
+[v _CM1 `Vb 1 e@249 ]
+"143 C:\Program Files\PICC\include\pic16f6x.h
+[v _CM0 `Vb 1 e@248 ]
+"146 C:\Program Files\PICC\include\pic16f6x.h
+[v _RBPU `Vb 1 e@1039 ]
+"147 C:\Program Files\PICC\include\pic16f6x.h
+[v _INTEDG `Vb 1 e@1038 ]
+"148 C:\Program Files\PICC\include\pic16f6x.h
+[v _T0CS `Vb 1 e@1037 ]
+"149 C:\Program Files\PICC\include\pic16f6x.h
+[v _T0SE `Vb 1 e@1036 ]
+"150 C:\Program Files\PICC\include\pic16f6x.h
+[v _PSA `Vb 1 e@1035 ]
+"151 C:\Program Files\PICC\include\pic16f6x.h
+[v _PS2 `Vb 1 e@1034 ]
+"152 C:\Program Files\PICC\include\pic16f6x.h
+[v _PS1 `Vb 1 e@1033 ]
+"153 C:\Program Files\PICC\include\pic16f6x.h
+[v _PS0 `Vb 1 e@1032 ]
+"156 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISA7 `Vb 1 e@1071 ]
+"157 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISA6 `Vb 1 e@1070 ]
+"158 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISA4 `Vb 1 e@1068 ]
+"159 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISA3 `Vb 1 e@1067 ]
+"160 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISA2 `Vb 1 e@1066 ]
+"161 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISA1 `Vb 1 e@1065 ]
+"162 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISA0 `Vb 1 e@1064 ]
+"165 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISB7 `Vb 1 e@1079 ]
+"166 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISB6 `Vb 1 e@1078 ]
+"167 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISB5 `Vb 1 e@1077 ]
+"168 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISB4 `Vb 1 e@1076 ]
+"169 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISB3 `Vb 1 e@1075 ]
+"170 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISB2 `Vb 1 e@1074 ]
+"171 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISB1 `Vb 1 e@1073 ]
+"172 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRISB0 `Vb 1 e@1072 ]
+"175 C:\Program Files\PICC\include\pic16f6x.h
+[v _EEIE `Vb 1 e@1127 ]
+"176 C:\Program Files\PICC\include\pic16f6x.h
+[v _CMIE `Vb 1 e@1126 ]
+"177 C:\Program Files\PICC\include\pic16f6x.h
+[v _RCIE `Vb 1 e@1125 ]
+"178 C:\Program Files\PICC\include\pic16f6x.h
+[v _TXIE `Vb 1 e@1124 ]
+"179 C:\Program Files\PICC\include\pic16f6x.h
+[v _CCP1IE `Vb 1 e@1122 ]
+"180 C:\Program Files\PICC\include\pic16f6x.h
+[v _TMR2IE `Vb 1 e@1121 ]
+"181 C:\Program Files\PICC\include\pic16f6x.h
+[v _TMR1IE `Vb 1 e@1120 ]
+"184 C:\Program Files\PICC\include\pic16f6x.h
+[v _OSCF `Vb 1 e@1139 ]
+"185 C:\Program Files\PICC\include\pic16f6x.h
+[v _POR `Vb 1 e@1137 ]
+"186 C:\Program Files\PICC\include\pic16f6x.h
+[v _BOR `Vb 1 e@1136 ]
+"189 C:\Program Files\PICC\include\pic16f6x.h
+[v _CSRC `Vb 1 e@1223 ]
+"190 C:\Program Files\PICC\include\pic16f6x.h
+[v _TX9 `Vb 1 e@1222 ]
+"191 C:\Program Files\PICC\include\pic16f6x.h
+[v _TXEN `Vb 1 e@1221 ]
+"192 C:\Program Files\PICC\include\pic16f6x.h
+[v _SYNC `Vb 1 e@1220 ]
+"193 C:\Program Files\PICC\include\pic16f6x.h
+[v _BRGH `Vb 1 e@1218 ]
+"194 C:\Program Files\PICC\include\pic16f6x.h
+[v _TRMT `Vb 1 e@1217 ]
+"195 C:\Program Files\PICC\include\pic16f6x.h
+[v _TX9D `Vb 1 e@1216 ]
+"198 C:\Program Files\PICC\include\pic16f6x.h
+[v _WRERR `Vb 1 e@1251 ]
+"199 C:\Program Files\PICC\include\pic16f6x.h
+[v _WREN `Vb 1 e@1250 ]
+"200 C:\Program Files\PICC\include\pic16f6x.h
+[v _WR `Vb 1 e@1249 ]
+"201 C:\Program Files\PICC\include\pic16f6x.h
+[v _RD `Vb 1 e@1248 ]
+"204 C:\Program Files\PICC\include\pic16f6x.h
+[v _VREN `Vb 1 e@1279 ]
+"205 C:\Program Files\PICC\include\pic16f6x.h
+[v _VROE `Vb 1 e@1278 ]
+"206 C:\Program Files\PICC\include\pic16f6x.h
+[v _VRR `Vb 1 e@1277 ]
+"207 C:\Program Files\PICC\include\pic16f6x.h
+[v _VR3 `Vb 1 e@1275 ]
+"208 C:\Program Files\PICC\include\pic16f6x.h
+[v _VR2 `Vb 1 e@1274 ]
+"209 C:\Program Files\PICC\include\pic16f6x.h
+[v _VR1 `Vb 1 e@1273 ]
+"210 C:\Program Files\PICC\include\pic16f6x.h
+[v _VR0 `Vb 1 e@1272 ]
+"5 F:\PIC\RS232\main.c
+[v _transmit `uc 1 e ]
+[p mainexit ]
+[; ;pic16f6x.h: 13: volatile unsigned char INDF @ 0x00;
+[; ;pic16f6x.h: 14: volatile unsigned char TMR0 @ 0x01;
+[; ;pic16f6x.h: 15: volatile unsigned char PCL @ 0x02;
+[; ;pic16f6x.h: 16: volatile unsigned char STATUS @ 0x03;
+[; ;pic16f6x.h: 17: volatile unsigned char FSR @ 0x04;
+[; ;pic16f6x.h: 18: volatile unsigned char PORTA @ 0x05;
+[; ;pic16f6x.h: 19: volatile unsigned char PORTB @ 0x06;
+[; ;pic16f6x.h: 20: volatile unsigned char PCLATH @ 0x0A;
+[; ;pic16f6x.h: 21: volatile unsigned char INTCON @ 0x0B;
+[; ;pic16f6x.h: 22: volatile unsigned char PIR1 @ 0x0C;
+[; ;pic16f6x.h: 23: volatile unsigned char TMR1L @ 0x0E;
+[; ;pic16f6x.h: 24: volatile unsigned char TMR1H @ 0x0F;
+[; ;pic16f6x.h: 25: volatile unsigned char T1CON @ 0x10;
+[; ;pic16f6x.h: 26: volatile unsigned char TMR2 @ 0x11;
+[; ;pic16f6x.h: 27: volatile unsigned char T2CON @ 0x12;
+[; ;pic16f6x.h: 28: volatile unsigned char CCPR1L @ 0x15;
+[; ;pic16f6x.h: 29: volatile unsigned char CCPR1H @ 0x16;
+[; ;pic16f6x.h: 30: volatile unsigned char CCP1CON @ 0x17;
+[; ;pic16f6x.h: 31: volatile unsigned char RCSTA @ 0x18;
+[; ;pic16f6x.h: 32: volatile unsigned char TXREG @ 0x19;
+[; ;pic16f6x.h: 33: volatile unsigned char RCREG @ 0x1A;
+[; ;pic16f6x.h: 34: volatile unsigned char CMCON @ 0x1F;
+[; ;pic16f6x.h: 37: volatile unsigned char OPTION @ 0x81;
+[; ;pic16f6x.h: 38: volatile unsigned char TRISA @ 0x85;
+[; ;pic16f6x.h: 39: volatile unsigned char TRISB @ 0x86;
+[; ;pic16f6x.h: 40: volatile unsigned char PIE1 @ 0x8C;
+[; ;pic16f6x.h: 41: volatile unsigned char PCON @ 0x8E;
+[; ;pic16f6x.h: 42: volatile unsigned char PR2 @ 0x92;
+[; ;pic16f6x.h: 43: volatile unsigned char TXSTA @ 0x98;
+[; ;pic16f6x.h: 44: volatile unsigned char SPBRG @ 0x99;
+[; ;pic16f6x.h: 45: volatile unsigned char EEDATA @ 0x9A;
+[; ;pic16f6x.h: 46: volatile unsigned char EEADR @ 0x9B;
+[; ;pic16f6x.h: 47: volatile unsigned char EECON1 @ 0x9C;
+[; ;pic16f6x.h: 48: volatile unsigned char EECON2 @ 0x9D;
+[; ;pic16f6x.h: 49: volatile unsigned char VRCON @ 0x9F;
+[; ;pic16f6x.h: 52: volatile bit IRP @ (unsigned)&STATUS*8+7;
+[; ;pic16f6x.h: 53: volatile bit RP1 @ (unsigned)&STATUS*8+6;
+[; ;pic16f6x.h: 54: volatile bit RP0 @ (unsigned)&STATUS*8+5;
+[; ;pic16f6x.h: 55: volatile bit TO @ (unsigned)&STATUS*8+4;
+[; ;pic16f6x.h: 56: volatile bit PD @ (unsigned)&STATUS*8+3;
+[; ;pic16f6x.h: 57: volatile bit ZERO @ (unsigned)&STATUS*8+2;
+[; ;pic16f6x.h: 58: volatile bit DC @ (unsigned)&STATUS*8+1;
+[; ;pic16f6x.h: 59: volatile bit CARRY @ (unsigned)&STATUS*8+0;
+[; ;pic16f6x.h: 62: volatile bit RA7 @ (unsigned)&PORTA*8+7;
+[; ;pic16f6x.h: 63: volatile bit RA6 @ (unsigned)&PORTA*8+6;
+[; ;pic16f6x.h: 64: volatile bit RA5 @ (unsigned)&PORTA*8+5;
+[; ;pic16f6x.h: 65: volatile bit RA4 @ (unsigned)&PORTA*8+4;
+[; ;pic16f6x.h: 66: volatile bit RA3 @ (unsigned)&PORTA*8+3;
+[; ;pic16f6x.h: 67: volatile bit RA2 @ (unsigned)&PORTA*8+2;
+[; ;pic16f6x.h: 68: volatile bit RA1 @ (unsigned)&PORTA*8+1;
+[; ;pic16f6x.h: 69: volatile bit RA0 @ (unsigned)&PORTA*8+0;
+[; ;pic16f6x.h: 72: volatile bit RB7 @ (unsigned)&PORTB*8+7;
+[; ;pic16f6x.h: 73: volatile bit RB6 @ (unsigned)&PORTB*8+6;
+[; ;pic16f6x.h: 74: volatile bit RB5 @ (unsigned)&PORTB*8+5;
+[; ;pic16f6x.h: 75: volatile bit RB4 @ (unsigned)&PORTB*8+4;
+[; ;pic16f6x.h: 76: volatile bit RB3 @ (unsigned)&PORTB*8+3;
+[; ;pic16f6x.h: 77: volatile bit RB2 @ (unsigned)&PORTB*8+2;
+[; ;pic16f6x.h: 78: volatile bit RB1 @ (unsigned)&PORTB*8+1;
+[; ;pic16f6x.h: 79: volatile bit RB0 @ (unsigned)&PORTB*8+0;
+[; ;pic16f6x.h: 82: volatile bit GIE @ (unsigned)&INTCON*8+7;
+[; ;pic16f6x.h: 83: volatile bit PEIE @ (unsigned)&INTCON*8+6;
+[; ;pic16f6x.h: 84: volatile bit T0IE @ (unsigned)&INTCON*8+5;
+[; ;pic16f6x.h: 85: volatile bit INTE @ (unsigned)&INTCON*8+4;
+[; ;pic16f6x.h: 86: volatile bit RBIE @ (unsigned)&INTCON*8+3;
+[; ;pic16f6x.h: 87: volatile bit T0IF @ (unsigned)&INTCON*8+2;
+[; ;pic16f6x.h: 88: volatile bit INTF @ (unsigned)&INTCON*8+1;
+[; ;pic16f6x.h: 89: volatile bit RBIF @ (unsigned)&INTCON*8+0;
+[; ;pic16f6x.h: 92: volatile bit EEIF @ (unsigned)&PIR1*8+7;
+[; ;pic16f6x.h: 93: volatile bit CMIF @ (unsigned)&PIR1*8+6;
+[; ;pic16f6x.h: 94: volatile bit RCIF @ (unsigned)&PIR1*8+5;
+[; ;pic16f6x.h: 95: volatile bit TXIF @ (unsigned)&PIR1*8+4;
+[; ;pic16f6x.h: 96: volatile bit CCP1IF @ (unsigned)&PIR1*8+2;
+[; ;pic16f6x.h: 97: volatile bit TMR2IF @ (unsigned)&PIR1*8+1;
+[; ;pic16f6x.h: 98: volatile bit TMR1IF @ (unsigned)&PIR1*8+0;
+[; ;pic16f6x.h: 101: volatile bit T1CKPS1 @ (unsigned)&T1CON*8+5;
+[; ;pic16f6x.h: 102: volatile bit T1CKPS0 @ (unsigned)&T1CON*8+4;
+[; ;pic16f6x.h: 103: volatile bit T1OSCEN @ (unsigned)&T1CON*8+3;
+[; ;pic16f6x.h: 104: volatile bit T1SYNC @ (unsigned)&T1CON*8+2;
+[; ;pic16f6x.h: 105: volatile bit TMR1CS @ (unsigned)&T1CON*8+1;
+[; ;pic16f6x.h: 106: volatile bit TMR1ON @ (unsigned)&T1CON*8+0;
+[; ;pic16f6x.h: 109: volatile bit TOUTPS3 @ (unsigned)&T2CON*8+6;
+[; ;pic16f6x.h: 110: volatile bit TOUTPS2 @ (unsigned)&T2CON*8+5;
+[; ;pic16f6x.h: 111: volatile bit TOUTPS1 @ (unsigned)&T2CON*8+4;
+[; ;pic16f6x.h: 112: volatile bit TOUTPS0 @ (unsigned)&T2CON*8+3;
+[; ;pic16f6x.h: 113: volatile bit TMR2ON @ (unsigned)&T2CON*8+2;
+[; ;pic16f6x.h: 114: volatile bit T2CKPS1 @ (unsigned)&T2CON*8+1;
+[; ;pic16f6x.h: 115: volatile bit T2CKPS0 @ (unsigned)&T2CON*8+0;
+[; ;pic16f6x.h: 118: volatile bit CCP1X @ (unsigned)&CCP1CON*8+5;
+[; ;pic16f6x.h: 119: volatile bit CCP1Y @ (unsigned)&CCP1CON*8+4;
+[; ;pic16f6x.h: 120: volatile bit CCP1M3 @ (unsigned)&CCP1CON*8+3;
+[; ;pic16f6x.h: 121: volatile bit CCP1M2 @ (unsigned)&CCP1CON*8+2;
+[; ;pic16f6x.h: 122: volatile bit CCP1M1 @ (unsigned)&CCP1CON*8+1;
+[; ;pic16f6x.h: 123: volatile bit CCP1M0 @ (unsigned)&CCP1CON*8+0;
+[; ;pic16f6x.h: 126: volatile bit SPEN @ (unsigned)&RCSTA*8+7;
+[; ;pic16f6x.h: 127: volatile bit RX9 @ (unsigned)&RCSTA*8+6;
+[; ;pic16f6x.h: 128: volatile bit SREN @ (unsigned)&RCSTA*8+5;
+[; ;pic16f6x.h: 129: volatile bit CREN @ (unsigned)&RCSTA*8+4;
+[; ;pic16f6x.h: 130: volatile bit ADEN @ (unsigned)&RCSTA*8+3;
+[; ;pic16f6x.h: 131: volatile bit FERR @ (unsigned)&RCSTA*8+2;
+[; ;pic16f6x.h: 132: volatile bit OERR @ (unsigned)&RCSTA*8+1;
+[; ;pic16f6x.h: 133: volatile bit RX9D @ (unsigned)&RCSTA*8+0;
+[; ;pic16f6x.h: 136: volatile bit C2OUT @ (unsigned)&CMCON*8+7;
+[; ;pic16f6x.h: 137: volatile bit C1OUT @ (unsigned)&CMCON*8+6;
+[; ;pic16f6x.h: 138: volatile bit C2INV @ (unsigned)&CMCON*8+5;
+[; ;pic16f6x.h: 139: volatile bit C1INV @ (unsigned)&CMCON*8+4;
+[; ;pic16f6x.h: 140: volatile bit CIS @ (unsigned)&CMCON*8+3;
+[; ;pic16f6x.h: 141: volatile bit CM2 @ (unsigned)&CMCON*8+2;
+[; ;pic16f6x.h: 142: volatile bit CM1 @ (unsigned)&CMCON*8+1;
+[; ;pic16f6x.h: 143: volatile bit CM0 @ (unsigned)&CMCON*8+0;
+[; ;pic16f6x.h: 146: volatile bit RBPU @ (unsigned)&OPTION*8+7;
+[; ;pic16f6x.h: 147: volatile bit INTEDG @ (unsigned)&OPTION*8+6;
+[; ;pic16f6x.h: 148: volatile bit T0CS @ (unsigned)&OPTION*8+5;
+[; ;pic16f6x.h: 149: volatile bit T0SE @ (unsigned)&OPTION*8+4;
+[; ;pic16f6x.h: 150: volatile bit PSA @ (unsigned)&OPTION*8+3;
+[; ;pic16f6x.h: 151: volatile bit PS2 @ (unsigned)&OPTION*8+2;
+[; ;pic16f6x.h: 152: volatile bit PS1 @ (unsigned)&OPTION*8+1;
+[; ;pic16f6x.h: 153: volatile bit PS0 @ (unsigned)&OPTION*8+0;
+[; ;pic16f6x.h: 156: volatile bit TRISA7 @ (unsigned)&TRISA*8+7;
+[; ;pic16f6x.h: 157: volatile bit TRISA6 @ (unsigned)&TRISA*8+6;
+[; ;pic16f6x.h: 158: volatile bit TRISA4 @ (unsigned)&TRISA*8+4;
+[; ;pic16f6x.h: 159: volatile bit TRISA3 @ (unsigned)&TRISA*8+3;
+[; ;pic16f6x.h: 160: volatile bit TRISA2 @ (unsigned)&TRISA*8+2;
+[; ;pic16f6x.h: 161: volatile bit TRISA1 @ (unsigned)&TRISA*8+1;
+[; ;pic16f6x.h: 162: volatile bit TRISA0 @ (unsigned)&TRISA*8+0;
+[; ;pic16f6x.h: 165: volatile bit TRISB7 @ (unsigned)&TRISB*8+7;
+[; ;pic16f6x.h: 166: volatile bit TRISB6 @ (unsigned)&TRISB*8+6;
+[; ;pic16f6x.h: 167: volatile bit TRISB5 @ (unsigned)&TRISB*8+5;
+[; ;pic16f6x.h: 168: volatile bit TRISB4 @ (unsigned)&TRISB*8+4;
+[; ;pic16f6x.h: 169: volatile bit TRISB3 @ (unsigned)&TRISB*8+3;
+[; ;pic16f6x.h: 170: volatile bit TRISB2 @ (unsigned)&TRISB*8+2;
+[; ;pic16f6x.h: 171: volatile bit TRISB1 @ (unsigned)&TRISB*8+1;
+[; ;pic16f6x.h: 172: volatile bit TRISB0 @ (unsigned)&TRISB*8+0;
+[; ;pic16f6x.h: 175: volatile bit EEIE @ (unsigned)&PIE1*8+7;
+[; ;pic16f6x.h: 176: volatile bit CMIE @ (unsigned)&PIE1*8+6;
+[; ;pic16f6x.h: 177: volatile bit RCIE @ (unsigned)&PIE1*8+5;
+[; ;pic16f6x.h: 178: volatile bit TXIE @ (unsigned)&PIE1*8+4;
+[; ;pic16f6x.h: 179: volatile bit CCP1IE @ (unsigned)&PIE1*8+2;
+[; ;pic16f6x.h: 180: volatile bit TMR2IE @ (unsigned)&PIE1*8+1;
+[; ;pic16f6x.h: 181: volatile bit TMR1IE @ (unsigned)&PIE1*8+0;
+[; ;pic16f6x.h: 184: volatile bit OSCF @ (unsigned)&PCON*8+3;
+[; ;pic16f6x.h: 185: volatile bit POR @ (unsigned)&PCON*8+1;
+[; ;pic16f6x.h: 186: volatile bit BOR @ (unsigned)&PCON*8+0;
+[; ;pic16f6x.h: 189: volatile bit CSRC @ (unsigned)&TXSTA*8+7;
+[; ;pic16f6x.h: 190: volatile bit TX9 @ (unsigned)&TXSTA*8+6;
+[; ;pic16f6x.h: 191: volatile bit TXEN @ (unsigned)&TXSTA*8+5;
+[; ;pic16f6x.h: 192: volatile bit SYNC @ (unsigned)&TXSTA*8+4;
+[; ;pic16f6x.h: 193: volatile bit BRGH @ (unsigned)&TXSTA*8+2;
+[; ;pic16f6x.h: 194: volatile bit TRMT @ (unsigned)&TXSTA*8+1;
+[; ;pic16f6x.h: 195: volatile bit TX9D @ (unsigned)&TXSTA*8+0;
+[; ;pic16f6x.h: 198: volatile bit WRERR @ (unsigned)&EECON1*8+3;
+[; ;pic16f6x.h: 199: volatile bit WREN @ (unsigned)&EECON1*8+2;
+[; ;pic16f6x.h: 200: volatile bit WR @ (unsigned)&EECON1*8+1;
+[; ;pic16f6x.h: 201: volatile bit RD @ (unsigned)&EECON1*8+0;
+[; ;pic16f6x.h: 204: volatile bit VREN @ (unsigned)&VRCON*8+7;
+[; ;pic16f6x.h: 205: volatile bit VROE @ (unsigned)&VRCON*8+6;
+[; ;pic16f6x.h: 206: volatile bit VRR @ (unsigned)&VRCON*8+5;
+[; ;pic16f6x.h: 207: volatile bit VR3 @ (unsigned)&VRCON*8+3;
+[; ;pic16f6x.h: 208: volatile bit VR2 @ (unsigned)&VRCON*8+2;
+[; ;pic16f6x.h: 209: volatile bit VR1 @ (unsigned)&VRCON*8+1;
+[; ;pic16f6x.h: 210: volatile bit VR0 @ (unsigned)&VRCON*8+0;
+[; ;pic.h: 504: extern void _nop(void);
+[; ;eeprom_routines.h: 41: extern void eeprom_write(unsigned char addr, unsigned char value);
+[; ;eeprom_routines.h: 42: extern unsigned char eeprom_read(unsigned char addr);
+[; ;pic.h: 630: extern void _delay(unsigned long);
+"3 F:\PIC\RS232\main.c
+[; ;main.c: 3: asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0x3FFB & 0x3FF7 & 0x3FDF & 0x3FBF & 0x3FEE & 0x3F7F");
+[; 	psect config,class=CONFIG,delta=2 ;#
+[; 	dw 0x3FFB & 0x3FF7 & 0x3FDF & 0x3FBF & 0x3FEE & 0x3F7F ;#
+"5
+[i _transmit
+-> -> 97 `ui `uc
+]
+[; ;main.c: 5: unsigned char transmit = 'a';
+"8
+[v F298 `(i 1 tf ]
+[v _isr `IF298 1 e ]
+{
+[; ;main.c: 7: interrupt isr(void)
+[; ;main.c: 8: {
+[e :U _isr ]
+[f ]
+[; ;main.c: 12: if (RCIF)
+"12
+[e $ ! _RCIF 2  ]
+[; ;main.c: 13: {
+"13
+{
+[; ;main.c: 14: TXREG = RCREG;
+"14
+[e = _TXREG _RCREG ]
+"15
+}
+[e :U 2 ]
+[; ;main.c: 15: }
+[; ;main.c: 20: if (!TXIF)
+"20
+[e $ ! ! _TXIF 3  ]
+[; ;main.c: 21: {
+"21
+{
+"23
+}
+[e :U 3 ]
+[; ;main.c: 23: }
+[; ;main.c: 25: }
+"25
+[e :UE 1 ]
+}
+"28
+[v _reset `(v 1 ef ]
+{
+[; ;main.c: 27: void reset(void)
+[; ;main.c: 28: {
+[e :U _reset ]
+[f ]
+[; ;main.c: 30: CMCON = 0x07;
+"30
+[e = _CMCON -> -> 7 `i `uc ]
+[; ;main.c: 33: OPTION = 0b11000000;
+"33
+[e = _OPTION -> -> 192 `i `uc ]
+[; ;main.c: 36: INTCON = 0b11000000;
+"36
+[e = _INTCON -> -> 192 `i `uc ]
+[; ;main.c: 37: PIE1 = 0b0011000;
+"37
+[e = _PIE1 -> -> 24 `i `uc ]
+[; ;main.c: 40: PORTA = 0;
+"40
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 41: PORTB = 0;
+"41
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 42: TRISA = 0b11111110;
+"42
+[e = _TRISA -> -> 254 `i `uc ]
+[; ;main.c: 43: TRISB = 0b11111011;
+"43
+[e = _TRISB -> -> 251 `i `uc ]
+[; ;main.c: 50: }
+"50
+[e :UE 4 ]
+}
+"53
+[v _main `(v 1 ef ]
+{
+[; ;main.c: 52: void main(void)
+[; ;main.c: 53: {
+[e :U _main ]
+[f ]
+[; ;main.c: 54: reset();
+"54
+[e ( _reset ..  ]
+[; ;main.c: 55: TRISA = 0;
+"55
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;main.c: 56: RA0 = 1;
+"56
+[e = _RA0 -> -> 1 `i `b ]
+[; ;main.c: 59: for (;;)
+"59
+{
+"60
+[e :U 6 ]
+[; ;main.c: 60: {
+{
+"62
+}
+[; ;main.c: 62: }
+[e $U 6  ]
+[e :U 7 ]
+}
+[; ;main.c: 63: }
+"63
+[e :UE 5 ]
+}

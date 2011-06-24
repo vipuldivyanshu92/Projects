@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/tdp4/!svn/ver/23/trunk/circuit/pcb
+END
+gumstix.log
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/tdp4/!svn/ver/23/trunk/circuit/pcb/gumstix.log
+END
+gumstix.pad
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/tdp4/!svn/ver/23/trunk/circuit/pcb/gumstix.pad
+END
+gumstix.dra
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/tdp4/!svn/ver/23/trunk/circuit/pcb/gumstix.dra
+END
+master.tag
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/tdp4/!svn/ver/23/trunk/circuit/pcb/master.tag
+END
+batch_drc.log
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/tdp4/!svn/ver/23/trunk/circuit/pcb/batch_drc.log
+END
+allegro.jrl
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/tdp4/!svn/ver/23/trunk/circuit/pcb/allegro.jrl
+END
+gumstix.log,1
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/tdp4/!svn/ver/23/trunk/circuit/pcb/gumstix.log,1
+END
+gumstix.psm
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/tdp4/!svn/ver/23/trunk/circuit/pcb/gumstix.psm
+END

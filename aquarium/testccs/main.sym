@@ -1,0 +1,204 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005-006 can_getd.data
+005-008 MAIN.can_id
+007     can_getd.i
+008-009 can_getd.ptr
+009-010 MAIN.can_data
+011     MAIN.can_length
+012     MAIN.counter
+013     MAIN.rxstat
+014     can_set_mode.mode
+014-017 can_putd.id
+015     can_set_mode.@SCRATCH1
+018-019 can_putd.data
+01A     can_putd.len
+01B     can_putd.priority
+01C     can_putd.ext
+01D     can_putd.rtr
+01E     can_putd.i
+01F-020 can_putd.txd0
+021     can_putd.port
+022-023 can_set_id.addr
+022     can_putd.@SCRATCH1
+023     can_putd.@SCRATCH2
+024-027 can_set_id.id
+024     can_putd.@SCRATCH3
+028     can_set_id.ext
+029-02A can_set_id.ptr
+02B     can_set_id.@SCRATCH1
+02C     can_set_id.@SCRATCH2
+02D     can_set_id.@SCRATCH3
+02E     can_set_id.@SCRATCH4
+F00     RXF0SIDH
+F01     RXF0SIDL
+F02     RXF0EIDH
+F03     RXF0EIDL
+F04     RXF1SIDH
+F05     RXF1SIDL
+F06     RXF1EIDH
+F07     RXF1EIDL
+F08     RXF2SIDH
+F09     RXF2SIDL
+F0A     RXF2EIDH
+F0B     RXF2EIDL
+F0C     RXF3SIDH
+F0D     RXF3SIDL
+F0E     RXF3EIDH
+F0F     RXF3EIDL
+F10     RXF4SIDH
+F11     RXF4SIDL
+F12     RXF4EIDH
+F13     RXF4EIDL
+F14     RXF5SIDH
+F15     RXF5SIDL
+F16     RXF5EIDH
+F17     RXF5EIDL
+F18     RXM0SIDH
+F19     RXM0SIDL
+F1A     RXM0EIDH
+F1B     RXM0EIDL
+F1C     RXM1SIDH
+F1D     RXM1SIDL
+F1E     RXM1EIDH
+F1F     RXM1EIDL
+F20     TXB2CON
+F21     TXB2SIDH
+F22     TXB2SIDL
+F23     TXB2EIDH
+F24     TXB2EIDL
+F25     TXB2DLC
+F26     TXB2D0
+F2D     TXB2D7
+F30     TXB1CON
+F31     TXB1SIDH
+F32     TXB1SIDL
+F33     TXB1EIDH
+F34     TXB1EIDL
+F35     TXB1DLC
+F36     TXB1D0
+F3D     TXB1D7
+F40     TXB0CON
+F41     TXB0SIDH
+F42     TXB0SIDL
+F43     TXB0EIDH
+F44     TXB0EIDL
+F45     TXB0DLC
+F46     TXB0D0
+F48     CCP_5_LOW
+F48     CCP_5
+F49     CCP_5_HIGH
+F4B     CCP_4
+F4B     CCP_4_LOW
+F4C     CCP_4_HIGH
+F4D     TXB0D7
+F4E     CCP_3
+F4E     CCP_3_LOW
+F4F     CCP_3_HIGH
+F50     RXB1CON
+F51     RXB1SIDH
+F51     CCP_2_LOW
+F51     CCP_2
+F52     CCP_2_HIGH
+F52     RXB1SIDL
+F53     RXB1EIDH
+F54     RXB1EIDL
+F55     RXB1DLC
+F60     RXB0CON
+F60     TXBaCON
+F61     RXB0SIDH
+F62     TXRXBaSIDL
+F62     RXB0SIDL
+F63     RXB0EIDH
+F64     RXB0EIDL
+F64     TXRXBaEIDL
+F65     TXBaDLC
+F65     RXBaDLC
+F65     RXB0DLC
+F66     RXB0D0
+F66     TXRXBaD0
+F6D     RXB0D7
+F6D     TXRXBaD7
+F6E     CANSTAT
+F6F     CANCON
+F70     BRGCON1
+F71     BRGCON2
+F72     BRGCON3
+F73     CIOCON
+F74     COMSTAT
+F75     RXERRCNT
+F76     TXERRCNT
+FA4.0   CAN_INT_RXB0IF
+FA4.1   CAN_INT_RXB1IF
+FA4.2   CAN_INT_TXB0IF
+FA4.3   CAN_INT_TXB1IF
+FA4.4   CAN_INT_TXB2IF
+FA4.5   CAN_INT_ERRIF
+FA4.6   CAN_INT_WAKIF
+FA4.7   CAN_INT_IRXIF
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBC     CCP_1_LOW
+FBC     CCP_1
+FBD     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0184  can_init
+0026  can_set_baud
+0004  can_set_mode
+0054  can_set_id
+025C  can_putd
+031C  MAIN
+031C  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    I:\aquarium\testccs\
+
+Project Files:
+    main.c                                                  [13-Apr-11 23:13  CRC=AFF493E9]
+    D:\PICC\devices\18F25K80.h                              [01-Apr-11 07:36  CRC=42EBDD1E]
+    D:\PICC\drivers\can-18xxx8.c                            [13-Apr-11 23:14  CRC=763C660D]
+    D:\PICC\drivers\can-18xxx8.h                            [18-May-10 17:21  CRC=59659BC5]
+
+Source signature=1BE80E9E
+
+Units:
+    I:\aquarium\testccs\main (main)
+
+Compiler Settings:
+    Processor:      PIC18F25K80
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.STA

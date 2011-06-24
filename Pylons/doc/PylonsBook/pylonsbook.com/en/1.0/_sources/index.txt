@@ -1,0 +1,198 @@
+.. PylonsBook documentation master file, created by sphinx-quickstart on Sat Mar  7 16:01:53 2009.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+The Definitive Guide to Pylons - James Gardner
+==============================================
+
+Front Cover Text
+----------------
+
+THE EXPERT'S VOICE IN WEB DEVELOPMENT
+
+Includes SQLAlchemy, JavaScript and WSGI
+
+The Definitive Guide to Pylons
+
+*Pylons is a lightweight web framework emphasizing flexibility and rapid development using standard tools from the Python community.*
+
+James Gardner
+*Cofounder of Pylons*
+
+Apress
+
+Back Cover Text
+---------------
+
+BOOKS FOR PROFESSIONALS BY PROFESSIONALS
+
+The Definitive Guide to Pylons
+
+Dear Reader,
+
+Pylons is a lightweight web framework built on standard Python tools that provides a robust environment for writing modern web applications. It is well known for its clean architecture and loosely coupled approach, both of which make web development fast, flexible, and easy.
+
+Pylons users have long called for a definitive guide to the framework that pulls together each of its components into one easy-to-follow manual. I’ve written this book in response to that call. Whether you work with Linux, Windows, BSD, or the Mac OS, this book will teach you everything you need to know about web development with Pylons—from how to create your first “Hello World!” application to how to use each of Pylons’ core tools including FormEncode, Mako, SQLAlchemy, and Routes to how to perform more advanced tasks such as testing, using Unicode, internationalizing your application, authenticating users, and more. I’ll take you through the intricacies of so-called WSGI middleware components and explain Pylons’ internal architecture step-by-step so that you can take full advantage of its features.
+
+This book is filled with useful examples and code snippets to complement the text. Throughout the book you’ll be developing a complete Pylons application called SimpleSite, which will serve as a fully functional hierarchical wiki with facilities for comments and tagging. Through this application I will demonstrate how you can apply Pylons concepts to a real application, and I will give you all the knowledge you need to go on to develop your own applications. If you have never used Pylons before, you’ll find this book will serve as a great introduction to the framework, and if you are already an experienced developer, you’ll get fresh insight into Pylons’ more sophisticated features.
+
+James Gardner
+
+
+THE APRESS ROADMAP
+
+::
+
+                            +--> The Definitive Guide to Pylons
+                            |
+        Beginning Python  --+
+                            |
+                            +--> The Definitive Guide to Django
+
+Apress 
+
+SOURCE CODE ONLINE
+
+www.apress.com
+
+**US $46.99**
+
+Shelve in Programming/Python
+
+User level: Beginner-Advanced
+
+ISBN-13: 978-1-59059-934-1
+
+ISBN-10: 1-59059-934-9
+
+54699
+
+9 781590 599341
+
+Inside Cover
+------------
+
+**The Definitive Guide to Pylons**
+
+**Copyright © 2009 by James Gardner**
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.2 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled “GNU Free Documentation License”.
+
+ISBN-10 (pbk): 1-59059-934-9
+
+ISBN-13 (pbk): 978-1-59059-934-1
+
+ISBN-13 (electronic): 978-1-4302-0534-0
+
+Printed and bound in the United States of America 9 8 7 6 5 4 3 2 1
+
+Trademarked names may appear in this book. Rather than use a trademark symbol with every occurrence of a trademarked name, we use the names only in an editorial fashion and to the benefit of the trademark owner, with no intention of infringement of the trademark.
+
+Lead Editors: Steve Anglin, Matt Wade
+
+Technical Reviewer: Michael Orr
+
+Editorial Board: Clay Andres, Steve Anglin, Mark Beckner, Ewan Buckingham, Tony Campbell, Gary Cornell, Jonathan Gennick, Michelle Lowman, Matthew Moodie, Jeffrey Pepper,Frank Pohlmann, Ben Renow-Clarke, Dominic Shakeshaft, Matt Wade, Tom Welsh
+
+Project Manager: Beth Christmas
+
+Copy Editor: Kim Wimpsett
+
+Associate Production Director: Kari Brooks-Copony
+
+Production Editor: Katie Stence
+
+Compositor: Linda Weidemann, Wolf Creek Press
+
+Proofreader: Lisa Hamilton
+
+Indexer: Becky Hornyak
+
+Artist: April Milne
+
+Cover Designer: Kurt Krames
+
+Manufacturing Director: Tom Debolski
+
+Distributed to the book trade worldwide by Springer-Verlag New York, Inc., 233 Spring Street, 6th Floor, New York, NY 10013. Phone 1-800-SPRINGER, fax 201-348-4505, e-mail ``orders-ny@springer-sbm.com``, or visit http://www.springeronline.com. 
+
+For information on translations, please contact Apress directly at 2855 Telegraph Avenue, Suite 600, Berkeley, CA 94705. Phone 510-549-5930, fax 510-549-5939, e-mail ``info@apress.com``, or visit http://www.apress.com. 
+
+Apress and friends of ED books may be purchased in bulk for academic, corporate, or promotional use. eBook versions and licenses are also available for most titles. For more information, reference our Special Bulk Sales–eBook Licensing web page at http://www.apress.com/info/bulksales.
+
+The information in this book is distributed on an “as is” basis, without warranty. Although every precaution has been taken in the preparation of this work, neither the author(s) nor Apress shall have any liability to any person or entity with respect to any loss or damage caused or alleged to be caused directly or indirectly by the information contained in this work. 
+
+The source code for this book is available to readers at http://www.apress.com.
+
+Front Matter
+------------
+
+.. toctree::
+   :maxdepth: 4
+
+   front-matter
+
+Errata
+------
+
+Errata for the book can be submitted and reviewed here: http://apress.com/book/errata/773.
+
+Part 1: Getting Started
+-----------------------
+
+.. toctree::
+   :maxdepth: 4
+
+                                                
+   introducing-pylons
+   installing-pylons
+   exploring-pylons
+   tracking-down-problems-and-handling-errors
+   using-view-templates
+   working-with-forms-and-validators
+   introducing-the-model-and-sqlalchemy
+   starting-the-simplesite-tutorial
+
+Part 2: Advanced Pylons
+-----------------------
+
+.. toctree::
+   :maxdepth: 4
+
+   urls-routing-and-dispatch
+   unicode
+   internationalization-and-localization
+   testing
+   documentation
+   simplesite-tutorial-part-2
+   css-javascript-and-ajax
+
+Part 3: Expert Pylons
+---------------------
+
+.. toctree::
+   :maxdepth: 4
+
+   the-web-server-gateway-interface-wsgi
+   pylons-internal-architecture
+   authentication-and-authorization
+   simplesite-tutorial-part-3
+   logging
+   deployment
+
+Appendicies
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   licenses
+
+Indices and Tables
+------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+

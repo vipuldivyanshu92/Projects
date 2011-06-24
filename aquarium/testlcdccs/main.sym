@@ -1,0 +1,99 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     MAIN.devid1
+01A     MAIN.devid2
+01B-01C MAIN.unique_id
+F48     CCP_5_LOW
+F48     CCP_5
+F49     CCP_5_HIGH
+F4B     CCP_4_LOW
+F4B     CCP_4
+F4C     CCP_4_HIGH
+F4E     CCP_3
+F4E     CCP_3_LOW
+F4F     CCP_3_HIGH
+F51     CCP_2
+F51     CCP_2_LOW
+F52     CCP_2_HIGH
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBC     CCP_1
+FBC     CCP_1_LOW
+FBD     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+00AE  timer0_isr
+00B8  mcu_init
+00F6  MAIN
+00F6  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    I:\aquarium\testlcdccs\
+
+Project Files:
+    main.c                                                  [01-May-11 20:37  CRC=26FA7354]
+    D:\PICC\devices\18F25K80.h                              [01-Apr-11 07:36  CRC=42EBDD1E]
+
+Source signature=ACD22D90
+
+Units:
+    I:\aquarium\testlcdccs\main (main)
+
+Compiler Settings:
+    Processor:      PIC18F25K80
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.STA

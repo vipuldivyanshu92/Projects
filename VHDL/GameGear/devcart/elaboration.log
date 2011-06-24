@@ -1,0 +1,17 @@
+elbread.dll ver. 1.0.5.375 Wed Apr 21 23:21:49 2010
+
+
+---------------------------------------------
+Entity         | Architecture     | Library
+---------------------------------------------
+mapper_entity  | mapper_behaviour | devcart
+-------------------------------------------
+
+---------------------------
+Package         | Library
+---------------------------
+standard        | std
+TEXTIO          | std
+std_logic_1164  | ieee
+NUMERIC_STD     | ieee
+-------------------------

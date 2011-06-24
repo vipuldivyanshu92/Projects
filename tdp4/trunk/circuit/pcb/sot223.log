@@ -1,0 +1,23 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    CREATE SYMBOL                                                    )
+(                                                                     )
+(    Drawing          : sot223.dra                                    )
+(    Software Version : 16.3p003                                      )
+(    Date/Time        : Thu Apr 21 10:49:45 2011                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Create Symbol of type: PACKAGE
+    Directory = E:/tdp4/trunk/circuit/pcb
+    Name      = sot223.psm
+    User      = Adraen
+    Machine   = TETHYS
+
+
+Create symbol started.
+ 
+
+Create symbol completed.
+

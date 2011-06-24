@@ -1,0 +1,52 @@
+.bar_container {
+	clear: both;
+}
+
+.bar_left {
+	float: left;
+	background-image: url(progress_left.png);
+	width: 8px;
+	height: 31px;
+}
+
+.bar_right {
+	float: left;
+	background-image: url(progress_right.png);
+	width: 8px;
+	height: 31px;
+}
+
+.bar_center {
+	float: left;
+	background-image: url(progress_center.png);
+	height: 31px;
+}
+
+.bar_progress {
+	position: relative;
+	top: 7px;
+	left: 0;
+	background-image: url(progress_pad.png);
+	background-repeat: repeat-x;
+	height: 17px;
+}
+
+.bar_text {
+	position: relative;
+	margin-top: -9px;
+	font-weight: bold;
+	font-size: 80%;
+	font-family: arial;
+}
+
+.bar_name {
+	color: #F0CB01;
+	text-align: center;
+}
+
+.bar_track {
+	color: #FFFFFF;
+	text-align: right;
+	width: 100%;
+	margin-top: -16px;
+}

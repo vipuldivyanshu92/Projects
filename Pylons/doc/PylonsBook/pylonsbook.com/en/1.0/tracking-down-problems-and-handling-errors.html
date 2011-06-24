@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from pylonsbook.com/en/1.0/tracking-down-problems-and-handling-errors.html by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 11 Jun 2009 15:42:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Chapter 4: Tracking Down and Handling Problems &mdash; Pylons Book v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Pylons Book v1.0 documentation" href="index.html" />
+    <link rel="next" title="Chapter 5: Using View Templates" href="using-view-templates.html" />
+    <link rel="prev" title="Chapter 3: Exploring Pylons" href="exploring-pylons.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="using-view-templates.html" title="Chapter 5: Using View Templates"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="exploring-pylons.html" title="Chapter 3: Exploring Pylons"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Pylons Book v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="chapter-4-tracking-down-and-handling-problems">
+<h1>Chapter 4: Tracking Down and Handling Problems<a class="headerlink" href="#chapter-4-tracking-down-and-handling-problems" title="Permalink to this headline">¶</a></h1>
+<p id="index-1204">One of the factors that most affects how quickly you can develop an application is your ability to track down and fix problems. Pylons provides three sets of tools to help you in this regard:</p>
+<blockquote>
+<ul class="simple">
+<li>A world-class web-based interactive debugger</li>
+<li>A console-based interactive testing shell</li>
+<li>A powerful set of logging tools</li>
+</ul>
+</blockquote>
+<p>You’ll learn about the interactive debugger in this chapter, but I’ll leave the discussion of the interactive shell until Chapter 12 and the discussion of logging until Chapter 20.</p>
+<p>You’ll also learn about how to present a page to the user when an error occurs using Pylons’ error documents support.</p>
+<p id="index-1205">It is also worth remembering that the <tt class="docutils literal"><span class="pre">--reload</span></tt> option from the Paste HTTP server described in the previous chapter can also help speed up the debugging process. When the <tt class="docutils literal"><span class="pre">--reload</span></tt> option is used, the server keeps track of all the Python files your application uses, and if any of them should change, the server gets automatically restarted so that you can test your changes straightaway.</p>
+<div class="section" id="using-the-pylons-interactive-debugger">
+<h2>Using the Pylons Interactive Debugger<a class="headerlink" href="#using-the-pylons-interactive-debugger" title="Permalink to this headline">¶</a></h2>
+<p id="index-1206">When you create a new Pylons application and keep the <tt class="docutils literal"><span class="pre">full_stack</span></tt> config option set to its default value of <tt class="docutils literal"><span class="pre">true</span></tt>, Pylons will include a special component called the <tt class="docutils literal"><span class="pre">ErrorHandler</span></tt> middleware in your application. You’ll learn more about how the <tt class="docutils literal"><span class="pre">ErrorHandler</span></tt> middleware actually works in Chapter 17, but you don’t need to know the details of how the <tt class="docutils literal"><span class="pre">ErrorHandler</span></tt> middleware works in order to use the Pylons interactive debugger.</p>
+<p>If an exception occurs when debug mode is set to <tt class="docutils literal"><span class="pre">true</span></tt> in the config file, the <tt class="docutils literal"><span class="pre">ErrorHandler</span></tt> middleware catches the exception and triggers the Pylons interactive debugger, which is a web page that provides various means of debugging the application, including an interactive Ajax-based Python console (see Figure 4-1).</p>
+<div class="figure">
+<a class="reference external image-reference" href="_images/9349f0401.png"><img alt="Figure 4-1. The Pylons interactive debugger" src="_images/9349f0401.png" /></a>
+<p class="caption">Figure 4-1. The Pylons interactive debugger</p>
+</div>
+<p id="index-1207">The interactive debugger screen has four main tabs, three of which are particularly useful:</p>
+<dl class="docutils" id="index-1208">
+<dt><em>Traceback tab</em></dt>
+<dd>This tab provides the raw exception trace and allows you to see the local variables at each part in the traceback. If you click &gt;&gt;, you will be able to see the source code around the area where the code was called. Clicking + next to a particular part of the traceback will open an interactive Ajax Python prompt, which allows you to enter Python commands to debug the application at that point in the call stack. It also provides a view of all the local variables at that point in the stack. You can, of course, open many interactive Ajax Python prompts at different parts of the traceback to debug different parts of the call stack.</dd>
+</dl>
+<dl class="docutils" id="index-1209">
+<dt><em>Extra Data tab</em></dt>
+<dd>This tab displays the CGI environment and WSGI variables at the time of the exception as well as information about the global and application-level configuration options that are set in your <tt class="docutils literal"><span class="pre">development.ini</span></tt> config file.</dd>
+</dl>
+<dl class="docutils" id="index-1210">
+<dt><em>Template tab</em></dt>
+<dd>If the exception occurred while rendering a Mako template, this tab will be displayed by default and will contain Mako’s HTML representation of what went wrong. This can often be a lot more useful than the main traceback information because the syntax error that occurred can be displayed visually, enabling you to go straight to the template code to correct the error. If the exception that triggered the interactive debugger was not triggered in a template, the Template tab will be empty.</dd>
+</dl>
+<p>Let’s modify the <tt class="docutils literal"><span class="pre">HelloWorld</span></tt> application created in the previous chapter to re-create the exception shown in Figure 4-1. Add another action to the <tt class="docutils literal"><span class="pre">HelloController</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">debugger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;Some value&quot;</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;Just testing the interactive debugger!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you visit <a class="reference external" href="http://localhost:5000/hello/debugger">http://localhost:5000/hello/debugger</a>, an exception will occur, and this will trigger the interactive debugger.</p>
+<p>Try clicking the &gt;&gt; link by the words <tt class="docutils literal"><span class="pre">raise</span> <span class="pre">Exception</span></tt>, and you will see a representation of the code near where the error occurred. If you click the + icon after the word <tt class="docutils literal"><span class="pre">debugger</span></tt> on the previous line, you will be shown the local variables list and the interactive Ajax Python prompt. Try entering the following line:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">value</span>
+</pre></div>
+</div>
+<p id="index-1211">You should see the value <tt class="docutils literal"><span class="pre">Some</span> <span class="pre">value</span></tt> displayed, just like you would in a normal Python prompt (see Figure 4-2). Try entering some other Python commands, and you will see the prompt behaves exactly as a normal prompt. You can even use the up and down arrow keys to scroll through the command history.</p>
+<div class="figure">
+<a class="reference external image-reference" href="_images/9349f0402.png"><img alt="Figure 4-2. The interactive debugger in use" src="_images/9349f0402.png" /></a>
+<p class="caption">Figure 4-2. The interactive debugger in use</p>
+</div>
+<p id="index-1212">A new feature of the interactive debugger in Pylons 0.9.7 is the Online Assistance box shown in Figure 4-3. Clicking Search Mail Lists will present a search box with the exception prepopulated to allow you to search the Pylons mailing list for the error that occurred. You can also search related mailing lists such as the Python, Mako, and SQLAlchemy lists.</p>
+<div class="figure">
+<a class="reference external image-reference" href="_images/9349f0403.png"><img alt="Figure 4-3. The online assistance tools" src="_images/9349f0403.png" /></a>
+<p class="caption">Figure 4-3. The online assistance tools</p>
+</div>
+<p id="index-1213">If you can’t find a discussion of the error that has occurred, you can post the complete traceback online. You can then send an e-mail to the mailing list referencing your traceback post or talk to other Pylons users directly in the IRC channel.</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">When posting traceback information online, be sure to check that you don’t post any private information such as usernames and passwords. All the information you post is publically accessible.</p>
+</div>
+<p id="index-1214">Occasionally it is even handy to deliberately put an exception into your code like this during development to act a bit like a breakpoint and allow you to see what is happening at that point in the code.</p>
+<p id="index-1215">You can even use the interactive debugger to debug Ajax requests. Every time an error occurs, the interactive debugger will log an error message containing a URL at which the error traceback can be accessed. You simply need to visit that URL in a web browser to be able to interactively debug that particular request. Each request that results in an error is given a slightly different URL so that you can be sure you are debugging the correct request.</p>
+<p id="index-1216">In addition to printing the debug URL to the error log, an HTTP header named <tt class="docutils literal"><span class="pre">X-Debug-URL</span></tt> containing the debug URL will also be added to the HTTP response headers, so you can read the URL from there too. In Figure 4-4, you can see that the exception just raised will also be available to debug at <a class="reference external" href="http://localhost:5000/_debug/view/1217245745">http://localhost:5000/_debug/view/1217245745</a>. The number at the end of the URL will be different on each request, though.</p>
+<p id="index-1217">Since the interactive debugger is accessed at the URL <tt class="docutils literal"><span class="pre">/_debug</span></tt>, it is important that you don’t design any URLs into your application to start with <tt class="docutils literal"><span class="pre">/_debug</span></tt>, or the interactive debugger is likely to interfere with them.</p>
+<div class="figure">
+<a class="reference external image-reference" href="_images/9349f0404.png"><img alt="Figure 4-4. The HTTP response including an ``X-Debug-URL`` header" src="_images/9349f0404.png" /></a>
+<p class="caption">Figure 4-4. The HTTP response including an <tt class="docutils literal"><span class="pre">X-Debug-URL</span></tt> header</p>
+</div>
+<div class="section" id="production-use">
+<h3>Production Use<a class="headerlink" href="#production-use" title="Permalink to this headline">¶</a></h3>
+<p id="index-1218">If you haven’t realized it already, leaving the interactive debugger enabled in production environments represents a major security risk because in the same way that you can enter any Python command you like in order to track down a potential problem when an exception occurs, a malicious visitor to your web site could use the same tool to enter malicious Python commands to do damage to your system or, worse, to use your system to launch attacks on other people’s systems.</p>
+<p>For this reason, it is important you disable the interactive debugger when running a Pylons application in any environment where a page containing the interactive debugger might be shown to someone other than yourself if an error occurs.</p>
+<p id="index-1219">To disable debugging, uncomment the following line in the <tt class="docutils literal"><span class="pre">[app:main]</span></tt> section of your <tt class="docutils literal"><span class="pre">development.ini</span></tt> file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#set debug = false</span>
+</pre></div>
+</div>
+<p>so that it reads as follows:</p>
+<div class="highlight-python"><pre>set debug = false</pre>
+</div>
+<p>You have been warned!</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">Do not leave the interactive debugger enabled on production systems.</p>
+</div>
+</div>
+<div class="section" id="e-mail-options">
+<h3>E-mail Options<a class="headerlink" href="#e-mail-options" title="Permalink to this headline">¶</a></h3>
+<p id="index-1220">Once you have disabled the interactive debugger for production use, you will be able to set up your application to send error reports to your e-mail address should an exception occur. The error reports will contain the full traceback as well as the information that would normally appear on the Extra Data tab.</p>
+<p>To enable Pylons’ error reporting, you need to ensure you have disabled interactive debugging as described earlier, but you also need to set your e-mail address in the <tt class="docutils literal"><span class="pre">email_to</span></tt> variable in the <tt class="docutils literal"><span class="pre">[DEFAULT]</span></tt> section at the top of the config file. The e-mail will be sent via SMTP, so you must also specify an SMTP server you have access to and choose an e-mail address that the e-mail should appear to come from:</p>
+<div class="highlight-python"><pre>[DEFAULT]
+debug = true
+# Uncomment and replace with the address which should receive any error reports
+email_to = feedback@pylonsbook.com
+smtp_server = smtp.pylonsbook.com
+error_email_from = server.error@pylonsbook.com</pre>
+</div>
+<p>The error reports look something like Figure 4-5 and will help you identify the problem that caused the exception.</p>
+<p id="index-1221">If an error report is sent, a 500 Internal Server Error response is displayed using Pylons error documents support. You’ll learn how to customize error documents in Chapter 19, when you put the finishing touches on SimpleSite, the example application you will develop throughout the book.</p>
+<div class="figure">
+<a class="reference external image-reference" href="_images/9349f0405.png"><img alt="Figure 4-5. An e-mail error report" src="_images/9349f0405.png" /></a>
+<p class="caption">Figure 4-5. An e-mail error report</p>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p id="index-1222">Now that you know how to use the interactive debugger, you can move on and start looking at individual topics involved in Pylons development. If you are following along with the examples in the book, feel free to explore the traceback any time an exception occurs. The interactive debugger is a very useful tool that will help you track down problems quickly as well as give you better insight into what is going on beneath the surface of your Pylons application.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Chapter 4: Tracking Down and Handling Problems</a><ul>
+<li><a class="reference external" href="#using-the-pylons-interactive-debugger">Using the Pylons Interactive Debugger</a><ul>
+<li><a class="reference external" href="#production-use">Production Use</a></li>
+<li><a class="reference external" href="#e-mail-options">E-mail Options</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="exploring-pylons.html"
+                                  title="previous chapter">Chapter 3: Exploring Pylons</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="using-view-templates.html"
+                                  title="next chapter">Chapter 5: Using View Templates</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/tracking-down-problems-and-handling-errors.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="http://pylonsbook.com/en/1.0/search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="using-view-templates.html" title="Chapter 5: Using View Templates"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="exploring-pylons.html" title="Chapter 3: Exploring Pylons"
+             >previous</a> |</li>
+        <li><a href="index.html">Pylons Book v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, James Gardner.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+
+<!-- Mirrored from pylonsbook.com/en/1.0/tracking-down-problems-and-handling-errors.html by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 11 Jun 2009 15:42:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

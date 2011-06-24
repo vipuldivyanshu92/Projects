@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer
+END
+UserControl.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/UserControl.java
+END
+Administrator.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/Administrator.java
+END
+Borrower.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/Borrower.java
+END
+States.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/States.java
+END
+InactivityTimer.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/InactivityTimer.java
+END
+Privilege.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/Privilege.java
+END
+BranchBook.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/BranchBook.java
+END
+Book.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/Book.java
+END
+BranchBookImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/BranchBookImpl.java
+END
+Keeper.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/Keeper.java
+END
+BranchUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/BranchUser.java
+END
+BranchUserImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/psd3/!svn/ver/13/BrachLib/src/applicationLayer/BranchUserImpl.java
+END

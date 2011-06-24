@@ -1,0 +1,18 @@
+\t (00:00:02) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:02) 
+
+\t (00:00:04) Opening existing drawing...
+\d (00:00:04) Database opened: I:/tdp4/trunk/circuit/s08/allegro/s08-2.brd
+\i (00:00:04) trapsize 2433
+\i (00:00:04) trapsize 2355
+\i (00:00:04) trapsize 2322
+\i (00:00:05) trapsize 1882
+\i (00:00:05) trapsize 1882
+\i (00:00:05) generaledit 
+\i (00:00:16) open 
+\i (00:00:17) fillin "s08.brd"
+\t (00:00:17) Opening existing drawing...
+\i (00:00:17) trapsize 1300
+\d (00:00:17) Database opened: I:/tdp4/trunk/circuit/s08/allegro/s08.brd
+\i (00:00:18) generaledit 
+\i (00:00:45) exit 

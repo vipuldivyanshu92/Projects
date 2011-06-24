@@ -1,0 +1,340 @@
+\t (00:00:03) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:03) 
+
+\t (00:00:04) Opening existing drawing...
+\d (00:00:05) Database opened: F:/tdp4/trunk/circuit/allegro/oscillator.dra
+\i (00:00:05) trapsize 163
+\i (00:00:05) trapsize 158
+\i (00:00:05) trapsize 155
+\i (00:00:05) trapsize 130
+\i (00:00:05) trapsize 130
+\i (00:00:05) generaledit 
+\i (00:00:06) trapsize 216
+\i (00:00:09) new 
+\i (00:00:20) newdrawfillin "header24.dra" "Package Symbol (Wizard)"
+\t (00:00:20) Starting new drawing...
+\w (00:00:20) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 2580,2580
+\i (00:00:20) trapsize 539
+\i (00:00:20) trapsize 539
+\i (00:00:20) package symbol wizard 
+\i (00:00:20) generaledit 
+\i (00:00:23) setwindow form.sym_wizard
+\i (00:00:23) FORM sym_wizard wiz_next  
+   (00:00:23) Loading cmds.cxt 
+   (00:00:23) Loading axlcore.cxt 
+\i (00:00:25) FORM sym_wizard use_custom_template YES 
+\i (00:00:26) FORM sym_wizard no_custom_template YES 
+\i (00:00:27) FORM sym_wizard load_template  
+\t (00:00:27) Opening existing drawing...
+\t (00:00:27) Grids are drawn 400, 400 apart for enhanced viewability.
+\i (00:00:27) setwindow pcb
+\i (00:00:27) trapsize 474
+\d (00:00:27) Database opened: D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (00:00:27) setwindow form.sym_wizard
+\i (00:00:27) FORM sym_wizard wiz_next  
+\i (00:00:31) FORM sym_wizard pack_units Millimeter 
+\i (00:00:33) FORM sym_wizard pack_units_create Millimeter 
+\i (00:00:35) FORM sym_wizard ref_des J* 
+\i (00:00:36) FORM sym_wizard wiz_next  
+\i (00:00:40) FORM sym_wizard dip_pin_count 24 
+\i (00:00:40) FORM sym_wizard dip_e 2.000 
+\i (00:00:42) FORM sym_wizard dip_e1 2.000 
+\i (00:03:35) FORM sym_wizard dip_width 4.000 
+\i (00:03:41) FORM sym_wizard dip_len 48.000 
+\i (00:03:51) setwindow pcb
+\i (00:03:51) pick grid 19794 10039
+\t (00:03:51) last pick:  19800  10000
+\i (00:03:54) setwindow form.sym_wizard
+\i (00:03:54) FORM sym_wizard wiz_next  
+\i (00:08:00) FORM sym_wizard default_pad_browse  
+\f (00:08:00) Package Symbol Wizard Padstack Browser
+\t (00:08:03) No valid name selected.
+\i (00:08:05) fillin "Header"
+\i (00:08:07) FORM sym_wizard wiz_next  
+\i (00:08:08) FORM sym_wizard wiz_next  
+\i (00:08:09) FORM sym_wizard wiz_finish  
+\w (00:08:09) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:08:09) Grids are drawn 10.160, 10.160 apart for enhanced viewability.
+\i (00:08:09) setwindow pcb
+\i (00:08:09) trapsize 12028
+\t (00:08:09) Performing DRC...
+\t (00:08:09) No DRC errors detected.
+\w (00:08:09) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 15240,15240
+\w (00:08:09) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 30480,30480
+\w (00:08:09) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 60960,60960
+\w (00:08:09) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 121920,121920
+\i (00:08:09) trapsize 12028
+\w (00:08:09) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 8128,8128
+\i (00:08:09) trapsize 1698
+\w (00:08:09) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 3793,3793
+\i (00:08:09) trapsize 792
+\i (00:08:09) trapsize 792
+\t (00:08:09) Creating package symbol 'F:/tdp4/trunk/circuit/allegro/header24.psm'.
+\t (00:08:09) Starting Create symbol...
+\i (00:08:10) generaledit 
+\i (00:08:12) zoom in 1 
+\i (00:08:12) setwindow pcb
+\i (00:08:12) zoom in -6.392 4.634
+\i (00:08:12) trapsize 396
+\i (00:08:12) zoom in 1 
+\i (00:08:12) setwindow pcb
+\i (00:08:12) zoom in -7.026 4.634
+\i (00:08:12) trapsize 198
+\i (00:08:22) zoom out 1 
+\i (00:08:22) setwindow pcb
+\i (00:08:22) zoom out 4.741 3.327
+\i (00:08:22) trapsize 396
+\i (00:08:23) zoom out 1 
+\i (00:08:23) setwindow pcb
+\i (00:08:23) zoom out 12.626 3.327
+\i (00:08:23) trapsize 792
+\i (00:08:24) zoom in 1 
+\i (00:08:24) setwindow pcb
+\i (00:08:24) zoom in 23.403 1.901
+\i (00:08:24) trapsize 396
+\i (00:08:28) zoom out 1 
+\i (00:08:28) setwindow pcb
+\i (00:08:28) zoom out 0.819 8.240
+\i (00:08:28) trapsize 792
+\i (00:08:31) new 
+\f (00:08:31) Do you want to save the changes you made to F:/tdp4/trunk/circuit/allegro/header24.dra?
+\i (00:08:32) fillin no 
+\i (00:08:51) newdrawfillin "header.dra" "Package Symbol (Wizard)"
+\t (00:08:51) Starting new drawing...
+\i (00:08:51) trapsize 2006
+\i (00:08:51) trapsize 2006
+\i (00:08:51) package symbol wizard 
+\i (00:08:51) generaledit 
+\i (00:08:52) setwindow form.sym_wizard
+\i (00:08:52) FORM sym_wizard wiz_next  
+\i (00:08:53) FORM sym_wizard load_template  
+\t (00:08:53) Opening existing drawing...
+\t (00:08:53) Grids are drawn 400, 400 apart for enhanced viewability.
+\i (00:08:53) setwindow pcb
+\i (00:08:53) trapsize 474
+\d (00:08:53) Database opened: D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (00:08:54) setwindow form.sym_wizard
+\i (00:08:54) FORM sym_wizard wiz_next  
+\i (00:08:56) FORM sym_wizard pack_units Millimeter 
+\i (00:08:58) FORM sym_wizard pack_units_create Millimeter 
+\i (00:09:01) FORM sym_wizard ref_des J* 
+\i (00:09:02) FORM sym_wizard wiz_next  
+\i (00:10:35) FORM sym_wizard dip_pin_count 24 
+\i (00:10:37) FORM sym_wizard dip_e 2.000 
+\i (00:10:37) FORM sym_wizard dip_e1 2.000 
+\i (00:10:49) FORM sym_wizard dip_width 4.000 
+\i (00:11:01) FORM sym_wizard dip_len 24.000 
+\i (00:11:01) FORM sym_wizard wiz_next  
+\i (00:11:02) FORM sym_wizard default_pad_browse  
+\f (00:11:02) Package Symbol Wizard Padstack Browser
+\t (00:11:04) No valid name selected.
+\i (00:11:07) fillin "Header"
+\i (00:11:08) FORM sym_wizard wiz_next  
+\i (00:11:09) FORM sym_wizard wiz_next  
+\i (00:11:10) FORM sym_wizard wiz_finish  
+\w (00:11:10) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:11:10) Grids are drawn 10.160, 10.160 apart for enhanced viewability.
+\i (00:11:10) setwindow pcb
+\i (00:11:10) trapsize 12028
+\t (00:11:10) Performing DRC...
+\t (00:11:10) No DRC errors detected.
+\w (00:11:10) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 15240,15240
+\w (00:11:10) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 30480,30480
+\w (00:11:10) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 60960,60960
+\w (00:11:10) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 121920,121920
+\i (00:11:10) trapsize 12028
+\w (00:11:10) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 8128,8128
+\i (00:11:10) trapsize 1698
+\w (00:11:10) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 2167,2167
+\i (00:11:10) trapsize 453
+\i (00:11:10) trapsize 453
+\t (00:11:10) Creating package symbol 'F:/tdp4/trunk/circuit/pcb/header.psm'.
+\t (00:11:10) Starting Create symbol...
+\i (00:11:10) generaledit 
+\i (00:11:11) zoom in 1 
+\i (00:11:11) setwindow pcb
+\i (00:11:11) zoom in -4.943 -5.845
+\i (00:11:11) trapsize 226
+\i (00:11:48) pick grid -3.902 -5.709
+\t (00:11:48) last pick:  -5.080  -5.080
+\i (00:11:59) refresh padstack 
+\i (00:12:01) setwindow form.rf_pad
+\i (00:12:01) FORM rf_pad execute  
+\t (00:12:01) Starting Refreshing padstacks...
+\t (00:12:02) Opening existing drawing...
+\i (00:12:02) setwindow pcb
+\i (00:12:02) trapsize 226
+\i (00:12:04) setwindow form.rf_pad
+\i (00:12:04) FORM rf_pad cancel  
+\i (00:12:04) setwindow pcb
+\i (00:12:04) generaledit 
+\i (00:12:05) zoom out 1 
+\i (00:12:05) setwindow pcb
+\i (00:12:05) zoom out 0.808 0.495
+\i (00:12:05) trapsize 453
+\i (00:12:07) roam start
+\i (00:12:07) roam y -48
+\i (00:12:07) roam y -16
+\i (00:12:07) roam end
+\i (00:12:10) open 
+\f (00:12:10) Do you want to save the changes you made to F:/tdp4/trunk/circuit/pcb/header.dra?
+\i (00:12:12) fillin yes 
+\t (00:12:13) Symbol 'header.psm' created.
+\i (00:12:28) fillin "dip4_conn.dra"
+\t (00:12:28) Opening existing drawing...
+\i (00:12:28) trapsize 167
+\d (00:12:28) Database opened: F:/tdp4/trunk/circuit/pcb/dip4_conn.dra
+\i (00:12:28) generaledit 
+\i (00:12:32) replace padstack 
+\i (00:12:36) pick grid 1.228 1.454
+\t (00:12:36) last pick:  0.000  2.540
+\i (00:12:40) replace padstack 
+\i (00:13:06) padeditlib 
+\f (00:13:06) Select Library Padstack
+\i (00:13:09) fillin "menu_ok"
+\i (00:13:09) generaledit 
+\i (00:13:12) padeditdb 
+\i (00:13:15) pick grid 1.329 1.253
+\t (00:13:15) last pick:  2.540  0.000
+\i (00:13:18) padeditdb 
+\i (00:13:20) padeditlib 
+\f (00:13:20) Select Library Padstack
+\i (00:13:28) fillin "Header"
+\i (00:13:31) setwindow form.padedit
+\i (00:13:31) pse_exit
+\f (00:13:31) Select Library Padstack
+\i (00:13:32) fillin "menu_cancel"
+\f (00:13:32) This will exit the command and discard any padstacks updated to design. 
+Continue?
+\i (00:13:36) fillin no 
+\f (00:13:36) Select Library Padstack
+\i (00:13:45) fillin "Header"
+\i (00:13:47) setwindow form.padedit
+\i (00:13:47) pse_exit
+\f (00:13:47) Select Library Padstack
+\i (00:13:48) fillin "menu_ok"
+\i (00:13:48) setwindow pcb
+\i (00:13:48) generaledit 
+\i (00:13:50) pick grid 4.538 0.953
+\t (00:13:50) last pick:  5.080  0.000
+\i (00:13:58) pick grid 3.067 4.395
+\t (00:13:58) last pick:  2.540  5.080
+\i (00:14:01) new 
+\i (00:14:08) newdrawfillin "header4.dra" "Package Symbol (Wizard)"
+\t (00:14:08) Starting new drawing...
+\w (00:14:08) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 800,800
+\i (00:14:08) trapsize 167
+\i (00:14:08) trapsize 167
+\i (00:14:08) package symbol wizard 
+\i (00:14:08) generaledit 
+\i (00:14:09) setwindow form.sym_wizard
+\i (00:14:09) FORM sym_wizard wiz_next  
+\i (00:14:11) FORM sym_wizard load_template  
+\t (00:14:11) Opening existing drawing...
+\t (00:14:11) Grids are drawn 400, 400 apart for enhanced viewability.
+\i (00:14:11) setwindow pcb
+\i (00:14:11) trapsize 474
+\d (00:14:11) Database opened: D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (00:14:11) setwindow form.sym_wizard
+\i (00:14:11) FORM sym_wizard wiz_next  
+\i (00:14:14) FORM sym_wizard pack_units Millimeter 
+\i (00:14:15) FORM sym_wizard pack_units_create Millimeter 
+\i (00:14:19) FORM sym_wizard ref_des J* 
+\i (00:14:20) FORM sym_wizard wiz_next  
+\i (00:14:22) FORM sym_wizard dip_pin_count 4 
+\i (00:14:23) FORM sym_wizard dip_e 2.000 
+\i (00:14:23) FORM sym_wizard dip_e1 2.000 
+\i (00:14:31) FORM sym_wizard dip_width 4.000 
+\i (00:14:35) FORM sym_wizard dip_len 4.000 
+\i (00:14:35) FORM sym_wizard wiz_next  
+\i (00:14:37) FORM sym_wizard default_pad_browse  
+\f (00:14:37) Package Symbol Wizard Padstack Browser
+\t (00:14:41) No valid name selected.
+\i (00:14:44) fillin "Header"
+\i (00:14:45) FORM sym_wizard wiz_next  
+\i (00:14:47) FORM sym_wizard wiz_next  
+\i (00:14:48) FORM sym_wizard wiz_finish  
+\w (00:14:48) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:14:48) Grids are drawn 10.160, 10.160 apart for enhanced viewability.
+\i (00:14:48) setwindow pcb
+\i (00:14:48) trapsize 12028
+\t (00:14:48) Performing DRC...
+\t (00:14:48) No DRC errors detected.
+\w (00:14:48) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 15240,15240
+\w (00:14:48) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 30480,30480
+\w (00:14:48) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 60960,60960
+\w (00:14:48) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 121920,121920
+\i (00:14:48) trapsize 12028
+\w (00:14:48) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 8128,8128
+\i (00:14:48) trapsize 1698
+\w (00:14:48) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 1083,1083
+\i (00:14:48) trapsize 226
+\w (00:14:48) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 800,800
+\i (00:14:48) trapsize 167
+\t (00:14:48) Creating package symbol 'F:/tdp4/trunk/circuit/pcb/header4.psm'.
+\t (00:14:48) Starting Create symbol...
+\i (00:14:48) generaledit 
+\i (00:14:53) save 
+\f (00:14:53) F:/tdp4/trunk/circuit/pcb/header4.dra: File Exists. Overwrite? 
+\i (00:14:57) fillin yes 
+\t (00:14:57) Symbol 'header4.psm' created.
+\i (00:14:57) generaledit 
+\i (00:14:58) new 
+\i (00:15:03) newdrawfillin "header6.dra" "Package Symbol (Wizard)"
+\t (00:15:03) Starting new drawing...
+\w (00:15:03) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 800,800
+\i (00:15:03) trapsize 167
+\i (00:15:03) trapsize 167
+\i (00:15:03) package symbol wizard 
+\i (00:15:03) generaledit 
+\i (00:15:05) setwindow form.sym_wizard
+\i (00:15:05) FORM sym_wizard wiz_next  
+\i (00:15:06) FORM sym_wizard load_template  
+\t (00:15:06) Opening existing drawing...
+\t (00:15:06) Grids are drawn 400, 400 apart for enhanced viewability.
+\i (00:15:06) setwindow pcb
+\i (00:15:06) trapsize 474
+\d (00:15:06) Database opened: D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (00:15:07) setwindow form.sym_wizard
+\i (00:15:07) FORM sym_wizard wiz_next  
+\i (00:15:09) FORM sym_wizard pack_units Millimeter 
+\i (00:15:11) FORM sym_wizard pack_units_create Millimeter 
+\i (00:15:13) FORM sym_wizard ref_des J* 
+\i (00:15:13) FORM sym_wizard wiz_next  
+\i (00:15:15) FORM sym_wizard dip_pin_count 6 
+\i (00:15:16) FORM sym_wizard dip_e 2.000 
+\i (00:15:17) FORM sym_wizard dip_e1 2.000 
+\i (00:15:18) FORM sym_wizard dip_width 4.000 
+\i (00:15:19) FORM sym_wizard dip_len 6.000 
+\i (00:15:20) FORM sym_wizard wiz_next  
+\i (00:15:22) FORM sym_wizard default_pad_browse  
+\f (00:15:22) Package Symbol Wizard Padstack Browser
+\i (00:15:24) fillin "Header"
+\i (00:15:26) FORM sym_wizard wiz_next  
+\i (00:15:27) FORM sym_wizard wiz_next  
+\i (00:15:27) FORM sym_wizard wiz_finish  
+\w (00:15:27) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:15:27) Grids are drawn 10.160, 10.160 apart for enhanced viewability.
+\i (00:15:27) setwindow pcb
+\i (00:15:27) trapsize 12028
+\t (00:15:27) Performing DRC...
+\t (00:15:27) No DRC errors detected.
+\w (00:15:27) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 15240,15240
+\w (00:15:27) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 30480,30480
+\w (00:15:27) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 60960,60960
+\w (00:15:27) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 121920,121920
+\i (00:15:27) trapsize 12028
+\w (00:15:27) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 8128,8128
+\i (00:15:27) trapsize 1698
+\w (00:15:27) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 1083,1083
+\i (00:15:27) trapsize 226
+\i (00:15:27) trapsize 226
+\t (00:15:27) Creating package symbol 'F:/tdp4/trunk/circuit/pcb/header6.psm'.
+\t (00:15:27) Starting Create symbol...
+\i (00:15:28) generaledit 
+\i (00:15:30) save 
+\f (00:15:30) F:/tdp4/trunk/circuit/pcb/header6.dra: File Exists. Overwrite? 
+\i (00:15:31) fillin yes 
+\t (00:15:31) Symbol 'header6.psm' created.
+\i (00:15:31) generaledit 
+\i (00:17:32) exit 

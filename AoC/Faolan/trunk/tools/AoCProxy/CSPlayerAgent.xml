@@ -1,0 +1,295 @@
+<?xml version="1.0" ?>
+
+<packets>
+
+	<interface name="CSPlayerAgent" />
+	
+	<packet opcode="0" name="Authenticate" description="">
+	</packet>
+
+	<packet opcode="1" name="CharacterAuthenticated" description="">
+	</packet>
+
+	<packet opcode="2" name="CharacterDisconnected" description="">
+	</packet>
+
+	<packet opcode="3" name="TeamLeave" description="">
+	</packet>
+
+	<packet opcode="4" name="TeamInvite" description="">
+	</packet>
+
+	<packet opcode="5" name="TeamInviteByName" description="">
+	</packet>
+
+	<packet opcode="6" name="TeamSetLootOption" description="">
+	</packet>
+
+	<packet opcode="7" name="TeamApply" description="">
+	</packet>
+
+	<packet opcode="8" name="AcceptTeamInvite" description="">
+	</packet>
+
+	<packet opcode="9" name="DeclineTeamInvite" description="">
+	</packet>
+
+	<packet opcode="10" name="CharacterSearch" description="">
+	</packet>
+
+	<packet opcode="11" name="SearchForTeam" description="">
+	</packet>
+
+	<packet opcode="12" name="SetNewTeamLeader" description="">
+	</packet>
+
+	<packet opcode="13" name="SummonCharacters" description="">
+	</packet>
+
+	<packet opcode="14" name="AcceptSummon" description="">
+	</packet>
+
+	<packet opcode="15" name="DeclineSummon" description="">
+	</packet>
+
+	<packet opcode="16" name="TeamKick" description="">
+	</packet>
+
+	<packet opcode="17" name="GetExtendedCharacterInfo" description="">
+	</packet>
+
+	<packet opcode="18" name="SetLFGStatus" description="">
+	</packet>
+
+	<packet opcode="19" name="SetLFMStatus" description="">
+	</packet>
+
+	<packet opcode="20" name="GetLFGStatus" description="">
+	</packet>
+
+	<packet opcode="21" name="GetLFMStatus" description="">
+	</packet>
+
+	<packet opcode="22" name="SetCommunityServerOption" description="">
+	</packet>
+
+	<packet opcode="23" name="AcceptGuildInvitation" description="">
+	</packet>
+
+	<packet opcode="24" name="DeclineGuildInvitation" description="">
+	</packet>
+
+	<packet opcode="25" name="ClientRequestGuildInfo" description="">
+	</packet>
+
+	<packet opcode="26" name="ClientRequestGuildName" description="">
+	</packet>
+
+	<packet opcode="27" name="ClientRequestCharIDByName" description="">
+	</packet>
+
+	<packet opcode="28" name="CreateGuild" description="">
+	</packet>
+
+	<packet opcode="29" name="GuildInviteByName" description="">
+	</packet>
+
+	<packet opcode="30" name="GuildInvite" description="">
+	</packet>
+
+	<packet opcode="31" name="GuildPromote" description="">
+	</packet>
+
+	<packet opcode="32" name="GuildDemote" description="">
+	</packet>
+
+	<packet opcode="33" name="GuildKick" description="">
+	</packet>
+
+	<packet opcode="34" name="GuildLeave" description="">
+	</packet>
+
+	<packet opcode="35" name="GuildTax" description="">
+	</packet>
+
+	<packet opcode="36" name="GuildGovernmentForm" description="">
+	</packet>
+
+	<packet opcode="37" name="GuildRecruitmentMode" description="">
+	</packet>
+
+	<packet opcode="38" name="GuildName" description="">
+	</packet>
+
+	<packet opcode="39" name="GuildDescription" description="">
+	</packet>
+
+	<packet opcode="40" name="GuildMOTD" description="">
+	</packet>
+
+	<packet opcode="41" name="GuildRequestMemberList" description="">
+	</packet>
+
+	<packet opcode="42" name="GuildApplication" description="">
+	</packet>
+
+	<packet opcode="43" name="GuildRejectApplication" description="">
+	</packet>
+
+	<packet opcode="44" name="SetLookingForGuild" description="">
+	</packet>
+
+	<packet opcode="45" name="GuildMergeRequest" description="">
+	</packet>
+
+	<packet opcode="46" name="GuildMergeReply" description="">
+	</packet>
+
+	<packet opcode="47" name="GuildWithdrawMoney" description="">
+	</packet>
+
+	<packet opcode="48" name="GetPvpPointsInfo" description="">
+	</packet>
+
+	<packet opcode="49" name="AddPvpPoints" description="">
+	</packet>
+
+	<packet opcode="50" name="RemovePvpPoints" description="">
+	</packet>
+
+	<packet opcode="51" name="ClearPvpPoints" description="">
+	</packet>
+
+	<packet opcode="52" name="SearchForGuilds" description="">
+	</packet>
+
+	<packet opcode="53" name="RequestGuildCitySpot" description="">
+	</packet>
+
+	<packet opcode="54" name="ApplyForMassivePVPBattle" description="">
+	</packet>
+
+	<packet opcode="55" name="MassivePvPBattleQueueGMC" description="">
+	</packet>
+
+	<packet opcode="56" name="PvPMatchMakingCreateMatch" description="">
+	</packet>
+
+	<packet opcode="57" name="PvPMatchMakingJoinMatch" description="">
+	</packet>
+
+	<packet opcode="58" name="PvPMatchMakingSetSide" description="">
+	</packet>
+
+	<packet opcode="59" name="PvPMatchMakingMatchSay" description="">
+	</packet>
+
+	<packet opcode="60" name="PvPMatchMakingLeaveMatch" description="">
+	</packet>
+
+	<packet opcode="61" name="PvPMatchMakingSearchForMatches" description="">
+	</packet>
+
+	<packet opcode="62" name="PvPMatchMakingGetMatchInfo" description="">
+	</packet>
+
+	<packet opcode="63" name="PvPMatchMakingTeleportToMinigame" description="">
+	</packet>
+
+	<packet opcode="64" name="PvPMatchMakingPutIntoMatchMaking" description="">
+	</packet>
+
+	<packet opcode="65" name="PvPMatchMakingRemoveFromMatchMaking" description="">
+	</packet>
+
+	<packet opcode="66" name="PvPMatchMakingKickPlayer" description="">
+	</packet>
+
+	<packet opcode="67" name="PvPMatchMakingBanPlayer" description="">
+	</packet>
+
+	<packet opcode="68" name="PvPMatchMakingMakePlayerMatchOwner" description="">
+	</packet>
+
+	<packet opcode="69" name="PvPMatchMakingForceSide" description="">
+	</packet>
+
+	<packet opcode="70" name="PvPMatchMakingStartMatch" description="">
+	</packet>
+
+	<packet opcode="71" name="DebugPvPMatchMakingShowDebugInfo" description="">
+	</packet>
+
+	<packet opcode="72" name="DebugPvPMatchMakingStopAllMatches" description="">
+	</packet>
+
+	<packet opcode="73" name="DebugPvPMatchMakingStopCurrentMatch" description="">
+	</packet>
+
+	<packet opcode="74" name="DebugPvPMatchMakingSetNewTimeLimit" description="">
+	</packet>
+
+	<packet opcode="75" name="DebugPvPMatchMakingRestart" description="">
+	</packet>
+
+	<packet opcode="76" name="DebugPvPMatchForcePlayerIntoCurrentMatch" description="">
+	</packet>
+
+	<packet opcode="77" name="DebugPvPMatchMakingDoMatchMaking" description="">
+	</packet>
+
+	<packet opcode="78" name="DebugPvPMatchForceStartMatch" description="">
+	</packet>
+
+	<packet opcode="79" name="DebugPvPMatchForceEnterAll" description="">
+	</packet>
+
+	<packet opcode="80" name="DebugCommunityServerModuleStart" description="">
+	</packet>
+
+	<packet opcode="81" name="DebugCommunityServerModuleStop" description="">
+	</packet>
+
+	<packet opcode="82" name="RaidCreate" description="">
+	</packet>
+
+	<packet opcode="83" name="RaidLeave" description="">
+	</packet>
+
+	<packet opcode="84" name="RaidInviteTeam" description="">
+	</packet>
+
+	<packet opcode="85" name="RaidInviteTeamAccept" description="">
+	</packet>
+
+	<packet opcode="86" name="RaidInviteTeamDecline" description="">
+	</packet>
+
+	<packet opcode="87" name="RaidKickTeam" description="">
+	</packet>
+
+	<packet opcode="88" name="RaidKickCharacter" description="">
+	</packet>
+
+	<packet opcode="89" name="RaidMoveTeamMember" description="">
+	</packet>
+
+	<packet opcode="90" name="RaidInviteCharacter" description="">
+	</packet>
+
+	<packet opcode="91" name="RaidAcceptInvite" description="">
+	</packet>
+
+	<packet opcode="92" name="RaidDeclineInvite" description="">
+	</packet>
+
+	<packet opcode="93" name="MassivePvpInfoRequest" description="">
+	</packet>
+
+	<packet opcode="94" name="SendTeamInfo" description="">
+	</packet>
+
+	<packet opcode="95" name="GMRequestGuildInfoFromChar" description="">
+	</packet>
+	
+</packets>

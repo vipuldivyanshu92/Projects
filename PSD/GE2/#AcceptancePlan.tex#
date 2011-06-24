@@ -1,0 +1,188 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fullpage}
+
+\begin{document}
+\today
+
+
+
+The foundations of the rigorous study of \emph{analysis}
+were laid in the nineteenth century, notably by the
+mathematicians Cauchy and Weierstrass. Central to the
+study of this subject are the formal definitions of
+\emph{limits} and \emph{continuity}.
+
+Let $D$ be a subset of $\bf R$ and let
+$f \colon D \to \mathbf{R}$ be a real-valued function on
+$D$. The function $f$ is said to be \emph{continuous} on
+$D$ if, for all $\epsilon > 0$ and for all $x \in D$,
+there exists some $\delta > 0$ (which may depend on $x$)
+such that if $y \in D$ satisfies
+\\
+\begin{table}[ht]
+\caption{Acceptance Tests And Values}
+\centering
+\begin{tabular}{| l | l | l | l |}
+\hline
+\multicolumn{4}{| c |}{Acceptance Test} \\ \hline
+    &           &   &    \\
+  T & Test Case & V & Test Value \\ \hline
+    &           &   &    \\
+    & boolean: isAdmin  & V1 & ``Tim'' - Is a member of staff, Not a keeper.\\ 
+ T1 & boolean: isMemberStaff & V2 & ``Jack'' - Is a member of staff, A keeper. \\   
+	& boolean: isKeeper      & V3 & ``Chris'' - Is not a member of staff.  \\ 
+    &           &    &    \\
+ T2 & boolean: searchforbook & V4 & ``Software Engineering'' - In central library. \\
+    &           & V5 & ``Programming With C`'' - Not in the central library. \\
+    &           & V6 & ``Professional Software Development'' - In branch library. \\
+    &           &   &    \\
+T3  & boolean: processRequest & V7 & ``Software Engineering'' - Approved request. \\
+    &                         & V8 & ``Programming With C`'' - Denied request. \\
+    &           &   &    \\
+T4  & boolean: acknowledgeRequest  & V9 & ``Software Engineering'' - Acknowledged receipt. \\
+    &           &   &    \\
+T5  & boolean: approveLoan & V10 & ``Jim'' - A borrower, ``Programming Techniques'' - In branch library. \\
+    &                      & V11 &  ``Mark'' - A borrower, ``Programming Basics'' - Not in branch. \\ 
+\end{tabular}
+\label{table:nonlin}
+\end{table}
+
+\begin{table}[ht]
+\caption{6.2 Keeper Administration}
+\centering
+\begin{tabular}{| c | c | c | c | p{3.7in} |}
+\hline
+\multicolumn{5}{| c |}{6.2.1 Add Keeper} \\ \hline
+  &                &      &       & \\
+Step & Description & Test & Value & Expected Results \\ \hline
+  &                &      &       & \\
+1 & Login As Admin & T1 & V1 & V1 privilege is changed to keeper. \\  
+  &                &    &    & After system restart, V1 maintains keeper privilege. \\
+  &                &    &    & A notification that V2 is a registered keeper. \\
+2 & Login As Admin & T1 & V2 & V2 Is already a registered Keeper. \\
+  &                &    &    & A notification that V2 is already a registered keeper. \\
+  &                &    &    & The System maintains the same functionality. \\
+3 & Login As Admin & T1 & V3 & V3 Is not a member of staff. \\
+  &                &    &    & A notification that V3 is not a staff member. \\
+  &                &    &    & User not found attempt another search. \\
+  &                &    &    & The system maintains the same functionality. \\ 
+4 & Login As Not Admin & T1 & V1 & Unsuccessful Login. \\
+  &                    &    &    & \\ \hline
+\multicolumn{5}{| c |}{6.2.2 Remove Keeper} \\ \hline
+  &                &      &       & \\
+Step & Description & Test & Value & Expected Results \\ \hline
+  &                &      &       & \\
+1 & Login As Admin & T1 & V1 & V1 Is not registered as a keeper. \\  
+  &                &    &    & A notification that V2 is not a registered keeper. \\
+  &                &    &    & The System maintains the same functionality. \\
+2 & Login As Admin & T1 & V2 & V2 privilege is changed to borrower. \\
+  &                &    &    & After system restart V2 maintains borrower privilege. \\
+  &                &    &    & A notification that V2 is a registered Borrower. \\
+3 & Login As Admin & T1 & V3 & V3 Is not a member of staff. \\
+  &                &    &    & A notification that V3 is not a member of staff. \\ 
+  &                &    &    & User not found attempt another search. \\
+  &                &    &    & The system maintains the same functionality. \\
+4 & Login As Not Admin & T1 & -  & Unsuccessful Login. \\ \hline
+\end{tabular}
+\label{table:nonlin}
+\end{table}
+
+\begin{table}[ht]
+\caption{6.3 Transferring Books From Central Library To The Branch}
+\centering
+\begin{tabular}{| c | c | c | c | p{3.5in} |}
+\hline
+\multicolumn{5}{| c |}{6.3.1 Request book for branch} \\ \hline
+  &                &      &       & \\
+Step & Description & Test & Value & Expected Results \\ \hline
+  &                &      &       & \\
+1 & Login As Keeper & T2 & V4 & V4 Is requested to be transferred into branch library. \\
+  &                 &    &    & Request is stored for processing. \\
+2 & Login As Keeper & T2 & V5 & V5 Not in central library. \\
+  &                 &    &    & A notification that V5 is not available in central library. \\
+3 & Login As Keeper & T2 & V6 & V6 is in branch library. \\
+  &                &   &   & A notification that V6 is in the branch library. \\
+  &                &   &   & The system maintains the same functionality. \\
+4 & Login As Not Keeper & T2 & - & Unsuccessful Login. \\
+  &                     &    &   & \\ \hline
+\multicolumn{5}{| c |}{6.3.2 Process Request} \\ \hline
+  &                &      &       & \\
+Step & Description & Test & Value & Expected Results \\ \hline
+  &                &      &       & \\
+1 & Login As Librarian & T3 & V7 & V7 Is approved to be transferred to branch library. \\
+  &                &      &      & V7 Status is updated to being inTransitToBranch. \\ 
+  &                &   &    & Keeper is notified of the librarian decision. \\
+2 & Login As Librarian & T3 & V8 & V8 Is denied to be transferred to branch library. \\
+  &                &   &    & Denied decision is recorded. \\
+4 & Login As Not Librarian  & T3 & - & Unsuccessful Login. \\ \hline
+\multicolumn{5}{| c |}{6.3.3 Record receipt of book} \\ \hline
+  &                &      &       & \\
+Step & Description & Test & Value & Expected Results \\ \hline
+  &                &      &       & \\
+1 & Login As keeper & T4 & V9 & V9 Status is changed to received to named keeper. \\
+  &                &   &    & The book is recorded as in possession of the keeper. \\
+  &                &   &    & After system restart, V9 maintains status received in possession of the associated keeper. \\
+4 & Login As Not keeper  & T3 & - & Unsuccessful Login. \\ \hline
+\end{tabular}
+\label{table:nonlin}
+\end{table}
+
+
+
+
+
+
+
+
+
+\begin{table}[ht]
+\caption{6.4 Sub-lending Books}
+\centering
+\begin{tabular}{| c | c | c | c | p{3.5in} |}
+\hline
+\multicolumn{5}{| c |}{6.4.1 Record book lend} \\ \hline
+  &                &      &       & \\
+Step & Description & Test & Value & Expected Results \\ \hline
+  &                &      &       & \\
+1 & Login As Keeper & T5 & V10 & V10 status is changed to lent to named borrower. \\
+  &                &   &    & After system restart, V10 maintains status lent to the associated borrower. \\
+2 & Login As Keeper & T5 & V11 & V11 book not in branch library. \\
+  &                 &    &     & A notification that book is not is branch library. \\
+4 & Login As Not Keeper & T5 & - & Unsuccessful Login. \\
+  &                     &    &   & \\ \hline
+\multicolumn{5}{| c |}{6.4.2 Request book return (to Branch)} \\ \hline
+  &                &      &       & \\
+Step & Description & Test & Value & Expected Results \\ \hline
+  &                &      &       & \\
+1 & Login As Keeper & T3 & V7 & V7 Is approved to be transferred to branch library. \\
+  &                &      &      & V7 Status is updated to being inTransitToBranch. \\ 
+  &                &   &    & Keeper is notified of the librarian decision. \\
+2 & Login As Keeper & T3 & V8 & V8 Is denied to be transferred to branch library. \\
+  &                &   &    & Denied decision is recorded. \\
+4 & Login As Not Librarian  & T3 & - & Unsuccessful Login. \\ \hline
+\multicolumn{5}{| c |}{6.3.3 Record receipt of book} \\ \hline
+  &                &      &       & \\
+Step & Description & Test & Value & Expected Results \\ \hline
+  &                &      &       & \\
+1 & Login As keeper & T4 & V9 & V9 Status is changed to received . \\
+  &                &   &    & The book is recorded as in possession of the keeper. \\
+  &                &   &    & After system restart, V9 maintains status received in possession of the associated keeper. \\
+4 & Login As Not keeper  & T3 & - & Unsuccessful Login. \\ \hline
+\end{tabular}
+\label{table:nonlin}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

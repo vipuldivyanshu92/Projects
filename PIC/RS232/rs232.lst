@@ -1,0 +1,560 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.80 build 6738 
+                                                                                               Wed Dec 08 20:51:01 2010
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6738
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6738"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F627
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 3 "F:\PIC\RS232\main.c"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 3 "F:\PIC\RS232\main.c"
+    45  2007  3F02               	dw 0x3FFB & 0x3FF7 & 0x3FDF & 0x3FBF & 0x3FEE & 0x3F7F ;#
+    46                           	FNCALL	_main,_reset
+    47                           	FNROOT	_main
+    48                           	FNCALL	intlevel1,_isr
+    49                           	global	intlevel1
+    50                           	FNROOT	intlevel1
+    51                           	global	_transmit
+    52                           psect	idataCOMMON,class=CODE,space=0,delta=2
+    53                           global __pidataCOMMON
+    54  0048                     __pidataCOMMON:
+    55                           	file	"F:\PIC\RS232\main.c"
+    56                           	line	5
+    57                           
+    58                           ;initializer for _transmit
+    59  0048  3461               	retlw	061h
+    60                           	global	_CMCON
+    61  001F                     _CMCON	set	31
+    62                           	global	_INTCON
+    63  000B                     _INTCON	set	11
+    64                           	global	_PORTA
+    65  0005                     _PORTA	set	5
+    66                           	global	_PORTB
+    67  0006                     _PORTB	set	6
+    68                           	global	_RCREG
+    69  001A                     _RCREG	set	26
+    70                           	global	_TXREG
+    71  0019                     _TXREG	set	25
+    72                           	global	_RA0
+    73  0028                     _RA0	set	40
+    74                           	global	_RCIF
+    75  0065                     _RCIF	set	101
+    76                           	global	_TXIF
+    77  0064                     _TXIF	set	100
+    78                           	global	_OPTION
+    79  0081                     _OPTION	set	129
+    80                           	global	_PIE1
+    81  008C                     _PIE1	set	140
+    82                           	global	_TRISA
+    83  0085                     _TRISA	set	133
+    84                           	global	_TRISB
+    85  0086                     _TRISB	set	134
+    86                           	file	"rs232.as"
+    87                           	line	#
+    88                           psect cinit,class=CODE,delta=2
+    89                           global start_initialization
+    90  0044                     start_initialization:
+    91                           
+    92                           psect	dataCOMMON,class=COMMON,space=1
+    93                           global __pdataCOMMON
+    94  0074                     __pdataCOMMON:
+    95                           	file	"F:\PIC\RS232\main.c"
+    96  0074                     _transmit:
+    97  0074                            ds      1
+    98                           
+    99                           ; Initialize objects allocated to COMMON
+   100                           	global __pidataCOMMON
+   101                           psect cinit,class=CODE,delta=2
+   102  0044  2048               	fcall	__pidataCOMMON+0		;fetch initializer
+   103  0045  00F4               	movwf	__pdataCOMMON+0&07fh		
+   104                           psect cinit,class=CODE,delta=2
+   105                           global end_of_initialization
+   106                           
+   107                           ;End of C runtime variable initialization code
+   108                           
+   109  0046                     end_of_initialization:
+   110  0046  0183               clrf status
+   111  0047  283B               ljmp _main	;jump to C main() function
+   112                           psect	cstackCOMMON,class=COMMON,space=1
+   113                           global __pcstackCOMMON
+   114  0070                     __pcstackCOMMON:
+   115                           	global	??_isr
+   116  0070                     ??_isr:	; 0 bytes @ 0x0
+   117                           	global	?_reset
+   118  0070                     ?_reset:	; 0 bytes @ 0x0
+   119                           	global	?_main
+   120  0070                     ?_main:	; 0 bytes @ 0x0
+   121                           	global	?_isr
+   122  0070                     ?_isr:	; 2 bytes @ 0x0
+   123  0070                     	ds	4
+   124                           	global	??_reset
+   125  0074                     ??_reset:	; 0 bytes @ 0x4
+   126                           	global	??_main
+   127  0074                     ??_main:	; 0 bytes @ 0x4
+   128 ;;Data sizes: Strings 0, constant 0, data 1, bss 0, persistent 0 stack 0
+   129 ;;Auto spaces:   Size  Autos    Used
+   130 ;; COMMON          14      4       5
+   131 ;; BANK0           80      0       0
+   132 ;; BANK1           80      0       0
+   133 ;; BANK2           48      0       0
+   134                           
+   135 ;;
+   136 ;; Pointer list with targets:
+   137                           
+   138                           
+   139                           
+   140 ;;
+   141 ;; Critical Paths under _main in COMMON
+   142 ;;
+   143 ;;   None.
+   144 ;;
+   145 ;; Critical Paths under _isr in COMMON
+   146 ;;
+   147 ;;   None.
+   148 ;;
+   149 ;; Critical Paths under _main in BANK0
+   150 ;;
+   151 ;;   None.
+   152 ;;
+   153 ;; Critical Paths under _isr in BANK0
+   154 ;;
+   155 ;;   None.
+   156 ;;
+   157 ;; Critical Paths under _main in BANK1
+   158 ;;
+   159 ;;   None.
+   160 ;;
+   161 ;; Critical Paths under _isr in BANK1
+   162 ;;
+   163 ;;   None.
+   164 ;;
+   165 ;; Critical Paths under _main in BANK2
+   166 ;;
+   167 ;;   None.
+   168 ;;
+   169 ;; Critical Paths under _isr in BANK2
+   170 ;;
+   171 ;;   None.
+   172                           
+   173 ;;
+   174 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   175 ;;
+   176                           
+   177 ;;
+   178 ;;Call Graph Tables:
+   179 ;;
+   180 ;; ---------------------------------------------------------------------------------
+   181 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   182 ;; ---------------------------------------------------------------------------------
+   183 ;; (0) _main                                                 0     0      0       0
+   184 ;;                              _reset
+   185 ;; ---------------------------------------------------------------------------------
+   186 ;; (1) _reset                                                0     0      0       0
+   187 ;; ---------------------------------------------------------------------------------
+   188 ;; Estimated maximum stack depth 1
+   189 ;; ---------------------------------------------------------------------------------
+   190 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   191 ;; ---------------------------------------------------------------------------------
+   192 ;; (2) _isr                                                  4     4      0       0
+   193 ;;                                              0 COMMON     4     4      0
+   194 ;; ---------------------------------------------------------------------------------
+   195 ;; Estimated maximum stack depth 2
+   196 ;; ---------------------------------------------------------------------------------
+   197                           
+   198 ;; Call Graph Graphs:
+   199                           
+   200 ;; _main (ROOT)
+   201 ;;   _reset
+   202 ;;
+   203 ;; _isr (ROOT)
+   204 ;;
+   205                           
+   206 ;; Address spaces:
+   207                           
+   208 ;;Name               Size   Autos  Total    Cost      Usage
+   209 ;;SFR3                 0      0       0       4        0.0%
+   210 ;;BITSFR3              0      0       0       4        0.0%
+   211 ;;BANK2               30      0       0       9        0.0%
+   212 ;;BITBANK2            30      0       0       8        0.0%
+   213 ;;SFR2                 0      0       0       5        0.0%
+   214 ;;BITSFR2              0      0       0       5        0.0%
+   215 ;;SFR1                 0      0       0       2        0.0%
+   216 ;;BITSFR1              0      0       0       2        0.0%
+   217 ;;BANK1               50      0       0       7        0.0%
+   218 ;;BITBANK1            50      0       0       6        0.0%
+   219 ;;CODE                 0      0       0       0        0.0%
+   220 ;;DATA                 0      0       6      10        0.0%
+   221 ;;ABS                  0      0       5       4        0.0%
+   222 ;;NULL                 0      0       0       0        0.0%
+   223 ;;STACK                0      0       1       2        0.0%
+   224 ;;BANK0               50      0       0       3        0.0%
+   225 ;;BITBANK0            50      0       0       5        0.0%
+   226 ;;SFR0                 0      0       0       1        0.0%
+   227 ;;BITSFR0              0      0       0       1        0.0%
+   228 ;;COMMON               E      4       5       1       35.7%
+   229 ;;BITCOMMON            E      0       0       0        0.0%
+   230 ;;EEDATA              80      0       0       0        0.0%
+   231                           
+   232                           	global	_main
+   233                           psect	maintext,global,class=CODE,delta=2
+   234                           global __pmaintext
+   235  003B                     __pmaintext:
+   236                           
+   237 ;; *************** function _main *****************
+   238 ;; Defined at:
+   239 ;;		line 53 in file "F:\PIC\RS232\main.c"
+   240 ;; Parameters:    Size  Location     Type
+   241 ;;		None
+   242 ;; Auto vars:     Size  Location     Type
+   243 ;;		None
+   244 ;; Return value:  Size  Location     Type
+   245 ;;		None               void
+   246 ;; Registers used:
+   247 ;;		wreg, status,2, status,0, pclath, cstack
+   248 ;; Tracked objects:
+   249 ;;		On entry : 17F/0
+   250 ;;		On exit  : 0/0
+   251 ;;		Unchanged: 0/0
+   252 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   253 ;;      Params:         0       0       0       0
+   254 ;;      Locals:         0       0       0       0
+   255 ;;      Temps:          0       0       0       0
+   256 ;;      Totals:         0       0       0       0
+   257 ;;Total ram usage:        0 bytes
+   258 ;; Hardware stack levels required when called:    2
+   259 ;; This function calls:
+   260 ;;		_reset
+   261 ;; This function is called by:
+   262 ;;		Startup code after reset
+   263 ;; This function uses a non-reentrant model
+   264 ;;
+   265                           psect	maintext
+   266                           	file	"F:\PIC\RS232\main.c"
+   267                           	line	53
+   268                           	global	__size_of_main
+   269  0009                     	__size_of_main	equ	__end_of_main-_main
+   270                           	
+   271  003B                     _main:	
+   272                           	opt	stack 6
+   273                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   274                           	line	54
+   275                           	
+   276  003B                     l1502:	
+   277                           ;main.c: 54: reset();
+   278  003B  2011               	fcall	_reset
+   279                           	line	55
+   280                           	
+   281  003C                     l1504:	
+   282                           ;main.c: 55: TRISA = 0;
+   283  003C  1683               	bsf	status, 5	;RP0=1, select bank1
+   284  003D  1303               	bcf	status, 6	;RP1=0, select bank1
+   285  003E  0185               	clrf	(133)^080h	;volatile
+   286                           	line	56
+   287                           	
+   288  003F                     l1506:	
+   289                           ;main.c: 56: RA0 = 1;
+   290  003F  1283               	bcf	status, 5	;RP0=0, select bank0
+   291  0040  1303               	bcf	status, 6	;RP1=0, select bank0
+   292  0041  1405               	bsf	(40/8),(40)&7
+   293                           	line	60
+   294                           ;main.c: 59: for (;;)
+   295                           	
+   296  0042                     l333:	
+   297                           	line	62
+   298                           ;main.c: 60: {
+   299                           ;main.c: 62: }
+   300  0042  2842               	goto	l333
+   301                           	
+   302  0043                     l334:	
+   303                           	line	63
+   304                           	
+   305  0043                     l335:	
+   306                           	global	start
+   307  0043  2810               	ljmp	start
+   308                           	opt stack 0
+   309                           GLOBAL	__end_of_main
+   310  0044                     	__end_of_main:
+   311 ;; =============== function _main ends ============
+   312                           
+   313                           	signat	_main,88
+   314                           	global	_reset
+   315                           psect	text67,local,class=CODE,delta=2
+   316                           global __ptext67
+   317  0011                     __ptext67:
+   318                           
+   319 ;; *************** function _reset *****************
+   320 ;; Defined at:
+   321 ;;		line 28 in file "F:\PIC\RS232\main.c"
+   322 ;; Parameters:    Size  Location     Type
+   323 ;;		None
+   324 ;; Auto vars:     Size  Location     Type
+   325 ;;		None
+   326 ;; Return value:  Size  Location     Type
+   327 ;;		None               void
+   328 ;; Registers used:
+   329 ;;		wreg, status,2
+   330 ;; Tracked objects:
+   331 ;;		On entry : 0/0
+   332 ;;		On exit  : 0/0
+   333 ;;		Unchanged: 0/0
+   334 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   335 ;;      Params:         0       0       0       0
+   336 ;;      Locals:         0       0       0       0
+   337 ;;      Temps:          0       0       0       0
+   338 ;;      Totals:         0       0       0       0
+   339 ;;Total ram usage:        0 bytes
+   340 ;; Hardware stack levels used:    1
+   341 ;; Hardware stack levels required when called:    1
+   342 ;; This function calls:
+   343 ;;		Nothing
+   344 ;; This function is called by:
+   345 ;;		_main
+   346 ;; This function uses a non-reentrant model
+   347 ;;
+   348                           psect	text67
+   349                           	file	"F:\PIC\RS232\main.c"
+   350                           	line	28
+   351                           	global	__size_of_reset
+   352  0017                     	__size_of_reset	equ	__end_of_reset-_reset
+   353                           	
+   354  0011                     _reset:	
+   355                           	opt	stack 6
+   356                           ; Regs used in _reset: [wreg+status,2]
+   357                           	line	30
+   358                           	
+   359  0011                     l710:	
+   360                           ;main.c: 30: CMCON = 0x07;
+   361  0011  3007               	movlw	(07h)
+   362  0012  1283               	bcf	status, 5	;RP0=0, select bank0
+   363  0013  1303               	bcf	status, 6	;RP1=0, select bank0
+   364  0014  009F               	movwf	(31)	;volatile
+   365                           	line	33
+   366                           ;main.c: 33: OPTION = 0b11000000;
+   367  0015  30C0               	movlw	(0C0h)
+   368  0016  1683               	bsf	status, 5	;RP0=1, select bank1
+   369  0017  1303               	bcf	status, 6	;RP1=0, select bank1
+   370  0018  0081               	movwf	(129)^080h	;volatile
+   371                           	line	36
+   372                           ;main.c: 36: INTCON = 0b11000000;
+   373  0019  30C0               	movlw	(0C0h)
+   374  001A  008B               	movwf	(11)	;volatile
+   375                           	line	37
+   376                           ;main.c: 37: PIE1 = 0b0011000;
+   377  001B  3018               	movlw	(018h)
+   378  001C  008C               	movwf	(140)^080h	;volatile
+   379                           	line	40
+   380                           	
+   381  001D                     l712:	
+   382                           ;main.c: 40: PORTA = 0;
+   383  001D  1283               	bcf	status, 5	;RP0=0, select bank0
+   384  001E  1303               	bcf	status, 6	;RP1=0, select bank0
+   385  001F  0185               	clrf	(5)	;volatile
+   386                           	line	41
+   387                           	
+   388  0020                     l714:	
+   389                           ;main.c: 41: PORTB = 0;
+   390  0020  0186               	clrf	(6)	;volatile
+   391                           	line	42
+   392                           ;main.c: 42: TRISA = 0b11111110;
+   393  0021  30FE               	movlw	(0FEh)
+   394  0022  1683               	bsf	status, 5	;RP0=1, select bank1
+   395  0023  1303               	bcf	status, 6	;RP1=0, select bank1
+   396  0024  0085               	movwf	(133)^080h	;volatile
+   397                           	line	43
+   398                           ;main.c: 43: TRISB = 0b11111011;
+   399  0025  30FB               	movlw	(0FBh)
+   400  0026  0086               	movwf	(134)^080h	;volatile
+   401                           	line	50
+   402                           	
+   403  0027                     l330:	
+   404  0027  0008               	return
+   405                           	opt stack 0
+   406                           GLOBAL	__end_of_reset
+   407  0028                     	__end_of_reset:
+   408 ;; =============== function _reset ends ============
+   409                           
+   410                           	signat	_reset,88
+   411                           	global	_isr
+   412                           psect	text68,local,class=CODE,delta=2
+   413                           global __ptext68
+   414  0028                     __ptext68:
+   415                           
+   416 ;; *************** function _isr *****************
+   417 ;; Defined at:
+   418 ;;		line 8 in file "F:\PIC\RS232\main.c"
+   419 ;; Parameters:    Size  Location     Type
+   420 ;;		None
+   421 ;; Auto vars:     Size  Location     Type
+   422 ;;		None
+   423 ;; Return value:  Size  Location     Type
+   424 ;;                  2  324[COMMON] int 
+   425 ;; Registers used:
+   426 ;;		wreg
+   427 ;; Tracked objects:
+   428 ;;		On entry : 0/0
+   429 ;;		On exit  : 0/0
+   430 ;;		Unchanged: 0/0
+   431 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   432 ;;      Params:         0       0       0       0
+   433 ;;      Locals:         0       0       0       0
+   434 ;;      Temps:          4       0       0       0
+   435 ;;      Totals:         4       0       0       0
+   436 ;;Total ram usage:        4 bytes
+   437 ;; Hardware stack levels used:    1
+   438 ;; This function calls:
+   439 ;;		Nothing
+   440 ;; This function is called by:
+   441 ;;		Interrupt level 1
+   442 ;; This function uses a non-reentrant model
+   443 ;;
+   444                           psect	text68
+   445                           	file	"F:\PIC\RS232\main.c"
+   446                           	line	8
+   447                           	global	__size_of_isr
+   448  0013                     	__size_of_isr	equ	__end_of_isr-_isr
+   449                           	
+   450  0028                     _isr:	
+   451                           	opt	stack 6
+   452                           ; Regs used in _isr: [wreg]
+   453                           psect	intentry,class=CODE,delta=2
+   454                           global __pintentry
+   455  0004                     __pintentry:
+   456                           global interrupt_function
+   457  0004                     interrupt_function:
+   458                           	global saved_w
+   459  007E                     	saved_w	set	btemp+0
+   460  0004  00FE               	movwf	saved_w
+   461  0005  0803               	movf	status,w
+   462  0006  00F0               	movwf	(??_isr+0)
+   463  0007  0804               	movf	fsr0,w
+   464  0008  00F1               	movwf	(??_isr+1)
+   465  0009  080A               	movf	pclath,w
+   466  000A  00F2               	movwf	(??_isr+2)
+   467  000B  1283               	bcf	status, 5	;RP0=0, select bank0
+   468  000C  1303               	bcf	status, 6	;RP1=0, select bank0
+   469  000D  087F               	movf	btemp+1,w
+   470  000E  00F3               	movwf	(??_isr+3)
+   471  000F  2828               	ljmp	_isr
+   472                           psect	text68
+   473                           	line	12
+   474                           	
+   475  0028                     i1l704:	
+   476                           ;main.c: 12: if (RCIF)
+   477  0028  1E8C               	btfss	(101/8),(101)&7
+   478  0029  282B               	goto	u1_21
+   479  002A  282C               	goto	u1_20
+   480  002B                     u1_21:
+   481  002B  282F               	goto	i1l708
+   482  002C                     u1_20:
+   483                           	line	14
+   484                           	
+   485  002C                     i1l706:	
+   486                           ;main.c: 13: {
+   487                           ;main.c: 14: TXREG = RCREG;
+   488  002C  081A               	movf	(26),w	;volatile
+   489  002D  0099               	movwf	(25)	;volatile
+   490  002E  282F               	goto	i1l708
+   491                           	line	15
+   492                           	
+   493  002F                     i1l325:	
+   494                           	line	20
+   495                           	
+   496  002F                     i1l708:	
+   497                           ;main.c: 15: }
+   498                           ;main.c: 20: if (!TXIF)
+   499  002F  2830               	goto	i1l327
+   500                           	line	23
+   501                           ;main.c: 21: {
+   502                           	
+   503  0030                     i1l326:	
+   504                           	line	25
+   505                           	
+   506  0030                     i1l327:	
+   507  0030  0873               	movf	(??_isr+3),w
+   508  0031  00FF               	movwf	btemp+1
+   509  0032  0872               	movf	(??_isr+2),w
+   510  0033  008A               	movwf	pclath
+   511  0034  0871               	movf	(??_isr+1),w
+   512  0035  0084               	movwf	fsr0
+   513  0036  0870               	movf	(??_isr+0),w
+   514  0037  0083               	movwf	status
+   515  0038  0EFE               	swapf	saved_w,f
+   516  0039  0E7E               	swapf	saved_w,w
+   517  003A  0009               	retfie
+   518                           	opt stack 0
+   519                           GLOBAL	__end_of_isr
+   520  003B                     	__end_of_isr:
+   521 ;; =============== function _isr ends ============
+   522                           
+   523                           	signat	_isr,90
+   524                           psect	text69,local,class=CODE,delta=2
+   525                           global __ptext69
+   526  0000                     __ptext69:
+   527                           	global	btemp
+   528  007E                     	btemp set 07Eh
+   529                           
+   530                           	DABS	1,126,2	;btemp
+   531                           	global	wtemp0
+   532  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.80 build 6738 
+Symbol Table                                                                                   Wed Dec 08 20:51:01 2010
+
+                 l330 0027                   l333 0042                   l334 0043                   l335 0043  
+                 l710 0011                   l712 001D                   l714 0020                   _RA0 0028  
+                 _isr 0028                   fsr0 0004                  l1502 003B                  l1504 003C  
+                l1506 003F                  ?_isr 0070                  _PIE1 008C                  _RCIF 0065  
+                _TXIF 0064                  u1_20 002C                  u1_21 002B                  _main 003B  
+                btemp 007E                  start 0010                 ??_isr 0070                 ?_main 0070  
+               _CMCON 001F                 i1l325 002F                 i1l326 0030                 i1l327 0030  
+               i1l704 0028                 i1l706 002C                 i1l708 002F                 _RCREG 001A  
+               _PORTA 0005                 _PORTB 0006                 _TRISA 0085                 _TRISB 0086  
+               _TXREG 0019                 _reset 0011                 pclath 000A                 status 0003  
+               wtemp0 007E          __end_of_main 0044                ??_main 0074                ?_reset 0070  
+              _INTCON 000B                _OPTION 0081          __pdataCOMMON 0074                saved_w 007E  
+      __pcstackCOMMON 0070         __end_of_reset 0028               ??_reset 0074            __pmaintext 003B  
+          __pintentry 0004          __size_of_isr 0013  end_of_initialization 0046         __pidataCOMMON 0048  
+ start_initialization 0044           __end_of_isr 003B        __size_of_reset 0017     interrupt_function 0004  
+            __ptext67 0011              __ptext68 0028              __ptext69 0000         __size_of_main 0009  
+            _transmit 0074              intlevel1 0000  

@@ -1,0 +1,32 @@
+PSD Interview report
+
+What the problem with the existing system ?
+	No branch system, everything in the main library.
+
+Who can check out a book from a branch ?
+	Anybody if they can lend books
+	
+Who accept/deny lending ?
+	Main library administration
+	
+How to identify staff / student / guest ?
+	matric number for staff and students
+	guest could have a temporary matric number, not precise yet
+	
+Main library is still able to lend books ?
+	Yes
+	
+Who define the lending time of a book ?
+	the branch library
+	
+Who manage the books in branch library  ?
+	No dedicated staff, only members of department
+	
+Who is reponsible for the lending ?
+	The owner of the book
+	
+How a book identified ?
+	ISBN + bookID, not precise yet need database informations from the library
+	
+The books in the branches expire after some time ?
+	no expiration however the book can be requested by the main library

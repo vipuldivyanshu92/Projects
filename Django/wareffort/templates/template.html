@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	
+<head>
+	<meta http-equiv="Content-Type" content="text/html" />
+	<meta name="author" content="Necroalbert" />
+	<meta name="description" content="Avalon - Effort de Guerre" />
+	<link rel="stylesheet" type="text/css" href="/site_media/style.css" />
+	<title> Avalon - Effort de Guerre </title>
+</head>
+
+<body>
+
+<div id="container">
+<!-- Overall progress -->
+<div class="bar_container">
+	<div class="bar_left"></div>
+	<div class="bar_center" style="width: 600px;">
+		<div class="bar_progress" style="width: {{ stats.totalpercent }}%;"></div>
+		<div class="bar_text">
+			<div class="bar_name">Avancement total</div>
+			<div class="bar_track">{{ stats.totalpercent }}%</div>
+		</div>
+	</div>
+	<div class="bar_right"></div>
+</div>
+
+{% for catkey, catvalue in categories.items %}
+	<!-- print the name of the category -->
+	<div class="category">
+		<div class="cat_name">{{ catvalue.name }}</div>
+		<!-- print the aims of this category -->
+		{% for aimkey, aimvalue in catvalue.aims.items %}
+			<!-- print the progress bar -->
+			<div class="bar_container">
+				<div class="bar_left"></div>
+				<div class="bar_center" style="width: 400px;">
+					<div class="bar_progress" style="width: {{ aimvalue.pcachieved }}%;"></div>
+					<div class="bar_text">
+						<div class="bar_name">{{ aimvalue.name }}</div>
+						<div class="bar_track">{{ aimvalue.nbingame }}/{{ aimvalue.nbrequired }}</div>
+					</div>
+				</div>
+				<div class="bar_right"></div>
+			</div>
+		{% endfor %}
+	</div>
+{% endfor %}
+
+</div>
+
+</body>
+
+</html>

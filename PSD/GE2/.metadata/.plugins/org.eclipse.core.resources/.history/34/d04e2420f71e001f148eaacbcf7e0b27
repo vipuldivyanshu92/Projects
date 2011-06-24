@@ -1,0 +1,25 @@
+package applicationLayer;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class InactivityTimer {
+	private static InactivityTimer instance = null;
+	private static final int defaultExpirationTime = 5*60;
+	private int expirationTime;
+	private Timer;
+	
+	private InactivityTimer() {
+		expirationTime = defaultExpirationTime;
+	}
+	
+	public static InactivityTimer getInstance() {
+		if (instance == null)
+			instance = new InactivityTimer();
+		return instance;
+	}
+	
+	private void logout(){
+		
+	}
+	
+}

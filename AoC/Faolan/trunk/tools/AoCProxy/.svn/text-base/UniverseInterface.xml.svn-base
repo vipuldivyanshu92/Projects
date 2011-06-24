@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+
+<packets>
+
+	<interface name="UniverseInterface" />
+
+	<packet opcode="0" name="Challenge" description="">
+		<field name="data" type="string"></field>
+	</packet>
+	
+	<packet opcode="1" name="AckAuthenticate" description="">
+		<field name="AuthStatus" type="UBInt32"></field>
+		<field name="PlayerID" type="UBInt64"></field>
+		<field name="TerritoryManagerAddr" type="string">127.0.0.1:7001</field>
+		<field name="Cookie" type="UBInt32"></field>
+		<field name="Reason" type="UBInt32"></field>
+	</packet>
+	
+	<packet opcode="2" name="LoginProblem" description="">
+		<field name="LoginStatus" type="UBInt32"></field>
+	</packet>
+	
+	<packet opcode="3" name="SetUpdateManager" description="">
+		<field name="UpdateManagerAddr" type="string"></field>
+	</packet>
+	
+	<packet opcode="4" name="SetUniverseManagerError" description="">
+		<field name="ErrorCode" type="UBInt32"></field>
+	</packet>
+	
+	<packet opcode="5" name="SetRegionState" description="">
+		<field name="unk1" type="UBInt32"></field>
+		<field name="unk2" type="UBInt32"></field>
+		<field name="unk3" type="UBInt32"></field>
+		<field name="unk4" type="UBInt8"></field>
+		<field name="unk5" type="UBInt8"></field>
+		<field name="unk6" type="UBInt8"></field>
+		<field name="unk7" type="UBInt8"></field>
+		<field name="unk8" type="UBInt32"></field>
+		<field name="unk9" type="UBInt32"></field>
+		<field name="unk7" type="UBInt8"></field>
+		<field name="unk7" type="UBInt8"></field>
+		<field name="unk7" type="UBInt8"></field>
+		<field name="unk9" type="UBInt32"></field>
+	</packet>
+
+</packets>

@@ -1,0 +1,53 @@
+(ExpressProject "smd"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\smd.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x"))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (OSCILLATOR
+      (FullPartName "OSCILLATOR.Normal")
+      (LibraryName "I:\AQUARIUM\SYMBOLS.OLB")
+      (DeviceIndex "0"))
+    (SPX1117
+      (FullPartName "SPX1117.Normal")
+      (LibraryName "I:\AQUARIUM\SYMBOLS.OLB")
+      (DeviceIndex "0"))
+    (MCP2551
+      (FullPartName "MCP2551.Normal")
+      (LibraryName "I:\AQUARIUM\SYMBOLS.OLB")
+      (DeviceIndex "0"))
+    (PIC18F4XK80
+      (FullPartName "PIC18F4XK80.Normal")
+      (LibraryName "I:\AQUARIUM\SYMBOLS.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 0 200 0 420"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -30 125 1131 125 583")
+        (Scroll "20 4")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path "I:\AQUARIUM\SMD.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))

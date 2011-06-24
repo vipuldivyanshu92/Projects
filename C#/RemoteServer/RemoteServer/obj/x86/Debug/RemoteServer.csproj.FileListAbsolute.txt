@@ -1,0 +1,5 @@
+F:\C#\RemoteServer\RemoteServer\bin\Debug\RemoteServer.exe
+F:\C#\RemoteServer\RemoteServer\bin\Debug\RemoteServer.pdb
+F:\C#\RemoteServer\RemoteServer\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\C#\RemoteServer\RemoteServer\obj\x86\Debug\RemoteServer.exe
+F:\C#\RemoteServer\RemoteServer\obj\x86\Debug\RemoteServer.pdb

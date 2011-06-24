@@ -1,0 +1,38 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="33FE82B0-FABF-4C13-880E-0084675E0960/f:App.xaml" caret="0" fromTop="0" />
+      <File id="33FE82B0-FABF-4C13-880E-0084675E0960/f:MainPage.xaml" caret="487" fromTop="9" />
+      <File id="0042810B-ECD9-4853-9159-21B04EEC7792/f:gadget.xml" caret="289" fromTop="7" />
+      <File id="0042810B-ECD9-4853-9159-21B04EEC7792/f:gadget.html" caret="2530" fromTop="33" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="0042810B-ECD9-4853-9159-21B04EEC7792/f:gadget.xml" caret="689" fromTop="22" />
+      <File id="0042810B-ECD9-4853-9159-21B04EEC7792/f:gadget.xml" caret="30" fromTop="0" />
+      <File id="0042810B-ECD9-4853-9159-21B04EEC7792/f:gadget.xml" caret="257" fromTop="6" />
+      <File id="0042810B-ECD9-4853-9159-21B04EEC7792/f:gadget.xml" caret="648" fromTop="18" />
+      <File id="0042810B-ECD9-4853-9159-21B04EEC7792/f:gadget.html" caret="265" fromTop="7" />
+      <File id="0042810B-ECD9-4853-9159-21B04EEC7792/f:gadget.html" caret="2530" fromTop="33" />
+      <File id="33FE82B0-FABF-4C13-880E-0084675E0960/f:MainPage.xaml" caret="44" fromTop="1" />
+      <File id="33FE82B0-FABF-4C13-880E-0084675E0960/f:MainPage.xaml" caret="487" fromTop="9" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

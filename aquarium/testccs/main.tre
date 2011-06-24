@@ -1,0 +1,17 @@
+ÀÄmain
+   ÀÄMAIN  0/84  Ram=15
+      ÃÄ??0??
+      ÃÄcan_init  0/216  Ram=0
+      ³  ÃÄcan_set_mode  0/34  Ram=2
+      ³  ÃÄcan_set_baud  0/46  Ram=0
+      ³  ÃÄcan_set_id  0/304  Ram=13
+      ³  ÃÄcan_set_id  0/304  Ram=13
+      ³  ÃÄcan_set_id  0/304  Ram=13
+      ³  ÃÄcan_set_id  0/304  Ram=13
+      ³  ÃÄcan_set_id  0/304  Ram=13
+      ³  ÃÄcan_set_id  0/304  Ram=13
+      ³  ÃÄcan_set_id  0/304  Ram=13
+      ³  ÃÄcan_set_id  0/304  Ram=13
+      ³  ÀÄcan_set_mode  0/34  Ram=2
+      ÀÄcan_putd  0/192  Ram=17
+         ÀÄcan_set_id  0/304  Ram=13

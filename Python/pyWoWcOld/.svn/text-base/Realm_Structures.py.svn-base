@@ -1,0 +1,3 @@
+ST_AUTH_LOGON_CHALLENGE   = ('<BBH4sBBBH4s4s4sIBBBBB', '<BBB32sBBB32s32s16sx')
+ST_AUTH_LOGON_PROOF       = ('<B32s20s20sxx', '<BB20sLxx')
+ST_REALM_LIST             = ('<BL', '<BHLB', '<BBBB', '<fBB')

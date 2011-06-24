@@ -1,0 +1,6 @@
+>>> Warning 203 "main.c" Line 187(1,1): Condition always TRUE
+>>> Warning 202 "main.c" Line 169(10,16): Variable never used:   devid1
+>>> Warning 202 "main.c" Line 169(18,24): Variable never used:   devid2
+>>> Warning 202 "main.c" Line 170(11,20): Variable never used:   unique_id
+      Memory usage:   ROM=1%      RAM=1% - 1%
+      0 Errors,  4 Warnings.

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1267305889763
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.copy",1267305895551
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1267305896549
+activated,editor,com.cloudgarden.jigloo,4.6.0,"com.cloudgarden.jigloo.editors.FormEditor",1267305897704
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.paste",1267305900137
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267305901339
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267305912212
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305917890
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305917984
+error,log,,,"Unhandled event loop exception",1267305920090
+error,log,,,"Unhandled event loop exception",1267305932741
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267305936142
+error,log,,,"Unhandled event loop exception",1267305936595
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineStart",1267305938467
+error,log,,,"Unhandled event loop exception",1267305939122
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.delete",1267305943911
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267305945393
+error,log,,,"Unhandled event loop exception",1267305945970
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267305947873
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267305951056
+error,log,,,"Unhandled event loop exception",1267305955720
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267305955845
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305965860
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305968513
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1267305968529

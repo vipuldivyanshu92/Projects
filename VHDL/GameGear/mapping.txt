@@ -1,0 +1,16 @@
+Page0 : 0000 - 3FFF
+Page1 : 4000 - 7FFF
+Page2 : 8000 - BFFF
+
+
+bank0 : 00000 - 03FFF
+bank1 : 04000 - 07FFF
+bank2 : 08000 - 0BFFF
+bank3 : 0C000 - 0FFFF
+bank4 : 10000 - 13FFF
+bank5 : 14000 - 17FFF
+...
+
+
+
+Assume a 1MB (byte) SRAM > 64 banks

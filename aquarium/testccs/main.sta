@@ -1,0 +1,49 @@
+
+ROM used: 880 (3%)
+          880 (3%) including unused fragments
+
+          1 Average locations per line
+          6 Average locations per statement
+
+RAM used: 19 (1%) at main() level
+          46 (1%) worst case
+
+Stack used: 2 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   79    16  10  main.c
+  529     0   0  D:\PICC\devices\18F25K80.h
+  447   137  90  D:\PICC\drivers\can-18xxx8.c
+  378     0   0  D:\PICC\drivers\can-18xxx8.h
+----- -----
+ 1433   153 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0    216  12   0   772  2.9  can_init
+0     46   3   0   255  2.3  can_set_baud
+0     34   2   2    76  3.1  can_set_mode
+0    304  17  13  1128  6.5  can_set_id
+0    192  11  17  1074  8.6  can_putd
+0     84   5  15   252  3.4  MAIN
+
+Program metrics:
+    Functions               6
+    Statements              153
+    Comments                502
+    Volume (V)              4907
+    Difficilty (D)          26.9
+    Effort to implement (E) 131967
+    Time to implement (T)   2 hours, 2 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   5
+    Maintainability (MI)    133
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   876  31888  
+
+
+

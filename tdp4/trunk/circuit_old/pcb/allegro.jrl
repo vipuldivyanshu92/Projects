@@ -1,0 +1,117 @@
+\t (00:00:04) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:04) 
+
+\t (00:00:04) Opening existing drawing...
+\d (00:00:04) Database opened: I:/tdp4/trunk/circuit/pcb/switch.dra
+\i (00:00:04) trapsize 288
+\i (00:00:04) trapsize 270
+\i (00:00:04) trapsize 263
+\i (00:00:04) trapsize 190
+\i (00:00:04) trapsize 237
+\i (00:00:04) generaledit 
+\i (00:00:22) opencd I:/tdp4/trunk/circuit/breakout/allegro/gumstix_breakout_topmask.brd 
+\t (00:00:22) Opening existing drawing...
+\i (00:00:22) trapsize 3076
+\i (00:00:22) trapsize 3059
+\i (00:00:22) trapsize 3561
+\d (00:00:22) Database opened: I:/tdp4/trunk/circuit/breakout/allegro/gumstix_breakout_topmask.brd
+\i (00:00:22) generaledit 
+\i (00:00:55) trapsize 2177
+\i (00:00:56) zoom in 1 
+\i (00:00:56) setwindow pcb
+\i (00:00:56) zoom in 1217.92 726.04
+\i (00:00:56) trapsize 1088
+\i (00:00:56) zoom in 1 
+\i (00:00:56) setwindow pcb
+\i (00:00:56) zoom in 980.64 806.59
+\i (00:00:56) trapsize 544
+\i (00:01:05) zoom out 1 
+\i (00:01:05) setwindow pcb
+\i (00:01:05) zoom out 835.88 276.52
+\i (00:01:05) trapsize 1088
+\i (00:01:19) zoom out 1 
+\i (00:01:19) setwindow pcb
+\i (00:01:19) zoom out 45.66 626.99
+\i (00:01:19) trapsize 2177
+\i (00:01:20) roam start
+\i (00:01:20) roam x -112
+\i (00:01:20) roam y 16
+\i (00:01:20) roam x -176
+\i (00:01:20) roam y 32
+\i (00:01:20) roam end
+\i (00:07:30) zoom in 1 
+\i (00:07:30) setwindow pcb
+\i (00:07:30) zoom in 577.91 108.16
+\i (00:07:30) trapsize 1088
+\i (00:07:34) zoom out 1 
+\i (00:07:34) setwindow pcb
+\i (00:07:34) zoom out 608.39 232.25
+\i (00:07:34) trapsize 2177
+\i (00:07:42) zoom in 1 
+\i (00:07:42) setwindow pcb
+\i (00:07:42) zoom in -541.02 628.44
+\i (00:07:42) trapsize 1088
+\i (00:09:09) zoom out 1 
+\i (00:09:09) setwindow pcb
+\i (00:09:09) zoom out 35.86 269.26
+\i (00:09:09) trapsize 2177
+\i (00:09:13) zoom out 1 
+\i (00:09:13) setwindow pcb
+\i (00:09:13) zoom out 375.47 439.05
+\i (00:09:13) trapsize 4354
+\i (00:09:14) zoom in 1 
+\i (00:09:14) setwindow pcb
+\i (00:09:14) zoom in 717.24 -1453.49
+\i (00:09:14) trapsize 2177
+\i (00:09:15) zoom in 1 
+\i (00:09:15) setwindow pcb
+\i (00:09:15) zoom in 900.10 -1235.79
+\i (00:09:15) trapsize 1088
+\i (00:09:16) roam start
+\i (00:09:17) roam x -16
+\i (00:09:17) roam y -64
+\i (00:09:17) zoom out 1 
+\i (00:09:17) setwindow pcb
+\i (00:09:17) zoom out 878.32 -1158.80
+\i (00:09:17) trapsize 2177
+\i (00:09:17) roam y -96
+\i (00:09:17) roam y -112
+\i (00:09:18) roam y -32
+\i (00:09:18) roam y -32
+\i (00:09:18) roam y -32
+\i (00:09:18) roam x 16
+\i (00:09:18) roam y -48
+\i (00:09:18) roam y -32
+\i (00:09:19) roam y 16
+\i (00:09:19) roam y 16
+\i (00:09:19) roam y 16
+\i (00:09:19) roam y 32
+\i (00:09:19) roam y 16
+\i (00:09:20) roam end
+\i (00:09:20) zoom in 1 
+\i (00:09:20) setwindow pcb
+\i (00:09:20) zoom in 943.63 95.10
+\i (00:09:20) trapsize 1088
+\i (00:10:01) zoom in 1 
+\i (00:10:01) setwindow pcb
+\i (00:10:01) zoom in 789.07 761.24
+\i (00:10:01) trapsize 544
+\i (00:10:03) zoom out 1 
+\i (00:10:03) setwindow pcb
+\i (00:10:03) zoom out 624.71 761.24
+\i (00:10:03) trapsize 1088
+\i (00:10:26) zoom out 1 
+\i (00:10:26) setwindow pcb
+\i (00:10:26) zoom out 546.35 341.10
+\i (00:10:26) trapsize 2177
+\i (00:10:36) zoom in 1 
+\i (00:10:36) setwindow pcb
+\i (00:10:36) zoom in -629.18 654.57
+\i (00:10:36) trapsize 1088
+\i (00:28:54) xhilite 
+\i (00:28:54) xname_flush 
+\i (00:28:54) done 
+\i (00:28:54) generaledit 
+\i (00:28:58) exit 
+\f (00:28:58) Do you want to save the changes you made to gumstix_breakout_topmask.brd?
+\i (00:28:59) fillin no 

@@ -1,0 +1,19 @@
+package applicationLayer;
+import java.util.List;
+
+import dataStorageLayer.BookStorageFacade;
+
+class Borrower extends BranchUserImpl {
+
+	
+	public List<Book> getBooksBorrowed() throws Exception{
+		
+		List<Book> b;
+		BookStorageFacade bsf = BookStorageFacade.getInstance();
+		
+		b = BookStorageFacade.getBooksByBorrower(this);		
+		return b; 
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+H:\Projects\C#\SRP\SRP\bin\Debug\SRP.exe
+H:\Projects\C#\SRP\SRP\bin\Debug\SRP.pdb
+H:\Projects\C#\SRP\SRP\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Projects\C#\SRP\SRP\obj\x86\Debug\SRP.exe
+H:\Projects\C#\SRP\SRP\obj\x86\Debug\SRP.pdb

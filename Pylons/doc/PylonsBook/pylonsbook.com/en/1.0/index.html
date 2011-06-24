@@ -1,0 +1,887 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from pylonsbook.com/en/1.0/index.html by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 11 Jun 2009 15:40:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Definitive Guide to Pylons - James Gardner &mdash; Pylons Book v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Pylons Book v1.0 documentation" href="#" />
+    <link rel="next" title="Dedication" href="front-matter.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="front-matter.html" title="Dedication"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">Pylons Book v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-definitive-guide-to-pylons-james-gardner">
+<h1>The Definitive Guide to Pylons - James Gardner<a class="headerlink" href="#the-definitive-guide-to-pylons-james-gardner" title="Permalink to this headline">¶</a></h1>
+<p><strong>The Definitive Guide to Pylons</strong></p>
+<p><strong>Copyright © 2009 by James Gardner</strong></p>
+<p>Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.2 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled “GNU Free Documentation License”.</p>
+<p>ISBN-10 (pbk): 1-59059-934-9</p>
+<p>ISBN-13 (pbk): 978-1-59059-934-1</p>
+<p>ISBN-13 (electronic): 978-1-4302-0534-0</p>
+<p>Printed and bound in the United States of America 9 8 7 6 5 4 3 2 1</p>
+<p>Trademarked names may appear in this book. Rather than use a trademark symbol with every occurrence of a trademarked name, we use the names only in an editorial fashion and to the benefit of the trademark owner, with no intention of infringement of the trademark.</p>
+<p>Lead Editors: Steve Anglin, Matt Wade</p>
+<p>Technical Reviewer: Michael Orr</p>
+<p>Editorial Board: Clay Andres, Steve Anglin, Mark Beckner, Ewan Buckingham, Tony Campbell, Gary Cornell, Jonathan Gennick, Michelle Lowman, Matthew Moodie, Jeffrey Pepper,Frank Pohlmann, Ben Renow-Clarke, Dominic Shakeshaft, Matt Wade, Tom Welsh</p>
+<p>Project Manager: Beth Christmas</p>
+<p>Copy Editor: Kim Wimpsett</p>
+<p>Associate Production Director: Kari Brooks-Copony</p>
+<p>Production Editor: Katie Stence</p>
+<p>Compositor: Linda Weidemann, Wolf Creek Press</p>
+<p>Proofreader: Lisa Hamilton</p>
+<p>Indexer: Becky Hornyak</p>
+<p>Artist: April Milne</p>
+<p>Cover Designer: Kurt Krames</p>
+<p>Manufacturing Director: Tom Debolski</p>
+<p>Distributed to the book trade worldwide by Springer-Verlag New York, Inc., 233 Spring Street, 6th Floor, New York, NY 10013. Phone 1-800-SPRINGER, fax 201-348-4505, e-mail <tt class="docutils literal"><span class="pre">orders-ny&#64;springer-sbm.com</span></tt>, or visit <a class="reference external" href="http://www.springeronline.com/">http://www.springeronline.com</a>.</p>
+<p>For information on translations, please contact Apress directly at 2855 Telegraph Avenue, Suite 600, Berkeley, CA 94705. Phone 510-549-5930, fax 510-549-5939, e-mail <tt class="docutils literal"><span class="pre">info&#64;apress.com</span></tt>, or visit <a class="reference external" href="http://www.apress.com/">http://www.apress.com</a>.</p>
+<p>Apress and friends of ED books may be purchased in bulk for academic, corporate, or promotional use. eBook versions and licenses are also available for most titles. For more information, reference our Special Bulk Sales–eBook Licensing web page at <a class="reference external" href="http://www.apress.com/info/bulksales">http://www.apress.com/info/bulksales</a>.</p>
+<p>The information in this book is distributed on an “as is” basis, without warranty. Although every precaution has been taken in the preparation of this work, neither the author(s) nor Apress shall have any liability to any person or entity with respect to any loss or damage caused or alleged to be caused directly or indirectly by the information contained in this work.</p>
+<p>The source code for this book is available to readers at <a class="reference external" href="http://www.apress.com/">http://www.apress.com</a>.</p>
+<div class="section" id="front-cover-text">
+<h2>Front Cover Text<a class="headerlink" href="#front-cover-text" title="Permalink to this headline">¶</a></h2>
+<p>THE EXPERT&#8217;S VOICE IN WEB DEVELOPMENT</p>
+<p>Includes SQLAlchemy, JavaScript and WSGI</p>
+<p>The Definitive Guide to Pylons</p>
+<p><em>Pylons is a lightweight web framework emphasizing flexibility and rapid development using standard tools from the Python community.</em></p>
+<p>James Gardner
+<em>Cofounder of Pylons</em></p>
+<p>Apress</p>
+</div>
+<div class="section" id="back-cover-text">
+<h2>Back Cover Text<a class="headerlink" href="#back-cover-text" title="Permalink to this headline">¶</a></h2>
+<p>BOOKS FOR PROFESSIONALS BY PROFESSIONALS</p>
+<p>The Definitive Guide to Pylons</p>
+<p>Dear Reader,</p>
+<p>Pylons is a lightweight web framework built on standard Python tools that provides a robust environment for writing modern web applications. It is well known for its clean architecture and loosely coupled approach, both of which make web development fast, flexible, and easy.</p>
+<p>Pylons users have long called for a definitive guide to the framework that pulls together each of its components into one easy-to-follow manual. I’ve written this book in response to that call. Whether you work with Linux, Windows, BSD, or the Mac OS, this book will teach you everything you need to know about web development with Pylons—from how to create your first “Hello World!” application to how to use each of Pylons’ core tools including FormEncode, Mako, SQLAlchemy, and Routes to how to perform more advanced tasks such as testing, using Unicode, internationalizing your application, authenticating users, and more. I’ll take you through the intricacies of so-called WSGI middleware components and explain Pylons’ internal architecture step-by-step so that you can take full advantage of its features.</p>
+<p>This book is filled with useful examples and code snippets to complement the text. Throughout the book you’ll be developing a complete Pylons application called SimpleSite, which will serve as a fully functional hierarchical wiki with facilities for comments and tagging. Through this application I will demonstrate how you can apply Pylons concepts to a real application, and I will give you all the knowledge you need to go on to develop your own applications. If you have never used Pylons before, you’ll find this book will serve as a great introduction to the framework, and if you are already an experienced developer, you’ll get fresh insight into Pylons’ more sophisticated features.</p>
+<p>James Gardner</p>
+<p>THE APRESS ROADMAP</p>
+<div class="highlight-python"><pre>                    +--&gt; The Definitive Guide to Pylons
+                    |
+Beginning Python  --+
+                    |
+                    +--&gt; The Definitive Guide to Django</pre>
+</div>
+<p>Apress</p>
+<p>SOURCE CODE ONLINE</p>
+<p>www.apress.com</p>
+<p><strong>US $46.99</strong></p>
+<p>Shelve in Programming/Python</p>
+<p>User level: Beginner-Advanced</p>
+<p>ISBN-13: 978-1-59059-934-1</p>
+<p>ISBN-10: 1-59059-934-9</p>
+<p>54699</p>
+<p>9 781590 599341</p>
+</div>
+<div class="section" id="errata">
+<h2>Errata<a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h2>
+<p>Errata for the book can be submitted and reviewed here: <a class="reference external" href="http://apress.com/book/errata/773">http://apress.com/book/errata/773</a>.</p>
+</div>
+<div class="section" id="front-matter">
+<h2>Front Matter<a class="headerlink" href="#front-matter" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="front-matter.html">Dedication</a></li>
+<li class="toctree-l1"><a class="reference external" href="front-matter.html#about-the-author">About the Author</a></li>
+<li class="toctree-l1"><a class="reference external" href="front-matter.html#about-the-technical-reviewer">About the Technical Reviewer</a></li>
+<li class="toctree-l1"><a class="reference external" href="front-matter.html#acknowledgments">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference external" href="front-matter.html#source-code-and-updates">Source Code and Updates</a></li>
+</ul>
+</div>
+<div class="section" id="part-1-getting-started">
+<h2>Part 1: Getting Started<a class="headerlink" href="#part-1-getting-started" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="introducing-pylons.html">Chapter 1: Introducing Pylons</a><ul>
+<li class="toctree-l2"><a class="reference external" href="introducing-pylons.html#the-old-way-cgi-scripts">The Old Way: CGI Scripts</a></li>
+<li class="toctree-l2"><a class="reference external" href="introducing-pylons.html#the-pylons-way">The Pylons Way</a><ul>
+<li class="toctree-l3"><a class="reference external" href="introducing-pylons.html#model-view-controller-architecture">Model View Controller Architecture</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-pylons.html#convention-over-configuration">Convention Over Configuration</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-pylons.html#loose-coupling-and-clean-separation">Loose Coupling and Clean Separation</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-pylons.html#other-features">Other Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="introducing-pylons.html#the-python-language">The Python Language</a><ul>
+<li class="toctree-l3"><a class="reference external" href="introducing-pylons.html#python-3-0">Python 3.0</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="introducing-pylons.html#the-pylons-community">The Pylons Community</a></li>
+<li class="toctree-l2"><a class="reference external" href="introducing-pylons.html#pylons-components">Pylons Components</a></li>
+<li class="toctree-l2"><a class="reference external" href="introducing-pylons.html#what-s-coming-up">What’s Coming Up</a></li>
+<li class="toctree-l2"><a class="reference external" href="introducing-pylons.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="installing-pylons.html">Chapter 2: Installing Pylons</a><ul>
+<li class="toctree-l2"><a class="reference external" href="installing-pylons.html#quick-start-to-installation-for-the-impatient">Quick Start to Installation for the Impatient</a></li>
+<li class="toctree-l2"><a class="reference external" href="installing-pylons.html#installation-in-detail">Installation in Detail</a><ul>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#using-the-python-package-index">Using the Python Package Index</a></li>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#setting-up-a-virtual-python-environment">Setting Up a Virtual Python Environment</a></li>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#working-with-easy-install">Working with Easy Install</a></li>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#installing-pylons">Installing Pylons</a></li>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#understanding-eggs">Understanding Eggs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="installing-pylons.html#advanced-topics">Advanced Topics</a><ul>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#activating-and-deactivating-a-virtual-python-environment">Activating and Deactivating a Virtual Python Environment</a></li>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#setting-virtualenv-options">Setting Virtualenv Options</a></li>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#choosing-package-versions-with-easy-install">Choosing Package Versions with Easy Install</a></li>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#installing-with-a-proxy-server">Installing with a Proxy Server</a></li>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#troubleshooting-easy-install">Troubleshooting Easy Install</a></li>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#working-on-the-bleeding-edge">Working on the Bleeding Edge</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="installing-pylons.html#platform-specific-notes">Platform-Specific Notes</a><ul>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#linux-and-bsd">Linux and BSD</a></li>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#mac-os-x">Mac OS X</a></li>
+<li class="toctree-l3"><a class="reference external" href="installing-pylons.html#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="installing-pylons.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="exploring-pylons.html">Chapter 3: Exploring Pylons</a><ul>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#exploring-pylons-dependencies">Exploring Pylons’ Dependencies</a></li>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#creating-a-pylons-project">Creating a Pylons Project</a></li>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#serving-a-pylons-application">Serving a Pylons Application</a><ul>
+<li class="toctree-l3"><a class="reference external" href="exploring-pylons.html#configuration-files">Configuration Files</a></li>
+<li class="toctree-l3"><a class="reference external" href="exploring-pylons.html#the-paste-http-server">The Paste HTTP Server</a></li>
+<li class="toctree-l3"><a class="reference external" href="exploring-pylons.html#static-files">Static Files</a></li>
+<li class="toctree-l3"><a class="reference external" href="exploring-pylons.html#a-word-about-ip-addresses-hosts-and-security">A Word About IP Addresses, Hosts, and Security</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#exploring-a-pylons-project-s-directory-structure">Exploring a Pylons Project’s Directory Structure</a></li>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#creating-a-controller-and-modifying-the-routes">Creating a Controller and Modifying the Routes</a></li>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#understanding-how-http-works">Understanding How HTTP Works</a></li>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#exploring-the-environment">Exploring the Environment</a></li>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#understanding-the-pylons-request-and-response">Understanding the Pylons Request and Response</a><ul>
+<li class="toctree-l3"><a class="reference external" href="exploring-pylons.html#request">Request</a></li>
+<li class="toctree-l3"><a class="reference external" href="exploring-pylons.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#understanding-pylons-globals">Understanding Pylons Globals</a><ul>
+<li class="toctree-l3"><a class="reference external" href="exploring-pylons.html#helpers">Helpers</a></li>
+<li class="toctree-l3"><a class="reference external" href="exploring-pylons.html#context-object">Context Object</a></li>
+<li class="toctree-l3"><a class="reference external" href="exploring-pylons.html#app-globals-object">App Globals Object</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#configuring-pylons">Configuring Pylons</a></li>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#controller-imports">Controller Imports</a></li>
+<li class="toctree-l2"><a class="reference external" href="exploring-pylons.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="tracking-down-problems-and-handling-errors.html">Chapter 4: Tracking Down and Handling Problems</a><ul>
+<li class="toctree-l2"><a class="reference external" href="tracking-down-problems-and-handling-errors.html#using-the-pylons-interactive-debugger">Using the Pylons Interactive Debugger</a><ul>
+<li class="toctree-l3"><a class="reference external" href="tracking-down-problems-and-handling-errors.html#production-use">Production Use</a></li>
+<li class="toctree-l3"><a class="reference external" href="tracking-down-problems-and-handling-errors.html#e-mail-options">E-mail Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="tracking-down-problems-and-handling-errors.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="using-view-templates.html">Chapter 5: Using View Templates</a><ul>
+<li class="toctree-l2"><a class="reference external" href="using-view-templates.html#introducing-mako">Introducing Mako</a><ul>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#using-the-template-context-c-global">Using the Template Context c Global</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#basic-template-syntax">Basic Template Syntax</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#default-pylons-template-variables">Default Pylons Template Variables</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#mako-runtime-built-ins">Mako Runtime Built-Ins</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#separation-of-logic-and-view">Separation of Logic and View</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="using-view-templates.html#security-considerations-and-webhelpers">Security Considerations and WebHelpers</a><ul>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#writing-your-own-helpers">Writing Your Own Helpers</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#applying-filters-in-templates">Applying Filters in Templates</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="using-view-templates.html#structuring-template-code">Structuring Template Code</a><ul>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#using-def-blocks">Using &lt;%def&gt; Blocks</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#the-mako-cache">The Mako Cache</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#capturing-output">Capturing Output</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#the-body-def">The body() Def</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="using-view-templates.html#template-inheritance-chains">Template Inheritance Chains</a><ul>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#simple-inheritance">Simple Inheritance</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#next-namespace">Next Namespace</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#parent-namespace">Parent Namespace</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="using-view-templates.html#behind-the-scenes">Behind the Scenes</a><ul>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#caching">Caching</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#alternative-template-languages">Alternative Template Languages</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#multiple-template-languages">Multiple Template Languages</a></li>
+<li class="toctree-l3"><a class="reference external" href="using-view-templates.html#working-with-your-own-templating-language">Working with Your Own Templating Language</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="using-view-templates.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="working-with-forms-and-validators.html">Chapter 6: Working with Forms and Validators</a><ul>
+<li class="toctree-l2"><a class="reference external" href="working-with-forms-and-validators.html#the-basics">The Basics</a><ul>
+<li class="toctree-l3"><a class="reference external" href="working-with-forms-and-validators.html#post-vs-get">POST vs. GET</a></li>
+<li class="toctree-l3"><a class="reference external" href="working-with-forms-and-validators.html#the-resubmitted-data-problem">The Resubmitted Data Problem</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="working-with-forms-and-validators.html#building-forms-with-helpers">Building Forms with Helpers</a></li>
+<li class="toctree-l2"><a class="reference external" href="working-with-forms-and-validators.html#uploading-files">Uploading Files</a></li>
+<li class="toctree-l2"><a class="reference external" href="working-with-forms-and-validators.html#handling-forms-manually">Handling Forms Manually</a></li>
+<li class="toctree-l2"><a class="reference external" href="working-with-forms-and-validators.html#introducing-formencode">Introducing FormEncode</a><ul>
+<li class="toctree-l3"><a class="reference external" href="working-with-forms-and-validators.html#configuring-validators">Configuring Validators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="working-with-forms-and-validators.html#using-html-fill">Using HTML Fill</a><ul>
+<li class="toctree-l3"><a class="reference external" href="working-with-forms-and-validators.html#error-message-formatting">Error Message Formatting</a></li>
+<li class="toctree-l3"><a class="reference external" href="working-with-forms-and-validators.html#render-arguments">Render Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="working-with-forms-and-validators.html#doing-validation-the-quick-way">Doing Validation the Quick Way</a></li>
+<li class="toctree-l2"><a class="reference external" href="working-with-forms-and-validators.html#using-custom-validators">Using Custom Validators</a></li>
+<li class="toctree-l2"><a class="reference external" href="working-with-forms-and-validators.html#solving-the-repeating-fields-problem">Solving the Repeating Fields Problem</a><ul>
+<li class="toctree-l3"><a class="reference external" href="working-with-forms-and-validators.html#creating-the-form">Creating the Form</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="working-with-forms-and-validators.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html">Chapter 7: Introducing the Model and SQLAlchemy</a><ul>
+<li class="toctree-l2"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#storing-data-in-the-filesystem">Storing Data in the Filesystem</a></li>
+<li class="toctree-l2"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#storing-data-in-amazon-s3">Storing Data in Amazon S3</a></li>
+<li class="toctree-l2"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#exploring-database-approaches">Exploring Database Approaches</a><ul>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#object-databases">Object Databases</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#xml-databases">XML Databases</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#relational-database-management-systems">Relational Database Management Systems</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#object-relational-mappers">Object-Relational Mappers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#setting-up-sqlalchemy">Setting Up SQLAlchemy</a><ul>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#installing-the-db-api-driver">Installing the DB-API Driver</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#installing-sqlalchemy">Installing SQLAlchemy</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#creating-a-database">Creating a Database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#exploring-sqlalchemy-s-architecture">Exploring SQLAlchemy’s Architecture</a><ul>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#engine-api">Engine API</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#metadata-and-type-apis">Metadata and Type APIs</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#sql-expression-api">SQL Expression API</a><ul>
+<li class="toctree-l4"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#sql-injection-attacks">SQL Injection Attacks</a></li>
+<li class="toctree-l4"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#selecting-results">Selecting Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#exploring-the-object-relational-api">Exploring the Object-Relational API</a><ul>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#object-relational-principles">Object-Relational Principles</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#more-metadata">More Metadata</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#classes-and-mappers">Classes and Mappers</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#understanding-the-session">Understanding the Session</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#exploring-the-session">Exploring the Session</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#queries">Queries</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#working-with-objects">Working with Objects</a></li>
+<li class="toctree-l3"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#declarative-api">Declarative API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#maintaining-performance">Maintaining Performance</a></li>
+<li class="toctree-l2"><a class="reference external" href="introducing-the-model-and-sqlalchemy.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="starting-the-simplesite-tutorial.html">Chapter 8: Starting the SimpleSite Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference external" href="starting-the-simplesite-tutorial.html#getting-started-with-simplesite">Getting Started with SimpleSite</a></li>
+<li class="toctree-l2"><a class="reference external" href="starting-the-simplesite-tutorial.html#exploring-the-template-structure">Exploring the Template Structure</a></li>
+<li class="toctree-l2"><a class="reference external" href="starting-the-simplesite-tutorial.html#using-sqlalchemy-in-pylons">Using SQLAlchemy in Pylons</a><ul>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#configuring-the-engine">Configuring the Engine</a></li>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#creating-the-model">Creating the Model</a></li>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#creating-the-database-tables">Creating the Database Tables</a></li>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#querying-data">Querying Data</a></li>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#understanding-the-role-of-the-base-controller">Understanding the Role of the Base Controller</a></li>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#using-a-sqlalchemy-session-in-pylons">Using a SQLAlchemy Session in Pylons</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="starting-the-simplesite-tutorial.html#updating-the-controller-to-support-editing-pages">Updating the Controller to Support Editing Pages</a><ul>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#view">view()</a></li>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#new">new()</a></li>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#create">create()</a></li>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#edit-and-save">edit() and save()</a></li>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#list">list()</a></li>
+<li class="toctree-l3"><a class="reference external" href="starting-the-simplesite-tutorial.html#delete">delete()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="starting-the-simplesite-tutorial.html#updating-the-footer">Updating the Footer</a></li>
+<li class="toctree-l2"><a class="reference external" href="starting-the-simplesite-tutorial.html#using-pagination">Using Pagination</a></li>
+<li class="toctree-l2"><a class="reference external" href="starting-the-simplesite-tutorial.html#formatting-dates-and-times">Formatting Dates and Times</a></li>
+<li class="toctree-l2"><a class="reference external" href="starting-the-simplesite-tutorial.html#using-sessions-and-a-flash-message">Using Sessions and a Flash Message</a></li>
+<li class="toctree-l2"><a class="reference external" href="starting-the-simplesite-tutorial.html#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="part-2-advanced-pylons">
+<h2>Part 2: Advanced Pylons<a class="headerlink" href="#part-2-advanced-pylons" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="urls-routing-and-dispatch.html">Chapter 9: URLs, Routing and Dispatch</a><ul>
+<li class="toctree-l2"><a class="reference external" href="urls-routing-and-dispatch.html#pylons-routing-in-detail">Pylons Routing in Detail</a><ul>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#pylons-dispatch">Pylons Dispatch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="urls-routing-and-dispatch.html#routes-in-detail">Routes in Detail</a><ul>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#route-parts">Route Parts</a></li>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#default-variables">Default Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="urls-routing-and-dispatch.html#generating-urls">Generating URLs</a><ul>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#named-routes">Named Routes</a></li>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#static-named-routes">Static Named Routes</a></li>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#internal-static-routes">Internal Static Routes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="urls-routing-and-dispatch.html#choosing-good-urls">Choosing Good URLs</a></li>
+<li class="toctree-l2"><a class="reference external" href="urls-routing-and-dispatch.html#unnecessary-routes-features">Unnecessary Routes Features</a><ul>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#route-minimization">Route Minimization</a></li>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#route-memory">Route Memory</a></li>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#implicit-defaults">Implicit Defaults</a></li>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#best-practice">Best Practice</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="urls-routing-and-dispatch.html#advanced-url-routing">Advanced URL Routing</a><ul>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#conditions">Conditions</a></li>
+<li class="toctree-l3"><a class="reference external" href="urls-routing-and-dispatch.html#filter-functions">Filter Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="urls-routing-and-dispatch.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="unicode.html">Chapter 10: Unicode</a><ul>
+<li class="toctree-l2"><a class="reference external" href="unicode.html#a-brief-history">A Brief History</a></li>
+<li class="toctree-l2"><a class="reference external" href="unicode.html#introducing-unicode">Introducing Unicode</a></li>
+<li class="toctree-l2"><a class="reference external" href="unicode.html#unicode-in-python-2">Unicode in Python 2</a><ul>
+<li class="toctree-l3"><a class="reference external" href="unicode.html#unicode-literals">Unicode Literals</a></li>
+<li class="toctree-l3"><a class="reference external" href="unicode.html#handling-errors">Handling Errors</a></li>
+<li class="toctree-l3"><a class="reference external" href="unicode.html#decoding-unicode">Decoding Unicode</a></li>
+<li class="toctree-l3"><a class="reference external" href="unicode.html#encoding-unicode">Encoding Unicode</a></li>
+<li class="toctree-l3"><a class="reference external" href="unicode.html#python-source-code-encoding">Python Source Code Encoding</a></li>
+<li class="toctree-l3"><a class="reference external" href="unicode.html#unicode-and-files">Unicode and Files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="unicode.html#unicode-considerations-in-pylons-programming">Unicode Considerations in Pylons Programming</a><ul>
+<li class="toctree-l3"><a class="reference external" href="unicode.html#request-parameters">Request Parameters</a></li>
+<li class="toctree-l3"><a class="reference external" href="unicode.html#templating">Templating</a></li>
+<li class="toctree-l3"><a class="reference external" href="unicode.html#output-encoding">Output Encoding</a></li>
+<li class="toctree-l3"><a class="reference external" href="unicode.html#databases">Databases</a></li>
+<li class="toctree-l3"><a class="reference external" href="unicode.html#a-complete-request-cycle">A Complete Request Cycle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="unicode.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="internationalization-and-localization.html">Chapter 11: Internationalization and Localization</a><ul>
+<li class="toctree-l2"><a class="reference external" href="internationalization-and-localization.html#understanding-the-process">Understanding the Process</a><ul>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#marking-strings-for-internationalization">Marking Strings for Internationalization</a></li>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#extracting-messages-and-handling-translations">Extracting Messages and Handling Translations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="internationalization-and-localization.html#seeing-it-in-action">Seeing It in Action</a><ul>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#using-babel">Using Babel</a></li>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#supporting-multiple-languages">Supporting Multiple Languages</a></li>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#updating-the-catalog">Updating the Catalog</a></li>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#translations-within-templates">Translations Within Templates</a></li>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#babel-extractors">Babel Extractors</a></li>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#setting-the-language-in-the-config-file">Setting the Language in the Config File</a></li>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#using-a-session-to-store-the-user-s-language">Using a Session to Store the User’s Language</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="internationalization-and-localization.html#advanced-internationalization-techniques">Advanced Internationalization Techniques</a><ul>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#fallback-languages">Fallback Languages</a></li>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#lazy-translations">Lazy Translations</a></li>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#plural-forms">Plural Forms</a></li>
+<li class="toctree-l3"><a class="reference external" href="internationalization-and-localization.html#search-engine-considerations">Search Engine Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="internationalization-and-localization.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="testing.html">Chapter 12: Testing</a><ul>
+<li class="toctree-l2"><a class="reference external" href="testing.html#types-of-testing-and-the-development-process">Types of Testing and the Development Process</a></li>
+<li class="toctree-l2"><a class="reference external" href="testing.html#unit-testing-with-nose">Unit Testing with nose</a><ul>
+<li class="toctree-l3"><a class="reference external" href="testing.html#introducing-nose">Introducing nose</a><ul>
+<li class="toctree-l4"><a class="reference external" href="testing.html#debug-messages">Debug Messages</a></li>
+<li class="toctree-l4"><a class="reference external" href="testing.html#detailed-errors">Detailed Errors</a></li>
+<li class="toctree-l4"><a class="reference external" href="testing.html#command-line-debugging">Command-Line Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference external" href="testing.html#search-locations">Search Locations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="testing.html#functional-testing">Functional Testing</a><ul>
+<li class="toctree-l3"><a class="reference external" href="testing.html#how-does-the-test-setup-work">How Does the Test Setup Work?</a></li>
+<li class="toctree-l3"><a class="reference external" href="testing.html#testing-the-save-action">Testing the save() Action</a></li>
+<li class="toctree-l3"><a class="reference external" href="testing.html#testing-your-own-objects">Testing Your Own Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="testing.html#interactive-shell">Interactive Shell</a></li>
+<li class="toctree-l2"><a class="reference external" href="testing.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="documentation.html">Chapter 13: Documentation</a><ul>
+<li class="toctree-l2"><a class="reference external" href="documentation.html#python-s-documentation-tools">Python’s Documentation Tools</a><ul>
+<li class="toctree-l3"><a class="reference external" href="documentation.html#comments">Comments</a></li>
+<li class="toctree-l3"><a class="reference external" href="documentation.html#docstrings">Docstrings</a></li>
+<li class="toctree-l3"><a class="reference external" href="documentation.html#the-built-in-help-function">The Built-In help() Function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="documentation.html#doctests">Doctests</a></li>
+<li class="toctree-l2"><a class="reference external" href="documentation.html#introducing-restructuredtext">Introducing reStructuredText</a></li>
+<li class="toctree-l2"><a class="reference external" href="documentation.html#introducing-sphinx">Introducing Sphinx</a><ul>
+<li class="toctree-l3"><a class="reference external" href="documentation.html#using-sphinx">Using Sphinx</a></li>
+<li class="toctree-l3"><a class="reference external" href="documentation.html#documenting-python-source-code">Documenting Python Source Code</a></li>
+<li class="toctree-l3"><a class="reference external" href="documentation.html#automatically-generating-documentation">Automatically Generating Documentation</a></li>
+<li class="toctree-l3"><a class="reference external" href="documentation.html#syntax-highlighting">Syntax Highlighting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="documentation.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="simplesite-tutorial-part-2.html">Chapter 14: SimpleSite Tutorial Part 2</a><ul>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-2.html#comments-system-one-to-many-mappings">Comments System: One-to-Many Mappings</a><ul>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#planning-the-controller">Planning the Controller</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#modifying-the-routes">Modifying the Routes</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#creating-the-controller">Creating the Controller</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#updating-the-controller-to-handle-comments">Updating the Controller to Handle Comments</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#setting-the-page-id-automatically">Setting the Page ID Automatically</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-2.html#updating-the-page-view">Updating the Page View</a><ul>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#handling-deleted-pages">Handling Deleted Pages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-2.html#tags-many-to-many-mappings">Tags: Many-to-Many Mappings</a><ul>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#creating-the-tag-controller">Creating the tag Controller</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#constraining-tag-names">Constraining Tag Names</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-2.html#adding-tags-to-pages">Adding Tags to Pages</a><ul>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#deleting-tags-and-pages">Deleting Tags and Pages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-2.html#creating-a-navigation-hierarchy">Creating a Navigation Hierarchy</a><ul>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#using-inheritance-in-sqlalchemy">Using Inheritance in SQLAlchemy</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#setting-up-initial-data">Setting Up Initial Data</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#creating-the-controllers">Creating the Controllers</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-2.html#the-page-controller">The Page Controller</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-2.html#changing-the-routing">Changing the Routing</a></li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-2.html#adding-the-navigation-elements">Adding the Navigation Elements</a></li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-2.html#adding-some-style">Adding Some Style</a></li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-2.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="css-javascript-and-ajax.html">Chapter 15: CSS, JavaScript, and Ajax</a><ul>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#adding-yui-to-your-project">Adding YUI to Your Project</a></li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#resetting-the-browser-css">Resetting the Browser CSS</a></li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#fonts">Fonts</a></li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#grids">Grids</a><ul>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#template-preset-grids">Template Preset Grids</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#nested-grids">Nested Grids</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#special-nested-grids">Special Nested Grids</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#updating-simplesite-to-use-css-grids">Updating SimpleSite to Use CSS Grids</a></li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#introducing-firebug">Introducing Firebug</a></li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#introducing-javascript">Introducing JavaScript</a></li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#javascript-essentials">JavaScript Essentials</a><ul>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#operators-of-interest">Operators of Interest</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#types">Types</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#function-scope-and-closures">Function Scope and Closures</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#objects">Objects</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#this">this</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#inheritance">Inheritance</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#prototypes">Prototypes</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#javascript-in-html">JavaScript in HTML</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#the-document-object-model">The Document Object Model</a><ul>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#navigating-the-dom">Navigating the DOM</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#manipulating-the-dom">Manipulating the DOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#the-event-model">The Event Model</a><ul>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#same-origin-policy">Same Origin Policy</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#browser-detection-vs-feature-detection">Browser Detection vs. Feature Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#adding-animation-to-the-simplesite-flash-message">Adding Animation to the SimpleSite Flash Message</a></li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#ajax">Ajax</a><ul>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#debugging-ajax-requests">Debugging Ajax Requests</a></li>
+<li class="toctree-l3"><a class="reference external" href="css-javascript-and-ajax.html#json">JSON</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#reducing-page-load-time">Reducing Page Load Time</a></li>
+<li class="toctree-l2"><a class="reference external" href="css-javascript-and-ajax.html#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="part-3-expert-pylons">
+<h2>Part 3: Expert Pylons<a class="headerlink" href="#part-3-expert-pylons" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html">Chapter 16: The Web Server Gateway Interface (WSGI)</a><ul>
+<li class="toctree-l2"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#introducing-wsgi">Introducing WSGI</a><ul>
+<li class="toctree-l3"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#wsgi-applications">WSGI Applications</a><ul>
+<li class="toctree-l4"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#using-instances-of-classes">Using Instances of Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#wsgi-in-pylons-controllers">WSGI in Pylons Controllers</a></li>
+<li class="toctree-l3"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#wsgi-servers">WSGI Servers</a></li>
+<li class="toctree-l3"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#wsgi-middleware">WSGI Middleware</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#writing-wsgi-middleware">Writing WSGI Middleware</a><ul>
+<li class="toctree-l3"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#modifying-the-environment">Modifying the Environment</a></li>
+<li class="toctree-l3"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#changing-the-status-and-headers">Changing the Status and Headers</a></li>
+<li class="toctree-l3"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#handling-errors">Handling Errors</a></li>
+<li class="toctree-l3"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#altering-the-response">Altering the Response</a></li>
+<li class="toctree-l3"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#testing-the-gzip-middleware">Testing the Gzip Middleware</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="the-web-server-gateway-interface-wsgi.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="pylons-internal-architecture.html">Chapter 17: Pylons’ Internal Architecture</a><ul>
+<li class="toctree-l2"><a class="reference external" href="pylons-internal-architecture.html#a-bit-of-history">A Bit of History</a></li>
+<li class="toctree-l2"><a class="reference external" href="pylons-internal-architecture.html#egg-entry-points">Egg Entry Points</a><ul>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#entry-points-and-websetup-py">Entry Points and websetup.py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="pylons-internal-architecture.html#the-pylons-config-file">The Pylons Config File</a><ul>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#default-config-options">Default Config Options</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#constructing-a-server">Constructing a Server</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#constructing-an-application">Constructing an Application</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#composite-applications">Composite Applications</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#pipelines-and-filters">Pipelines and Filters</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#understanding-factories">Understanding Factories</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#alternative-ways-of-specifying-factories">Alternative Ways of Specifying Factories</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#configuration-inheritance">Configuration Inheritance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="pylons-internal-architecture.html#accessing-the-pylons-wsgi-application-and-other-objects-programmatically">Accessing the Pylons WSGI Application and Other Objects Programmatically</a><ul>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#accessing-the-server-application-and-filters">Accessing the Server, Application, and Filters</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#accessing-configuration-options">Accessing Configuration Options</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#creating-a-pylons-application-with-paste-deploy">Creating a Pylons Application with Paste Deploy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="pylons-internal-architecture.html#the-pylons-middleware-stack">The Pylons Middleware Stack</a><ul>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#application-state-vs-request-state">Application State vs. Request State</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="pylons-internal-architecture.html#creating-an-application">Creating an Application</a><ul>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#loading-the-pylons-environment">Loading the Pylons Environment</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#the-pylonsapp-instance">The PylonsApp Instance</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#the-middleware-chain">The Middleware Chain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="pylons-internal-architecture.html#handling-a-request">Handling a Request</a><ul>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#the-cascade">The Cascade</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#the-registry-manager-stackedobjectproxy-and-pylons-globals">The Registry Manager, StackedObjectProxy, and Pylons Globals</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#returning-to-the-middleware-chain">Returning to the Middleware Chain</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#the-role-of-pylonsapp">The Role of PylonsApp</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#the-role-of-wsgicontroller">The Role of WSGIController</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="pylons-internal-architecture.html#handling-the-response">Handling the Response</a><ul>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#abort-redirect-to-and-httpexception">abort(), redirect_to(), and HTTPException</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#exception-handling">Exception Handling</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#error-documents">Error Documents</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#streaming-content">Streaming Content</a></li>
+<li class="toctree-l3"><a class="reference external" href="pylons-internal-architecture.html#returning-unicode-from-an-action">Returning Unicode from an Action</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="pylons-internal-architecture.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="authentication-and-authorization.html">Chapter 18: Authentication and Authorization</a><ul>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#private-data">Private Data</a></li>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#a-homegrown-solution">A Homegrown Solution</a></li>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#authkit">AuthKit</a></li>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#authentication-middleware">Authentication Middleware</a></li>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#authorization-and-permissions">Authorization and Permissions</a><ul>
+<li class="toctree-l3"><a class="reference external" href="authentication-and-authorization.html#the-authorization-decorator">The Authorization Decorator</a></li>
+<li class="toctree-l3"><a class="reference external" href="authentication-and-authorization.html#the-authorization-middleware">The Authorization Middleware</a></li>
+<li class="toctree-l3"><a class="reference external" href="authentication-and-authorization.html#the-authorization-function">The Authorization Function</a></li>
+<li class="toctree-l3"><a class="reference external" href="authentication-and-authorization.html#protecting-a-controller">Protecting a Controller</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#groups-roles-and-permissions">Groups, Roles, and Permissions</a></li>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#user-management-api">User Management API</a></li>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#cookie-options">Cookie Options</a></li>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#alternative-methods">Alternative Methods</a></li>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#functional-testing">Functional Testing</a></li>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#general-security-considerations">General Security Considerations</a><ul>
+<li class="toctree-l3"><a class="reference external" href="authentication-and-authorization.html#secure-sockets-layer">Secure Sockets Layer</a></li>
+<li class="toctree-l3"><a class="reference external" href="authentication-and-authorization.html#encrypted-passwords">Encrypted Passwords</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="authentication-and-authorization.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="simplesite-tutorial-part-3.html">Chapter 19: SimpleSite Tutorial Part 3</a><ul>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-3.html#authentication-and-authorization">Authentication and Authorization</a><ul>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#setting-up-the-middleware">Setting Up the Middleware</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#adjusting-websetup-py">Adjusting websetup.py</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#protecting-controller-actions">Protecting Controller Actions</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#changing-templates-based-on-permissions">Changing Templates Based on Permissions</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#signing-in-and-signing-out">Signing In and Signing Out</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#styling-the-sign-in-screen">Styling the Sign-in Screen</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#protecting-the-rest-of-the-actions">Protecting the Rest of the Actions</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#using-the-authkit-user-management-api">Using the AuthKit User Management API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-3.html#error-documents">Error Documents</a><ul>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#customizing-the-error-documents-for-simplesite">Customizing the Error Documents for SimpleSite</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-3.html#adding-a-wysiwyg-interface">Adding a WYSIWYG Interface</a></li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-3.html#configuring-the-setup-py-file">Configuring the setup.py File</a><ul>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#choosing-a-version-number">Choosing a Version Number</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#configuring-dependencies">Configuring Dependencies</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#extra-dependencies">Extra Dependencies</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#extra-dependency-links">Extra Dependency Links</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#specifying-metadata">Specifying Metadata</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#customizing-the-long-description">Customizing the Long Description</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#customizing-the-production-config-file-template">Customizing the Production Config File Template</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-3.html#packaging-a-pylons-project-for-distribution">Packaging a Pylons Project for Distribution</a><ul>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#building-an-egg-file">Building an Egg File</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#publishing-an-egg-on-the-python-package-index">Publishing an Egg on the Python Package Index</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-3.html#making-simplesite-into-a-paste-project-template">Making SimpleSite into a Paste Project Template</a><ul>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#introducing-project-template-variables">Introducing Project Template Variables</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#using-project-template-variables">Using Project Template Variables</a></li>
+<li class="toctree-l3"><a class="reference external" href="simplesite-tutorial-part-3.html#completing-the-cycle">Completing the Cycle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="simplesite-tutorial-part-3.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="logging.html">Chapter 20: Logging</a><ul>
+<li class="toctree-l2"><a class="reference external" href="logging.html#getting-started-with-pylons-logging">Getting Started with Pylons Logging</a></li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#understanding-the-logging-module">Understanding the logging Module</a><ul>
+<li class="toctree-l3"><a class="reference external" href="logging.html#understanding-log-levels">Understanding Log Levels</a></li>
+<li class="toctree-l3"><a class="reference external" href="logging.html#logging-variables">Logging Variables</a></li>
+<li class="toctree-l3"><a class="reference external" href="logging.html#logging-in-templates">Logging in Templates</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#introducing-logging-configuration">Introducing Logging Configuration</a><ul>
+<li class="toctree-l3"><a class="reference external" href="logging.html#logger-sections">Logger Sections</a></li>
+<li class="toctree-l3"><a class="reference external" href="logging.html#handler-sections">Handler Sections</a></li>
+<li class="toctree-l3"><a class="reference external" href="logging.html#formatter-sections">Formatter Sections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#redirecting-log-output-using-handlers">Redirecting Log Output Using Handlers</a><ul>
+<li class="toctree-l3"><a class="reference external" href="logging.html#logging-to-a-file">Logging to a File</a></li>
+<li class="toctree-l3"><a class="reference external" href="logging.html#logging-to-wsgi-errors">Logging to wsgi.errors</a></li>
+<li class="toctree-l3"><a class="reference external" href="logging.html#configuring-which-messages-are-logged">Configuring Which Messages Are Logged</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#controlling-propagation-with-loggers">Controlling Propagation with Loggers</a><ul>
+<li class="toctree-l3"><a class="reference external" href="logging.html#using-propagation-to-filter-messages">Using Propagation to Filter Messages</a></li>
+<li class="toctree-l3"><a class="reference external" href="logging.html#summarizing-propagation-options">Summarizing Propagation Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#capturing-log-output-from-other-software">Capturing Log Output from Other Software</a><ul>
+<li class="toctree-l3"><a class="reference external" href="logging.html#capturing-sqlalchemy-log-messages-using-propagation">Capturing SQLAlchemy Log Messages Using Propagation</a></li>
+<li class="toctree-l3"><a class="reference external" href="logging.html#capturing-authkit-messages-using-a-handler">Capturing AuthKit Messages Using a Handler</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#production-configuration">Production Configuration</a></li>
+<li class="toctree-l2"><a class="reference external" href="logging.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="deployment.html">Chapter 21: Deployment</a><ul>
+<li class="toctree-l2"><a class="reference external" href="deployment.html#choosing-or-setting-up-a-python-environment">Choosing or Setting Up a Python Environment</a><ul>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#using-the-system-python-environment">Using the System Python Environment</a></li>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#platform-packages-or-easy-install">Platform Packages or Easy Install?</a></li>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#using-buildout">Using Buildout</a></li>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#setting-up-a-virtual-python-environment">Setting Up a Virtual Python Environment</a></li>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#dealing-with-activate">Dealing with Activate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="deployment.html#installing-the-required-software-into-the-environment">Installing the Required Software into the Environment</a></li>
+<li class="toctree-l2"><a class="reference external" href="deployment.html#creating-a-config-file-for-the-application">Creating a Config File for the Application</a></li>
+<li class="toctree-l2"><a class="reference external" href="deployment.html#setting-up-the-application-instance">Setting Up the Application Instance</a></li>
+<li class="toctree-l2"><a class="reference external" href="deployment.html#serving-the-application-from-the-installed-environment">Serving the Application from the Installed Environment</a></li>
+<li class="toctree-l2"><a class="reference external" href="deployment.html#deployment-options">Deployment Options</a><ul>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#embedding">Embedding</a></li>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#proxying">Proxying</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="deployment.html#using-apache-to-proxy-requests-to-pylons">Using Apache to Proxy Requests to Pylons</a><ul>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#setting-up-log-files">Setting Up Log Files</a></li>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#creating-init-scripts">Creating init Scripts</a></li>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#restarting-stopped-applications">Restarting Stopped Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="deployment.html#embedding-pylons-in-apache-with-mod-wsgi">Embedding Pylons in Apache with mod_wsgi</a><ul>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#setting-up-a-virtual-host">Setting Up a Virtual Host</a></li>
+<li class="toctree-l3"><a class="reference external" href="deployment.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="deployment.html#deployment-on-windows">Deployment on Windows</a></li>
+<li class="toctree-l2"><a class="reference external" href="deployment.html#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="appendicies">
+<h2>Appendicies<a class="headerlink" href="#appendicies" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="licenses.html">Appendix: Licenses</a><ul>
+<li class="toctree-l2"><a class="reference external" href="licenses.html#gnu-free-documentation-license">GNU Free Documentation License</a><ul>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#preamble">0. PREAMBLE</a></li>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#applicability-and-definitions">1. APPLICABILITY AND DEFINITIONS</a></li>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#verbatim-copying">2. VERBATIM COPYING</a></li>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#copying-in-quantity">3. COPYING IN QUANTITY</a></li>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#modifications">4. MODIFICATIONS</a></li>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#combining-documents">5. COMBINING DOCUMENTS</a></li>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#collections-of-documents">6. COLLECTIONS OF DOCUMENTS</a></li>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#aggregation-with-independent-works">7. AGGREGATION WITH INDEPENDENT WORKS</a></li>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#translation">8. TRANSLATION</a></li>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#termination">9. TERMINATION</a></li>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#future-revisions-of-this-license">10. FUTURE REVISIONS OF THIS LICENSE</a></li>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#addendum-how-to-use-this-license-for-your-documents">ADDENDUM: How to use this License for your documents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="licenses.html#pylons-license">Pylons License</a><ul>
+<li class="toctree-l3"><a class="reference external" href="licenses.html#all-templates-generated-are-covered-under-the-following-license">ALL TEMPLATES GENERATED ARE COVERED UNDER THE FOLLOWING LICENSE:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="licenses.html#yui-license">YUI License</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and Tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference external" href="modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference external" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="#">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">The Definitive Guide to Pylons - James Gardner</a><ul>
+<li><a class="reference external" href="#front-cover-text">Front Cover Text</a></li>
+<li><a class="reference external" href="#back-cover-text">Back Cover Text</a></li>
+<li><a class="reference external" href="#errata">Errata</a></li>
+<li><a class="reference external" href="#front-matter">Front Matter</a><ul>
+</ul>
+</li>
+<li><a class="reference external" href="#part-1-getting-started">Part 1: Getting Started</a><ul>
+</ul>
+</li>
+<li><a class="reference external" href="#part-2-advanced-pylons">Part 2: Advanced Pylons</a><ul>
+</ul>
+</li>
+<li><a class="reference external" href="#part-3-expert-pylons">Part 3: Expert Pylons</a><ul>
+</ul>
+</li>
+<li><a class="reference external" href="#appendicies">Appendicies</a><ul>
+</ul>
+</li>
+<li><a class="reference external" href="#indices-and-tables">Indices and Tables</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Next topic</h4>
+            <p class="topless"><a href="front-matter.html"
+                                  title="next chapter">Dedication</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/index.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="http://pylonsbook.com/en/1.0/search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="front-matter.html" title="Dedication"
+             >next</a> |</li>
+        <li><a href="#">Pylons Book v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, James Gardner.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+
+<!-- Mirrored from pylonsbook.com/en/1.0/index.html by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 11 Jun 2009 15:41:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

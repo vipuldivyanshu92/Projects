@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/adraen/!svn/ver/28/trunk/AI4-AE1/AI4-AE1
+END
+AI4-AE1.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/adraen/!svn/ver/28/trunk/AI4-AE1/AI4-AE1/AI4-AE1.csproj
+END
+App.xaml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/adraen/!svn/ver/3/trunk/AI4-AE1/AI4-AE1/App.xaml
+END
+MainWindow.xaml.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/adraen/!svn/ver/28/trunk/AI4-AE1/AI4-AE1/MainWindow.xaml.cs
+END
+Agent.cs
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/adraen/!svn/ver/28/trunk/AI4-AE1/AI4-AE1/Agent.cs
+END
+App.xaml.cs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/adraen/!svn/ver/3/trunk/AI4-AE1/AI4-AE1/App.xaml.cs
+END
+Segment.cs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/adraen/!svn/ver/28/trunk/AI4-AE1/AI4-AE1/Segment.cs
+END
+Environment.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/adraen/!svn/ver/28/trunk/AI4-AE1/AI4-AE1/Environment.cs
+END
+BDTree.cs
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/adraen/!svn/ver/28/trunk/AI4-AE1/AI4-AE1/BDTree.cs
+END
+MainWindow.xaml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/adraen/!svn/ver/24/trunk/AI4-AE1/AI4-AE1/MainWindow.xaml
+END
+Point.cs
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/adraen/!svn/ver/28/trunk/AI4-AE1/AI4-AE1/Point.cs
+END
+Benchmark.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/adraen/!svn/ver/28/trunk/AI4-AE1/AI4-AE1/Benchmark.cs
+END

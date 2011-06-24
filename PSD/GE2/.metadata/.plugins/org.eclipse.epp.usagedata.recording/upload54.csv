@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301270340
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301271511
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1267301271527
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301281996
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301283041
+activated,editor,com.cloudgarden.jigloo,4.6.0,"com.cloudgarden.jigloo.editors.FormEditor",1267301292090
+error,log,,,"Unhandled event loop exception",1267301313150
+error,log,,,"Unhandled event loop exception",1267301316146
+error,log,,,"Unhandled event loop exception",1267301321543
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267301322667
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267301323618
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineStart",1267301327066
+error,log,,,"Unhandled event loop exception",1267301329265
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267301329577
+error,log,,,"Unhandled event loop exception",1267301332011
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267301335412
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267301336363
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267301344585
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267301358781
+executed,command,org.eclipse.debug.ui,3.5.1.v20090811_r351,"org.eclipse.debug.ui.commands.RunLast",1267301361355
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301362322
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301363555
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1267301363571
+activated,editor,com.cloudgarden.jigloo,4.6.0,"com.cloudgarden.jigloo.editors.FormEditor",1267301411994
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267301414725

@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{tikz-timing}
+\usepackage{a4wide}
+
+\begin{document}
+	\indent It is assumed in this protocol that the data would not be corrupted
+	during the SPI communication therefore this protocol does not define
+	integrity checks and error correction. It is also assumed that when the
+	slave select line is de-asserted the SPI buffers in both the client and
+	server sides are flushed, this is to prevents unknown state and possible
+	synchronization issues.	 
+
+	\section{Packet structure}
+	\subsection{Global Structure}
+		\begin{tikztimingtable}
+		SIZE	 & GN 2D{2} 6D{VARIABLE} GN \\
+		PACKET	 & GN 2D{OP} 6D{DATA} GN \\
+		\end{tikztimingtable}
+
+		\begin{table}[h]
+		\centering
+		\caption{Operation codes and values}
+		\begin{tabular}{| l | c | c |}
+		\hline
+		Operation & Value(\#2) & Description \\
+		\hline\hline
+		CMD	& 00 & Command Packet \\
+		D11 & 01 & 11bits identifier CAN packet \\
+		D29 & 10 & 29bits identifier CAN packet \\
+		\hline
+		\end{tabular}
+		\label{tab:global_struct}
+		\end{table}
+
+		\indent Every packet must have a two bits packet identifier to indicate
+		the type of the outgoing data. The table \ref{tab:global_struct}
+		contains the command codes used in this protocol to send command
+		messages and CAN packet with an identifier of length 11 and 29.
+
+	\subsection{CMD Packet}
+		\begin{tikztimingtable}
+		SIZE	 & GN 2D{2} 6D{6} GN \\
+		PACKET	 & GN 2D{CMD} 6D{CMD\_CODE} GN \\
+		\end{tikztimingtable}
+
+		\begin{table}[h]
+		\centering
+		\caption{Command codes and values}
+		\begin{tabular}{| l | c | c |}
+		\hline
+		Command & Value(\#10) & Description \\
+		\hline\hline
+		CMD\_NULL & 0 & Do nothing \\
+		CMD\_START & 1 & Start data transfer \\
+		CMD\_STOP & 2 & Stop data transfer \\
+		CMD\_EOS & & End of stream \\
+		\hline
+		\end{tabular}
+		\label{tab:cmd_codes}
+		\end{table}
+
+		\indent The command packet is used to initiate and indicate the current
+		status of the transmission. The list of available commands can be seen
+		in the Table \ref{tab:cmd_codes}. The number of possible commands is
+		limited to 64 as the command field is 6 bits long.
+
+	\subsection{DATA11 Packet}
+		\begin{tikztimingtable}
+		SIZE	 & GN 2D{2} 11D{11} 4D{4} 8D{0..64} GN \\
+		PACKET	 & GN 2D{D11} 11D{CAN\_ID} 4D{DLC} 8D{DATA} GN \\
+		\end{tikztimingtable}
+
+		\indent The DATA11 packet is used to transfer a CAN packet where the
+		CAN identifier is 11 bits long, the DLC value should be specified
+		precisely or the transmission will go out of sync as the amount of
+		data read and the data in the transmit buffer will be different.
+
+	\subsection{DATA29 Packet}
+		\begin{tikztimingtable}
+		SIZE	 & GN 2D{2} 29D{29} 4D{4} 8D{0..64} GN \\
+		PACKET	 & GN 2D{D29} 29D{CAN\_ID} 4D{DLC} 8D{DATA} GN \\
+		\end{tikztimingtable}
+
+		\indent The DATA29 is similar to the DATA11 packet however it is used
+		to transfer the CAN packet with a 29 bits long identifier.
+
+	\section{Transfer}
+	\subsection{Read one packet}
+		\begin{tikztimingtable}
+		CLK		& 	68{c} \\
+		SS 		& 	h 33L h \\
+		MISO	& 	x 8U 25D{PACKET} x \\
+		MOSI 	& 	x 8D{CMD\_START} 8D{CMD\_STOP} 17U x\\
+		\end{tikztimingtable}
+
+		\indent A single packet can be read by sending the start and stop packet
+		back to back the master will have to ensure that it finishes reading
+		the packet before de-asserting the slave select line.
+
+	\subsection{Read all packets}
+		\begin{tikztimingtable}
+		CLK		& 114{c}\\
+		SS		& h 56L h\\
+		MISO	& x 8U 10D{PACKET} 10D{PACKET} 10D{PACKET} 8D{CMD\_EOS} 10D{CMD\_NULL} x\\
+		MOSI	& x 8D{CMD\_START} 8D{CMD\_NULL} 8D{CMD\_NULL} 8D{CMD\_NULL} 8D{CMD\_NULL} 8D{CMD\_NULL} 8D{CMD\_STOP} x\\
+		\end{tikztimingtable}
+
+	\subsection{Read and write}
+		\begin{tikztimingtable}
+		CLK		& 113{c}\\
+		SS		& h 56L h\\
+		MISO	& x 8U 10D{PACKET} 10D{PACKET} 10D{PACKET} 8D{CMD\_EOS} 10D{CMD\_NULL}x\\
+		MOSI	& x 8D{CMD\_START} 10D{PACKET} 10D{PACKET} 10D{PACKET} 10D{PACKET} 8D{CMD\_STOP}x\\
+		\end{tikztimingtable}
+
+\end{document}

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/tdp4/!svn/ver/24/trunk/software/s08/cmd
+END
+HCS08_Full_Chip_Simulator_Postload.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/tdp4/!svn/ver/24/trunk/software/s08/cmd/HCS08_Full_Chip_Simulator_Postload.cmd
+END
+HCS08_Full_Chip_Simulator_Preload.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/tdp4/!svn/ver/24/trunk/software/s08/cmd/HCS08_Full_Chip_Simulator_Preload.cmd
+END
+BDM_P&E_Multilink_CyclonePro_Reset.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/tdp4/!svn/ver/24/trunk/software/s08/cmd/BDM_P&E_Multilink_CyclonePro_Reset.cmd
+END
+BDM_P&E_Multilink_CyclonePro_Startup.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tdp4/!svn/ver/24/trunk/software/s08/cmd/BDM_P&E_Multilink_CyclonePro_Startup.cmd
+END
+BDM_P&E_Multilink_CyclonePro_Postload.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tdp4/!svn/ver/24/trunk/software/s08/cmd/BDM_P&E_Multilink_CyclonePro_Postload.cmd
+END
+BDM_P&E_Multilink_CyclonePro_Preload.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tdp4/!svn/ver/24/trunk/software/s08/cmd/BDM_P&E_Multilink_CyclonePro_Preload.cmd
+END
+HCS08_Full_Chip_Simulator_Reset.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/tdp4/!svn/ver/24/trunk/software/s08/cmd/HCS08_Full_Chip_Simulator_Reset.cmd
+END
+HCS08_Full_Chip_Simulator_Startup.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/tdp4/!svn/ver/24/trunk/software/s08/cmd/HCS08_Full_Chip_Simulator_Startup.cmd
+END

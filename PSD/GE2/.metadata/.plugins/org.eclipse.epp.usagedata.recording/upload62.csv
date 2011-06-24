@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267304988083
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.findReplace",1267304988130
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305014890
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305016170
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305017277
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305037900
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305039585
+error,log,,,"Unhandled event loop exception",1267305044686
+error,log,,,"Unhandled event loop exception",1267305047260
+error,log,,,"Unhandled event loop exception",1267305058087
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.text.contentAssist.proposals",1267305115386
+error,log,,,"Unhandled event loop exception",1267305115776
+error,log,,,"Unhandled event loop exception",1267305143949
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.select.lineStart",1267305146414
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.copy",1267305147818
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.delete",1267305148567
+error,log,,,"Unhandled event loop exception",1267305150642
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267305151874
+error,log,,,"Unhandled event loop exception",1267305152888
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.paste",1267305153575
+error,log,,,"Unhandled event loop exception",1267305158598
+error,log,,,"Unhandled event loop exception",1267305164729
+error,log,,,"Unhandled event loop exception",1267305174510
+error,log,,,"Unhandled event loop exception",1267305181046
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267305181124

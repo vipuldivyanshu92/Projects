@@ -1,0 +1,20 @@
+package applicationLayer;
+
+import java.util.List;
+import dataStorageLayer.BookStorageFacade;
+
+/**
+ * Borrower is a user with the right to borrow books.
+ */
+public class Borrower extends BranchUserImpl {
+
+	public List<BranchBook> getBooksBorrowed() throws Exception{
+		
+		List<BranchBook> b;
+		BookStorageFacade bsf = BookStorageFacade.getInstance();
+		
+		b = bsf.getBooksBy("borrower", this.getId());		
+		return b; 
+	}
+	
+}

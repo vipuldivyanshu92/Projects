@@ -1,0 +1,16 @@
+H:\Projects\C#\MobileRC_POC\MobileRC_POC\obj\Debug\ResolveAssemblyReference.cache
+H:\Projects\C#\MobileRC_POC\MobileRC_POC\obj\Debug\MobileRC_POC.Form1.resources
+H:\Projects\C#\MobileRC_POC\MobileRC_POC\obj\Debug\MobileRC_POC.Properties.Resources.resources
+H:\Projects\C#\MobileRC_POC\MobileRC_POC\obj\Debug\MobileRC_POC.csproj.GenerateResource.Cache
+H:\Projects\C#\MobileRC_POC\MobileRC_POC\bin\Debug\MobileRC_POC.exe
+H:\Projects\C#\MobileRC_POC\MobileRC_POC\bin\Debug\MobileRC_POC.pdb
+H:\Projects\C#\MobileRC_POC\MobileRC_POC\obj\Debug\MobileRC_POC.exe
+H:\Projects\C#\MobileRC_POC\MobileRC_POC\obj\Debug\MobileRC_POC.pdb
+K:\C#\MobileRC_POC\MobileRC_POC\bin\Debug\MobileRC_POC.exe
+K:\C#\MobileRC_POC\MobileRC_POC\bin\Debug\MobileRC_POC.pdb
+K:\C#\MobileRC_POC\MobileRC_POC\obj\Debug\ResolveAssemblyReference.cache
+K:\C#\MobileRC_POC\MobileRC_POC\obj\Debug\MobileRC_POC.Form1.resources
+K:\C#\MobileRC_POC\MobileRC_POC\obj\Debug\MobileRC_POC.Properties.Resources.resources
+K:\C#\MobileRC_POC\MobileRC_POC\obj\Debug\MobileRC_POC.csproj.GenerateResource.Cache
+K:\C#\MobileRC_POC\MobileRC_POC\obj\Debug\MobileRC_POC.exe
+K:\C#\MobileRC_POC\MobileRC_POC\obj\Debug\MobileRC_POC.pdb

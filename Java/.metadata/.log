@@ -1,0 +1,62 @@
+!SESSION 2009-01-29 12:52:53.669 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_11
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.filesystem 1 1 2009-01-29 13:11:04.423
+!MESSAGE Could not load library: localfile_1_0_0.dll.  This library provides platform-specific optimizations for certain file system operations.  This library is not present on all platforms, so this may not be an error.  The resources plug-in will safely fall back to using java.io.File functionality.
+!STACK 0
+java.lang.UnsatisfiedLinkError: no localfile_1_0_0 in java.library.path
+	at java.lang.ClassLoader.loadLibrary(Unknown Source)
+	at java.lang.Runtime.loadLibrary0(Unknown Source)
+	at java.lang.System.loadLibrary(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFileNatives.<clinit>(LocalFileNatives.java:32)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.fetchInfo(LocalFile.java:141)
+	at org.eclipse.core.filesystem.provider.FileStore.fetchInfo(FileStore.java:277)
+	at org.eclipse.core.internal.localstore.BlobStore.<init>(BlobStore.java:45)
+	at org.eclipse.core.internal.localstore.HistoryStore2.<init>(HistoryStore2.java:77)
+	at org.eclipse.core.internal.resources.ResourcesCompatibility.createHistoryStore(ResourcesCompatibility.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.internal.resources.ResourcesCompatibilityHelper.createHistoryStore(ResourcesCompatibilityHelper.java:73)
+	at org.eclipse.core.internal.resources.ResourcesCompatibilityHelper.createHistoryStore(ResourcesCompatibilityHelper.java:47)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.getHistoryStore(FileSystemResourceManager.java:358)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1012)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:1827)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$3.run(IDEWorkbenchAdvisor.java:391)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2009-02-07 18:09:32.630 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.version=1.6.0_12
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.filesystem 1 1 2009-02-07 18:15:20.505
+!MESSAGE Could not load library: localfile_1_0_0.dll.  This library provides platform-specific optimizations for certain file system operations.  This library is not present on all platforms, so this may not be an error.  The resources plug-in will safely fall back to using java.io.File functionality.
+!STACK 0
+java.lang.UnsatisfiedLinkError: no localfile_1_0_0 in java.library.path
+	at java.lang.ClassLoader.loadLibrary(Unknown Source)
+	at java.lang.Runtime.loadLibrary0(Unknown Source)
+	at java.lang.System.loadLibrary(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFileNatives.<clinit>(LocalFileNatives.java:32)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.fetchInfo(LocalFile.java:141)
+	at org.eclipse.core.filesystem.provider.FileStore.fetchInfo(FileStore.java:277)
+	at org.eclipse.core.internal.localstore.BlobStore.<init>(BlobStore.java:45)
+	at org.eclipse.core.internal.localstore.HistoryStore2.<init>(HistoryStore2.java:77)
+	at org.eclipse.core.internal.resources.ResourcesCompatibility.createHistoryStore(ResourcesCompatibility.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.internal.resources.ResourcesCompatibilityHelper.createHistoryStore(ResourcesCompatibilityHelper.java:73)
+	at org.eclipse.core.internal.resources.ResourcesCompatibilityHelper.createHistoryStore(ResourcesCompatibilityHelper.java:47)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.getHistoryStore(FileSystemResourceManager.java:358)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1012)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:1827)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$3.run(IDEWorkbenchAdvisor.java:391)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)

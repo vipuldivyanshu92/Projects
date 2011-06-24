@@ -1,0 +1,1169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from pylonsbook.com/en/1.0/using-view-templates.html by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 11 Jun 2009 15:42:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Chapter 5: Using View Templates &mdash; Pylons Book v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Pylons Book v1.0 documentation" href="index.html" />
+    <link rel="next" title="Chapter 6: Working with Forms and Validators" href="working-with-forms-and-validators.html" />
+    <link rel="prev" title="Chapter 4: Tracking Down and Handling Problems" href="tracking-down-problems-and-handling-errors.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="working-with-forms-and-validators.html" title="Chapter 6: Working with Forms and Validators"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tracking-down-problems-and-handling-errors.html" title="Chapter 4: Tracking Down and Handling Problems"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Pylons Book v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="chapter-5-using-view-templates">
+<h1>Chapter 5: Using View Templates<a class="headerlink" href="#chapter-5-using-view-templates" title="Permalink to this headline">¶</a></h1>
+<p id="index-1350">Real web applications require the generation of a lot of HTML pages. In the <tt class="docutils literal"><span class="pre">HelloWorld</span></tt> example from Chapter 3, you saw how to generate a string in Python code and return it from a controller action to the user’s browser to produce some visible output.</p>
+<p id="index-1351">If you tried to generate a whole web application with lots of different HTML pages by generating strings in Python code, it would quickly become rather cumbersome because the Python language was not specifically designed to make it easy to generate HTML. Instead, it is often helpful to use a <em>templating system</em>.</p>
+<p>Rather than writing Python code containing HTML strings, templating systems typically allow you to write HTML directly and embed Python code in your HTML when you need to do so. Since most of your template is likely to be HTML rather than Python, this is often a lot quicker. Templating languages typically also offer simple constructs for substituting variables or repeating certain sections of HTML.</p>
+<div class="section" id="introducing-mako">
+<span id="index-1352"></span><h2>Introducing Mako<a class="headerlink" href="#introducing-mako" title="Permalink to this headline">¶</a></h2>
+<p>Here is a simple template written using Pylons’ default templating language, Mako. It simply prints a personalized greeting:</p>
+<div class="highlight-python"><pre>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Greetings&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Greetings&lt;/h1&gt;
+    &lt;p&gt;Hello ${name}!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p id="index-1353">As you can see, most of the template consists of HTML. Areas of the template that represent Python expressions that add to the content of the template are written inside <tt class="docutils literal"><span class="pre">${}</span></tt>. In this example, the value of <tt class="docutils literal"><span class="pre">name</span></tt> would replace the <tt class="docutils literal"><span class="pre">${name}</span></tt> text when the template was rendered.</p>
+<p>Let’s see how to use this template in Pylons. Throughout this chapter, you’ll create a new Pylons application that demonstrates various features of Mako, and by the end of the chapter, you will have created a complete set of templates you can use in your own Pylons application.</p>
+<p>Start by creating a new project. Once again, you will be asked some questions; you can choose the defaults:</p>
+<div class="highlight-python"><pre>$ paster create --template=pylons TemplateDemo
+Selected and implied templates:
+  Pylons#pylons  Pylons application template
+
+Variables:
+  egg:      TemplateDemo
+  package:  templatedemo
+  project:  TemplateDemo
+Enter template_engine (mako/genshi/jinja/etc: Template language) ['mako']:
+Enter sqlalchemy (True/False: Include SQLAlchemy 0.4 configuration) [False]:
+Enter google_app_engine (True/False: Setup default appropriate for Google App Engine) [False]:
+Creating template pylons
+Creating directory ./TemplateDemo
+  Recursing into +package+
+    Creating ./TemplateDemo/templatedemo/
+    Copying __init__.py_tmpl to ./TemplateDemo/templatedemo/__init__.py
+    Recursing into config
+    ... etc</pre>
+</div>
+<p id="index-1354">Remember that the <tt class="docutils literal"><span class="pre">--template</span></tt> option in the previous command refers to <em>project</em> templates used to create a project directory structure for you, whereas this chapter is about <em>view</em> templates used to help render the HTML for a view.</p>
+<p id="index-1355">Pylons projects store view templates in the project’s <tt class="docutils literal"><span class="pre">templates</span></tt> directory, but if you want to store them somewhere else, you can configure where Pylons should tell Mako to look to find your view templates by editing your project’s <tt class="docutils literal"><span class="pre">config/environment.py</span></tt> file. By default, it looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Create the Mako TemplateLookup, with the default autoescaping</span>
+<span class="n">config</span><span class="p">[</span><span class="s">&#39;pylons.app_globals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mako_lookup</span> <span class="o">=</span> <span class="n">TemplateLookup</span><span class="p">(</span>
+    <span class="n">directories</span><span class="o">=</span><span class="n">paths</span><span class="p">[</span><span class="s">&#39;templates&#39;</span><span class="p">],</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>You can replace <tt class="docutils literal"><span class="pre">paths['templates']</span></tt> with a list of the places that Mako should search for view templates. Mako searches the directories in order.</p>
+<p id="index-1356">Now that the project has been created, let’s test the greeting example you saw earlier. Save the greeting template in the <tt class="docutils literal"><span class="pre">TemplateDemo/templatedemo/templates/</span></tt> directory as <tt class="docutils literal"><span class="pre">greeting.html</span></tt>.</p>
+<p>You’ll also need a controller to test the template. Create a new controller in your <tt class="docutils literal"><span class="pre">TemplateDemo</span></tt> project named <tt class="docutils literal"><span class="pre">greeting</span></tt>:</p>
+<div class="highlight-python"><pre>$ cd TemplateDemo
+$ paster controller greeting</pre>
+</div>
+<p>Update the <tt class="docutils literal"><span class="pre">index()</span></tt> action of the <tt class="docutils literal"><span class="pre">greeting</span></tt> controller so that it looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Pylons Developer&#39;</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="s">&#39;/greeting.html&#39;</span><span class="p">,</span> <span class="n">extra_vars</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">render()</span></tt> function is imported at the top of the controller from your project’s <tt class="docutils literal"><span class="pre">lib/base.py</span></tt> file. Within that file you’ll find the import below so the <tt class="docutils literal"><span class="pre">render()</span></tt> function in your controller is really just an alias for Pylons’ <tt class="docutils literal"><span class="pre">render_mako()</span></tt> function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pylons.templating</span> <span class="kn">import</span> <span class="n">render_mako</span> <span class="k">as</span> <span class="n">render</span>
+</pre></div>
+</div>
+<p id="index-1357">You’ll look at how to use other templating languages later in the chapter. Also notice that the template paths have to start with a slash (<tt class="docutils literal"><span class="pre">/</span></tt>). This requirement was introduced in Pylons 0.9.6.</p>
+<p id="index-1358">If you start the server with the <tt class="docutils literal"><span class="pre">paster</span> <span class="pre">serve</span> <span class="pre">--reload</span> <span class="pre">development.ini</span></tt> command and visit <a class="reference external" href="http://localhost:5000/greeting/index">http://localhost:5000/greeting/index</a>, you should see the <tt class="docutils literal"><span class="pre">Hello</span> <span class="pre">Pylons</span> <span class="pre">Developer!</span></tt> greeting in your browser (see Figure 5-1).</p>
+<div class="figure">
+<a class="reference external image-reference" href="_images/9349f0501.png"><img alt="Figure 5-1. The output produced by the ``greeting.html`` template" src="_images/9349f0501.png" /></a>
+<p class="caption">Figure 5-1. The output produced by the <tt class="docutils literal"><span class="pre">greeting.html</span></tt> template</p>
+</div>
+<div class="section" id="using-the-template-context-c-global">
+<h3>Using the Template Context c Global<a class="headerlink" href="#using-the-template-context-c-global" title="Permalink to this headline">¶</a></h3>
+<p id="index-1359">Although passing the <tt class="docutils literal"><span class="pre">name</span></tt> argument directly as an extra argument to <tt class="docutils literal"><span class="pre">render()</span></tt> works perfectly well, it is usually considered a better practice to assign template variables to Pylons via the template context global <tt class="docutils literal"><span class="pre">c</span></tt>, which you learned about in Chapter 3. Here is the updated controller:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Pylons Developer&#39;</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="s">&#39;/greeting.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Before you can use the <tt class="docutils literal"><span class="pre">c</span></tt> global, it needs importing into your controller:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pylons</span> <span class="kn">import</span> <span class="n">tmpl_context</span> <span class="k">as</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p id="index-1360">You might prefer to assign template variables to <tt class="docutils literal"><span class="pre">c</span></tt> rather than pass them in directly as arguments to <tt class="docutils literal"><span class="pre">render()</span></tt> for two reasons:</p>
+<blockquote>
+<ul class="simple">
+<li>There is less chance you will accidentally assign a variable that has the same name as either one of the Pylons globals or one of the global names set up by Mako.</li>
+<li>If a particular variable is useful in a template, there is a good chance it will be useful elsewhere in your application too. Since the <tt class="docutils literal"><span class="pre">c</span></tt> object is a Pylons global, you can also use objects assigned as attributes of <tt class="docutils literal"><span class="pre">c</span></tt> elsewhere in your application during a request.</li>
+</ul>
+</blockquote>
+<p>Here’s the updated <tt class="docutils literal"><span class="pre">greeting.html</span></tt> template:</p>
+<div class="highlight-python"><pre>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Greetings&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Greetings&lt;/h1&gt;
+    &lt;p&gt;Hello ${c.name}!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>Notice that this time the call to <tt class="docutils literal"><span class="pre">render()</span></tt> doesn’t include the <tt class="docutils literal"><span class="pre">c</span></tt> global explicitly. Pylons automatically passes this and other globals to Mako anyway, so you don’t need to do so yourself.</p>
+<p>If you test this updated example, you will see the same output as before.</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p id="index-1361">Be careful when setting <tt class="docutils literal"><span class="pre">c</span></tt> attributes that begin with an underscore (<tt class="docutils literal"><span class="pre">_</span></tt>) character. <tt class="docutils literal"><span class="pre">c</span></tt> and other global variables are really a <tt class="docutils literal"><span class="pre">StackedObjectProxy</span></tt>, which reserve the attribute names <tt class="docutils literal"><span class="pre">_current_obj</span></tt>, <tt class="docutils literal"><span class="pre">_push_object</span></tt>, and <tt class="docutils literal"><span class="pre">_pop_object</span></tt> for their internal methods.</p>
+<p class="last">You’ll learn about how these objects actually work under the hood in Chapter 17.</p>
+</div>
+<p id="index-1362">The <tt class="docutils literal"><span class="pre">c</span></tt> global is reset on each request so that you don’t need to worry about a controller still having old values set from a previous request.</p>
+<p>One issue you learned about in Chapter 3 is that the <tt class="docutils literal"><span class="pre">c</span></tt> object doesn’t raise an <tt class="docutils literal"><span class="pre">AttributeError</span></tt> when you attempt to access an attribute that doesn’t exist and instead returns an empty string. This behavior is confusing for new Pylons developers (as well as more experienced ones), so it is recommended you disable it by specifying the <tt class="docutils literal"><span class="pre">strict_c</span></tt> option in <tt class="docutils literal"><span class="pre">config/environment.py</span></tt>. Add a new line after the Pylons configuration options:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># CONFIGURATION OPTIONS HERE (note: all config options will override</span>
+<span class="c"># any Pylons config options)</span>
+<span class="n">config</span><span class="p">[</span><span class="s">&#39;pylons.strict_c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>The template context global <tt class="docutils literal"><span class="pre">c</span></tt> makes it easy to pass information around your application, but it is available only during a request. As a result, you should be very careful about creating libraries that explicitly rely on it; otherwise, your code might quickly become quite tangled.</p>
+<p>As an example, imagine you had assigned the variables <tt class="docutils literal"><span class="pre">name</span></tt> and <tt class="docutils literal"><span class="pre">age</span></tt> to the <tt class="docutils literal"><span class="pre">c</span></tt> object and then created a function that performed some simple formatting. You might be tempted to write it like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pylons</span> <span class="kn">import</span> <span class="n">c</span>
+
+<span class="k">def</span> <span class="nf">format_age</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">&quot;Name: </span><span class="si">%s</span><span class="s">, Age: </span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1363">Although this works perfectly well, it is bad practice—your function can be used only when Pylons is processing an HTTP request because this is the only time the <tt class="docutils literal"><span class="pre">c</span></tt> global is available. It is much better to write your function like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">format_age</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">&quot;Name: </span><span class="si">%s</span><span class="s">, Age: </span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and then to use it like <tt class="docutils literal"><span class="pre">format_age(c.name,</span> <span class="pre">c.age)</span></tt> so that the function itself does not rely on the presence of the <tt class="docutils literal"><span class="pre">c</span></tt> global. This will make it much more obvious how your code works and will make refactoring later much easier.</p>
+<p id="index-1364">For the same reason, it is better to avoid using other Pylons globals such as <tt class="docutils literal"><span class="pre">request</span></tt> and <tt class="docutils literal"><span class="pre">response</span></tt> where possible. Being explicit is usually a good idea.</p>
+</div>
+<div class="section" id="basic-template-syntax">
+<h3>Basic Template Syntax<a class="headerlink" href="#basic-template-syntax" title="Permalink to this headline">¶</a></h3>
+<p id="index-1365">Now that you’ve seen how a very simple template works, it is time to look in more detail at the template syntax you’ll frequently use when working with Mako templates.</p>
+<p>If you’d like to follow along with any of the examples in this section, create a new template called <tt class="docutils literal"><span class="pre">basic.html</span></tt>, and then create a new action in the controller to render it, because you will return to the <tt class="docutils literal"><span class="pre">greeting.html</span></tt> example later in the chapter so shouldn’t change that template now.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">basic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="s">&#39;/basic.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1366">Let’s get started. You’ve already seen basic expression substitution using the <tt class="docutils literal"><span class="pre">${}</span></tt> construct. You can use any valid Python expression that would be suitable as a function argument within the brackets. Here is an example:</p>
+<div class="highlight-python"><pre>The value of 3 + 5 is: ${3 + 5}
+A string representation of 3 to the power 4 is ${pow(3, 4)}</pre>
+</div>
+<p id="index-1367">You can add comments to your templates by starting a line with the <tt class="docutils literal"><span class="pre">##</span></tt> characters. A single <tt class="docutils literal"><span class="pre">#</span></tt> is used quite a lot in templates for CSS selectors and output for various programming languages, so it was decided <tt class="docutils literal"><span class="pre">##</span></tt> should be used for comments rather than adopting the Python comment format of a single <tt class="docutils literal"><span class="pre">#</span></tt> character.</p>
+<p>Make sure the <tt class="docutils literal"><span class="pre">##</span></tt> characters are at the very start of the line with no whitespace. For example:</p>
+<div class="highlight-python"><pre>## This is a comment which will not be rendered
+This will be rendered ## and so will this.</pre>
+</div>
+<p id="index-1368">You can also use multiline comments using <tt class="docutils literal"><span class="pre">&lt;%doc&gt;</span></tt> tags. For example:</p>
+<div class="highlight-python"><pre>&lt;%doc&gt;
+    This is a multiline comment which will not be rendered. This style of
+    comment is particularly useful for documentation as well as situations where
+    you want to comment out a large region of your template temporarily during
+    testing.
+&lt;/%doc&gt;</pre>
+</div>
+<p id="index-1369">Related to the <tt class="docutils literal"><span class="pre">&lt;%doc&gt;</span></tt> tag is the <tt class="docutils literal"><span class="pre">&lt;%text&gt;</span></tt> tag, which simply outputs verbatim whatever text is specified without treating it as Mako markup. This is very handy for documenting Mako. For example, the following:</p>
+<div class="highlight-python"><pre>&lt;%text&gt;
+    This is some Mako syntax which will not be executed: ${variable}
+    Neither will this &lt;%doc&gt;be treated as a comment&lt;/%doc&gt;
+&lt;/%text&gt;</pre>
+</div>
+<p>produces the unchanged output, as you would expect:</p>
+<div class="highlight-python"><pre>This is some Mako syntax which will not be executed: ${variable}
+Neither will this &lt;%doc&gt;be treated as a comment&lt;/%doc&gt;</pre>
+</div>
+<p>You might need to view the HTML source code to see that this is indeed the output produced because some web browsers, including Internet Explorer, don’t handle tags containing <tt class="docutils literal"><span class="pre">%</span></tt> characters such as the <tt class="docutils literal"><span class="pre">&lt;%doc&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;/%doc&gt;</span></tt> tags in this example.</p>
+<p id="index-1370">Mako also supports the full range of control structures supported by Python, including <tt class="docutils literal"><span class="pre">if</span></tt>, <tt class="docutils literal"><span class="pre">elif</span></tt>, <tt class="docutils literal"><span class="pre">else</span></tt>, <tt class="docutils literal"><span class="pre">while</span></tt>, and <tt class="docutils literal"><span class="pre">for</span></tt>. These structures are very useful in templates. For example, to control which information is displayed, you might use an <tt class="docutils literal"><span class="pre">if</span></tt> statement:</p>
+<div class="highlight-python"><pre>% if c.name == 'Pylons Developer':
+    Welcome Pylons Developer
+% else:
+    Welcome guest
+% endif</pre>
+</div>
+<p>These statements work in the same way they would in Python, including the need for a colon (<tt class="docutils literal"><span class="pre">:</span></tt>) at the end of the line. The only difference is that because templates don’t have to conform to the strict indentation rules that Python source code follows, you have to specify the point at which the control structure ends. In this case, you used an <tt class="docutils literal"><span class="pre">%</span> <span class="pre">endif</span></tt> line, but if you were using a <tt class="docutils literal"><span class="pre">while</span></tt> loop, for example, you would use <tt class="docutils literal"><span class="pre">%</span> <span class="pre">endwhile</span></tt>.</p>
+<p>You can, of course, combine control structures too. For example, you might want to generate an HTML list from a data structure that looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">c</span><span class="o">.</span><span class="n">links</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s">&#39;James&#39;</span><span class="p">,</span><span class="s">&#39;http://jimmyg.org&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;Ben&#39;</span><span class="p">,</span><span class="s">&#39;http://groovie.org&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s">&#39;Philip&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p id="index-1371">The template might look like this:</p>
+<div class="highlight-python"><pre>&lt;ul&gt;
+% for item in c.links:
+    &lt;li&gt;\
+% if item[1]:
+    &lt;a href="${item[1]}"&gt;${item[0]}&lt;/a&gt;\
+% else:
+    ${item[0]}\
+% endif
+    &lt;/li&gt;
+% endfor
+&lt;/ul&gt;</pre>
+</div>
+<p>This would generate a list that looked like this:</p>
+<div class="highlight-python"><pre>&lt;ul&gt;
+    &lt;li&gt;&lt;a href="http://jimmyg.org"&gt;James&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://groovie.org"&gt;Ben&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Philip&lt;/li&gt;
+&lt;/ul&gt;</pre>
+</div>
+<p>Notice how the variable <tt class="docutils literal"><span class="pre">item</span></tt> specified in the <tt class="docutils literal"><span class="pre">for</span></tt> loop can still be used as an expression in the <tt class="docutils literal"><span class="pre">${}</span></tt> construct even though it is generated in a loop and was not directly passed into the template as a namespace argument.</p>
+<p>Also, if the bottom <tt class="docutils literal"><span class="pre">%</span> <span class="pre">endif</span></tt> statement was not in line with the <tt class="docutils literal"><span class="pre">%</span> <span class="pre">if</span></tt> statement, the template would have worked equally well. Mako doesn’t require the same indentation that Python does, although it is usually good practice to properly structure your templates anyway.</p>
+<p id="index-1372">The final thing to point out about this example is that it has made extensive use of the <tt class="docutils literal"><span class="pre">\</span></tt> character, which, when placed at the end of a line, consumes the newline character that follows it to prevent Mako from adding a line break at the end of the line.</p>
+<p id="index-1373">Sometimes it is useful to be able to directly write Python code in templates. This can be done with Python blocks, although as has already been described, Python code is really best kept to the controllers where possible to provide a clean interface between your controllers and view. You can use a Python block like this:</p>
+<div class="highlight-python"><pre>&lt;%
+    title = 'Pylons Developer'
+    names = [x[0] for x in c.links]
+%&gt;</pre>
+</div>
+<p>Any variables you declare in Python blocks are then available to be used in control statements or in <tt class="docutils literal"><span class="pre">${}</span></tt> constructs. For example, this code:</p>
+<div class="highlight-python"><pre>% for i, value in enumerate(names):
+${i+1}. ${value} &lt;br /&gt;
+% endfor</pre>
+</div>
+<p>produces the following output:</p>
+<div class="highlight-python"><pre>1. James
+2. Ben
+3. Philip</pre>
+</div>
+<p id="index-1374">Any code within Python blocks must be properly indented in the same way normal source code is. The block itself can have any level of indentation. For example, although this code looks messy, it is perfectly valid:</p>
+<div class="highlight-python"><pre>Your title is ${title}
+   &lt;%
+         # This block can have any indentation as long as the Python
+         #  code within it is properly indented
+         if title == 'Pylons Developer':
+             msg = 'You must program in Python!'
+         else:
+             msg = ''
+     %&gt;
+An optional message: ${msg}</pre>
+</div>
+<p>The code within these blocks is executed each time the template is rendered.</p>
+<p>Because you can put Python expressions in a line containing a Mako control structure such as <tt class="docutils literal"><span class="pre">%</span> <span class="pre">if</span></tt>, you might be tempted to think you can write any expression after a <tt class="docutils literal"><span class="pre">%</span></tt> sign, for example, like this:</p>
+<div class="highlight-python"><pre>## The line below is NOT allowed:
+% a = 3</pre>
+</div>
+<p id="index-1375">Instead, any expressions should be written in blocks.</p>
+<p>A variation of the <tt class="docutils literal"><span class="pre">&lt;%</span> <span class="pre">%&gt;</span></tt> block places the Python code within it at the top of the cached Python file Mako generates, making it very useful for <tt class="docutils literal"><span class="pre">import</span></tt> statements. Notice the <tt class="docutils literal"><span class="pre">!</span></tt> character after the start of the first bracket in the following example:</p>
+<div class="highlight-python"><pre>&lt;%!
+    import datetime
+%&gt;</pre>
+</div>
+<p id="index-1376">This is called a <em>module-level block</em>, and when used in the context of a multithreaded Pylons application, the code it contains is executed only the first time a template is executed. Module-level blocks, as the name suggests, are good places for putting module imports, in this case, to make the <tt class="docutils literal"><span class="pre">datetime</span></tt> module available throughout the template. Module-level blocks don’t have access to the usual Mako environment and cannot be used for outputting content. We’ll discuss module-level blocks again when you learn how Mako caches templates later in the chapter.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">So far, all the templates have been designed to generate HTML, but of course you can use templates to generate any sort of text-based file, be it an e-mail, a rich-text document, a configuration file, or a file format specific to your application.</p>
+</div>
+</div>
+<div class="section" id="default-pylons-template-variables">
+<h3>Default Pylons Template Variables<a class="headerlink" href="#default-pylons-template-variables" title="Permalink to this headline">¶</a></h3>
+<p id="index-1377">The template context global <tt class="docutils literal"><span class="pre">c</span></tt> is not the only object Pylons passes to Mako for you automatically via the <tt class="docutils literal"><span class="pre">render()</span></tt> function. In addition, the following are set up by default:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">tmpl_context</span></tt> and its alias <tt class="docutils literal"><span class="pre">c</span></tt></dt>
+<dd>This is the template context object you have already seen. Although it is usually accessed as <tt class="docutils literal"><span class="pre">c</span></tt>, you can also access it within templates as <tt class="docutils literal"><span class="pre">tmpl_context</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">config</span></tt></dt>
+<dd>This is the Pylons <tt class="docutils literal"><span class="pre">config</span></tt> global described in Chapter 3.</dd>
+<dt><tt class="docutils literal"><span class="pre">app_globals</span></tt> and its alias <tt class="docutils literal"><span class="pre">g</span></tt></dt>
+<dd>This is the project application globals object you learned about in Chapter 3, usually accessed as <tt class="docutils literal"><span class="pre">g</span></tt> but available as <tt class="docutils literal"><span class="pre">app_globals</span></tt> in templates.</dd>
+<dt><tt class="docutils literal"><span class="pre">h</span></tt></dt>
+<dd>This is the project <tt class="docutils literal"><span class="pre">helpers</span></tt> module. In this case, this is <tt class="docutils literal"><span class="pre">templatedemo.lib.helpers</span></tt>, which is the place you should put all your helper functions. Again, these are described in Chapter 3.</dd>
+<dt><tt class="docutils literal"><span class="pre">request</span></tt></dt>
+<dd>This is the Pylons request object for this request.</dd>
+<dt><tt class="docutils literal"><span class="pre">response</span></tt></dt>
+<dd>This is the Pylons response object for this request.</dd>
+<dt><tt class="docutils literal"><span class="pre">session</span></tt></dt>
+<dd>This is the Pylons session object (unless sessions are removed).</dd>
+<dt><tt class="docutils literal"><span class="pre">translator</span></tt>, <tt class="docutils literal"><span class="pre">ungettext()</span></tt>, <tt class="docutils literal"><span class="pre">()</span></tt>, and <tt class="docutils literal"><span class="pre">N_()</span></tt></dt>
+<dd>These are objects to help you with internationalization. You will learn about these in Chapter 11, so you don’t need to worry about them now.</dd>
+</dl>
+<p>As an example, to add the current URL to the <tt class="docutils literal"><span class="pre">greeting.html</span></tt> template you have been using, you might use the <tt class="docutils literal"><span class="pre">h</span></tt> object. First import the <tt class="docutils literal"><span class="pre">url_for()</span></tt> function into the <tt class="docutils literal"><span class="pre">templatedemo/lib/helpers.py</span></tt> file with this import:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">routes</span> <span class="kn">import</span> <span class="n">url_for</span>
+</pre></div>
+</div>
+<p>Then update the template like this:</p>
+<div class="highlight-python"><pre>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Greetings&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Greetings&lt;/h1&gt;
+
+    &lt;p&gt;Hello ${c.name}! You are visiting ${h.url_for()}&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p id="index-1378">Later in the chapter when you look at custom <tt class="docutils literal"><span class="pre">render()</span></tt> functions, you will see how you can customize which variables are used by default. For more information about template variables, see <a class="reference external" href="http://docs.pylonshq.com/views/#default-template-variables">http://docs.pylonshq.com/views/#default-template-variables</a>.</p>
+</div>
+<div class="section" id="mako-runtime-built-ins">
+<h3>Mako Runtime Built-Ins<a class="headerlink" href="#mako-runtime-built-ins" title="Permalink to this headline">¶</a></h3>
+<p id="index-1379">In addition to the Pylons default template variables that the Pylons <tt class="docutils literal"><span class="pre">render()</span></tt> global sets up for you, it is worth being aware that Mako sets up a number of runtime built-ins for you. I’ll mention most of these in the course of this chapter, but for full information about each, you should consult the Mako documentation at <a class="reference external" href="http://www.makotemplates.org/docs/documentation.html#runtime_builtins">http://www.makotemplates.org/docs/documentation.html#runtime_builtins</a>.</p>
+<p>Here’s a quick summary so that you can make sure you don’t accidentally use any of these as names of your own variables in templates:</p>
+<dl class="docutils" id="index-1380">
+<dt><tt class="docutils literal"><span class="pre">context</span></tt></dt>
+<dd>This context is the central object that is created when a template is first executed and is responsible for handling all communication with the outside world. It includes the output buffer and a dictionary of the variables that can be freely referenced within a template; this includes the other Mako runtime built-ins, the Pylons default variables, and any extra variables passed by the <tt class="docutils literal"><span class="pre">extra_variables</span></tt> argument to <tt class="docutils literal"><span class="pre">render()</span></tt>. As such, the <tt class="docutils literal"><span class="pre">context</span></tt> object is very important. You can learn more about it at <a class="reference external" href="http://www.makotemplates.org/docs/documentation.html#runtime">http://www.makotemplates.org/docs/documentation.html#runtime</a>.</dd>
+</dl>
+<dl class="docutils" id="index-1381">
+<dt><tt class="docutils literal"><span class="pre">local</span></tt>, <tt class="docutils literal"><span class="pre">self</span></tt>, <tt class="docutils literal"><span class="pre">parent</span></tt>, and <tt class="docutils literal"><span class="pre">next</span></tt></dt>
+<dd>These are all namespaces and have particular meanings in the context of template inheritance chains. You’ll look at these later in the chapter.</dd>
+</dl>
+<dl class="docutils" id="index-1382">
+<dt><tt class="docutils literal"><span class="pre">capture</span></tt></dt>
+<dd>This is a function that calls a given def and captures its resulting content into a string, which is returned. A <em>def</em> is Mako terminology for a reusable block of template code wrapped in a <tt class="docutils literal"><span class="pre">&lt;%def&gt;</span></tt> tag that behaves a bit like a function in Python. You’ll learn about defs and the <tt class="docutils literal"><span class="pre">capture()</span></tt> function later in the chapter.</dd>
+<dt><tt class="docutils literal"><span class="pre">caller</span></tt></dt>
+<dd>This is a “mini” namespace created when using the <tt class="docutils literal"><span class="pre">&lt;%call&gt;</span></tt> tag to define a “def call with content.” You don’t deal with <tt class="docutils literal"><span class="pre">caller</span></tt> in this book, but it is well documented at <a class="reference external" href="http://www.makotemplates.org/docs/documentation.html#defs_defswithcontent">http://www.makotemplates.org/docs/documentation.html#defs_defswithcontent</a> if you are interested.</dd>
+<dt><tt class="docutils literal"><span class="pre">UNDEFINED</span></tt></dt>
+<dd>This is an instance of <tt class="docutils literal"><span class="pre">mako.runtime.Undefined</span></tt> that raises an exception when its <tt class="docutils literal"><span class="pre">__str__()</span></tt> method is called. It is used when you use a variable in a template without assigning it a value. If you see an <tt class="docutils literal"><span class="pre">UNDEFINED</span></tt>, it is likely that you mistyped a variable name or forgot to pass a particular variable to a template.</dd>
+</dl>
+<dl class="docutils" id="index-1383">
+<dt><tt class="docutils literal"><span class="pre">pageargs</span></tt></dt>
+<dd>This dictionary can be specified with the <tt class="docutils literal"><span class="pre">&lt;%page&gt;</span></tt> tag and tells templates the arguments that the <tt class="docutils literal"><span class="pre">body()</span></tt> def takes. You’ll look at the <tt class="docutils literal"><span class="pre">body()</span></tt> def and its use in template inheritance chains later in the book, but for details of <tt class="docutils literal"><span class="pre">pageargs</span></tt>, consult the Mako documentation at <a class="reference external" href="http://www.makotemplates.org/docs/documentation.html#namespaces_body">http://www.makotemplates.org/docs/documentation.html#namespaces_body</a>.</dd>
+</dl>
+<p id="index-1384">Three very useful methods of the context object are <tt class="docutils literal"><span class="pre">get()</span></tt>, <tt class="docutils literal"><span class="pre">keys()</span></tt>, and <tt class="docutils literal"><span class="pre">write()</span></tt>. Here’s an example demonstrating how they are each used:</p>
+<div class="highlight-python"><pre>&lt;html&gt;
+&lt;body&gt;
+&lt;%
+    context.write('&lt;p&gt;Here is an example:&lt;/p&gt;')
+%&gt;
+&lt;p&gt;
+% for key in context.keys():
+The key is &lt;tt&gt;${key}&lt;/tt&gt;, the value is ${str(context.get(key))}. &lt;br /&gt;
+% endfor
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>Create a new template called <tt class="docutils literal"><span class="pre">context.html</span></tt>, and add a new action to the controller to test it like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">context</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="s">&#39;/context.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1385">If you visit <a class="reference external" href="http://localhost:5000/greeting/context">http://localhost:5000/greeting/context</a>, a long list of output is produced, including all the variables that can be used in templates. The source starts like this:</p>
+<div class="highlight-python"><pre>&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;Here is an example:&lt;/p&gt;
+&lt;p&gt;
+The key is &lt;tt&gt;all&lt;/tt&gt;, the value is &amp;lt;built-in function all&amp;gt;. &lt;br /&gt;
+The key is &lt;tt&gt;help&lt;/tt&gt;, the value is Type help() for interactive help, or help(object) for help about object.. &lt;br /&gt;
+The key is &lt;tt&gt;vars&lt;/tt&gt;, the value is &amp;lt;built-in function vars&amp;gt;. &lt;br /&gt;
+The key is &lt;tt&gt;SyntaxError&lt;/tt&gt;, the value is &amp;lt;type 'exceptions.SyntaxError'&amp;gt;. &lt;br /&gt;
+The key is &lt;tt&gt;session&lt;/tt&gt;, the value is {}. &lt;br /&gt;
+The key is &lt;tt&gt;unicode&lt;/tt&gt;, the value is &amp;lt;type 'unicode'&amp;gt;. &lt;br /&gt;
+The key is &lt;tt&gt;sorted&lt;/tt&gt;, the value is &amp;lt;built-in function sorted&amp;gt;. &lt;br /&gt;
+...</pre>
+</div>
+<p id="index-1386">The two important things to realize are that writing output with <tt class="docutils literal"><span class="pre">context.write()</span></tt> has the same effect as using <tt class="docutils literal"><span class="pre">${}</span></tt> and that any variables that can be used in a template can be accessed with <tt class="docutils literal"><span class="pre">context.get()</span></tt>.</p>
+</div>
+<div class="section" id="separation-of-logic-and-view">
+<h3>Separation of Logic and View<a class="headerlink" href="#separation-of-logic-and-view" title="Permalink to this headline">¶</a></h3>
+<p id="index-1387">The greeting example you have been using so far is rather artificial because you could have just put your name directly into the template. Real web applications respond to data from various sources, so let’s make our example slightly more realistic by retrieving the name of the visitor from the query string on each request. If no query string is present, you’ll just use <tt class="docutils literal"><span class="pre">Visitor</span></tt> as the name.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;Visitor&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="s">&#39;/greeting.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you were now to visit <a class="reference external" href="http://localhost:5000/greeting/index?name=Pylons+Developer">http://localhost:5000/greeting/index?name=Pylons+Developer</a>, you would see the same greeting as the first example.</p>
+<p>This is a much more realistic example. Here the controller does some processing based on some logic and then passes relevant information to the template to display. In this setup, the template represents a <em>view</em> of the data in the Model View Controller architecture, and in line with this architecture, it is generally considered best practice to keep logic code in your controller and use Python only in your template to assist with rendering the information passed by the controller.</p>
+<p>Some templating languages take the separation of logic code and view code to extremes and actively prohibit any sort of data processing in the template. Although this might be good practice, it can be sometimes be terribly frustrating when you want to do something simple if the templating language prevents you from doing it. Mako takes the view that the developer knows best and therefore provides some powerful templating tools and the ability to embed Python code in the template. It is then up to you as a developer to decide how much to use the tools Mako provides.</p>
+<p id="index-1388">Here is the same example written slightly differently just to demonstrate that you can put simple logic in templates if you really need to do so. Here’s the action:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="s">&#39;/greeting.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and here’s the new template:</p>
+<div class="highlight-python"><pre>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Greetings&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Greetings&lt;/h1&gt;
+    &lt;p&gt;Hello ${request.params.get('name', 'Visitor')}!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+</div>
+</div>
+<div class="section" id="security-considerations-and-webhelpers">
+<h2>Security Considerations and WebHelpers<a class="headerlink" href="#security-considerations-and-webhelpers" title="Permalink to this headline">¶</a></h2>
+<p id="index-1389">One point to watch out for when you are using any data from the Web in a template is that a malicious user might put HTML characters in the data. If, for example, you visit the URL <a class="reference external" href="http://localhost:5000/greeting/index?name=Ja%3Cb%3Em%3C%2Fb%3Ees">http://localhost:5000/greeting/index?name=Ja%3Cb%3Em%3C%2Fb%3Ees</a>, the value of <tt class="docutils literal"><span class="pre">request.params['name']</span></tt> would be <tt class="docutils literal"><span class="pre">Ja&lt;b&gt;m&lt;/b&gt;es</span></tt>, and if Mako didn’t apply any special escaping, this value would be rendered, resulting in the <tt class="docutils literal"><span class="pre">m</span></tt> being made bold in the HTML rendered by the browser.</p>
+<p id="index-1390">In itself this might not seem like a big problem, but actually it opens your web application up to so-called cross-site scripting (XSS) attacks. For example, a malicious user could insert JavaScript into your page to replace some of your own content to trick the user of the page into giving away information or visiting a site they didn’t intend to because they thought the content on the page was generated by you.</p>
+<p>This is a real risk for many websites today, so it is well worth being aware of. Pylons protects you from making this mistake by automatically escaping all values rendered by Mako. If you look at your project’s <tt class="docutils literal"><span class="pre">config/environment.py</span></tt> again, you will see that the full configuration for Mako looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Create the Mako TemplateLookup, with the default autoescaping</span>
+<span class="n">config</span><span class="p">[</span><span class="s">&#39;pylons.app_globals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mako_lookup</span> <span class="o">=</span> <span class="n">TemplateLookup</span><span class="p">(</span>
+    <span class="n">directories</span><span class="o">=</span><span class="n">paths</span><span class="p">[</span><span class="s">&#39;templates&#39;</span><span class="p">],</span>
+    <span class="n">module_directory</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">app_conf</span><span class="p">[</span><span class="s">&#39;cache_dir&#39;</span><span class="p">],</span> <span class="s">&#39;templates&#39;</span><span class="p">),</span>
+    <span class="n">input_encoding</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">output_encoding</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">,</span>
+    <span class="n">imports</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;from webhelpers.html import escape&#39;</span><span class="p">],</span>
+    <span class="n">default_filters</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;escape&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p id="index-1391">The last argument, <tt class="docutils literal"><span class="pre">default_filters</span></tt>, means that all output is filtered through the <tt class="docutils literal"><span class="pre">webhelpers.html.escape</span></tt> function, which automatically applies HTML escaping to make the content safe.</p>
+<p id="index-1392">Of course, sometimes you want to pass data to Mako and have it treated as HTML. To do this, you have to wrap the content in a <tt class="docutils literal"><span class="pre">webhelpers.html.literal()</span></tt> object. A <tt class="docutils literal"><span class="pre">literal</span></tt> is a special type derived from Python’s built-in <tt class="docutils literal"><span class="pre">unicode</span></tt> type. When the <tt class="docutils literal"><span class="pre">escape()</span></tt> function finds a <tt class="docutils literal"><span class="pre">literal</span></tt>, it doesn’t escape it.</p>
+<p id="index-1393">To demonstrate these features, update the <tt class="docutils literal"><span class="pre">greeting.html</span></tt> template so it looks like this:</p>
+<div class="highlight-python"><pre>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Greetings&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Greetings&lt;/h1&gt;
+
+    &lt;p&gt;${c.greeting} ${c.name}!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>Rather than using the <tt class="docutils literal"><span class="pre">webhelpers.html.literal</span></tt> object directly, most Pylons developers prefer to import it into their project’s <tt class="docutils literal"><span class="pre">lib/helpers.py</span></tt> file so that it can be accessed as <tt class="docutils literal"><span class="pre">h.literal</span></tt> in controllers.</p>
+<p>Update the <tt class="docutils literal"><span class="pre">lib/helpers.py</span></tt> file to include this import:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;Helper functions</span>
+
+<span class="sd">Consists of functions to typically be used within templates, but also</span>
+<span class="sd">available to Controllers. This module is available to both as &#39;h&#39;.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c"># Import helpers as desired, or define your own, ie:</span>
+<span class="c"># from webhelpers.html.tags import checkbox, password</span>
+
+<span class="kn">from</span> <span class="nn">webhelpers.html</span> <span class="kn">import</span> <span class="n">literal</span>
+</pre></div>
+</div>
+<p>Now import the <tt class="docutils literal"><span class="pre">helpers</span></tt> module into your controller as <tt class="docutils literal"><span class="pre">h</span></tt> by adding this at the top of <tt class="docutils literal"><span class="pre">controllers/greeting.py</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">templatedemo.lib.helpers</span> <span class="kn">as</span> <span class="nn">h</span>
+</pre></div>
+</div>
+<p>Finally, change the <tt class="docutils literal"><span class="pre">index()</span></tt> action of the controller to look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s">&#39;&lt;b&gt;Welcome&lt;/b&gt;&#39;</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;Visitor&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="s">&#39;/greeting.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1394">Now visit <a class="reference external" href="http://localhost:5000/greeting/index?name=Ja%3Cb%3Em%3C%2Fb%3Ees">http://localhost:5000/greeting/index?name=Ja%3Cb%3Em%3C%2Fb%3Ees</a>, and you will see that the HTML wrapped in <tt class="docutils literal"><span class="pre">literal()</span></tt> is rendered as an HTML literal, whereas the data passed to Mako from the <tt class="docutils literal"><span class="pre">request</span></tt> object is correctly escaped and the <tt class="docutils literal"><span class="pre">&lt;</span></tt> and <tt class="docutils literal"><span class="pre">&gt;</span></tt> characters are rendered correctly.</p>
+<div class="section" id="writing-your-own-helpers">
+<h3>Writing Your Own Helpers<a class="headerlink" href="#writing-your-own-helpers" title="Permalink to this headline">¶</a></h3>
+<p id="index-1395">As of WebHelpers 0.6, all the HTML helper functions automatically return <tt class="docutils literal"><span class="pre">literal()</span></tt> objects, described earlier, so that their return values are treated as HTML. If you have created your own helper functions for a previous version of Pylons and try to use them with a Pylons 0.9.7 application, you will probably be surprised to find that all the output is escaped. You can solve this problem by modifying the helper functions to return an HTML <tt class="docutils literal"><span class="pre">literal</span></tt> object instead of a Python <tt class="docutils literal"><span class="pre">unicode</span></tt> or <tt class="docutils literal"><span class="pre">str</span></tt> object.</p>
+<p>When writing or upgrading helper functions to use HTML literals, you should be careful that you don’t accidentally introduce security holes. For example, consider this function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">webhelpers.html</span> <span class="kn">import</span> <span class="n">literal</span>
+
+<span class="k">def</span> <span class="nf">emphasize</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">literal</span><span class="p">(</span><span class="s">&#39;&lt;em&gt;&#39;</span><span class="o">+</span><span class="n">value</span><span class="o">+</span><span class="s">&#39;&lt;/em&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Imagine you used this in your greeting action like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">emphasize</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;Visitor&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p id="index-1396">You have introduced a security hole because the <tt class="docutils literal"><span class="pre">Ja&lt;b&gt;m&lt;/b&gt;es</span></tt> string is concatenated with the <tt class="docutils literal"><span class="pre">&lt;em&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;/em&gt;</span></tt> strings in the <tt class="docutils literal"><span class="pre">emphasize()</span></tt> helper, and the whole string <tt class="docutils literal"><span class="pre">&lt;em&gt;Ja&lt;b&gt;m&lt;/b&gt;es&lt;/em&gt;</span></tt> is marked as a literal. The <tt class="docutils literal"><span class="pre">&lt;b&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;/b&gt;</span></tt> tags now pass through the <tt class="docutils literal"><span class="pre">escape()</span></tt> function and through to the HTML document. This is not the behavior you want. Instead, the <tt class="docutils literal"><span class="pre">emphasize()</span></tt> function should be written like the following so the value itself isn’t accidentally marked as an HTML literal:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">emphasize</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">literal</span><span class="p">(</span><span class="s">&#39;&lt;em&gt;&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">value</span> <span class="o">+</span> <span class="n">literal</span><span class="p">(</span><span class="s">&#39;&lt;/em&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To avoid the problem, WebHelpers 0.6 introduced an <tt class="docutils literal"><span class="pre">HTML</span></tt> object that can be used for generating HTML fragments in a safe way. Here is the <tt class="docutils literal"><span class="pre">emphasize</span></tt> helper written using the <tt class="docutils literal"><span class="pre">HTML</span></tt> object:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">emphasize</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">HTML</span><span class="o">.</span><span class="n">em</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also nest HTML objects; the following would also wrap the value in a <tt class="docutils literal"><span class="pre">&lt;span&gt;</span></tt> tag:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">emphasize</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">HTML</span><span class="o">.</span><span class="n">span</span><span class="p">(</span><span class="n">HTML</span><span class="o">.</span><span class="n">em</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>You can also add HTML attributes as keyword arguments to <tt class="docutils literal"><span class="pre">HTML</span></tt>. Where an attribute name is a reserved word in Python, you should add <tt class="docutils literal"><span class="pre">_</span></tt> to the end of the argument. For example, here is a <tt class="docutils literal"><span class="pre">&lt;span&gt;</span></tt> tag with an <tt class="docutils literal"><span class="pre">id</span></tt> attribute of <tt class="docutils literal"><span class="pre">first</span></tt> and a <tt class="docutils literal"><span class="pre">class</span></tt> attribute of <tt class="docutils literal"><span class="pre">highlight</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">emphasize</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">HTML</span><span class="o">.</span><span class="n">span</span><span class="p">(</span><span class="n">HTML</span><span class="o">.</span><span class="n">em</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="nb">id</span><span class="o">=</span><span class="s">&#39;first&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s">&#39;highlight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Calling <tt class="docutils literal"><span class="pre">emphasize('Ja&lt;b&gt;m&lt;/b&gt;es')</span></tt> would return a <tt class="docutils literal"><span class="pre">literal</span></tt> object representing the Unicode string <tt class="docutils literal"><span class="pre">u'&lt;span</span> <span class="pre">id=&quot;first&quot;</span> <span class="pre">class=&quot;highlight&quot;&gt;&lt;em&gt;Ja&amp;lt;m&amp;gt;es&lt;/em&gt;&lt;/span&gt;'</span></tt> with the HTML characters from the argument correctly escaped.</p>
+<p id="index-1397">See the WebHelpers documentation for more information at <a class="reference external" href="http://docs.pylonshq.com/thirdparty/webhelpers/html/html/">http://docs.pylonshq.com/thirdparty/webhelpers/html/html/</a>.</p>
+</div>
+<div class="section" id="applying-filters-in-templates">
+<h3>Applying Filters in Templates<a class="headerlink" href="#applying-filters-in-templates" title="Permalink to this headline">¶</a></h3>
+<p id="index-1398">The <tt class="docutils literal"><span class="pre">escape()</span></tt> function set up as a default filter in <tt class="docutils literal"><span class="pre">config/environment.py</span></tt> is applied to all Mako output, but you can also apply filters to specific Mako output by using Mako’s <tt class="docutils literal"><span class="pre">|</span></tt> operator within a <tt class="docutils literal"><span class="pre">${}</span></tt> expression in a template.</p>
+<p id="index-1399">The built-in escape functions are as follows:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">u</span></tt></dt>
+<dd>This produces URL escaping, provided by <tt class="docutils literal"><span class="pre">urllib.quote_plus(string.encode('utf-8'))</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">h</span></tt></dt>
+<dd>This produces HTML escaping, provided by <tt class="docutils literal"><span class="pre">cgi.escape(string,</span> <span class="pre">True)</span></tt>. Note that this is <em>not</em> the same as the <tt class="docutils literal"><span class="pre">helpers</span></tt> module object <tt class="docutils literal"><span class="pre">h</span></tt>, which is also available in templates. Mako knows when you are using <tt class="docutils literal"><span class="pre">h</span></tt> as a filter and when it is supposed to refer to your project’s <tt class="docutils literal"><span class="pre">helpers</span></tt> module.</dd>
+<dt><tt class="docutils literal"><span class="pre">x</span></tt></dt>
+<dd>This produces XML escaping.</dd>
+<dt><tt class="docutils literal"><span class="pre">trim</span></tt></dt>
+<dd>This produces whitespace trimming, provided by <tt class="docutils literal"><span class="pre">string.strip()</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">entity</span></tt></dt>
+<dd>This produces HTML entity references for applicable strings, derived from the <tt class="docutils literal"><span class="pre">htmlentitydefs</span></tt> module in the standard library.</dd>
+<dt><tt class="docutils literal"><span class="pre">unicode</span></tt></dt>
+<dd>This produces a Python Unicode string (this function is applied by default).</dd>
+<dt><tt class="docutils literal"><span class="pre">decode.&lt;some</span> <span class="pre">encoding&gt;</span></tt></dt>
+<dd>This decodes input into a Python Unicode string with the specified encoding.</dd>
+<dt><tt class="docutils literal"><span class="pre">n</span></tt></dt>
+<dd>This disables all default filtering; only filters specified in the local expression tag will be applied.</dd>
+</dl>
+<p>You can also use the <tt class="docutils literal"><span class="pre">escape</span></tt> function because Mako is configured by the following line to automatically import into all templates:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">imports</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;from webhelpers.html import escape&#39;</span><span class="p">],</span>
+</pre></div>
+</div>
+<p>Here’s an example of how filtering works:</p>
+<div class="highlight-python"><pre>${ c.test | trim,entity }</pre>
+</div>
+<p>If <tt class="docutils literal"><span class="pre">c.test</span></tt> had the value <tt class="docutils literal"><span class="pre">u&quot;</span>&nbsp; <span class="pre">It</span> <span class="pre">will</span> <span class="pre">cost</span> <span class="pre">£5</span>&nbsp; <span class="pre">&quot;</span></tt>, the spaces would be stripped by <tt class="docutils literal"><span class="pre">trim</span></tt>, the £ sign would be converted to the HTML entity <tt class="docutils literal"><span class="pre">&amp;pound;</span></tt>, and the output would simply be <tt class="docutils literal"><span class="pre">It</span> <span class="pre">will</span> <span class="pre">cost</span> <span class="pre">&amp;pound;5</span></tt>.</p>
+<p id="index-1400">If you have an HTML string that is <em>not</em> wrapped in <tt class="docutils literal"><span class="pre">literal()</span></tt> but that <em>shouldn’t</em> be escaped, you can disable the default <tt class="docutils literal"><span class="pre">escape</span></tt> filter with <tt class="docutils literal"><span class="pre">n</span></tt>. For example, if <tt class="docutils literal"><span class="pre">c.test</span></tt> contained the Unicode string <tt class="docutils literal"><span class="pre">u'&lt;b&gt;Hello&lt;/b&gt;'</span></tt>, you could have this passed through <em>unescaped</em> like this:</p>
+<div class="highlight-python"><pre>${ c.test | n}</pre>
+</div>
+</div>
+</div>
+<div class="section" id="structuring-template-code">
+<h2>Structuring Template Code<a class="headerlink" href="#structuring-template-code" title="Permalink to this headline">¶</a></h2>
+<p>The ability to substitute variables, control program flow, and execute small snippets of Python are all very useful, but what gives templates their real value is the ability to define template blocks and call them from other templates to produce complex page layouts with as little duplication of effort as possible. In the following sections, you’ll learn about some of the ways Mako allows you to do this.</p>
+<div class="section" id="using-def-blocks">
+<h3>Using &lt;%def&gt; Blocks<a class="headerlink" href="#using-def-blocks" title="Permalink to this headline">¶</a></h3>
+<p id="index-1401">A <em>def</em> block is rather like a Python function in that each def block has a name, can accept arguments, and can be called. As an example, let’s update the list-generating code you used earlier to be a reusable def block:</p>
+<div class="highlight-python"><pre>&lt;%
+    items = [
+        ('James', 'http://jimmyg.org'),
+        ('Ben', 'http://groovie.org'),
+        ('Philip', ''),
+    ]
+%&gt;
+
+${navigation_links('James', items)}
+
+&lt;%def name="navigation_links(selected, links)"&gt;
+    &lt;%def name="link(label, url)"&gt;
+        % if url:
+            &lt;a href="${url}"&gt;${label}&lt;/a&gt;
+        % else:
+            ${label}
+        % endif
+    &lt;/%def&gt;
+
+
+    % for item in links:
+        &lt;li&gt;\
+    % if item[0] == selected:
+        &lt;b&gt;${link(item[0], item[1])}&lt;/b&gt;\
+    % else:
+        ${link(item[0], item[1])}\
+    % endif
+        &lt;/li&gt;
+    % endfor
+    &lt;/ul&gt;
+&lt;/%def&gt;</pre>
+</div>
+<p id="index-1402">There’s quite a lot going on in this example, so let’s take it piece by piece. You can see you have two functions. The first is called <tt class="docutils literal"><span class="pre">navigation_links()</span></tt> and takes two arguments: <tt class="docutils literal"><span class="pre">selected</span></tt> is the label of the currently selected navigation link, and <tt class="docutils literal"><span class="pre">links</span></tt> is the list of links.</p>
+<p>Within the <tt class="docutils literal"><span class="pre">navigation_links()</span></tt> function, there is another function called <tt class="docutils literal"><span class="pre">link()</span></tt> that generates an HTML link if a URL is associated with the navigation link.</p>
+<p id="index-1403">Finally, there is a definition of the links defined in Python block at the top and some code to call the <tt class="docutils literal"><span class="pre">navigation_links()</span></tt> function at the bottom. Save this template code as <tt class="docutils literal"><span class="pre">navigation.html</span></tt>. You can then test it by adding a new action to the controller:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">navigation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="s">&#39;/navigation.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The template generates the following HTML source:</p>
+<div class="highlight-python"><pre>&lt;ul&gt;
+    &lt;li&gt;        &lt;b&gt;
+        &lt;a href="http://jimmyg.org"&gt;James&lt;/a&gt;
+&lt;/b&gt;        &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href="http://groovie.org"&gt;Ben&lt;/a&gt;
+
+        &lt;/li&gt;
+    &lt;li&gt;
+        Philip
+        &lt;/li&gt;
+&lt;/ul&gt;</pre>
+</div>
+<p>The extra whitespace is because you have concentrated on making your template look neat rather than concentrating on the HTML output. To remove all the whitespace, your HTML statements would have to begin at the start of the line because by default Mako does not strip out whitespace.</p>
+<p id="index-1404">Notice that you have controlled some of the line endings, though. Leaving a trailing <tt class="docutils literal"><span class="pre">\</span></tt> character at the end of the line tells Mako not to insert a line end character, so you can see there is no line end after the <tt class="docutils literal"><span class="pre">&lt;/b&gt;</span></tt> tag even though there is some whitespace, which comes from the following line in the template before the <tt class="docutils literal"><span class="pre">&lt;/li&gt;</span></tt> tag.</p>
+<p id="index-1405">Defs in Mako behave very similarly to functions in Python and have access to their parent scope. This means you would be able to use the <tt class="docutils literal"><span class="pre">selected</span></tt> and <tt class="docutils literal"><span class="pre">links</span></tt> variables within the <tt class="docutils literal"><span class="pre">link()</span></tt> def.</p>
+<p>You might also have noticed that the <tt class="docutils literal"><span class="pre">navigation_links()</span></tt> function was called before its definition. All top-level functions are loaded into memory before the main body of the template is rendered, so this is perfectly acceptable too.</p>
+<p id="index-1406">The <tt class="docutils literal"><span class="pre">link()</span></tt> def is called from within <tt class="docutils literal"><span class="pre">navigation_links()</span></tt>. Just like in Python, the <tt class="docutils literal"><span class="pre">link()</span></tt> function would not be callable from outside <tt class="docutils literal"><span class="pre">navigation_links()</span></tt> because it is local to the <tt class="docutils literal"><span class="pre">navigation_links()</span></tt> scope.</p>
+</div>
+<div class="section" id="the-mako-cache">
+<h3>The Mako Cache<a class="headerlink" href="#the-mako-cache" title="Permalink to this headline">¶</a></h3>
+<p id="index-1407">It can sometimes be difficult to remember exactly what rules apply to defs, particularly when you get involved with more complex examples such as the inheritance chains you’ll see later in the chapter. Luckily, there is an easy way to find out what is going on behind the scenes.</p>
+<p>Mako works by compiling the templates you write into ordinary Python code the very first time it is executed or any time it is executed after it has been changed. Any subsequent times the template is rendered, the Python file is simply executed, and the output is returned.</p>
+<p id="index-1408">Mako caches these templates according to the value of the <tt class="docutils literal"><span class="pre">cache_dir</span></tt> variable in your project’s <tt class="docutils literal"><span class="pre">development.ini</span></tt> file. By default, this is set to the value <tt class="docutils literal"><span class="pre">%(here)s/data</span></tt>. The <tt class="docutils literal"><span class="pre">%(here)s</span></tt> value gets replaced with the location of the <tt class="docutils literal"><span class="pre">development.ini</span></tt> file, so Mako will cache the files in your project’s <tt class="docutils literal"><span class="pre">data/templates</span></tt> directory by default.</p>
+<p>Let’s have a look at the cached template for the <tt class="docutils literal"><span class="pre">navigation.html</span></tt> template you’ve just created. Its cached counterpart is in <tt class="docutils literal"><span class="pre">TemplateDemo/data/templates/navigation.html.py</span></tt>. Let’s look at each part of the file in turn starting with the top:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mako</span> <span class="kn">import</span> <span class="n">runtime</span><span class="p">,</span> <span class="n">filters</span><span class="p">,</span> <span class="n">cache</span>
+<span class="n">UNDEFINED</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">.</span><span class="n">UNDEFINED</span>
+<span class="n">__M_dict_builtin</span> <span class="o">=</span> <span class="nb">dict</span>
+<span class="n">__M_locals_builtin</span> <span class="o">=</span> <span class="nb">locals</span>
+<span class="n">_magic_number</span> <span class="o">=</span> <span class="mf">4</span>
+<span class="n">_modified_time</span> <span class="o">=</span> <span class="mf">1219507190.1808441</span>
+
+<span class="n">_template_filename</span><span class="o">=</span><span class="s">&#39;/Users/james/TemplateDemo/templatedemo/templates/navigation.html&#39;</span>
+<span class="n">_template_uri</span><span class="o">=</span><span class="s">&#39;/navigation.html&#39;</span>
+<span class="n">_template_cache</span><span class="o">=</span><span class="n">cache</span><span class="o">.</span><span class="n">Cache</span><span class="p">(</span><span class="n">__name__</span><span class="p">,</span> <span class="n">_modified_time</span><span class="p">)</span>
+<span class="n">_source_encoding</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span>
+<span class="kn">from</span> <span class="nn">webhelpers.html</span> <span class="kn">import</span> <span class="n">escape</span>
+<span class="n">_exports</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;navigation_links&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Here Mako defines various variables related to your template. You can see the import of the <tt class="docutils literal"><span class="pre">escape</span></tt> function that was specified as an argument to the <tt class="docutils literal"><span class="pre">TemplateLookup</span></tt> in your project’s <tt class="docutils literal"><span class="pre">config/environment.py</span></tt> file. If you had defined any module-level blocks, their contents would also be placed in this part of the cache.</p>
+<p id="index-1409">Next is the <tt class="docutils literal"><span class="pre">render_body()</span></tt> function that represents the main body of each template:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">render_body</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="o">**</span><span class="n">pageargs</span><span class="p">):</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">caller_stack</span><span class="o">.</span><span class="n">_push_frame</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">__M_locals</span> <span class="o">=</span> <span class="n">__M_dict_builtin</span><span class="p">(</span><span class="n">pageargs</span><span class="o">=</span><span class="n">pageargs</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">navigation_links</span><span class="p">(</span><span class="n">selected</span><span class="p">,</span><span class="n">links</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">render_navigation_links</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">locals_</span><span class="p">(</span><span class="n">__M_locals</span><span class="p">),</span><span class="n">selected</span><span class="p">,</span><span class="n">links</span><span class="p">)</span>
+        <span class="n">__M_writer</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">writer</span><span class="p">()</span>
+        <span class="c"># SOURCE LINE 1</span>
+
+        <span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s">&#39;James&#39;</span><span class="p">,</span> <span class="s">&#39;http://jimmyg.org&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s">&#39;Ben&#39;</span><span class="p">,</span> <span class="s">&#39;http://groovie.org&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s">&#39;Philip&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">),</span>
+        <span class="p">]</span>
+
+
+        <span class="n">__M_locals</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">__M_dict_builtin</span><span class="p">([(</span><span class="n">__M_key</span><span class="p">,</span> <span class="n">__M_locals_builtin</span><span class="p">()[</span><span class="n">__M_key</span><span class="p">])</span> <span class="k">for</span> <span class="n">__M_key</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;items&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">__M_key</span> <span class="ow">in</span> <span class="n">__M_locals_builtin</span><span class="p">()]))</span>
+        <span class="c"># SOURCE LINE 7</span>
+        <span class="n">__M_writer</span><span class="p">(</span><span class="s">u&#39;</span><span class="se">\n\n</span><span class="s">&#39;</span><span class="p">)</span>
+        <span class="c"># SOURCE LINE 9</span>
+        <span class="n">__M_writer</span><span class="p">(</span><span class="n">escape</span><span class="p">(</span><span class="n">navigation_links</span><span class="p">(</span><span class="s">&#39;James&#39;</span><span class="p">,</span> <span class="n">items</span><span class="p">)))</span>
+        <span class="n">__M_writer</span><span class="p">(</span><span class="s">u&#39;    </span><span class="se">\n\n</span><span class="s">&#39;</span><span class="p">)</span>
+        <span class="c"># SOURCE LINE 31</span>
+        <span class="n">__M_writer</span><span class="p">(</span><span class="s">u&#39;</span><span class="se">\n\n\n\n</span><span class="s">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s">&#39;&#39;</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">caller_stack</span><span class="o">.</span><span class="n">_pop_frame</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In this case, you can see the <tt class="docutils literal"><span class="pre">items</span></tt> list being defined and the call to <tt class="docutils literal"><span class="pre">navigation_links()</span></tt> being made. This in turn calls the <tt class="docutils literal"><span class="pre">render_navigation_links()</span></tt> function, which is rather long, so I won’t repeat it here.</p>
+<p id="index-1410">Each part of the cached template is simply normal Python code even though some of the variables start with <tt class="docutils literal"><span class="pre">__M_</span></tt> to avoid the risk of naming conflicts. You can also see the <tt class="docutils literal"><span class="pre">escape()</span></tt> function being used, so it is clear which variables are escaped and which aren’t.</p>
+<p>If you look carefully at the <tt class="docutils literal"><span class="pre">render_body()</span></tt> method, you’ll notice <tt class="docutils literal"><span class="pre">context.caller_stack.push_frame()</span></tt> is called at the start of the rendering and <tt class="docutils literal"><span class="pre">context.caller_stack.pop_frame()</span></tt> is called at the end. These two calls help Mako keep track of where it is in the inheritance chains you will learn about later in the chapter.</p>
+<p id="index-1411">Although you would never use the cached Mako templates directly, it is helpful to realize they are there. If you ever run into difficulties, looking at the cached version can sometimes shed light on a problem.</p>
+</div>
+<div class="section" id="capturing-output">
+<h3>Capturing Output<a class="headerlink" href="#capturing-output" title="Permalink to this headline">¶</a></h3>
+<p id="index-1412">Something to be aware of when calling defs is that their output is rendered straight to the context output buffer—it isn’t actually returned.</p>
+<p id="index-1413">If you look at the cached template example again, it should be clear why. Each line of source template is wrapped in an <tt class="docutils literal"><span class="pre">__M_writer()</span></tt> call, which has the effect of calling <tt class="docutils literal"><span class="pre">context.write()</span></tt>. If you want to actually capture the output of a def to a variable rather than to the output buffer, you have to use <tt class="docutils literal"><span class="pre">capture()</span></tt>.</p>
+<p>For example, consider this:</p>
+<div class="highlight-python"><pre>&lt;%def name="add(num1, num2)"&gt;
+${num1+num2}
+&lt;/%def&gt;
+
+&lt;%def name="display(num1, num2, result)"&gt;
+The result of ${num1} + ${num2} is ${result}
+&lt;/%def&gt;
+
+${display(1, 2, add(1,2))}</pre>
+</div>
+<p>Running this example produces the following HTML source (although you won’t see the line breaks in a web browser):</p>
+<div class="highlight-python"><pre>3
+
+The result of 1 + 2 is None</pre>
+</div>
+<p>What happens here is that the output of the <tt class="docutils literal"><span class="pre">add()</span></tt> def is written to the output buffer, not captured and passed to the <tt class="docutils literal"><span class="pre">display()</span></tt> def. The <tt class="docutils literal"><span class="pre">add()</span></tt> def actually returns <tt class="xref docutils literal"><span class="pre">None</span></tt>, which is the value returned by ordinary Python functions if no value is explicitly returned. Instead, you want to capture the output from the <tt class="docutils literal"><span class="pre">add()</span></tt> def. You can do this by modifying the line that calls it to look like this:</p>
+<div class="highlight-python"><pre>${display(1, 2, capture(add, 1, 2))}</pre>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">capture</span></tt> function is one of Mako’s built-in template variables. It takes the def to capture as the first argument and the values to pass to the def as the subsequent arguments. The new output is as follows:</p>
+<div class="highlight-python"><pre>The result of 1 + 2 is 3</pre>
+</div>
+<p id="index-1414">If you are interested, you can read more about Mako’s output buffering in the Mako documentation.</p>
+</div>
+<div class="section" id="namespaces">
+<h3>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h3>
+<p id="index-1415">In a real web application, it is likely that most of the pages will need navigation links, so it would be useful if you could import the <tt class="docutils literal"><span class="pre">navigation_links()</span></tt> function you have just created into other templates. You can do this using the <tt class="docutils literal"><span class="pre">&lt;%namespace&gt;</span></tt> tag.</p>
+<p>Update the <tt class="docutils literal"><span class="pre">greeting.html</span></tt> template so that it imports and uses the <tt class="docutils literal"><span class="pre">navigation_links()</span></tt> function from the template you just created.</p>
+<div class="highlight-python"><pre>&lt;%namespace name="nav" file="/navigation.html" /&gt;
+
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Greetings&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Greetings&lt;/h1&gt;
+
+    ${nav.navigation_links('Ben', links=[
+        ( not )'James','http://jimmyg.org'),
+        ('Ben','http://groovie.org'),
+        ('Philip',''),
+    ])}
+
+    &lt;p&gt;${c.greeting} ${c.name}!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">&lt;%namespace&gt;</span></tt> tag takes a <tt class="docutils literal"><span class="pre">file</span></tt> argument to specify the template you want to import and a <tt class="docutils literal"><span class="pre">name</span></tt> argument to specify the namespace under which the defs should be imported.</p>
+<p>You can then use the <tt class="docutils literal"><span class="pre">nav</span></tt> namespace to generate navigation links in the greetings template.</p>
+<p id="index-1416">Sometimes it is useful to have the components imported directly into the local namespace rather than a namespace of their own. This is possible too using this alternative syntax:</p>
+<div class="highlight-python"><pre>&lt;%namespace file="navigation.html" import="navigation_links" /&gt;
+
+${navigation_links('James', type='list', links=[
+    ['James','http://jimmyg.org'],
+    ['Ben','http://groovie.org'],
+    ['Philip',''],
+])}</pre>
+</div>
+<p>When the <tt class="docutils literal"><span class="pre">import</span></tt> attribute is used, the <tt class="docutils literal"><span class="pre">name</span></tt> attribute is optional.</p>
+<p>You can also just use <tt class="docutils literal"><span class="pre">import=&quot;*&quot;</span></tt> to import everything from another template or <tt class="docutils literal"><span class="pre">import=&quot;component1,</span> <span class="pre">component2&quot;</span></tt> to specify specific components you want to import. The names imported by the <tt class="docutils literal"><span class="pre">import</span></tt> attribute take precedence over any names that exist within the current context.</p>
+<p>Namespaces can also import regular Python functions from modules as long as they accept an argument named <tt class="docutils literal"><span class="pre">context</span></tt> as their first argument. As an example, a module file <tt class="docutils literal"><span class="pre">my/module.py</span></tt> might contain the following callable:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">write_greeting</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A template can then use this module as follows:</p>
+<div class="highlight-python"><pre>&lt;%namespace name="my" module="my.module" /&gt;
+
+${my.write_greeting()}</pre>
+</div>
+<p id="index-1417">Note that the <tt class="docutils literal"><span class="pre">context</span></tt> argument is not needed in the call. When Mako generates the cached Python version, it creates a locally scoped callable, which is responsible for passing the <tt class="docutils literal"><span class="pre">context</span></tt> object in for you.</p>
+</div>
+<div class="section" id="the-body-def">
+<h3>The body() Def<a class="headerlink" href="#the-body-def" title="Permalink to this headline">¶</a></h3>
+<p id="index-1418">There is one other important <tt class="docutils literal"><span class="pre">&lt;%def&gt;</span></tt> you will need to know about called the <tt class="docutils literal"><span class="pre">body()</span></tt> def. The <tt class="docutils literal"><span class="pre">body()</span></tt> def represents the whole of the body of the template, that is, any template code not wrapped in its own def. For example, if you had a template that looked like this, the <tt class="docutils literal"><span class="pre">12:00pm</span></tt> line would be in the <tt class="docutils literal"><span class="pre">body()</span></tt> def.</p>
+<div class="highlight-python"><pre>&lt;%def name="test()"&gt;Hello World!&lt;/%def&gt;
+
+12:00pm</pre>
+</div>
+<p>You can see this in action by using this template in another one. Imagine the previous template was saved as <tt class="docutils literal"><span class="pre">greeting_and_time.html</span></tt>. You could create another template like this to use its functionality under the namespace <tt class="docutils literal"><span class="pre">other</span></tt>:</p>
+<div class="highlight-python"><pre>&lt;%namespace name="other" file="/greeting_and_time.html" /&gt;
+
+The greeting is ${other.test()}
+The time is ${other.body()}</pre>
+</div>
+<p>Notice how the calling body method is effectively just like a normal <tt class="docutils literal"><span class="pre">&lt;%def&gt;</span></tt> but without the opening and closing <tt class="docutils literal"><span class="pre">&lt;%def&gt;</span></tt> tags needing to be specified. The output is as you would expect:</p>
+<div class="highlight-python"><pre>The greeting is Hello World!
+The time is 12:00pm</pre>
+</div>
+<p id="index-1419">Being able to access the body of a template is really useful when you are using template chains in an inheritance structure. Let’s look at this in the next section.</p>
+</div>
+</div>
+<div class="section" id="template-inheritance-chains">
+<h2>Template Inheritance Chains<a class="headerlink" href="#template-inheritance-chains" title="Permalink to this headline">¶</a></h2>
+<p id="index-1420">The real value of templating languages isn’t so much that they help you mix and match Python and plain text in a more efficient manner but that so much of their functionality can be reused effectively in other pages. You’ve already seen how you can create reusable components using <tt class="docutils literal"><span class="pre">&lt;%def&gt;</span></tt> blocks and then import them into other templates using the <tt class="docutils literal"><span class="pre">&lt;%namespace&gt;</span></tt> tag, but Mako also provides facilities to enable you to structure your templates so that derived templates can inherit functionality from a base template.</p>
+<div class="section" id="simple-inheritance">
+<h3>Simple Inheritance<a class="headerlink" href="#simple-inheritance" title="Permalink to this headline">¶</a></h3>
+<p id="index-1421">Using a template chain in Mako is best explained with an example. The following is a base template named <tt class="docutils literal"><span class="pre">base.html</span></tt>, which defines some HTML and a footer but also has two defs, <tt class="docutils literal"><span class="pre">self.title()</span></tt> and <tt class="docutils literal"><span class="pre">self.body()</span></tt>. Save this template as <tt class="docutils literal"><span class="pre">base.html</span></tt> in <tt class="docutils literal"><span class="pre">templatedemo/templates</span></tt>:</p>
+<div class="highlight-python"><pre>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;${self.title()}&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ${self.body()}
+        &lt;div class="footer"&gt;
+            &lt;p&gt;This is a simple page footer&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>Let’s modify the greeting example to use this template. Let’s ignore the namespace code you added earlier in the chapter for the minute and just concentrate on inheriting the base template. Here’s how it looks:</p>
+<div class="highlight-python"><pre>&lt;%inherit file="/base.html"/&gt;\
+&lt;%def name="title()"&gt;Greetings&lt;/%def&gt;
+&lt;h1&gt;Greetings&lt;/h1&gt;
+
+&lt;p&gt;${c.greeting} ${c.name}!&lt;/p&gt;</pre>
+</div>
+<p id="index-1422">Save this new version of <tt class="docutils literal"><span class="pre">greeting.html</span></tt>. The <tt class="docutils literal"><span class="pre">index()</span></tt> action of the <tt class="docutils literal"><span class="pre">greeting</span></tt> controller should still look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s">&#39;&lt;b&gt;Welcome&lt;/b&gt;&#39;</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;Visitor&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="s">&#39;/greeting.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you visit <a class="reference external" href="http://localhost:5000/greeting/index">http://localhost:5000/greeting/index</a> in your browser again, you will see the following HTML rendered:</p>
+<div class="highlight-python"><pre>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Greetings&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+&lt;h1&gt;Greetings&lt;/h1&gt;
+
+&lt;p&gt;&lt;b&gt;Welcome&lt;/b&gt; Visitor!&lt;/p&gt;
+
+        &lt;div class="footer"&gt;
+            &lt;p&gt;This is a simple page footer&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>Let’s think about what is going on to produce this HTML. Because <tt class="docutils literal"><span class="pre">greeting.html</span></tt> inherits from the <tt class="docutils literal"><span class="pre">base.html</span></tt> control for rendering passes directly to the <tt class="docutils literal"><span class="pre">base.html</span> <span class="pre">body()</span></tt> def. The <tt class="docutils literal"><span class="pre">&lt;html&gt;</span></tt> line is rendered first, followed by all the other characters until <tt class="docutils literal"><span class="pre">${self.title()}</span></tt> is called.</p>
+<p id="index-1423">In the context of rendering a normal template, <tt class="docutils literal"><span class="pre">self</span></tt> would refer to the template itself, but in the context of an inheritance chain like this one, <tt class="docutils literal"><span class="pre">self</span></tt> always refers to the template at the bottom of the inheritance chain, which is always the template that was originally specified in the call to <tt class="docutils literal"><span class="pre">render()</span></tt>, in this case, <tt class="docutils literal"><span class="pre">greeting.html</span></tt>. This means that although you are rendering the <tt class="docutils literal"><span class="pre">base.html</span> <span class="pre">body()</span></tt> def, <tt class="docutils literal"><span class="pre">${self.title()}</span></tt> refers to the <tt class="docutils literal"><span class="pre">title()</span></tt> def in <tt class="docutils literal"><span class="pre">greeting.html</span></tt>. This renders the <tt class="docutils literal"><span class="pre">Greeting</span></tt> text, which appears in the page title.</p>
+<p>Once the title is rendered, control passes back to the <tt class="docutils literal"><span class="pre">base.html</span></tt> template, and more HTML is rendered until <tt class="docutils literal"><span class="pre">${self.body()}</span></tt> is reached. Once again, <tt class="docutils literal"><span class="pre">self</span></tt> refers to <tt class="docutils literal"><span class="pre">greeting.html</span></tt>, so the <tt class="docutils literal"><span class="pre">body()</span></tt> def of <tt class="docutils literal"><span class="pre">greeting.html</span></tt> is rendered. Finally, control passes back to <tt class="docutils literal"><span class="pre">base.html</span></tt> to render the footer, and the whole page is rendered.</p>
+<p>As you can imagine, being able to structure your templates like this is really useful because it means you can now create multiple templates based on <tt class="docutils literal"><span class="pre">base.html</span></tt> without having to duplicate its content in each child template. By using defs in the way you used <tt class="docutils literal"><span class="pre">title()</span></tt>, you can create regions that can be replaced in child templates. These don’t just have to contain static text; they can also contain navigation elements, CSS, JavaScript, section headings, or any other content you like. When you start the SimpleSite tutorial, you’ll use inheritance chains to create a full-featured site.</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">If you are following the Mako documentation, you should be aware that Mako describes the template at the top of the chain (<tt class="docutils literal"><span class="pre">base.html</span></tt> in our example) as being the bottom-most template and the template at the bottom as being the top-most template, so you need to be aware of the slightly confusing terminology.</p>
+</div>
+<p id="index-1424">In the previous example, you used the <tt class="docutils literal"><span class="pre">self</span></tt> namespace to effectively mean “use the def from the template furthest down the inheritance chain.” Mako also provides two related namespaces called <tt class="docutils literal"><span class="pre">next</span></tt> and <tt class="docutils literal"><span class="pre">parent</span></tt>, which are especially useful if you have more than two templates involved in an inheritance chain.</p>
+</div>
+<div class="section" id="next-namespace">
+<h3>Next Namespace<a class="headerlink" href="#next-namespace" title="Permalink to this headline">¶</a></h3>
+<p id="index-1425">Imagine the greeting template you’ve been using is actually part of the user administration section of a site. This site might also need some section links to allow the user to navigate around the section, but if these links were put in the <tt class="docutils literal"><span class="pre">base.html</span></tt> template, they would appear on all pages in the site, not just in the user administration section. You could put the links in the <tt class="docutils literal"><span class="pre">greeting.html</span></tt> template, but then you would also have to duplicate them in other templates in the same section. You could do this by keeping the links in a namespace and simply calling the def in each template rather than duplicating the code each time, but Mako provides a better solution.</p>
+<p>It turns out that you aren’t limited to two templates in an inheritance chain; you can have as many templates as you like. Rather than inheriting the <tt class="docutils literal"><span class="pre">greeting.html</span></tt> template from the <tt class="docutils literal"><span class="pre">base.html</span></tt> template, let’s create a new template specifically for the user administration section; call it <tt class="docutils literal"><span class="pre">section.html</span></tt>, and save this file in the <tt class="docutils literal"><span class="pre">templatedemo/templates</span></tt> directory with the following content (there is a deliberate mistake in this template, though, so you might want to read on first):</p>
+<div class="highlight-python"><pre>&lt;%inherit file="/base.html"/&gt;
+&lt;%namespace file="/navigation.html" import="navigation_links" /&gt;
+
+${navigation_links('Admin Home', links=[
+    ('Admin Home', '/admin'),
+    ('Settings', '/admin/settings'),
+    ('Sign Out', '/admin/signout'),
+])}
+
+${self.body()}
+
+&lt;%def name="title()"&gt;User Administration&lt;/%def&gt;</pre>
+</div>
+<p>Notice that this template inherits from <tt class="docutils literal"><span class="pre">base.html</span></tt> and that you are still using the <tt class="docutils literal"><span class="pre">navigation.html</span></tt> template you created earlier to do the hard work of creating the links.</p>
+<p>For the <tt class="docutils literal"><span class="pre">greeting.html</span></tt> template to use this template, you need to change its <tt class="docutils literal"><span class="pre">&lt;%inherit&gt;</span></tt> tag to look like this:</p>
+<div class="highlight-python"><pre>&lt;%inherit file="/section.html"/&gt;\</pre>
+</div>
+<p>If you refresh the browser, you will see that the content hasn’t changed! This might surprise you, so let’s think about what’s happened. You call <tt class="docutils literal"><span class="pre">render()</span></tt> to render <tt class="docutils literal"><span class="pre">greeting.html</span></tt>, and control is passed to the <tt class="docutils literal"><span class="pre">section.html</span> <span class="pre">body()</span></tt> def, but this template is inherited from <tt class="docutils literal"><span class="pre">base.html</span></tt>, so control passes to the <tt class="docutils literal"><span class="pre">base.html</span> <span class="pre">body()</span></tt> def. Once again, HTML is rendered until <tt class="docutils literal"><span class="pre">${self.title()}</span></tt> is reached. Remember that <tt class="docutils literal"><span class="pre">self</span></tt> refers to the <em>last</em> template in the chain, in this case, <tt class="docutils literal"><span class="pre">greeting.html</span></tt>, so it is the <tt class="docutils literal"><span class="pre">greeting.html</span></tt> <tt class="docutils literal"><span class="pre">title()</span></tt> def and <tt class="docutils literal"><span class="pre">body()</span></tt> def that are rendered, not the ones in <tt class="docutils literal"><span class="pre">section.html</span></tt>.</p>
+<p id="index-1426">To solve this problem, you need to use Mako’s <tt class="docutils literal"><span class="pre">next</span></tt> namespace. <tt class="docutils literal"><span class="pre">next</span></tt> is similar to <tt class="docutils literal"><span class="pre">self</span></tt> but refers to the next template in the chain, not the last one. To use <tt class="docutils literal"><span class="pre">next</span></tt>, you’ll need to change all the references to <tt class="docutils literal"><span class="pre">${self.title()}</span></tt> and <tt class="docutils literal"><span class="pre">${self.body()}</span></tt> in <tt class="docutils literal"><span class="pre">base.html</span></tt> and <tt class="docutils literal"><span class="pre">section.html</span></tt> to use <tt class="docutils literal"><span class="pre">${next.title()}</span></tt> and <tt class="docutils literal"><span class="pre">${next.body()}</span></tt>, respectively.</p>
+<p>Once you’ve updated the templates, they behave as you expect. When <tt class="docutils literal"><span class="pre">${next.title()}</span></tt> is reached, the <tt class="docutils literal"><span class="pre">title()</span></tt> def from <tt class="docutils literal"><span class="pre">section.html</span></tt> is rendered. Control is passed back to <tt class="docutils literal"><span class="pre">base.html</span></tt> until <tt class="docutils literal"><span class="pre">${next.body()}</span></tt> is reached; then the <tt class="docutils literal"><span class="pre">body()</span></tt> def of <tt class="docutils literal"><span class="pre">section.html</span></tt> is rendered, producing the navigation links. When <tt class="docutils literal"><span class="pre">${next</span> <span class="pre">body()}</span></tt> is reached in <tt class="docutils literal"><span class="pre">section.html</span></tt>, the <tt class="docutils literal"><span class="pre">body()</span></tt> def from <tt class="docutils literal"><span class="pre">greeting</span></tt> is rendered. When it is finished, control passes back to <tt class="docutils literal"><span class="pre">section.html</span></tt> and then back to <tt class="docutils literal"><span class="pre">base.html</span></tt> to finish off the rendering.</p>
+<p>Figure 5-2 shows the result.</p>
+<div class="figure">
+<a class="reference external image-reference" href="_images/9349f0502.png"><img alt="Figure 5-2. Greeting produced with a template inheritance chain" src="_images/9349f0502.png" /></a>
+<p class="caption">Figure 5-2. Greeting produced with a template inheritance chain</p>
+</div>
+<p>If the <tt class="docutils literal"><span class="pre">section.html</span></tt> template didn’t have a <tt class="docutils literal"><span class="pre">title()</span></tt> def, the call to <tt class="docutils literal"><span class="pre">${next.title()}</span></tt> in <tt class="docutils literal"><span class="pre">base.html</span></tt> would have rendered the <tt class="docutils literal"><span class="pre">title()</span></tt> def in <tt class="docutils literal"><span class="pre">greeting.html</span></tt> instead.</p>
+<p id="index-1427">Middle templates such as <tt class="docutils literal"><span class="pre">section.html</span></tt> are normally used for sections of the site in this way with base templates such as <tt class="docutils literal"><span class="pre">base.html</span></tt> containing content that applies to every page and child templates such as <tt class="docutils literal"><span class="pre">greeting.html</span></tt> containing only page-specific information. Of course, if you have a large site, it might make sense to have more than one middle template so that you can implement subsections or different page layouts within a section. The inheritance technique is very flexible.</p>
+</div>
+<div class="section" id="parent-namespace">
+<h3>Parent Namespace<a class="headerlink" href="#parent-namespace" title="Permalink to this headline">¶</a></h3>
+<p id="index-1428">In the same way that the <tt class="docutils literal"><span class="pre">next</span></tt> namespace allows you to refer to a def in the namespace of the child template immediately below it, Mako also provides a <tt class="docutils literal"><span class="pre">parent</span></tt> namespace that allows a child template to refer to a def in the parent template immediately above it. This is useful if you want a child template to be able to control where in a parent template its content is inserted.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Using the <tt class="docutils literal"><span class="pre">parent</span></tt> namespace might remind you of using <tt class="docutils literal"><span class="pre">super</span></tt> in a derived class to access a method in a base class in a normal Python inheritance structure. The two are similar, but in Python there is no equivalent to the <tt class="docutils literal"><span class="pre">next</span></tt> namespace; that is, you cannot access a child method from a parent class.</p>
+</div>
+<p>Let’s change the way the <tt class="docutils literal"><span class="pre">title()</span></tt> def works so that <tt class="docutils literal"><span class="pre">greeting.html</span></tt> can decide whether to include the content from the <tt class="docutils literal"><span class="pre">section.html</span> <span class="pre">body()</span></tt> def. The first thing you need to do is change <tt class="docutils literal"><span class="pre">base.html</span></tt> so that it calls <tt class="docutils literal"><span class="pre">${self.title()}</span></tt> rather than <tt class="docutils literal"><span class="pre">${next.title()}</span></tt>. This means that when the title is rendered, control for rendering the def will pass to <tt class="docutils literal"><span class="pre">greeting.html</span></tt>, bypassing <tt class="docutils literal"><span class="pre">section.html</span></tt>.</p>
+<div class="highlight-python"><pre>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;${self.title()}&lt;/title&gt;
+        ...</pre>
+</div>
+<p>If you tested the example, you will see that the page title now displays <tt class="docutils literal"><span class="pre">Greetings</span></tt> again. Now let’s change <tt class="docutils literal"><span class="pre">greeting.html</span></tt> so that the title also includes the section title. You’d like the title to read “User Administration &gt; Greetings.” Update the <tt class="docutils literal"><span class="pre">title()</span></tt> def in <tt class="docutils literal"><span class="pre">greeting.html</span></tt> to look like this:</p>
+<div class="highlight-python"><pre>&lt;%def name="title()"&gt;${parent.title()} &amp;gt; Greetings&lt;/%def&gt;</pre>
+</div>
+<p>Now when control for rendering the <tt class="docutils literal"><span class="pre">title()</span></tt> def passes from <tt class="docutils literal"><span class="pre">base.html</span></tt> to <tt class="docutils literal"><span class="pre">greeting.html</span></tt>, the <tt class="docutils literal"><span class="pre">greeting.html</span> <span class="pre">title()</span></tt> def calls its parent template <tt class="docutils literal"><span class="pre">title()</span></tt> def where the <tt class="docutils literal"><span class="pre">User</span> <span class="pre">Administration</span></tt> string is rendered as expected.</p>
+<p>Using the <tt class="docutils literal"><span class="pre">parent</span></tt> namespace in this way is particularly useful when working with sections containing JavaScript or CSS, because you’ll often find that it is useful to be able to control whether the JavaScript and CSS for the child template is rendered before or after that of the parent.</p>
+<p id="index-1429">In summary, the rule of thumb is that if the base template should have control of where the child content should be placed, use <tt class="docutils literal"><span class="pre">next</span></tt>. If the child template needs control of where its own content is placed, use <tt class="docutils literal"><span class="pre">parent</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="behind-the-scenes">
+<h2>Behind the Scenes<a class="headerlink" href="#behind-the-scenes" title="Permalink to this headline">¶</a></h2>
+<p id="index-1430">Now that you have a good idea of how to use Mako templates within Pylons, you can turn your attention to how Pylons links the <tt class="docutils literal"><span class="pre">render()</span></tt> function you call to the template engine code as well as how it adds default variables. Once you understand the basic principles, you’ll look at how to use the alternative template languages Pylons supports, as well as how to add support for your own template languages.</p>
+<p>If you intend to use only Mako in your Pylons applications and are not interested in understanding what is going on behind the scenes, you might prefer to jump ahead to the next chapter to begin learning about forms.</p>
+<p id="index-1431">Let’s start by looking at the definition of the <tt class="docutils literal"><span class="pre">pylons.templating.render_mako()</span></tt> function that you imported as <tt class="docutils literal"><span class="pre">render()</span></tt> in the greeting controller. It looks something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">render_mako</span><span class="p">(</span><span class="n">template_name</span><span class="p">,</span> <span class="n">extra_vars</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">cache_key</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                <span class="n">cache_type</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">cache_expire</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">render_template</span><span class="p">():</span>
+        <span class="n">globs</span> <span class="o">=</span> <span class="n">extra_vars</span> <span class="ow">or</span> <span class="p">{}</span>
+        <span class="n">globs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pylons_globals</span><span class="p">())</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="n">globs</span><span class="p">[</span><span class="s">&#39;app_globals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mako_lookup</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="n">template_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="n">globs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">cached_template</span><span class="p">(</span><span class="n">template_name</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">cache_key</span><span class="o">=</span><span class="n">cache_key</span><span class="p">,</span>
+                           <span class="n">cache_type</span><span class="o">=</span><span class="n">cache_type</span><span class="p">,</span> <span class="n">cache_expire</span><span class="o">=</span><span class="n">cache_expire</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1432">The first thing you should notice is that the function supports caching with a call to <tt class="docutils literal"><span class="pre">cached_template()</span></tt>. You’ll look at the caching options in a minute, but let’s start by looking at what happens in the <tt class="docutils literal"><span class="pre">render_template()</span></tt> function.</p>
+<p id="index-1433">First, a dictionary is set up called <tt class="docutils literal"><span class="pre">globs</span></tt>, which contains any values you specified in the <tt class="docutils literal"><span class="pre">extra_vars</span></tt> keyword. This dictionary is then updated with all the Pylons globals that I described earlier in the “Default Pylons Template Variables” section. These are returned automatically by the <tt class="docutils literal"><span class="pre">pylons_globals()</span></tt> function.</p>
+<p>One of the globals returned is the <tt class="docutils literal"><span class="pre">app_globals</span></tt> object, which you’ll remember from Chapter 3, is an instance of your project’s <tt class="docutils literal"><span class="pre">templatedemo.lib.app_globals.Globals</span></tt> class. This class has an attribute called <tt class="docutils literal"><span class="pre">mako_lookup</span></tt>, but if you look at your project’s <tt class="docutils literal"><span class="pre">templatedemo/lib/app_globals.py</span></tt> file, you’ll see that <tt class="docutils literal"><span class="pre">mako_lookup</span></tt> isn’t defined there. It is actually added dynamically when the application is first loaded by the configuration code in <tt class="docutils literal"><span class="pre">config/environment.py</span></tt>. Here are the relevant lines. You’ll recall that you looked at the options to <tt class="docutils literal"><span class="pre">TemplateLookup</span></tt> earlier in the chapter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">load_environment</span><span class="p">(</span><span class="n">global_conf</span><span class="p">,</span> <span class="n">app_conf</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="n">config</span><span class="p">[</span><span class="s">&#39;pylons.app_globals&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">app_globals</span><span class="o">.</span><span class="n">Globals</span><span class="p">()</span>
+    <span class="o">...</span>
+    <span class="n">config</span><span class="p">[</span><span class="s">&#39;pylons.app_globals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mako_lookup</span> <span class="o">=</span> <span class="n">TemplateLookup</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Once the template has been returned, the final act of the <tt class="docutils literal"><span class="pre">render_template()</span></tt> function is to return the rendered template, passing in the variables you have specified as keyword arguments.</p>
+<p id="index-1434">As you can see, although it takes a careful look through the code, the templating setup is actually easy to understand. This is typical of the way most of Pylons works. With a little digging through the source code, you can usually work out what is going on and customize the behavior you want in your own Pylons application.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Don’t be afraid to look at the Pylons source code. It is available online at <a class="reference external" href="http://pylonshq.com/hg">http://pylonshq.com/hg</a>.</p>
+</div>
+<div class="section" id="caching">
+<h3>Caching<a class="headerlink" href="#caching" title="Permalink to this headline">¶</a></h3>
+<p id="index-1435">Sometimes it is useful to be able to cache template calls to speed up performance. As you’ve seen, the <tt class="docutils literal"><span class="pre">render_mako()</span></tt> function has a number of options to support this, each of which defaults to <tt class="xref docutils literal"><span class="pre">None</span></tt> if it is not specified:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">cache_key</span></tt></dt>
+<dd>This is the key to cache this copy of the template under.</dd>
+<dt><tt class="docutils literal"><span class="pre">cache_type</span></tt></dt>
+<dd>This is the cache type. Valid options are <tt class="docutils literal"><span class="pre">dbm</span></tt>, <tt class="docutils literal"><span class="pre">file</span></tt>, <tt class="docutils literal"><span class="pre">memory</span></tt>, <tt class="docutils literal"><span class="pre">database</span></tt>, or <tt class="docutils literal"><span class="pre">memcached</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">cache_expire</span></tt></dt>
+<dd>This is the time in seconds to cache this template with this <tt class="docutils literal"><span class="pre">cache_key</span></tt>. Or use <tt class="docutils literal"><span class="pre">never</span></tt> to designate that the cache should never expire.</dd>
+</dl>
+<p>These options are then used, along with the template name, to cache the result of the call to the <tt class="docutils literal"><span class="pre">render_template()</span></tt> function I’ve just described. The caching functionality comes from the Beaker package and is described in detail at <a class="reference external" href="http://docs.pylonshq.com/caching/">http://docs.pylonshq.com/caching/</a>. Pylons also supports sophisticated caching options to cache other types of data and supports other types of caching, but these are beyond the scope of the book; have a look at the previously mentioned link for the full information.</p>
+<p>To test the caching, let’s modify the <tt class="docutils literal"><span class="pre">base.html</span></tt> template to add the current date and time to the footer of every page. Change the template to look like this:</p>
+<div class="highlight-python"><pre>&lt;%!
+    import datetime
+%&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;${self.title()}&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ${next.body()}
+        &lt;div class="footer"&gt;
+            &lt;p&gt;Page generated at ${str(datetime.datetime.now())}&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>When you visit <a class="reference external" href="http://localhost:5000/greeting/index">http://localhost:5000/greeting/index</a> this time, the footer will show the exact time the page was generated. For example:</p>
+<div class="highlight-python"><pre>Page generated at 2008-08-24 15:40:10.568216</pre>
+</div>
+<p>Now modify the controller to add some caching:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s">&#39;&lt;b&gt;Welcome&lt;/b&gt;&#39;</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;Visitor&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="s">&#39;/greeting.html&#39;</span><span class="p">,</span> <span class="n">cache_expire</span><span class="o">=</span><span class="mf">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now the first time you visit the page, the current time will be displayed, but every subsequent visit will result in the page being returned from the cache until five seconds have passed. After five seconds, a new page will be rendered with a new date and time, but once again, this new page will be returned from the cache only after five seconds have passed.</p>
+<p id="index-1436">If no <tt class="docutils literal"><span class="pre">cache_type</span></tt> is specified, the default used is <tt class="docutils literal"><span class="pre">dbm</span></tt>, which stores the cached pages in a simple database within your cache directory. Have a look at <tt class="docutils literal"><span class="pre">data/cache</span></tt>, and you will see the data folders present where the cache has been stored on disk. If you don’t specify a <tt class="docutils literal"><span class="pre">cache_key</span></tt>, the key <tt class="docutils literal"><span class="pre">default</span></tt> is used. Specifying <tt class="docutils literal"><span class="pre">never</span></tt> as the <tt class="docutils literal"><span class="pre">cache_expire</span></tt> argument will mean the cache won’t expire. Obviously, though, if you are using the <tt class="docutils literal"><span class="pre">memory</span></tt> cache type, restarting the server will cause the cache to be emptied.</p>
+</div>
+<div class="section" id="alternative-template-languages">
+<h3>Alternative Template Languages<a class="headerlink" href="#alternative-template-languages" title="Permalink to this headline">¶</a></h3>
+<p id="index-1437">As well as supporting Mako, Pylons supports these template languages out of the box:</p>
+<dl class="docutils">
+<dt><em>Jinja 1</em> (<a class="reference external" href="http://jinja.pocoo.org/">http://jinja.pocoo.org/</a>):</dt>
+<dd>This describes itself as a state-of-the-art, general-purpose template engine. It was originally inspired by Django’s template syntax.</dd>
+<dt><em>Genshi</em> (<a class="reference external" href="http://genshi.edgewall.org/">http://genshi.edgewall.org/</a>):</dt>
+<dd>This is an XML templating language designed to make generating valid XHTML and XML straightforward. Genshi is very popular with Pylons programmers and is used as the default templating language in TurboGears.</dd>
+</dl>
+<p>All three template engines are very different, but they each have one thing in common: they are all written as improvements to existing template engines. Genshi is the formal successor of Kid, Mako replaced Myghty, and Jinja was inspired by Django templates. This means all three are well-thought-out and production-ready template systems. They all use Unicode internally and have an API that is easy to use with Pylons.</p>
+<p id="index-1438">Deciding between them is really a matter of preference. If you are primarily writing an application that outputs XML or XHTML, then you might find Genshi useful because it guarantees that your output is well formed. On the other hand, Mako and Jinja are much faster than Genshi and allow much more flexibility in the output they produce. Genshi requires a completely different syntax for text-based output, but if you are writing a predominantly XHTML-based application, this may not be a problem. All three handle the escaping of data correctly with Pylons thanks to the use of the HTML literals I described earlier.</p>
+<p>If you are fairly new to templating languages and are trying to pick a templating language to use with Pylons, Mako is a good choice, and that is why it was chosen to be the default templating language for Pylons. Of course, Pylons doesn’t restrict you to using a single templating language. If you think it would be helpful in your application, you can use multiple templating languages at the same time. You’ll see how to do this later in the chapter.</p>
+<p id="index-1439">To use an alternative template language, you will need to first install it:</p>
+<div class="highlight-python"><pre>$ easy_install Genshi
+$ easy_install Jinja</pre>
+</div>
+<p>If you want to use one of the alternative templating languages in your project but don’t need Mako support, the easiest thing to do is to specify the templating language you want when you run the <tt class="docutils literal"><span class="pre">paster</span> <span class="pre">create</span></tt> command. For example, to get a Genshi project, you might do this, specifying <tt class="docutils literal"><span class="pre">genshi</span></tt> when prompted:</p>
+<div class="highlight-python"><pre>$ paster create --template=pylons GenshiTemplateDemo
+Selected and implied templates:
+  Pylons#pylons  Pylons application template
+
+Variables:
+  egg:      GenshiTemplateDemo
+  package:  genshitemplatedemo
+  project:  GenshiTemplateDemo
+Enter template_engine (mako/genshi/jinja/etc: Template language) ['mako']: genshi
+...</pre>
+</div>
+<p>This will set up <tt class="docutils literal"><span class="pre">config/environment.py</span></tt> with the following lines:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Create the Genshi TemplateLoader</span>
+<span class="n">config</span><span class="p">[</span><span class="s">&#39;pylons.app_globals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">genshi_loader</span> <span class="o">=</span> <span class="n">TemplateLoader</span><span class="p">(</span>
+    <span class="n">paths</span><span class="p">[</span><span class="s">&#39;templates&#39;</span><span class="p">],</span> <span class="n">auto_reload</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then in your <tt class="docutils literal"><span class="pre">lib/base.py</span></tt> file, rather than importing the <tt class="docutils literal"><span class="pre">render_mako()</span></tt> function, you would import <tt class="docutils literal"><span class="pre">render_genshi()</span></tt> like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pylons.templating</span> <span class="kn">import</span> <span class="n">render_genshi</span> <span class="k">as</span> <span class="n">render</span>
+</pre></div>
+</div>
+<p>Genshi doesn’t generate output directly; instead, it generates a stream of nodes. Genshi streams can be serialized using one of four methods: <tt class="docutils literal"><span class="pre">xml</span></tt>, <tt class="docutils literal"><span class="pre">xhtml</span></tt>, <tt class="docutils literal"><span class="pre">html</span></tt>, or <tt class="docutils literal"><span class="pre">text</span></tt>. The <tt class="docutils literal"><span class="pre">render_genshi()</span></tt> function takes an extra argument named <tt class="docutils literal"><span class="pre">method</span></tt> that you can use to specify the output method. It defaults to <tt class="docutils literal"><span class="pre">xhtml</span></tt>, but you can choose a different value if you want a different type of output.</p>
+<p id="index-1440">You can follow a similar process to set up a project to work exclusively with Jinja, specifying <tt class="docutils literal"><span class="pre">jinja</span></tt> when prompted by <tt class="docutils literal"><span class="pre">paster</span> <span class="pre">create</span></tt> and using the <tt class="docutils literal"><span class="pre">render_jinja()</span></tt> function in your controllers.</p>
+</div>
+<div class="section" id="multiple-template-languages">
+<h3>Multiple Template Languages<a class="headerlink" href="#multiple-template-languages" title="Permalink to this headline">¶</a></h3>
+<p id="index-1441">As was mentioned a moment ago, nothing is stopping you from using more than one templating language in your Pylons application. This requires a little more work because you must add the template lookup code to <tt class="docutils literal"><span class="pre">config/environment.py</span></tt> yourself. This isn’t difficult, though.</p>
+<p>Let’s modify the <tt class="docutils literal"><span class="pre">TemplateDemo</span></tt> example you’ve been using to add Jinja support too. First install Jinja:</p>
+<div class="highlight-python"><pre>$ easy_install "Jinja==1.2"</pre>
+</div>
+<p>Now open <tt class="docutils literal"><span class="pre">config/environment.py</span></tt>, and change the end of the <tt class="docutils literal"><span class="pre">load_environment()</span></tt> function to look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># CONFIGURATION OPTIONS HERE (note: all config options will override</span>
+<span class="c"># any Pylons config options)</span>
+
+<span class="c"># Import the jinja components we need</span>
+<span class="kn">from</span> <span class="nn">jinja</span> <span class="kn">import</span> <span class="n">ChoiceLoader</span><span class="p">,</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
+
+<span class="c"># Create the Jinja Environment</span>
+<span class="n">config</span><span class="p">[</span><span class="s">&#39;pylons.app_globals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">jinja_env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">ChoiceLoader</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">FileSystemLoader</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">[</span><span class="s">&#39;templates&#39;</span><span class="p">]]))</span>
+
+<span class="c"># Jinja&#39;s unable to request c&#39;s attributes without strict_c</span>
+<span class="n">config</span><span class="p">[</span><span class="s">&#39;pylons.strict_c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>Jinja will look in the same location as Mako for its files. If you wanted to keep the templates for each in different directories, you could specify different paths for each.</p>
+<p>Let’s create a simple Jinja template:</p>
+<div class="highlight-python"><pre>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Jinja Greeting&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Jinja Greeting&lt;/h1&gt;
+    {{ c.greeting }}
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>Save this in the <tt class="docutils literal"><span class="pre">templates</span></tt> directory as <tt class="docutils literal"><span class="pre">jinja.html</span></tt>. Now you need a new action in the greeting controller:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">jinja</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">greeting</span> <span class="o">=</span> <span class="s">&#39;Hi from Jinja!&#39;</span>
+    <span class="k">return</span> <span class="n">render_jinja</span><span class="p">(</span><span class="s">&#39;/jinja.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You’ll need to import the Jinja render function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pylons.templating</span> <span class="kn">import</span> <span class="n">render_jinja</span>
+</pre></div>
+</div>
+<p id="index-1442">If you test the example, you’ll see the <tt class="docutils literal"><span class="pre">Hi</span> <span class="pre">from</span> <span class="pre">Jinja!</span></tt> greeting.</p>
+</div>
+<div class="section" id="working-with-your-own-templating-language">
+<h3>Working with Your Own Templating Language<a class="headerlink" href="#working-with-your-own-templating-language" title="Permalink to this headline">¶</a></h3>
+<p id="index-1443">One of the great benefits of choosing a web framework based on Python is the sheer breadth of software available for you to use, including a large number of templating languages. If you’ve come from a background of Cheetah, Tal, Stan, Myghty, Kid, Breve, or any of the other templating languages available, you can easily integrate them into your Pylons application. The integration requires two steps:</p>
+<blockquote>
+<ol class="arabic simple">
+<li>Create a template lookup object attached to the <tt class="docutils literal"><span class="pre">app_globals</span></tt> object in <tt class="docutils literal"><span class="pre">config/environment.py</span></tt>.</li>
+<li>Create a render function, using the <tt class="docutils literal"><span class="pre">pylons_globals()</span></tt> and <tt class="docutils literal"><span class="pre">cached_template()</span></tt> functions if necessary, and use the template lookup attached to <tt class="docutils literal"><span class="pre">app_globals</span></tt> to render the template.</li>
+</ol>
+</blockquote>
+<p id="index-1444">Use the <tt class="docutils literal"><span class="pre">render_mako()</span></tt> function and <tt class="docutils literal"><span class="pre">config/environment.py</span></tt> listings from earlier in this chapter as a basis for your own code. If you need a further example, the Pylons documentation includes an example of how to integrate Kid via a custom <tt class="docutils literal"><span class="pre">render()</span></tt> function. You can read it at <a class="reference external" href="http://docs.pylonshq.com/views/#custom-render-functions">http://docs.pylonshq.com/views/#custom-render-functions</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Previous versions of Pylons implemented template plug-in support via the TurboGears Buffet API. This API is deprecated in Pylons 0.9.7, although you can still use the API for legacy purposes if you need. See <a class="reference external" href="http://docs.pylonshq.com/modules/templating/#legacy-buffet-templating-plugin-and-render-functions">http://docs.pylonshq.com/modules/templating/#legacy-buffet-templating-plugin-and-render-functions</a> for more information.</p>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This chapter was a fairly in-depth guide to the main aspects of templating in Pylons. You learned how to pass variables to templates via the template context variable <tt class="docutils literal"><span class="pre">c</span></tt>, how to avoid security problems through automatic escaping, and how to use HTML literals. You also learned the main features of Mako, from its template syntax to its inheritance chains, and you saw how to use its <tt class="docutils literal"><span class="pre">next</span></tt> and <tt class="docutils literal"><span class="pre">parent</span></tt> namespaces. You also learned all about what goes on behind the scenes to make templating in Pylons work from the Mako cache to the <tt class="docutils literal"><span class="pre">render()</span></tt> function setup.</p>
+<p>There has clearly been a lot to take in. Don’t worry if you didn’t understand every detail on the first read. You’ll be using Mako templates throughout the book, particularly in the SimpleSite tutorial chapters, so you’ll get plenty of practice working with them to build real applications.</p>
+<p id="index-1445">Next up you will learn how to create forms with Pylons, how to validate their content, and how to present error messages to the user if they enter invalid data.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Chapter 5: Using View Templates</a><ul>
+<li><a class="reference external" href="#introducing-mako">Introducing Mako</a><ul>
+<li><a class="reference external" href="#using-the-template-context-c-global">Using the Template Context c Global</a></li>
+<li><a class="reference external" href="#basic-template-syntax">Basic Template Syntax</a></li>
+<li><a class="reference external" href="#default-pylons-template-variables">Default Pylons Template Variables</a></li>
+<li><a class="reference external" href="#mako-runtime-built-ins">Mako Runtime Built-Ins</a></li>
+<li><a class="reference external" href="#separation-of-logic-and-view">Separation of Logic and View</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#security-considerations-and-webhelpers">Security Considerations and WebHelpers</a><ul>
+<li><a class="reference external" href="#writing-your-own-helpers">Writing Your Own Helpers</a></li>
+<li><a class="reference external" href="#applying-filters-in-templates">Applying Filters in Templates</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#structuring-template-code">Structuring Template Code</a><ul>
+<li><a class="reference external" href="#using-def-blocks">Using &lt;%def&gt; Blocks</a></li>
+<li><a class="reference external" href="#the-mako-cache">The Mako Cache</a></li>
+<li><a class="reference external" href="#capturing-output">Capturing Output</a></li>
+<li><a class="reference external" href="#namespaces">Namespaces</a></li>
+<li><a class="reference external" href="#the-body-def">The body() Def</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#template-inheritance-chains">Template Inheritance Chains</a><ul>
+<li><a class="reference external" href="#simple-inheritance">Simple Inheritance</a></li>
+<li><a class="reference external" href="#next-namespace">Next Namespace</a></li>
+<li><a class="reference external" href="#parent-namespace">Parent Namespace</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#behind-the-scenes">Behind the Scenes</a><ul>
+<li><a class="reference external" href="#caching">Caching</a></li>
+<li><a class="reference external" href="#alternative-template-languages">Alternative Template Languages</a></li>
+<li><a class="reference external" href="#multiple-template-languages">Multiple Template Languages</a></li>
+<li><a class="reference external" href="#working-with-your-own-templating-language">Working with Your Own Templating Language</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="tracking-down-problems-and-handling-errors.html"
+                                  title="previous chapter">Chapter 4: Tracking Down and Handling Problems</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="working-with-forms-and-validators.html"
+                                  title="next chapter">Chapter 6: Working with Forms and Validators</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/using-view-templates.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="http://pylonsbook.com/en/1.0/search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="working-with-forms-and-validators.html" title="Chapter 6: Working with Forms and Validators"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tracking-down-problems-and-handling-errors.html" title="Chapter 4: Tracking Down and Handling Problems"
+             >previous</a> |</li>
+        <li><a href="index.html">Pylons Book v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, James Gardner.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+
+<!-- Mirrored from pylonsbook.com/en/1.0/using-view-templates.html by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 11 Jun 2009 15:42:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,37 @@
+9
+
+dir
+31
+http://svn.assembla.com/svn/faolanproject/trunk/faolan/src
+http://svn.assembla.com/svn/faolanproject
+
+
+
+2008-07-31T19:54:08.923851Z
+27
+Albat0r
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+fbf1ad31-3caa-4afa-b5b4-094426959cba
+
+auth
+dir
+
+common
+dir
+
+char
+dir
+

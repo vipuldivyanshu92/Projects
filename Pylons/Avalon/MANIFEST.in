@@ -1,0 +1,3 @@
+include avalon/config/deployment.ini_tmpl
+recursive-include avalon/public *
+recursive-include avalon/templates *

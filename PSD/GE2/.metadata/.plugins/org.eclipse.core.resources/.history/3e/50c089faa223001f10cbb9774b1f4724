@@ -1,0 +1,134 @@
+package dataStorageLayer;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.lang.String;
+
+import applicationLayer.BranchBook;
+import applicationLayer.BranchBookImpl;
+import applicationLayer.Keeper;
+import applicationLayer.States;
+
+import uk.ac.gla.dcs.psd3.ay2009.project.CentralLibClient;
+import uk.ac.gla.dcs.psd3.ay2009.project.CentralLibClientSQLImpl;
+import uk.ac.gla.dcs.psd3.ay2009.project.model.Book;
+import uk.ac.gla.dcs.psd3.ay2009.project.model.BookDescription;
+
+public class BookStorageFacade {
+	private static BookStorageFacade instance = null;
+	private CentralLibClient libClient = null;
+	// *ToDo* Change this to the config file
+	private static String dbPropertiesFN = "config/test/db.properties";
+	
+	private BookStorageFacade()	{
+		libClient = new CentralLibClientSQLImpl(dbPropertiesFN);
+	}
+	
+	public static BookStorageFacade getInstance() {
+		if (instance == null)
+			instance = new BookStorageFacade();
+		
+		return instance;
+	}
+
+	private BranchBook bookToBranchBook(Book b) throws Exception {
+		BranchBook bb = new BranchBookImpl();
+		
+		// Load from Prolib data
+		bb.setAuthors(b.getBookDescription().getAuthors());
+		bb.setID(b.getID());
+		bb.setISBN(b.getBookDescription().getISBN());
+		bb.setPublished(b.getBookDescription().getPublished());
+		bb.setPublisher(b.getBookDescription().getPublisher());
+		bb.setTitle(b.getBookDescription().getTitle());
+		
+		// Load from local branch library database
+		BranchStorageInterface bsi = BranchStorageInterface.getInstance();
+		UserStorageFacade usf = UserStorageFacade.getInstance();
+		
+		bb.setState(bsi.getBookState(b.getID()));
+		bb.setKeeper((Keeper)usf.getUserById(bsi.getBookKeeper(b.getID())));
+		bb.setBorrower(bb.getBorrower());
+		
+		return bb;
+	}
+	
+	public BranchBook getBookByID(int id) throws Exception
+	{
+		/*	Return Branch Book by ID */
+		return bookToBranchBook(libClient.getBookByID(id));
+	}
+	
+	public List<BranchBook> getBooksBy(String key, Object value) throws Exception
+	{
+		BranchStorageInterface bsi = BranchStorageInterface.getInstance();
+		List<BranchBook> bbl = new ArrayList<BranchBook>();
+		if (key.equalsIgnoreCase("isbn"))
+		{
+			List<Book> bl = libClient.findBooksByDescription("ISBN='" + value.toString() + "'");
+			for(Book b : bl) {
+				bbl.add(bookToBranchBook(b));
+			}
+			//	Return book by ISBN
+		} else if (key.equalsIgnoreCase("publisher")) {
+			//	Return book by Publisher
+			List<Book> bl = libClient.findBooksByDescription("Publisher='" + value.toString() + "'");
+			for(Book b : bl) {
+				bbl.add(bookToBranchBook(b));
+			}
+		} else if (key.equalsIgnoreCase("published")) {
+			List<Book> bl = libClient.findBooksByDescription("Published='" + value.toString() + "'");
+			for(Book b : bl) {
+				bbl.add(bookToBranchBook(b));
+			}
+		} else if (key.equalsIgnoreCase("title")) {
+			List<Book> bl = libClient.findBooksByDescription("Title='" + value.toString() + "'");
+			for(Book b : bl) {
+				bbl.add(bookToBranchBook(b));
+			}
+		} else if (key.equalsIgnoreCase("author")) {
+			List<Book> bl = libClient.findBooksByDescription("Author='" + value.toString() + "'");
+			for(Book b : bl) {
+				bbl.add(bookToBranchBook(b));
+			}			
+		} else if (key.equalsIgnoreCase("state")) {
+			BranchStorageInterface bsi = BranchStorageInterface.getInstance();
+			List<Book> bl = libClient.findBooksByDescription("Published='" + value.toString() + "'");
+			for(Book b : bl) {
+				bbl.add(bookToBranchBook(b));
+			}
+		} else if (key.equalsIgnoreCase("borrower")) {
+			
+		} else if (key.equalsIgnoreCase("state")) {
+			
+		} else if (key.equalsIgnoreCase("keeper")) {
+			bsi = BranchStorageInterface.getInstance();
+			List<BranchBook> li = bsi.getBooksByKeeper(((Keeper) value).getId());
+			for (BranchBook bbsd : li)
+			{
+				if (!b.equals(null)){
+					BookDescription bd = b.getBookDescription();
+					bbsd.setID(bd.getID());
+					bbsd.setAuthors(bd.getAuthors());
+					bbsd.setISBN(bd.getISBN());
+					bbsd.setKeeper((Keeper) value);
+					bbsd.setPublished(bd.getPublished());
+					bbsd.setPublisher(bd.getPublisher());
+					
+					bbsd.setBorrower(bsi.getBookBorrower(bd.getID()));
+					
+				}
+			}
+		} else {
+			throw new Exception("Unknown Key!");
+		}
+	}
+	
+	public void setBookKeeper(int bookid, int userid) throws Exception {}
+	
+	public int getBookBorrower(int bookid) {}
+	
+	public void setBookBorrower(int bookid, int userid) {}
+	
+	public void setBookState(int bookid, States s) {}
+}

@@ -1,0 +1,223 @@
+(ExpressProject "GUMSTIX_EXPANSION_V1"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\gumstix_expansion_v1.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (DRC_Scope "0")
+    (DRC_Action "0")
+    (DRC_Create_Warnings "FALSE")
+    (DRC_View_Output "FALSE")
+    (DRC_Run_Electrical_Rules "TRUE")
+    (DRC_Run_Physical_Rules "FALSE")
+    (DRC_Report_File "F:\TDP4\TRUNK\CIRCUIT\GUMSTIX_EXPANSION_V1.DRC")
+    (DRC_Check_Ports "FALSE")
+    (DRC_Check_Off-Page_Connectors "FALSE")
+    (DRC_Report_Ports_and_Off-page_Connectors "FALSE")
+    (DRC_SDT_Compatibility "FALSE")
+    (DRC_Report_Off-grid_Objects "FALSE")
+    (DRC_Check_Unconnected_Nets "TRUE")
+    (DRC_Check_for_Misleading_TAP "FALSE")
+    (DRC_Report_Netnames "FALSE")
+    (DRC_Check_Single_Node_Nets "TRUE")
+    (DRC_Check_No_Driving_Source "TRUE")
+    (DRC_Check_Duplicate_NetNames "TRUE")
+    (DRC_Check_Floating_Pins "TRUE")
+    (DRC_Check_Physical_Power_Pins_Visibility "TRUE")
+    (DRC_Check_PCB_Footprint_Property "TRUE")
+    (DRC_Check_Normal_Convert_View_Sync "TRUE")
+    (DRC_Check_Incorrect_PinGroup_Assignment "TRUE")
+    (DRC_Check_High_Speed_Props_Syntax "TRUE")
+    (DRC_Check_Missing_Pin_Numbers "TRUE")
+    (DRC_Check_Device_With_No_Pins "TRUE")
+    (DRC_Check_Power_Ground_Short "TRUE")
+    (DRC_Identical_References "TRUE")
+    (DRC_Type_Mismatch "TRUE")
+    (DRC_Visible_Power_pins "FALSE")
+    (DRC_Report_Unused_Part_Packages "TRUE")
+    (DRC_Check_Name_Prop_For_HierBlocks "TRUE")
+    ("Create Allegro Netlist" "TRUE")
+    ("Allegro Netlist Directory" "allegro")
+    ("View Allegro Netlist Files" "FALSE")
+    ("Update Allegro Board" "TRUE")
+    ("Allegro Netlist Input Board File" "F:\tdp4\trunk\circuit\pcb\bare.brd")
+    ("Allegro Netlist Output Board File" "allegro\gumstix_expansion_v1_4.brd")
+    ("Allegro Netlist Remove Etch" "FALSE")
+    ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
+    ("Allegro Netlist Open Board in Allegro" "ORCAD")
+    ("Allegro Setup Configuration File"
+       "D:\Cadence\SPB_16.3\tools\capture\allegro.cfg")
+    ("Allegro Setup Backup Versions" "3")
+    ("Allegro Setup Output Warnings" "TRUE")
+    ("Allegro Setup Ignore Constraints" "FALSE")
+    ("Allegro Setup Part Type Length" "31")
+    ("Allegro Netlist Combine Property String" "PCB Footprint")
+    ("Allegro Netlist Ignore Fixed Property" "FALSE")
+    ("Allegro Netlist User Defined Property" "FALSE")
+    (Netlist_TAB "0"))
+  (Folder "Outputs"
+    (File ".\gumstix_expansion_v1.drc"
+      (Type "Report"))
+    (File ".\allegro\pstxnet.dat"
+      (Type "Report")
+      (DisplayName "pstxnet.dat"))
+    (File ".\allegro\pstxprt.dat"
+      (Type "Report")
+      (DisplayName "pstxprt.dat"))
+    (File ".\allegro\pstchip.dat"
+      (Type "Report")
+      (DisplayName "pstchip.dat")))
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    (OFFPAGELEFT-L
+      (LibraryName "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (CON9
+      (FullPartName "CON9.Normal")
+      (LibraryName "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (SWITCH
+      (FullPartName "SWITCH.Normal")
+      (LibraryName "F:\TDP4\TRUNK\CIRCUIT\SYMBOLS.OLB")
+      (DeviceIndex "0"))
+    (C_elect
+      (FullPartName "C_elect.Normal")
+      (LibraryName
+         "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (CON6
+      (FullPartName "CON6.Normal")
+      (LibraryName "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (OFFPAGELEFT-R
+      (LibraryName "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (CON3
+      (FullPartName "CON3.Normal")
+      (LibraryName "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (LED
+      (FullPartName "LED.Normal")
+      (LibraryName "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    ("4 HEADER"
+      (FullPartName "4 HEADER.Normal")
+      (LibraryName "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (74AHC1G126
+      (FullPartName "74AHC1G126.Normal")
+      (LibraryName "L:\TP4\SYMBOLS.OLB")
+      (DeviceIndex "0"))
+    (FT232RQ
+      (FullPartName "FT232RQ.Normal")
+      (LibraryName "L:\TP4\SYMBOLS.OLB")
+      (DeviceIndex "0"))
+    (TJA1040T
+      (FullPartName "TJA1040T.Normal")
+      (LibraryName "E:\TP4\SYMBOLS.OLB")
+      (DeviceIndex "0"))
+    ("CONN MOD 6-6_J"
+      (FullPartName "CONN MOD 6-6_J.Normal")
+      (LibraryName "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (SN74LVC16T245
+      (FullPartName "SN74LVC16T245.Normal")
+      (LibraryName "F:\TP4\SYMBOLS.OLB")
+      (DeviceIndex "0"))
+    (MC9S08DZ60
+      (FullPartName "MC9S08DZ60.Normal")
+      (LibraryName "F:\TP4\SYMBOLS.OLB")
+      (DeviceIndex "0"))
+    (FERRITE_BEAD
+      (FullPartName "FERRITE_BEAD.Normal")
+      (LibraryName "F:\TP4\SYMBOLS.OLB")
+      (DeviceIndex "0"))
+    (CON5
+      (FullPartName "CON5.Normal")
+      (LibraryName "D:\CADENCE\SPB_16.3\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (GUMSTIX_J4
+      (FullPartName "GUMSTIX_J4.Normal")
+      (LibraryName "F:\TP4\SYMBOLS.OLB")
+      (DeviceIndex "0"))
+    (GUMSTIX_J1
+      (FullPartName "GUMSTIX_J1.Normal")
+      (LibraryName "F:\TP4\SYMBOLS.OLB")
+      (DeviceIndex "0")))
+  (LastUsedLibraryBrowseDirectory "F:\tdp4\trunk\circuit")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Outputs"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 0 365 0 513"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 150 1152 150 604")
+        (Scroll "0 218")
+        (Zoom "122")
+        (Occurrence "/"))
+      (Path "F:\TDP4\TRUNK\CIRCUIT\GUMSTIX_EXPANSION_V1.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "CAN"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 163 1165 -20 434")
+        (Scroll "0 20")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path "F:\TDP4\TRUNK\CIRCUIT\GUMSTIX_EXPANSION_V1.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "KEYBOARD"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 75 1106 75 485")
+        (Scroll "-6 0")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path "F:\TDP4\TRUNK\CIRCUIT\GUMSTIX_EXPANSION_V1.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "POWER_SUPPLY"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 50 839 50 379")
+        (Scroll "0 11")
+        (Zoom "109")
+        (Occurrence "/"))
+      (Path "F:\TDP4\TRUNK\CIRCUIT\GUMSTIX_EXPANSION_V1.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "GUMSTIX_CONNECTORS"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 125 1156 125 528")
+        (Scroll "-60 0")
+        (Zoom "89")
+        (Occurrence "/"))
+      (Path "F:\TDP4\TRUNK\CIRCUIT\GUMSTIX_EXPANSION_V1.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "USB")))
+  (MPSSessionName "Adraen")
+  (ISPCBBASICLICENSE "false"))

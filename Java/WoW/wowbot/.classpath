@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/external/mina-2.0.0-M4/dist/mina-core-2.0.0-M4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/external/slf4j-1.5.6/slf4j-simple-1.5.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="c3d7dc06-18a7-458d-9999-4bf21ab1c5fc" kpf_version="4" name="pywowc.kpf">
+<preference-set idref="c3d7dc06-18a7-458d-9999-4bf21ab1c5fc">
+  <boolean id="import_live">1</boolean>
+</preference-set>
+</project>

@@ -1,0 +1,58 @@
+# 
+# ===============================================================================
+#                               Allegro PCB Router                               
+# Copyright 1990-2006 Cadence Design Systems, Inc.  All Rights Reserved.
+# ===============================================================================
+# 
+# Software licensed for sale by Cadence Design Systems, Inc.
+# Current time = Fri Apr 29 18:30:31 2011
+# 
+# Allegro PCB Router v16-3-85 made 2009/11/03 at 11:55:32
+# Running on: uranus, OS Version: WindowsNT 6.1.7601, Architecture: Intel Pentium II, III, or 4
+# Licensing: The program will not obey any unlicensed rules
+# No graphics will be displayed.
+# Design Name i:/aquarium/allegro\circuit_lightr1.dsn
+# Batch File Name: pasde.do
+# Did File Name: i:/aquarium/allegro/specctra.did
+# Current time = Fri Apr 29 18:30:31 2011
+# PCB i:/aquarium/allegro
+# Master Unit set up as: MIL 1000
+# PCB Limits xlo=-2178.0000 ylo=-1663.0000 xhi=2178.0000 yhi=1361.5000
+# Total 17 Images Consolidated.
+# Via VIA z=1, 2 xlo=-12.0000 ylo=-12.0000 xhi= 12.0000 yhi= 12.0000
+# 
+#    VIA     TOP  BOTTOM
+# 
+#    TOP  ------   VIA  
+# BOTTOM   VIA    ------
+# 
+# Wires Processed 0, Vias Processed 0
+# Using colormap in design file.
+# Layers Processed: Signal Layers 2
+# Components Placed 26, Images Processed 37, Padstacks Processed 6
+# Nets Processed 29, Net Terminals 96
+# PCB Area=10414800.000  EIC=7  Area/EIC=1487828.571  SMDs=1
+# Total Pin Count: 111
+# Signal Connections Created 67
+# 
+# Design Rules --------------------------------------------
+# Via Grid 0.0100 with offset 0.0000
+# Layer TOP Horz Signal Wire Grid 0.0100 with offset 0.0000, Width= 9.0000, Clearance= 9.0000
+# Layer BOTTOM Vert Signal Wire Grid 0.0100 with offset 0.0000, Width= 9.0000, Clearance= 9.0000
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# 
+# Wiring Statistics ----------------- i:/aquarium/allegro\circuit_lightr1.dsn
+# Nets 29 Connections 67 Unroutes 67
+# Signal Layers 2 Power Layers 0
+# Wire Junctions 0, at vias 0 Total Vias 0
+# Percent Connected    0.00
+# Manhattan Length 31977.9100 Horizontal 20572.1070 Vertical 11405.8030
+# Routed Length   0.0000 Horizontal   0.0000 Vertical   0.0000
+# Ratio Actual / Manhattan   0.0000
+# Unconnected Length 31977.9100 Horizontal 18735.5600 Vertical 13242.3500
+# Total Conflicts: 0 (Cross: 0, Clear: 0, Xtalk: 0, Length: 0, Polygon Clear: 0 )
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:01
+# Loading Do File pasde.do ...
+# Loading Do File i:/aquarium/allegro\circuit_lightr1_rules.do ...
+# Colormap Written to File _notify.std
+# Enter command <quit

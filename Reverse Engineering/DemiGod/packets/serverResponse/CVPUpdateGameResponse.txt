@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CVPUpdateGameResponse>
+	<ResponseCode>0</ResponseCode>
+	<ResponseMessage>Success</ResponseMessage>
+	<GameToken>FGwgwUFlgN8BaKkBT23w9AmMa/D8bH9I95HuufI5AcB9Ph1Rxj8dCISPM/SAcijgDArCgUTseF1Tj2yIEbe1y4FR0VUGO/tV8dzs/4eRXdE2/Rln6G2iDJX6mct+czipKaS0NfOU/VthAEsYQj0Sbfh45MzUsVkyhBRa4MEPtw7wMyspqG5cL6YVOqG8QQrGdcHaYdzPpWOxPuzzMuj2JzC/cpnwzZ2tfwx/kaC3dhp4bwWO5Osq1ASPyMY/KLaTdLvztq1TjZRM33gvzaFmvG3ekkSDM1KoCuwn28faIyvEy38UE3WRGPrw8WChB16V3Rt+jI/V8FJ/sh6SjY0cNkTyLlbv9lRbWSGPsCI8aFMqOz49TnOTJOC773x6JYH/7CBdkrElJyJJbKvJOCpAPCfGXbqyLx8padVLTJhFD01l9EjRsqb5UMl4vCF8wLBhDHqbGzMIJhU=</GameToken>
+</CVPUpdateGameResponse>

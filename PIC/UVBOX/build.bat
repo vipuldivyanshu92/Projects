@@ -1,0 +1,1 @@
+"D:\Microchip\MPASM Suite\MPASMWIN.exe" uvbox.asm /pPIC16F627

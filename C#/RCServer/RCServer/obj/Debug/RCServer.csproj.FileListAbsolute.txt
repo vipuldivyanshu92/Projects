@@ -1,0 +1,8 @@
+K:\C#\RCServer\RCServer\bin\Debug\RCServer.exe
+K:\C#\RCServer\RCServer\bin\Debug\RCServer.pdb
+K:\C#\RCServer\RCServer\obj\Debug\ResolveAssemblyReference.cache
+K:\C#\RCServer\RCServer\obj\Debug\RCServer.Form1.resources
+K:\C#\RCServer\RCServer\obj\Debug\RCServer.Properties.Resources.resources
+K:\C#\RCServer\RCServer\obj\Debug\RCServer.csproj.GenerateResource.Cache
+K:\C#\RCServer\RCServer\obj\Debug\RCServer.exe
+K:\C#\RCServer\RCServer\obj\Debug\RCServer.pdb

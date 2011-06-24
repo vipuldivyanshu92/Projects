@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1267301841841
+activated,view,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.PackageExplorer",1267301844057
+activated,editor,com.cloudgarden.jigloo,4.6.0,"com.cloudgarden.jigloo.editors.FormEditor",1267301844275
+error,log,,,"Unhandled event loop exception",1267301854633
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267301855819
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301863791
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301865336
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1267301865352
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301867458
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301874884
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301876226
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301877600
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301880080
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301882950
+activated,editor,com.cloudgarden.jigloo,4.6.0,"com.cloudgarden.jigloo.editors.FormEditor",1267301884152
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301887007
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301888490
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1267301888505
+activated,editor,com.cloudgarden.jigloo,4.6.0,"com.cloudgarden.jigloo.editors.FormEditor",1267301923982
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301926478
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.findReplace",1267301926509
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267301929901
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267301930322
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.text.contentAssist.proposals",1267301933036
+error,log,,,"Unhandled event loop exception",1267301936749

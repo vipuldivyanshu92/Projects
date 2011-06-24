@@ -1,0 +1,52 @@
+9
+
+dir
+21
+http://svn2.assembla.com/svn/aocemu/trunk/db/PostgreSQL
+http://svn2.assembla.com/svn/aocemu
+
+
+
+2008-06-14T22:57:18.354949Z
+21
+Ashura75013
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+843fd666-81f2-4710-8602-7759cdb5ad05
+
+dbCreate.sql
+file
+
+
+
+
+2008-06-17T18:59:14.277355Z
+4c8742de208af89edd2577d24b44bcfc
+2008-06-14T21:37:36.311276Z
+20
+Ashura75013
+
+dbInsert.sql
+file
+
+
+
+
+2008-06-17T18:59:14.278355Z
+7d0b2c7b2f160b75db25c23855c1e1b2
+2008-06-14T22:57:18.354949Z
+21
+Ashura75013
+

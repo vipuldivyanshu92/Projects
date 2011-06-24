@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+\begin{document}
+\today
+
+
+
+The foundations of the rigorous study of \emph{analysis}
+were laid in the nineteenth century, notably by the
+mathematicians Cauchy and Weierstrass. Central to the
+study of this subject are the formal definitions of
+\emph{limits} and \emph{continuity}.
+
+Let $D$ be a subset of $\bf R$ and let
+$f \colon D \to \mathbf{R}$ be a real-valued function on
+$D$. The function $f$ is said to be \emph{continuous} on
+$D$ if, for all $\epsilon > 0$ and for all $x \in D$,
+there exists some $\delta > 0$ (which may depend on $x$)
+such that if $y \in D$ satisfies
+\[ |y - x| < \delta \]
+then
+\[ |f(y) - f(x)| < \epsilon. \]
+
+One may readily verify that if $f$ and $g$ are continuous
+functions on $D$ then the functions $f+g$, $f-g$ and
+$f.g$ are continuous. If in addition $g$ is everywhere
+non-zero then $f/g$ is continuous.
+\\
+\\
+\begin{table}[ht]
+\caption{Acceptance Tests And Values}
+\centering
+\begin{tabular}{| l | l | l | l |}
+\hline
+\multicolumn{4}{| c |}{Acceptance Test} \\ \hline
+    &           &   &    \\
+  T & Test Case & V & Test Value \\ \hline
+    &           &   &    \\
+    & boolean: isAdmin  & V1 & ``Tim'' - Is a member of staff, Not a keeper.\\ 
+ T1 & boolean: isMemberStaff & V2 & ``Jack'' - Is a member of staff, A keeper. \\   
+	& boolean: isKeeper      & V3 & ``Chris'' - Is Not A member of staff.  \\ 
+    &           &   &    \\
+\end{tabular}
+\label{table:nonlin}
+\end{table}
+
+\begin{table}[ht]
+\caption{Add Keeper}
+\centering
+\begin{tabular*}{1.75\textwidth}{@{\extracolsep{\fill}}| c | c | c | c | l |}
+\hline
+\multicolumn{5}{| c |}{6.2.1 Add Keeper} \\ \hline
+  &                &      &       & \\
+Step & Description & Test & Value & Expected Results \\ \hline
+  &                &      &       & \\
+1 & Login As Admin & T1 & V1 & V1 Is registered as a keeper. \\  
+  &                &    &    & Update V1 privilege. \\
+  &                &    &    & After system restart V1 maintains keeper privilege. \\
+  &                &    &    & A notification that V2 is a registered keeper. \\
+2 & Login As Admin & T1 & V2 & V2 Is already a registered Keeper. \\
+  &                &    &    & A notification that V2 is already a registered keeper. \\
+  &                &    &    & The System maintains the same functionality. \\
+3 & Login As Admin & T1 & V3 & V3 Is not a member of staff. \\
+  &                &    &    & User not found attempt another search. \\
+  &                &    &    & The system maintains the same functionality. \\
+  &                &    &    & A notification that V3 is not a user with a potential to be a keeper. \\ 
+4 & Login As Not Admin & T1 & V1 & Unsuccessful Login. \\
+  &                    &    &    & \\ \hline
+\multicolumn{5}{| c |}{6.2.2 Remove Keeper} \\ \hline
+  &                &      &       & \\
+Step & Description & Test & Value & Expected Results \\ \hline
+  &                &      &       & \\
+1 & Login As Admin & T1 & V1 & V1 Is not registered as a keeper. \\  
+  &                &    &    & A notification that V2 is not a registered keeper. \\
+  &                &    &    & The System maintains the same functionality. \\
+2 & Login As Admin & T1 & V2 & V2 Is registered as a borrower. \\
+  &                &    &    & Update V2 privilege. \\
+  &                &    &    & After system restart V2 maintains borrower privilege. \\
+  &                &    &    & A notification that V2 is a registered Borrower. \\
+3 & Login As Admin & T1 & V3 & V3 Is not a member of staff. \\
+  &                &    &    & User not found attempt another search. \\
+  &                &    &    & The system maintains the same functionality. \\
+  &                &    &    & A notification that V3 is not a user with a potential to be a keeper. \\ 
+4 & Login As Not Admin & T1 & V1 & Unsuccessful Login. \\
+
+\label{table:nonlin}
+\end{tabular*}
+\end{table}
+\end{document}

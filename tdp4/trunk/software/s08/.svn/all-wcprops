@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/tdp4/!svn/ver/71/trunk/software/s08
+END
+BDM_P&E_Multilink_CyclonePro.ini
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/tdp4/!svn/ver/71/trunk/software/s08/BDM_P&E_Multilink_CyclonePro.ini
+END
+Default.mem
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/tdp4/!svn/ver/24/trunk/software/s08/Default.mem
+END
+Compiler_HC08.pdf
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tdp4/!svn/ver/24/trunk/software/s08/Compiler_HC08.pdf
+END
+HCS08_Full_Chip_Simulator.ini
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/tdp4/!svn/ver/24/trunk/software/s08/HCS08_Full_Chip_Simulator.ini
+END
+C_Layout.hwl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/tdp4/!svn/ver/24/trunk/software/s08/C_Layout.hwl
+END
+TDP4.mcp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/tdp4/!svn/ver/43/trunk/software/s08/TDP4.mcp
+END

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/users/0704887j/projects/java/GE2/ProLib/psd3.jar"/>
+	<classpathentry kind="lib" path="/users/0704887j/projects/java/GE2/ProLib/lib/junit4.jar"/>
+	<classpathentry kind="lib" path="/users/0704887j/projects/java/GE2/ProLib/lib/l4jconf.jar"/>
+	<classpathentry kind="lib" path="/users/0704887j/projects/java/GE2/ProLib/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="/users/0704887j/projects/java/GE2/ProLib/lib/marc4j.jar"/>
+	<classpathentry kind="lib" path="/users/0704887j/projects/java/GE2/ProLib/lib/mysql.jar"/>
+	<classpathentry kind="lib" path="/users/0704887j/projects/java/GE2/ProLib/lib/sqlbeans.jar"/>
+	<classpathentry kind="con" path="org.dyno.visual.swing.VS_LIBRARY/layoutext"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

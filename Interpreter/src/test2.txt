@@ -1,0 +1,11 @@
+define square
+line 50 0
+line 0 -50
+line -50 0
+line 0 50
+end
+position 50 100
+square
+move 100 20
+square
+circle 10

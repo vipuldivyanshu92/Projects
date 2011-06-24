@@ -1,0 +1,19 @@
+import uk.ac.gla.dcs.psd3.ay2009.project.model.UserImpl;;
+
+public class UserStorageFacade {
+	private static UserStorageFacade _instance = null;
+	
+	private UserStorageFacade() {
+	}
+	
+	public static UserStorageFacade getInstance() {
+		if (_instance == null)
+			_instance = new UserStorageFacade();
+		
+		return _instance;
+	}
+	
+	public Object getUserBy(String key, Object value) {
+		
+	}
+}

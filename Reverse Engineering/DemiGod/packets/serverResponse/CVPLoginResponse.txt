@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CVPLoginResponse>
+	<ResponseCode>0</ResponseCode>
+	<ResponseMessage>Success</ResponseMessage>
+	<Token>FGwgwUFlgN8BaKkBT23w9AmMa/D8bH9I95HuufI5AcB9Ph1Rxj8dCISPM/SAcijgDArCgUTseF1Tj2yIEbe1y4FR0VUGO/tVCWkJmCLfDCOgn3PbaPp4rvuAqZZ0Vjiako1W6LYXAlPnqiyJB1JUuwWRqGlzp2qQ0c+lT2D3mUUUiCIw+kBe2pCEcrxqpVkq0WFeL8W8jbxE1dXAUGYdaEpUHm/kf7gd/FvA0RIm1tc0gv6Zw5nOqbesJE4ijnvPJETTIZM6n6+tNNvItekUh9su58f/GkOWQ/JPvhck7Z+/uBLF6ssWDjLtnJTJdO9QIbPIx5oFKuerLbmwJPp8Q90t478yUwCqaWO+mkrJ4aREOqzOfSL30h/M+AhRhNmgEd00yUQ9JmZ7X1zS8EmupxVxfwSRZSUVDNI6uw+59sea+442Jf/jGPPT+XgurELiFq/ymjuDBIOZqkkKaejb4sB5vViGrLjrMMLIv8Xd10pgUOzhIQgR6mL0myIOA2Mh</Token>
+	<Players>
+		<Player>
+			<Default>true</Default>
+			<PlayerID>15769</PlayerID>
+			<PlayerName>Adraen</PlayerName>
+			<TitleID>444</TitleID>
+			<PlayerData />
+			<AIPlayer>false</AIPlayer>
+			<MMGroup>1</MMGroup>
+			<EarnedFavorPts>0</EarnedFavorPts>
+			<SpentFavorPts>0</SpentFavorPts>
+			<CurrentFavorPts>0</CurrentFavorPts>
+			<SpecialtyItems />
+			<CurrentWinningStreak>0</CurrentWinningStreak>
+			<CurrentLosingStreak>0</CurrentLosingStreak>
+			<CurrentDropoutStreak>0</CurrentDropoutStreak>
+			<LargestWinningStreak>0</LargestWinningStreak>
+			<LargestLosingStreak>0</LargestLosingStreak>
+			<LargestDropoutStreak>0</LargestDropoutStreak>
+			<TotalWins>0</TotalWins>
+			<TotalLosses>0</TotalLosses>
+			<TotalDropouts>0</TotalDropouts>
+			<TotalPlaytime>0</TotalPlaytime>
+		</Player>
+	</Players>
+</CVPLoginResponse>
+
+
+### Wrong Password response ###
+<?xml version="1.0" encoding="utf-8"?>
+<CVPLoginResponse>
+	<ResponseCode>5</ResponseCode>
+	<ResponseMessage>Impulse login failed.
+		The username and password entered do not match.  (You provided Adraen)
+		Please check your username and password and try again.
+	</ResponseMessage>
+	<Token />
+	<Players />
+</CVPLoginResponse>
+
+### Wrong Username ###
+<?xml version="1.0" encoding="utf-8"?>
+<CVPLoginResponse>
+	<ResponseCode>6</ResponseCode>
+	<ResponseMessage>Invalid Stardock.net account.
+		A Stardock.net account does not exist for "Adrae". You must register the account first.
+	</ResponseMessage>
+	<Token />
+	<Players />
+</CVPLoginResponse>

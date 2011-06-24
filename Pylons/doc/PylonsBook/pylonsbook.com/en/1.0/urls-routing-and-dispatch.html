@@ -1,0 +1,922 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from pylonsbook.com/en/1.0/urls-routing-and-dispatch.html by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 11 Jun 2009 15:42:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Chapter 9: URLs, Routing and Dispatch &mdash; Pylons Book v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Pylons Book v1.0 documentation" href="index.html" />
+    <link rel="next" title="Chapter 10: Unicode" href="unicode.html" />
+    <link rel="prev" title="Chapter 8: Starting the SimpleSite Tutorial" href="starting-the-simplesite-tutorial.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="unicode.html" title="Chapter 10: Unicode"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="starting-the-simplesite-tutorial.html" title="Chapter 8: Starting the SimpleSite Tutorial"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Pylons Book v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="chapter-9-urls-routing-and-dispatch">
+<h1>Chapter 9: URLs, Routing and Dispatch<a class="headerlink" href="#chapter-9-urls-routing-and-dispatch" title="Permalink to this headline">¶</a></h1>
+<p id="index-1264">All web applications and frameworks need some mechanism for mapping the URL that a user enters in the browser to the code that should be executed when the server receives the request. Different languages and frameworks take different approaches to this. In PHP- or CGI-based systems, the URL represents a path on the hard disk to the file that should be executed. In Zope, URLs are treated as paths in an object hierarchy, and in Django, URLs are matched to code based on regular expressions.</p>
+<p id="index-1265">Pylons doesn’t use any of these approaches. Instead, it uses a very powerful and flexible system called Routes, which is an improved version of the Ruby on Rails routing system. Routes allows you to quickly and easily specify how groups of similar URLs map to your controllers; in turn, this allows you to create whatever URL structure you prefer for your application. Unlike other lookup systems, the URL is completely decoupled from the code that handles it. This also makes it easier to change your URL structure if you need to do so.</p>
+<p>You’ve already seen Routes in action in previous chapters. For example, in Chapter 3 you saw a route that looked like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/{id}&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1266">Each of the labels between curly brackets represents dynamic parts of a route. When a route is matched, the corresponding URL parts are matched, and their values are assigned to routing variables corresponding to the labels of the dynamic parts within the curly brackets. In this way, the one route can be used to match a large range of URLs.</p>
+<p id="index-1267">You can also use Routes to generate URLs with <tt class="docutils literal"><span class="pre">h.url_for()</span></tt>. To do this, you need to import the Routes <tt class="docutils literal"><span class="pre">url_for()</span></tt> function into your project’s <tt class="docutils literal"><span class="pre">lib/helpers.py</span></tt> file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">routes</span> <span class="kn">import</span> <span class="n">url_for</span>
+</pre></div>
+</div>
+<p>Here’s an example of how to use <tt class="docutils literal"><span class="pre">h.url_for()</span></tt>, which results in the URL <tt class="docutils literal"><span class="pre">/page/view/1</span></tt> being generated:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As you can see, the arguments to <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> correspond to the routing variable names used when defining the route.</p>
+<p>When a user visits this URL, the same route used for generating the URL will also be used for matching it. In this case, the URL generated by the earlier call to <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> will also generate the routing variables <tt class="docutils literal"><span class="pre">controller='page'</span></tt>, <tt class="docutils literal"><span class="pre">action='view'</span></tt>, and <tt class="docutils literal"><span class="pre">id=1</span></tt> when the URL is visited, and this results in the page controller’s <tt class="docutils literal"><span class="pre">view()</span></tt> action being called with the ID <tt class="docutils literal"><span class="pre">1</span></tt>.</p>
+<p id="index-1268">You can also give individual routes a name by specifying a string as the first argument to <tt class="docutils literal"><span class="pre">map.connect()</span></tt>. This reduces the amount of typing you have to do when generating URLs. For example, you might define this route:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;blog_entry&#39;</span><span class="p">,</span> <span class="s">&#39;/blog/view/{id}&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You could then generate a URL to the entry with ID <tt class="docutils literal"><span class="pre">1</span></tt> like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s">&#39;blog_entry&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now that you have a rough feel for how Routes works, let’s dive in straightaway and look at how Routes is set up and used in Pylons and how Pylons uses information from Routes to dispatch requests.</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last" id="index-1269">One problem with Routes is that because it was originally ported from the Ruby on Rails implementation, it still contains a number of features that you might have used when developing a Pylons 0.9.6 project that are no longer considered good practice. In the section “Unnecessary Routes Features” later in this chapter, I’ll explain why these features are no longer recommended. It is likely they will be removed in a future version of Routes, so it is important you avoid using them.</p>
+</div>
+<div class="section" id="pylons-routing-in-detail">
+<h2>Pylons Routing in Detail<a class="headerlink" href="#pylons-routing-in-detail" title="Permalink to this headline">¶</a></h2>
+<p id="index-1270">At its heart Routes is all about two things: analyzing a URL to produce a list of variables and being able to re-generate that URL from the same variables. These variables are known as <em>routing variables</em>, and they are used by Pylons to determine which controller action should be called and the arguments it should be called with. The URL matching is done by comparing the URL to a series of strings known as <em>route paths</em>, which, together with a set of options, define how a particular set of URLs can be turned into routing variables and back to URLs again. The route paths and options together are known as a <em>route</em>, and a set of routes is known as a <em>route map</em>.</p>
+<p id="index-1271">Let’s see how these concepts are applied in a Pylons application. You can find your project’s route map in its <tt class="docutils literal"><span class="pre">config/routing.py</span></tt> file. Let’s use the SimpleSite route map as an example. It looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">make_map</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Create, configure and return the routes Mapper&quot;&quot;&quot;</span>
+    <span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;pylons.paths&#39;</span><span class="p">][</span><span class="s">&#39;controllers&#39;</span><span class="p">],</span>
+                 <span class="n">always_scan</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;debug&#39;</span><span class="p">])</span>
+    <span class="nb">map</span><span class="o">.</span><span class="n">minimization</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="c"># The ErrorController route (handles 404/500 error pages); it should</span>
+    <span class="c"># likely stay at the top, ensuring it can always be resolved</span>
+    <span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/error/{action}&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;error&#39;</span><span class="p">)</span>
+    <span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/error/{action}/{id}&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;error&#39;</span><span class="p">)</span>
+
+    <span class="c"># CUSTOM ROUTES HERE</span>
+
+    <span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}&#39;</span><span class="p">)</span>
+    <span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/{id}&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">map</span>
+</pre></div>
+</div>
+<p id="index-1272">Here you can see that the <tt class="docutils literal"><span class="pre">make_map()</span></tt> function is responsible for creating a route map object called <tt class="docutils literal"><span class="pre">map</span></tt> and returning it. The routes are added to the map via the <tt class="docutils literal"><span class="pre">map.connect()</span></tt> function, which takes a route path such as <tt class="docutils literal"><span class="pre">'/{controller}/{action}/{id}'</span></tt> and some optional arguments called the <em>route options</em>. Each of the labels for the dynamic parts between the <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt> characters specify the positions of routing variables that are matched against any value in the corresponding position within a URL. When a URL is entered, Pylons tries to match it by calling <tt class="docutils literal"><span class="pre">map.match(url)</span></tt>. Routes then searches each of the routes in the route map from top to bottom until it finds a route that matches the URL. Because matching is done from top to bottom, you are always advised to put your custom routes below the ones that Pylons provides to ensure you don’t accidentally interfere with the default behavior of Pylons. More generally speaking, you should always put your most general routes at the bottom of the route map so that they don’t accidentally get matched before a more specific route lower down in the route map.</p>
+<p id="index-1273">To demonstrate the behavior of the route map as it stands, let’s consider some example URLs and the routing variables that are produced when the URL is matched. Let’s start with the site root URL, which is <tt class="docutils literal"><span class="pre">/</span></tt>:</p>
+<div class="highlight-python"><pre>URL:    /
+Result: None</pre>
+</div>
+<p>As you can see, there are no routes with just one <tt class="docutils literal"><span class="pre">/</span></tt> character in them, so the URL <tt class="docutils literal"><span class="pre">/</span></tt> is not currently matched. If you visited this URL, you would see the <tt class="docutils literal"><span class="pre">index.html</span></tt> file served from your project’s <tt class="docutils literal"><span class="pre">public</span></tt> directory or a 404 Not Found error page. You’ll add a route to handle the root URL in the second part of the SimpleSite tutorial in Chapter 14.</p>
+<div class="highlight-python"><pre>URL:    /page/view/1
+Result: {'action': 'view', 'controller': 'page', 'id': '1'}</pre>
+</div>
+<p>As you already know from having tested the SimpleSite application in Chapter 8, this URL is matched by the last route in the route map and results in a page being displayed. The URL fragment <tt class="docutils literal"><span class="pre">page</span></tt> is matched to <tt class="docutils literal"><span class="pre">{controller}</span></tt>, <tt class="docutils literal"><span class="pre">view</span></tt> is matched to <tt class="docutils literal"><span class="pre">{action}</span></tt>, and <tt class="docutils literal"><span class="pre">1</span></tt> is matched to <tt class="docutils literal"><span class="pre">{id}</span></tt>.</p>
+<p>Now consider the URL <tt class="docutils literal"><span class="pre">/error/img</span></tt>:</p>
+<div class="highlight-python"><pre>URL:    /error/img/logo.png
+Result: {'action': 'img', 'controller': 'error', 'id': 'logo.png'}</pre>
+</div>
+<p>This is matched by the second route, <tt class="docutils literal"><span class="pre">map.connect('/error/{action}',</span> <span class="pre">controller='error')</span></tt>, because the first part of the URL begins with <tt class="docutils literal"><span class="pre">/error/</span></tt>. The <tt class="docutils literal"><span class="pre">img</span></tt> part is matched to <tt class="docutils literal"><span class="pre">{action}</span></tt>, and <tt class="docutils literal"><span class="pre">logo.png</span></tt> is matched to <tt class="docutils literal"><span class="pre">{id}</span></tt>. Notice that the route path doesn’t contain a <tt class="docutils literal"><span class="pre">{controller}</span></tt> part, though, so you might wonder how the <tt class="docutils literal"><span class="pre">controller</span></tt> routing variable gets assigned a value. You’ll see in the route map that the error route definition also takes a default argument of <tt class="docutils literal"><span class="pre">controller='error'</span></tt>. This means that if the route is matched, the <tt class="docutils literal"><span class="pre">controller</span></tt> routing variable will be automatically added to the results with a value of <tt class="docutils literal"><span class="pre">'error'</span></tt>. You’ll learn about how Pylons uses this route in its internal handling of error documents in Chapter 19.</p>
+<p>So far, this should all seem fairly intuitive; URLs are matched against static text or dynamic parts representing routing variables in the route path, and default values can be added when needed. Let’s try another example:</p>
+<div class="highlight-python"><pre>URL:    /section/view/1
+Result: None</pre>
+</div>
+<p id="index-1274">This time the URL isn’t matched even though at first glance it looks like it should be. To understand why, you need to know a little bit more about how Routes works.</p>
+<p>The <tt class="docutils literal"><span class="pre">Mapper</span></tt> object takes a number of arguments, including the following:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">controller_scan</span></tt></dt>
+<dd>This takes a function that will be used to return a list of valid controllers during URL matching. If the <tt class="docutils literal"><span class="pre">directory</span></tt> argument is also specified, it will be passed into the function when it is called.</dd>
+<dt><tt class="docutils literal"><span class="pre">directory</span></tt></dt>
+<dd>This is passed into <tt class="docutils literal"><span class="pre">controller_scan</span></tt> for the directory to scan. It should be an absolute path if using the default <tt class="docutils literal"><span class="pre">controller_scan</span></tt> function.</dd>
+<dt><tt class="docutils literal"><span class="pre">always_scan</span></tt></dt>
+<dd>This specifies whether the <tt class="docutils literal"><span class="pre">controller_scan</span></tt> function should be run during every URL match. This is typically a good idea during development so the server won’t need to be restarted when a controller is added, but you might want to disable it on production systems to avoid the small overhead of the check. After all, you are unlikely to have specified routes to controllers that don’t exist in production code.</dd>
+<dt><tt class="docutils literal"><span class="pre">explicit</span></tt></dt>
+<dd>This has a default value of <tt class="xref docutils literal"><span class="pre">False</span></tt>, but when it is set to <tt class="xref docutils literal"><span class="pre">True</span></tt>, some of the features of Routes such as route memory and implicit defaults are disabled. You’ll learn about these features and why you should usually set this option to <tt class="xref docutils literal"><span class="pre">True</span></tt> in the “Unnecessary Routes Features” section.</dd>
+</dl>
+<p id="index-1275">Pylons uses the Routes default <tt class="docutils literal"><span class="pre">controller_scan()</span></tt> function, which will scan the directory specified by the <tt class="docutils literal"><span class="pre">directory</span></tt> argument to check for controllers. If a particular route matches a URL but the controller resulting from the match doesn’t exist, the route will be ignored, and the next route will be tried. In this case, the <tt class="docutils literal"><span class="pre">directory</span></tt> argument is set to <tt class="docutils literal"><span class="pre">config['pylons.paths']['controllers']</span></tt>, which contains the path to your project’s <tt class="docutils literal"><span class="pre">controllers</span></tt> directory. Since no <tt class="docutils literal"><span class="pre">section</span></tt> controller exists yet, the route in the previous example didn’t match. For production use, you don’t need to have Routes scan the controller directory on each match because the controllers aren’t likely to change, so the <tt class="docutils literal"><span class="pre">always_scan</span></tt> variable is automatically set to the same value as the value of the <tt class="docutils literal"><span class="pre">debug</span></tt> option in the config file, enabling the scan in development mode and disabling it in production mode.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You are very unlikely to want to customize the <tt class="docutils literal"><span class="pre">controller_scan()</span></tt> function in your own application, but I’ve mentioned it here so that you are aware of its behavior when you see it crop up in some of the examples in this chapter.</p>
+</div>
+<p id="index-1276">By carefully defining routes and specifying their order in the <em>route map</em>, it is possible to quickly and easily map quite complex URL structures into simple sets of routing variables that can be used in your application. Before you go on to look at the details of how to write your own routes, let’s take a brief look at how Pylons uses the routing variables to call a particular controller action.</p>
+<div class="section" id="pylons-dispatch">
+<h3>Pylons Dispatch<a class="headerlink" href="#pylons-dispatch" title="Permalink to this headline">¶</a></h3>
+<p id="index-1277">Once a URL has been matched against a route and the controller has been verified to exist, Pylons checks to see whether it can find the action.</p>
+<p>Pylons is set up so that any controller methods that start with an <tt class="docutils literal"><span class="pre">_</span></tt> character are not considered actions at all and cannot be called as a result of a URL dispatch. If the action specified in the routing variables doesn’t exist or it starts with an <tt class="docutils literal"><span class="pre">_</span></tt> character, then the check fails. In debug mode for development, this raises an exception to explain the mistake; in production mode, it simply results in a 404 Not Found error page being displayed.</p>
+<p id="index-1278">If the controller and action both exist, then Pylons looks for a <tt class="docutils literal"><span class="pre">__before__()</span></tt> method attached to the controller class. If the method exists, it is executed. The <tt class="docutils literal"><span class="pre">__before__()</span></tt> method can therefore be used to set up per-request objects or perform other processing to be carried out before each action in the controller is called.</p>
+<p>Next, Pylons inspects the action to see what arguments it takes and calls it in such a way that any arguments that have the same names as the routing variables are called with the value of the routing variable as the argument. Here are some examples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># No routing variables used in the action</span>
+<span class="k">def</span> <span class="nf">no_routing_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">&#39;No routing variables used&#39;</span>
+
+<span class="c"># Populate the ``id`` with the value of the ``id`` routing variable</span>
+<span class="k">def</span> <span class="nf">id_present</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">&#39;The id is </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="nb">id</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You’ve already seen routing variables being used in this way in the <tt class="docutils literal"><span class="pre">page</span></tt> controller from the SimpleSite tutorial in Chapter 8, and you’ll recall from Chapter 3 that you can also retrieve the <tt class="docutils literal"><span class="pre">controller</span></tt> name and <tt class="docutils literal"><span class="pre">action</span></tt> in the same way. All the routing variables that are passed to the action are also automatically added as attributes to the template context global <tt class="docutils literal"><span class="pre">c</span></tt>.</p>
+</div>
+<p id="index-1279">In addition to routing variables, you can also specify both <tt class="docutils literal"><span class="pre">environ</span></tt> and <tt class="docutils literal"><span class="pre">start_response</span></tt> as arguments in your actions. The <tt class="docutils literal"><span class="pre">environ</span></tt> argument will get populated with the same WSGI environment dictionary you can access via the Pylons request global as <tt class="docutils literal"><span class="pre">request.environ</span></tt>, and the <tt class="docutils literal"><span class="pre">start_response()</span></tt> callable is a WSGI callable you’ll learn about in Chapter 16. Both <tt class="docutils literal"><span class="pre">environ</span></tt> and <tt class="docutils literal"><span class="pre">start_response</span></tt> get added as attributes to the template context global <tt class="docutils literal"><span class="pre">c</span></tt> in the same way as the routing variables do if you use them in an action. To see all these features in action, consider the following example. When the <tt class="docutils literal"><span class="pre">test()</span></tt> action is called, the browser will display <tt class="docutils literal"><span class="pre">True,</span> <span class="pre">True,</span> <span class="pre">True,</span> <span class="pre">True</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">__before__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">id_set_in_before</span> <span class="o">=</span> <span class="nb">id</span>
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">,</span> <span class="n">controller</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">id_set_in_before</span> <span class="o">==</span> <span class="nb">id</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">environ</span> <span class="o">==</span> <span class="n">environ</span> <span class="o">==</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">start_response</span> <span class="o">==</span> <span class="n">start_response</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">controller</span> <span class="o">==</span> <span class="n">controller</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">content_type</span> <span class="o">=</span> <span class="s">&#39;text/plain&#39;</span>
+    <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1280">After an action is called, Pylons looks for an <tt class="docutils literal"><span class="pre">__after__()</span></tt> method attached to the controller, and if it exists, it is called too. You can use <tt class="docutils literal"><span class="pre">__after__()</span></tt> for performing any cleanup of objects you created in the <tt class="docutils literal"><span class="pre">__before__()</span></tt> method.</p>
+<p>Both the <tt class="docutils literal"><span class="pre">__before__()</span></tt> and <tt class="docutils literal"><span class="pre">__after__()</span></tt> methods can also accept any of the routing variable names as arguments in exactly the same way as the controller action can.</p>
+<p id="index-1281">Of course, there are occasions where it is useful to be able to access the routing variables outside your controller code. All the routing variables are available in the <tt class="docutils literal"><span class="pre">request.urlvars</span></tt> dictionary and are also available in <tt class="docutils literal"><span class="pre">request.environ[&quot;wsgiorg.routing_args&quot;]</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="routes-in-detail">
+<h2>Routes in Detail<a class="headerlink" href="#routes-in-detail" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have seen some examples of routes being matched against URLs and understand how Pylons uses the routing variables to dispatch to your controller actions, it is time to learn the details of how you can construct individual routes.</p>
+<div class="section" id="route-parts">
+<h3>Route Parts<a class="headerlink" href="#route-parts" title="Permalink to this headline">¶</a></h3>
+<p id="index-1282">As you’ve already seen, a route is specified by arguments to <tt class="docutils literal"><span class="pre">map.connect()</span></tt> that include a route path and a number of options. The route path itself can consist of a number of different types of parts between <tt class="docutils literal"><span class="pre">/</span></tt> characters:</p>
+<dl class="docutils" id="index-1283">
+<dt><em>Static parts</em></dt>
+<dd>These are plain-text parts of the URL that don’t result in any route variables being defined. In the default Pylons setup, the string <tt class="docutils literal"><span class="pre">error</span></tt> in the route path <tt class="docutils literal"><span class="pre">/error/{action}</span></tt> is a static part.</dd>
+</dl>
+<dl class="docutils" id="index-1284">
+<dt><em>Dynamic parts</em></dt>
+<dd>The text in the URL matching the dynamic part is assigned to a routing variable of that name. Dynamic parts are marked in the route path as the routing variable name within curly brackets. In the default Pylons setup, the string <tt class="docutils literal"><span class="pre">{action}</span></tt> in the route path <tt class="docutils literal"><span class="pre">/error/{action}</span></tt> is a dynamic part. Dynamic parts can also be specified by the routing variable name preceded by a colon, which is the style used in earlier versions of Routes. For example, you could change the first error route path from <tt class="docutils literal"><span class="pre">/error/{action}</span></tt> to <tt class="docutils literal"><span class="pre">/error/:action</span></tt>, and it would still work.</dd>
+</dl>
+<dl class="docutils" id="index-1285">
+<dt><em>Wildcard parts</em></dt>
+<dd>A wildcard part will match <em>everything</em> (including <tt class="docutils literal"><span class="pre">/</span></tt> characters) except the other parts around it. Wildcard parts are marked in the route path by preceding them with the <tt class="docutils literal"><span class="pre">*</span></tt> character. The default Pylons setup doesn’t include any routes that use wildcard parts, but you can use them in your own routes if you need to do so.</dd>
+</dl>
+<p>To demonstrate the different types of route parts, consider the following URL:</p>
+<div class="highlight-python"><pre>/wiki/page/view/some/variable/depth/file.html</pre>
+</div>
+<p>and a route path to match it, which includes a wildcard part:</p>
+<div class="highlight-python"><pre>/wiki/{controller}/{action}/*url</pre>
+</div>
+<p>In this case, <tt class="docutils literal"><span class="pre">wiki</span></tt> is treated as a static part, and <tt class="docutils literal"><span class="pre">page</span></tt> is a dynamic part that is assigned to the <tt class="docutils literal"><span class="pre">controller</span></tt> route variable. In Routes, <tt class="docutils literal"><span class="pre">/</span></tt> characters separating dynamic or wildcard parts are not treated as static parts, so the next <tt class="docutils literal"><span class="pre">/</span></tt> is ignored. <tt class="docutils literal"><span class="pre">view</span></tt> is a dynamic part assigned to the <tt class="docutils literal"><span class="pre">action</span></tt> route variable. The following <tt class="docutils literal"><span class="pre">/</span></tt> is also ignored, and the whole of the rest of the URL is considered a wildcard part and assigned to the <tt class="docutils literal"><span class="pre">url</span></tt> route variable.</p>
+<p>Any URL starting with <tt class="docutils literal"><span class="pre">/wiki/</span></tt> followed by two sets of characters, each followed by a <tt class="docutils literal"><span class="pre">/</span></tt> character, will be matched by this route path as long as the controller exists.</p>
+<p id="index-1286">Let’s test this with a simple example. Rather than modifying the SimpleSite project, you can set up your own route map directly. You just have to specify a dummy <tt class="docutils literal"><span class="pre">controller_scan</span></tt> function to return a list of valid controllers. In the example, <tt class="docutils literal"><span class="pre">map.minimization</span></tt> is set to <tt class="xref docutils literal"><span class="pre">False</span></tt> so that the route map is set up in the same way it would be in a Pylons application. The <tt class="docutils literal"><span class="pre">controller_scan()</span></tt> function will just return <tt class="docutils literal"><span class="pre">['error',</span> <span class="pre">'page']</span></tt> to simulate that only the <tt class="docutils literal"><span class="pre">page</span></tt> and <tt class="docutils literal"><span class="pre">error</span></tt> controllers exist. Here’s what the route map looks like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">controller_scan</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="p">[</span><span class="s">&#39;error&#39;</span><span class="p">,</span> <span class="s">&#39;page&#39;</span><span class="p">]</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">routes</span> <span class="kn">import</span> <span class="n">Mapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimization</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/wiki/{controller}/{action}/*url&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/wiki/page/view/some/variable/depth/file.html&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;view&#39;, &#39;url&#39;: u&#39;some/variable/depth/file.html&#39;, &#39;controller&#39;: u&#39;page&#39;}</span>
+</pre></div>
+</div>
+<p>The URL is matched as expected. Let’s try to match some different URLs:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/some/other/url&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/wiki/folder/view/some/variable/depth/file.html&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<p>Notice that if the URL doesn’t match or if the matched controller doesn’t exist, the route is not matched, and the <tt class="docutils literal"><span class="pre">map.match()</span></tt> function returns <tt class="xref docutils literal"><span class="pre">None</span></tt>.</p>
+<p id="index-1287">The Pylons implementation of Routes doesn’t require the dynamic and wildcard portions of the route path to be separated by a <tt class="docutils literal"><span class="pre">/</span></tt> character. Here you’re using a <tt class="docutils literal"><span class="pre">.</span></tt> character as a separator. Note that you need to create a new <tt class="docutils literal"><span class="pre">Mapper</span></tt> to set this new route because you have already called <tt class="docutils literal"><span class="pre">map.connect()</span></tt> on the previous one. Once again, you use the dummy <tt class="docutils literal"><span class="pre">controller_scan()</span></tt> function and set <tt class="docutils literal"><span class="pre">map.minimization</span> <span class="pre">=</span> <span class="pre">False</span></tt> to turn off minimization in the same way as the Pylons setup:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimization</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/blog/{controller}.{action}.*url&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/blog/page.view.some/variable/depth/file.html&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;view&#39;, &#39;url&#39;: u&#39;some/variable/depth/file.html&#39;, &#39;controller&#39;: u&#39;page&#39;}</span>
+</pre></div>
+</div>
+<p>As these examples have demonstrated, you can think of wildcard parts as being very much like dynamic parts but also matching <tt class="docutils literal"><span class="pre">/</span></tt> characters.</p>
+<p id="index-1288">Although wildcard parts are a powerful tool, they generally aren’t used very often and can be a sign that you haven’t designed your routes very well. The risk is that because they match any character including <tt class="docutils literal"><span class="pre">/</span></tt>, they will match very many URLs. If you were to have a wildcard route near the top of your route map, it could easily match URLs for which there was a more specific route later in the route map. The vast majority of the time you will just use static and dynamic parts in your route paths, but if you do use wildcard routes, they should always be placed near the bottom of the route map to avoid them accidentally matching URLs when there is a more specific route later in the map.</p>
+<p>These are three cases when you might choose to use wildcard routes:</p>
+<blockquote>
+<ul class="simple">
+<li>When an entire portion of the URL is going to be passed to another application (for example, Paste’s static file server)</li>
+<li>When you are trying to match a string ID that might include <tt class="docutils literal"><span class="pre">/</span></tt> characters</li>
+</ul>
+<ul class="simple" id="index-1289">
+<li>When you want to pass the entire request URL to a particular action to handle an error condition, rather than allowing a 404 Not Found error page to be returned</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="default-variables">
+<h3>Default Variables<a class="headerlink" href="#default-variables" title="Permalink to this headline">¶</a></h3>
+<p id="index-1290">With the knowledge you’ve already gained, you will be able to create most of the routes you are likely to need, but there is one problem. Every route matched must result in at least the routing variables <tt class="docutils literal"><span class="pre">controller</span></tt> and <tt class="docutils literal"><span class="pre">action</span></tt> being assigned a value, but URLs such as <tt class="docutils literal"><span class="pre">/</span></tt> don’t contain enough characters to be able to deduce the controller and action names from them.</p>
+<p>To solve this problem, Routes allows you to specify default values for any routing variables as part of the routing map’s <tt class="docutils literal"><span class="pre">connect()</span></tt> function. You’ve already seen default variables in action during the discussion of Pylons’ error route, but let’s look at another example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimization</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/archives/by_eon/{century}&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;list&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1291">In this example, the <tt class="docutils literal"><span class="pre">controller</span></tt> and <tt class="docutils literal"><span class="pre">action</span></tt> both have default values, so they are called <em>default variables</em>. You’ll notice that you can’t create a URL that will affect the value of the <tt class="docutils literal"><span class="pre">controller</span></tt> and <tt class="docutils literal"><span class="pre">action</span></tt> variables since they aren’t present in the route path, so their default values of ‘``archives&#8217;`` and <tt class="docutils literal"><span class="pre">'list'</span></tt> will always be used. Such variables are known as <em>hard-coded variables</em>.</p>
+<p id="index-1292">The value assigned to the <tt class="docutils literal"><span class="pre">century</span></tt> routing variable will depend on the URL with which it is matched:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/archives/by_eon/&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/archives/by_eon&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/archives/by_eon/1800&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;aggregate&#39;, &#39;controller&#39;: u&#39;page&#39;, &#39;century&#39;: u&#39;1800&#39;}</span>
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p id="index-1293">One thing you have to be aware of when choosing names for routing arguments is that the <tt class="docutils literal"><span class="pre">map.connect()</span></tt> method also accepts certain keyword arguments including <tt class="docutils literal"><span class="pre">requirement</span></tt>, <tt class="docutils literal"><span class="pre">_explicit</span></tt>, <tt class="docutils literal"><span class="pre">_encoding</span></tt>, and <tt class="docutils literal"><span class="pre">_filter</span></tt>. If you choose a routing variable with the same name as one of these arguments, then you will not be able to specify a default value because Routes will not interpret the argument as a default value. To prevent this potential problem, future versions of Routes will not allow any routing variable names starting with an <tt class="docutils literal"><span class="pre">_</span></tt> character, so you would be wise to avoid starting your routing variables with an <tt class="docutils literal"><span class="pre">_</span></tt>.</p>
+<p class="last">You should avoid using two other names as routing variables; these are the WSGI objects <tt class="docutils literal"><span class="pre">environ</span></tt> and <tt class="docutils literal"><span class="pre">start_response</span></tt>. Both can be passed automatically to controller actions when they are called. If you choose routing variables with the same names as these, you won’t be able to access the routing variables as arguments to the controller actions because the Pylons dispatch mechanism will assume you want the WSGI objects themselves rather than the routing variables of the same name.</p>
+</div>
+<p id="index-1294">It is possible to take the use of default variables to an extreme. A route where the controller and action are hard-coded is known as an <em>explicit route</em>. Here’s an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/blog/view/1&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1295">Here the whole route path is made only from static parts, and all the routing variables are hard-coded as default variables. The benefit of this approach is that only one URL will ever match this route, but the drawback is that defining all your URLs this way requires adding an awful lot of routes to your application.</p>
+</div>
+</div>
+<div class="section" id="generating-urls">
+<h2>Generating URLs<a class="headerlink" href="#generating-urls" title="Permalink to this headline">¶</a></h2>
+<p id="index-1296">Now that you have seen how Pylons uses Routes and you understand the details of how URLs are matched, you can turn your attention once again to how to generate URLs.</p>
+<p>Routes includes two functions for use in your web application that you will find yourself using frequently:</p>
+<blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">h.url_for()</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">redirect_to()</span></tt></li>
+</ul>
+</blockquote>
+<p id="index-1297">You’ve already seen the <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> function a few times, and you’ll recall that to make it available in your controllers and templates, you need to import it into your project’s <tt class="docutils literal"><span class="pre">lib/helpers.py</span></tt> file from the <tt class="docutils literal"><span class="pre">routes</span></tt> module.</p>
+<p>The <tt class="docutils literal"><span class="pre">redirect_to()</span></tt> function is automatically imported into your controllers from the <tt class="docutils literal"><span class="pre">pylons.controllers.util</span></tt> module. It is used to redirect a controller to a different URL within your application. If you look at the page controller in the SimpleSite project you’ve been developing, you’ll see that up to now redirects have been coded manually by specifying the correct HTTP status code for a redirect and setting a <tt class="docutils literal"><span class="pre">Location</span></tt> HTTP header using the <tt class="docutils literal"><span class="pre">response</span></tt> global. Here’s the <tt class="docutils literal"><span class="pre">save()</span></tt> action as an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@restrict</span><span class="p">(</span><span class="s">&#39;POST&#39;</span><span class="p">)</span>
+<span class="nd">@validate</span><span class="p">(</span><span class="n">schema</span><span class="o">=</span><span class="n">NewPageForm</span><span class="p">(),</span> <span class="n">form</span><span class="o">=</span><span class="s">&#39;edit&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">page_q</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">Session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Page</span><span class="p">)</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">page_q</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">page</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">abort</span><span class="p">(</span><span class="mf">404</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">form_result</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">!=</span> <span class="n">v</span><span class="p">:</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="n">meta</span><span class="o">.</span><span class="n">Session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">session</span><span class="p">[</span><span class="s">&#39;flash&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Page successfully updated.&#39;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="c"># Issue an HTTP redirect</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">status_int</span> <span class="o">=</span> <span class="mf">302</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span>
+       <span class="nb">id</span><span class="o">=</span><span class="n">page</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s">&quot;Moved temporarily&quot;</span>
+</pre></div>
+</div>
+<p>You could instead replace the last five lines to use <tt class="docutils literal"><span class="pre">redirect_to()</span></tt> like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Issue an HTTP redirect</span>
+<span class="k">return</span> <span class="n">redirect_to</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">page</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As you can see, this is much neater, so it is a good idea to use <tt class="docutils literal"><span class="pre">redirect_to()</span></tt> in your controllers rather than writing out the long version of the code. <tt class="docutils literal"><span class="pre">redirect_to()</span></tt> is commonly used after a form submission to redirect to another URL so that if the user clicks Refresh, the form data isn’t sent again.</p>
+<p id="index-1298">One of the major benefits of using <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> and <tt class="docutils literal"><span class="pre">redirect_to()</span></tt> rather than generating your own URLs manually is that Pylons can automatically take account of the URL at which your application is deployed and adjust the URLs automatically.</p>
+<p id="index-1299">As an example, imagine you have created a new Pylons project to manage application forms. You might choose to deploy the Pylons application at a URL such as <tt class="docutils literal"><span class="pre">/forms</span></tt> so that it appears to be part of an existing site. This means that when a user visits <tt class="docutils literal"><span class="pre">/forms</span></tt>, the Pylons application needs to know that they are really requesting a URL, which would be <tt class="docutils literal"><span class="pre">/</span></tt> if the Pylons application was running on a stand-alone server. This also means that any time the application creates a URL, it has to start <tt class="docutils literal"><span class="pre">/forms</span></tt>; otherwise, the links wouldn’t point to the Pylons application. In this setup, the <tt class="docutils literal"><span class="pre">SCRIPT_NAME</span></tt> environment variable would be set to <tt class="docutils literal"><span class="pre">/forms</span></tt> so Pylons can work out that the URLs needed to be adjusted. Any time you call any of the Pylons URL generation functions, the URL generated is modified to take account of the <tt class="docutils literal"><span class="pre">SCRIPT_NAME</span></tt> environment variable, so all the URLs get generated correctly without needing any manual modification.</p>
+<div class="section" id="named-routes">
+<h3>Named Routes<a class="headerlink" href="#named-routes" title="Permalink to this headline">¶</a></h3>
+<p id="index-1300">If you are regularly using the same route in your application, it can quickly become tedious to type all the routing variables every time you want to use <tt class="docutils literal"><span class="pre">h.url_for()</span></tt>. This is where <em>named routes</em> come in. A named route is like an ordinary route, but you access it directly via a name.</p>
+<p>Here’s an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;category_home&#39;</span><span class="p">,</span> <span class="s">&#39;category/{section}&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span>
+          <span class="n">section</span><span class="o">=</span><span class="s">&#39;home&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then in your Pylons application you might use this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s">&#39;category_home&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is equivalent to generating the URL using the routing variables in full, both generate the URL <tt class="docutils literal"><span class="pre">/category/home</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="s">&#39;home&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As you can see, this saves a bit of typing. You can also specify keyword arguments, and it will override defaults associated with the route name. The following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s">&#39;category_home&#39;</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="s">&#39;admin&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>generates the URL <tt class="docutils literal"><span class="pre">/category/admin</span></tt> and is equivalent to this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="s">&#39;admin&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="static-named-routes">
+<h3>Static Named Routes<a class="headerlink" href="#static-named-routes" title="Permalink to this headline">¶</a></h3>
+<p id="index-1301">Routes also supports a feature called <em>static named routes</em>. These are routes that do not involve actual URL generation but instead allow you to quickly alias common URLs that are external to your site. To make a route static, you add <tt class="docutils literal"><span class="pre">_static=True</span></tt> as an argument. For example, if your route map contained this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;google_search&#39;</span><span class="p">,</span> <span class="s">&#39;http://www.google.com/search&#39;</span><span class="p">,</span> <span class="n">_static</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>you could now reference <a class="reference external" href="http://www.google.com/search">http://www.google.com/search</a> by typing this in your application:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s">&#39;google_search&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is especially useful if you are accessing resources throughout your application that you think might change because it means you have to change the URL in only one place. Static named routes are ignored entirely when matching a URL.</p>
+</div>
+<div class="section" id="internal-static-routes">
+<h3>Internal Static Routes<a class="headerlink" href="#internal-static-routes" title="Permalink to this headline">¶</a></h3>
+<p id="index-1302">You can also use <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> to reference static resources in your project’s <tt class="docutils literal"><span class="pre">public</span></tt> directory. Routes will automatically prepend the URL you give it with the proper <tt class="docutils literal"><span class="pre">SCRIPT_NAME</span></tt> so that even if you are running your Pylons application under a different URL, the correct URL will be generated. For example, if your Pylons application was mounted at <tt class="docutils literal"><span class="pre">/forms</span></tt> and you used this in your application, the URL <tt class="docutils literal"><span class="pre">/forms/css/source.css</span></tt> would be correctly generated with this code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s">&#39;/css/source.css&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For portable web applications, it’s highly encouraged that you use <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> for all your URLs, even those that are static resources and images. This will ensure that the URLs are properly handled in any of the possible deployment setups you could use for your application.</p>
+</div>
+</div>
+<div class="section" id="choosing-good-urls">
+<h2>Choosing Good URLs<a class="headerlink" href="#choosing-good-urls" title="Permalink to this headline">¶</a></h2>
+<p id="index-1303">Now that you’ve seen some of the ways you can use Routes to match and generate URLs, let’s take a look at what actually makes a good URL structure.</p>
+<p>First here’s a definition of the parts of a URL:</p>
+<div class="highlight-python"><pre>http://jimmyg.org:80/some/url#fragment?foo=bar
+|--|   |---------|--|--------|--------|------|
+ |          |     |     |        |       |
+protocol    |    port   |     fragment   |
+       domain name  path info      query string</pre>
+</div>
+<p id="index-1304">Now here are some tips:</p>
+<dl class="docutils" id="index-1305">
+<dt><em>Describe the content</em></dt>
+<dd><p class="first">An obvious URL is a great URL. If a user can glance at a link in an email and know what it contains, you have done your job. This means choosing URL parts that accurately describe what is contained at that level of the URL structure. It’s usually better to use a descriptive word rather than an ID in the URL wherever possible. For example, if you were designing a blog, you should try to use <tt class="docutils literal"><span class="pre">apr</span></tt> instead of <tt class="docutils literal"><span class="pre">04</span></tt> to represent April, and you should use the name of a category rather than its ID if that is appropriate. Choosing URLs that describe their content makes your application intuitive to your users and gives search engines a better chance of accurately ranking the page.</p>
+<div class="last admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last" id="index-1306">Edward Cutrell and Zhiwei Guan from Microsoft Research conducted an eye-tracking study of search engine use that found people spend 24 percent of their “gaze time” looking at the URLs in the search results. If your URLs accurately describe their content, users can make a better guess about whether your content is relevant to them.</p>
+</div>
+</dd>
+</dl>
+<dl class="docutils" id="index-1307">
+<dt><em>Keep it short</em></dt>
+<dd>Try to keep your URLs as short as possible without breaking any of the other tips here. Short URLs are easier to type or to copy and paste into documents and emails. If possible, keeping URLs to less than 80 characters is ideal so that users can paste URLs into email without having to use URL-shortening tools such as <tt class="docutils literal"><span class="pre">tinyurl.com</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-1308">
+<dt><em>Hyphens separate best</em></dt>
+<dd>It is best to use single words in each part of a URL, but if you have to use multiple words, such as for the title of a blog post, then hyphens are the best characters to use to separate the words, as in <tt class="docutils literal"><span class="pre">/2008/nov/my-blog-post-title/</span></tt>. The <tt class="docutils literal"><span class="pre">-</span></tt> character cannot be used in Python keywords, so if you intend to use the URL fragments as Python controller names or actions, you might want to convert them to <tt class="docutils literal"><span class="pre">_</span></tt> characters first. Incidentally, using hyphens to separate words is also the most readable way of separating terms in CSS styles.</dd>
+</dl>
+<dl class="docutils" id="index-1309">
+<dt><em>Static-looking URLs are best</em></dt>
+<dd>Regardless of how your content is actually generated, it is worth structuring URLs so that they don’t contain lots of <tt class="docutils literal"><span class="pre">&amp;</span></tt>, <tt class="docutils literal"><span class="pre">=</span></tt>, and <tt class="docutils literal"><span class="pre">?</span></tt> characters that most visitors won’t properly understand. If you can write a URL like <tt class="docutils literal"><span class="pre">?</span> <span class="pre">type=food&amp;category=apple</span></tt> as <tt class="docutils literal"><span class="pre">/food/apple</span></tt>, then users can see much more quickly what it is about. Routes makes this sort of transformation easy, so there is no need to make extensive use of variables in query strings when they could form part of the URL.</dd>
+</dl>
+<dl class="docutils" id="index-1310">
+<dt><em>Keeping URLs lowercase makes your life easier</em></dt>
+<dd>The protocol and domain name parts of a URL can technically be entered in any case, but the optional fragment part after the <tt class="docutils literal"><span class="pre">#</span></tt> character is case sensitive. How a particular server treats anything between the two depends on the server, operating system, and what the URL resolves to. Since Pylons applications can be deployed on many different servers, you have to be aware of the potential problems. Unix filesystems are usually case sensitive, while Windows ones aren’t. Mac OS X systems can be case sensitive or case insensitive depending on the filesystem. This means that if the URL resolves to a file, Windows servers will generally allow any case, while Unix ones won’t. Query string parameters are also case sensitive. You can generally save yourself a headache by keeping everything lowercase and issuing a 404 for anything that isn’t. Of course, if you are writing a wiki application where the page names depend on the capitalization, then you’ll need to make the URLs case sensitive.</dd>
+</dl>
+<dl class="docutils" id="index-1311">
+<dt><em>Keep the underlying technology out of the URL</em></dt>
+<dd>Your users aren’t likely to care which specific technology you are using to generate your pages or whether they are generated as HTML or XHTML, so the basic rule is don’t use a file extension for dynamically generated pages unless you are doing something clever in your application internally like determining the format to represent the content based on the extension. It is generally best to choose names that represent what the URL <em>is</em> rather than its technology.</dd>
+</dl>
+<dl class="docutils" id="index-1312">
+<dt><em>Never change a URL</em></dt>
+<dd>Otherwise, your users won’t be able to find the page they bookmarked, and any page rank you built up in social bookmarking sites or search engines will be lost. If you absolutely have to change a URL, ensure you set up a permanent 301 redirect to the new one so that your users don’t get 404 errors. The W3C put it best: “Cool URLs don’t change.”</dd>
+</dl>
+<dl class="docutils" id="index-1313">
+<dt><em>Only use disambiguated URLs</em></dt>
+<dd><p class="first">Any piece of content should have one and only one definitive URL, with any alternatives acting as a permanent redirect. In the past, features such as Apache’s <tt class="docutils literal"><span class="pre">DirectoryIndex</span></tt> have meant that if you entered a URL that resolved to a folder, the default document for that folder would be served. This means that two URLs would exist for one resource. To make matters worse, servers are often configured so that <a class="reference external" href="http://www.example.com/someresource">http://www.example.com/someresource</a> and <a class="reference external" href="http://example.com/someresource">http://example.com/someresource</a> both point to the same resource. This means there can easily be four URLs for the same resource.</p>
+<p id="index-1314">There are three good reasons why this is bad:</p>
+<ul class="simple">
+<li>Search engines and social bookmarking sites give pages with the most links the highest rank. If you have four different URLs for the same page, different people are likely to link to different versions, so you are effectively dividing your rank by 4.</li>
+<li>Browser or server caches will have to cache four versions of the page. Put another way, this means they can’t improve performance if a user visits a different version of the same URL the second time.</li>
+<li>All versions of the page will be treated by web browsers as different resources, so the user’s browsing history won’t be accurate.</li>
+</ul>
+<p class="last" id="index-1315">The only time you might want to have more than one URL for the same resource is if all but one of the URLs redirects to the other one so that users of your site who have already bookmarked links can still find them.</p>
+</dd>
+</dl>
+<dl class="docutils" id="index-1316">
+<dt><em>Treat the URL as part of the UI</em></dt>
+<dd><p class="first">Navigation links, sidebars, and tabs are all well and good, but if you have a good URL structure, your users should be able to navigate your site by changing parts of the URL. There are a few rules about how best to do this:</p>
+<ul class="last simple">
+<li>Ensure that for every part of the path info part of a URL that a user might remove, a useful page is returned. For example, if the URL <tt class="docutils literal"><span class="pre">/2007/nov/entry</span></tt> gives a blog entry, <tt class="docutils literal"><span class="pre">2007/nov</span></tt> might list all the November entries, and <tt class="docutils literal"><span class="pre">/2007</span></tt> might list all entries from 2007.</li>
+<li>Never have a URL on your domain that gives a 500 error. It doesn’t take a genius to realize that you don’t want any URL in your web site to crash and cause a server error, but developers don’t always think about what will happen if a user starts hacking the URL to contain different values. For example, if you have a URL <tt class="docutils literal"><span class="pre">/food/apple</span></tt> and a user changes it to <tt class="docutils literal"><span class="pre">/food/pizza</span></tt> when the application is set up only to deal with fruit, it should give a 404 Page Not Found error, not a 500 Internal Server error. Users are much more likely to stop trying to guess URLs if they get a 500 page because they’ll be worried either that they might be breaking something or that the site is of low quality. The moment they stop hacking the URL, it has lost its usefulness as a UI component.</li>
+</ul>
+</dd>
+</dl>
+<p id="index-1317">The most important tip is that you should use common sense when designing a URL structure. Don’t apply any of the tips too rigidly; after all, you know your application and your users’ requirements, so you can use your judgment about what will work best for you.</p>
+</div>
+<div class="section" id="unnecessary-routes-features">
+<h2>Unnecessary Routes Features<a class="headerlink" href="#unnecessary-routes-features" title="Permalink to this headline">¶</a></h2>
+<p id="index-1318">Because Routes was originally ported from the Ruby on Rails version, a few “features” have been added that in hindsight aren’t necessary and are best to disable. In the following sections, you’ll look at these features, what they do, and how to disable them.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is highly likely that all these features will be completely removed in a future release of Routes.</p>
+</div>
+<div class="section" id="route-minimization">
+<h3>Route Minimization<a class="headerlink" href="#route-minimization" title="Permalink to this headline">¶</a></h3>
+<p id="index-1319">Previous versions of Pylons had a feature called <em>route minimization</em> enabled by default. Route minimization allowed you to specify optional default variables for a particular route. To demonstrate route minimization, let’s look at the previous example again but this time with minimization enabled and with an optional default variable, <tt class="docutils literal"><span class="pre">century</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimization</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/archives/by_eon/{century}&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span>
+<span class="gp">... </span>     <span class="n">action</span><span class="o">=</span><span class="s">&#39;aggregate&#39;</span><span class="p">,</span> <span class="n">century</span><span class="o">=</span><span class="mf">1800</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/archives/by_eon/&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;aggregate&#39;, &#39;controller&#39;: u&#39;page&#39;, &#39;century&#39;: u&#39;1800&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/archives/by_eon&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;aggregate&#39;, &#39;controller&#39;: u&#39;page&#39;, &#39;century&#39;: u&#39;1800&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/archives/by_eon/1800&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;aggregate&#39;, &#39;controller&#39;: u&#39;page&#39;, &#39;century&#39;: u&#39;1800&#39;}</span>
+</pre></div>
+</div>
+<p>Notice this time that all three URLs result in a match, even though two of them don’t have a part of the URL that could correspond to the <tt class="docutils literal"><span class="pre">century</span></tt> dynamic part. This is because with minimization enabled, Routes assumes you want to use the optional default variables automatically if they aren’t specified in the URL.</p>
+<p>Here are some of the reasons why route minimization is a bad idea:</p>
+<blockquote>
+<ul class="simple">
+<li>It means multiple URLs serve the same page, which as explained earlier is bad for caches and search engine rankings.</li>
+<li>It makes it difficult to choose which URL should be generated for a particular action when using <tt class="docutils literal"><span class="pre">h.url_for()</span></tt>, so Routes always generates the shortest URL with minimization enabled.</li>
+<li>Complex routes and many defaults can make it hard to predict which route will be matched.</li>
+</ul>
+</blockquote>
+<p id="index-1320">It is recommended that you leave route minimization disabled by keeping <tt class="docutils literal"><span class="pre">map.minimization</span></tt> set to <tt class="xref docutils literal"><span class="pre">False</span></tt> at the top of your route map.</p>
+</div>
+<div class="section" id="route-memory">
+<h3>Route Memory<a class="headerlink" href="#route-memory" title="Permalink to this headline">¶</a></h3>
+<p id="index-1321">One feature of Routes that was designed to make your life as a developer easier was called <em>route memory</em>. When your controller and action are matched from the URL, the routing variables that are set get remembered for the rest of that request. This means that when you are using <tt class="docutils literal"><span class="pre">h.url_for()</span></tt>, you actually only need to specify routing variables, which are different from the ones matched in the current request.</p>
+<p>Consider this route:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/archives/{year}/{month}/{day}&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the URL <tt class="docutils literal"><span class="pre">/archives/2008/10/4</span></tt> was entered, this route would match the following variables:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;controller&#39;</span><span class="p">:</span> <span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="s">&#39;action&#39;</span><span class="p">:</span> <span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">:</span> <span class="s">&#39;2008&#39;</span><span class="p">,</span> <span class="s">&#39;month&#39;</span><span class="p">:</span> <span class="s">&#39;10&#39;</span><span class="p">,</span> <span class="s">&#39;day&#39;</span><span class="p">:</span> <span class="s">&#39;4&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>With these routing variables matched, <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> would generate the following results:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="mf">6</span><span class="p">)</span>          <span class="c"># =&gt;     /page/2008/10/6</span>
+<span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="mf">4</span><span class="p">)</span>        <span class="c"># =&gt;     /page/2008/4/4</span>
+<span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mf">2009</span><span class="p">)</span>      <span class="c"># =&gt;     /page/2009/10/4</span>
+</pre></div>
+</div>
+<p>The majority of times you use <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> will be in view templates. Since the same template is often called from multiple different controllers and actions, you can’t always rely on <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> generating the same URL in the same template, and this can introduce unexpected bugs, so it is usually much better to specify all your routing arguments explicitly.</p>
+<p>There is another problem with route memory. Consider a route map set up with the following routes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}&#39;</span><span class="p">)</span>
+<span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/{id}&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>With route memory enabled, let’s imagine someone visited the URL <tt class="docutils literal"><span class="pre">/page/view/1</span></tt>. Here are the routing variables that would be matched:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;controller&#39;</span><span class="p">:</span> <span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="s">&#39;action&#39;</span><span class="p">:</span> <span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="s">&#39;1&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p id="index-1322">Now try to work out which URL would be generated with this code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;new&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The result is <tt class="docutils literal"><span class="pre">/page/new/1</span></tt> even though the <tt class="docutils literal"><span class="pre">new()</span></tt> action might not take an <tt class="docutils literal"><span class="pre">id</span></tt> argument. This means that in order to have this matched by the first route to generate the URL <tt class="docutils literal"><span class="pre">/page/new</span></tt>, you would have to explicitly specify <tt class="docutils literal"><span class="pre">id=None</span></tt> like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;new&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You may not have noticed, but this is exactly what you did in the footer for the SimpleSite <tt class="docutils literal"><span class="pre">view.html</span></tt> template in Chapter 8. If route memory was disabled globally, you would not have had to specify <tt class="docutils literal"><span class="pre">id=None</span></tt> for the <tt class="docutils literal"><span class="pre">new()</span></tt>, <tt class="docutils literal"><span class="pre">list()</span></tt>, or <tt class="docutils literal"><span class="pre">delete()</span></tt> action routes.</p>
+<p>As well as explicitly setting a routing variable to <tt class="xref docutils literal"><span class="pre">None</span></tt>, you can also disable route memory on a per-call basis by specifying the controller starting with a <tt class="docutils literal"><span class="pre">/</span></tt> character. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;/page&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;new&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1323">This is not ideal either, though. To avoid this complication, it is highly recommended that you disable route memory completely and always specify all arguments to <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> explicitly. You can do this by passing <tt class="docutils literal"><span class="pre">explicit=True</span></tt> to the <tt class="docutils literal"><span class="pre">Mapper()</span></tt> constructor in your project’s <tt class="docutils literal"><span class="pre">config/routing.py</span></tt>. This will ensure route memory isn’t used, and you will have to explicitly specify each routing variable in every call to <tt class="docutils literal"><span class="pre">h.url_for()</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;pylons.paths&#39;</span><span class="p">][</span><span class="s">&#39;controllers&#39;</span><span class="p">],</span>
+      <span class="n">always_scan</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;debug&#39;</span><span class="p">],</span> <span class="n">explicit</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1324">If you should choose not to disable the route memory feature, you should be aware that it works only with <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> and not with its counterpart <tt class="docutils literal"><span class="pre">redirect_to()</span></tt>.</p>
+</div>
+<div class="section" id="implicit-defaults">
+<h3>Implicit Defaults<a class="headerlink" href="#implicit-defaults" title="Permalink to this headline">¶</a></h3>
+<p id="index-1325">Routes has a surprising legacy feature that means that if you don’t specify a controller and an action for a particular route, the <em>implicit defaults</em> of <tt class="docutils literal"><span class="pre">controller='content'</span></tt> and <tt class="docutils literal"><span class="pre">action='index'</span></tt> will be used for you. This can be demonstrated very simply:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimization</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/archives/&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/archives/&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;index&#39;, &#39;controller&#39;: u&#39;content&#39;}</span>
+</pre></div>
+</div>
+<p id="index-1326">It is highly unlikely you want Routes to make up <tt class="docutils literal"><span class="pre">action</span></tt> and <tt class="docutils literal"><span class="pre">controller</span></tt> variables for you, so it’s strongly recommended that you disable this feature. You can do this by passing <tt class="docutils literal"><span class="pre">_explicit=True</span></tt> as an argument to the individual routes you want implicit defaults to be disabled for:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimization</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/archives/&#39;</span><span class="p">,</span> <span class="n">_explicit</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/archives/&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<p id="index-1327">In reality, it is likely you will want these implicit defaults disabled for all your routes. Luckily, the <tt class="docutils literal"><span class="pre">explicit=True</span></tt> option you passed to the <tt class="docutils literal"><span class="pre">Mapper()</span></tt> object to disable route memory also disables implicit defaults, which is another reason to use it.</p>
+</div>
+<div class="section" id="best-practice">
+<h3>Best Practice<a class="headerlink" href="#best-practice" title="Permalink to this headline">¶</a></h3>
+<p id="index-1328">With route minimization, route memory, and implicit defaults disabled, the way you use Routes in your application might be quite different from the way you used it in previous versions of Pylons. To demonstrate this, let’s look at an old routing structure that you might have used in Pylons 0.9.6:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimize</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;:controller/:action/:id&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here minimization is enabled as well as implicit routes and route memory. Look how many different URLs match the same controller, action, and ID. This clearly breaks the URL disambiguation rule listed earlier in the “Choosing Good URLs” section:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/blog/view/4/&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;view&#39;, &#39;controller&#39;: u&#39;blog&#39;, &#39;id&#39;: u&#39;1&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/blog/view/4&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;view&#39;, &#39;controller&#39;: u&#39;blog&#39;, &#39;id&#39;: u&#39;1&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/blog/view/&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;view&#39;, &#39;controller&#39;: u&#39;blog&#39;, &#39;id&#39;: u&#39;1&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/blog/view&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;view&#39;, &#39;controller&#39;: u&#39;blog&#39;, &#39;id&#39;: u&#39;1&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/blog/&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;view&#39;, &#39;controller&#39;: u&#39;blog&#39;, &#39;id&#39;: u&#39;1&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/blog&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;view&#39;, &#39;controller&#39;: u&#39;blog&#39;, &#39;id&#39;: u&#39;1&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;view&#39;, &#39;controller&#39;: u&#39;blog&#39;, &#39;id&#39;: u&#39;1&#39;}</span>
+</pre></div>
+</div>
+<p>With route minimization, route memory, and implicit defaults disabled, you would have to add the following routes to achieve the same effect:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">,</span> <span class="n">explicit</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimize</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/{id}&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/{id}/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1329">Of course, as has been mentioned, it is generally a bad idea to have more than one URL map to the same resource, so you are unlikely to want to do this in most applications. Even if you did want to do this, the explicit approach requires a lot more typing, but it is also much clearer what is happening. Although using explicit routes can sometimes mean more typing, being explicit about what you expect to happen makes life much easier when you have more complicated route setups.</p>
+<p>Disabling route memory, implicit defaults, and route minimization also requires you to do more work when generating URLs, but once again, this will prevent you from finding obscure URL generation problems later in a project. To generate the URL to view the blog post with ID 1 and with the <tt class="docutils literal"><span class="pre">explicit</span></tt> argument set to <tt class="xref docutils literal"><span class="pre">True</span></tt>, you would always have to type the following, no matter which routing variables were generated for the request that calls the code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This would generate the URL <tt class="docutils literal"><span class="pre">/</span></tt> because this is the first route to match. Since routes are matched from top to bottom, if you wanted this to generate the URL <tt class="docutils literal"><span class="pre">/blog/view/1</span></tt> instead you could move the second-to-last route to the top so that it was matched first. This would affect the way URLs were generated for other controllers too, though:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">,</span> <span class="n">explicit</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimize</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/{id}&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/{id}/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1330">Alternatively, you could add an <em>explicit route</em> as the first route. You’ll remember from the discussion of default variables earlier in the chapter that an explicit route matches only <em>one</em> URL:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">,</span> <span class="n">explicit</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimize</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/blog/view/1&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/{id}&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/{id}/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1331">Some people would argue that you should always specify the controller and action for <em>every</em> URL as hard-coded default variables using an explicit or named route. There are some other advantages to this approach:</p>
+<blockquote>
+<ul class="simple">
+<li>Temporarily blocking access to a particular controller can be difficult with nonexplicit routes because it isn’t always obvious whether another route you have specified will also resolve the URL to the controller. If you have named or explicit routes, you can just comment out the routes that point at the controller in question, and you’re all set.</li>
+<li>Imagine you have a Pylons application that is a couple of years old and has an established group of users who have bookmarked various parts of your site. If you were to refactor the application, moving controllers around or putting certain actions in different controllers, you would find it difficult to maintain the existing URL structure if you were using implicit routes. With explicit or named routes, you could simply update where the URL pointed to so that the old URLs would still work.</li>
+</ul>
+</blockquote>
+<p>I hope what is clear from the discussion in this section is that you should always set <tt class="docutils literal"><span class="pre">explicit=True</span></tt> in your <tt class="docutils literal"><span class="pre">Mapper</span></tt> to disable route memory and implicit defaults and that you should disable route minimization with <tt class="docutils literal"><span class="pre">map.minimization=False</span></tt>, but it is up to you whether you choose to go further and be even more explicit about your routes with hard-coded defaults for the controller and action or named routes.</p>
+<p id="index-1332">Only you can decide whether ordinary, explicit, or named routes are the correct choice for your application. Ordinary routes that use the “convention over configuration” philosophy don’t result in disambiguated URLs. Named and explicit routes give you complete control over how your URLs are generated but are more effort to set up. The nice thing about Routes is, of course, that you can use all three techniques together.</p>
+</div>
+</div>
+<div class="section" id="advanced-url-routing">
+<h2>Advanced URL Routing<a class="headerlink" href="#advanced-url-routing" title="Permalink to this headline">¶</a></h2>
+<p>It is now time to learn about some of the really advanced features of Routes that, when used effectively, can very much simplify your route maps or enable your Pylons application to deal with any number of complex legacy URL structures you might have inherited from an old application.</p>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<p id="index-1333">Any route you specify can have a <tt class="docutils literal"><span class="pre">requirement</span></tt> argument specified as a keyword to the <tt class="docutils literal"><span class="pre">map``’s</span> <span class="pre">``connect()</span></tt> method. The requirement argument should be a dictionary of routing variable names for any dynamic or wildcard parts and a corresponding regular expression to match their values against. Regular expressions are documented in the Python documentation for the <tt class="docutils literal"><span class="pre">re</span></tt> module. Any valid Python regular expression can be used.</p>
+<p>Here’s an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;archives/{year}/{month}/{day}&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;archives&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span>
+    <span class="n">year</span><span class="o">=</span><span class="mf">2004</span><span class="p">,</span><span class="n">requirements</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;year&#39;</span><span class="p">:</span> <span class="s">&#39;\d{2,4}&#39;</span><span class="p">,</span> <span class="s">&#39;month&#39;</span><span class="p">:</span> <span class="s">&#39;\d{1,2}&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>One particularly useful regular expression used in the previous example is <tt class="docutils literal"><span class="pre">\d</span></tt>, which matches a digit. In this case, the year can be either two or four digits long, and the month can be one or two digits long.</p>
+<p>Here’s another example; this time we are ensuring the theme is one of the allowed themes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">theme_map</span> <span class="o">=</span> <span class="s">&#39;admin|home|members|system&#39;</span>
+<span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;users/{theme}/edit&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;users&#39;</span><span class="p">,</span>
+    <span class="n">requirements</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;theme&#39;</span><span class="p">:</span> <span class="n">theme_map</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="conditions">
+<h3>Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline">¶</a></h3>
+<p id="index-1334">Conditions specify a set of special conditions that must be met for the route to be accepted as a valid match for the URL. The <tt class="docutils literal"><span class="pre">conditions</span></tt> argument must always be a dictionary and can accept three different keys:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">method</span></tt></dt>
+<dd>The request must be one of the HTTP methods defined here. This argument must be a list of HTTP methods and should be uppercase.</dd>
+<dt><tt class="docutils literal"><span class="pre">function</span></tt></dt>
+<dd>This is a function that will be used to evaluate whether the route is a match. This must return <tt class="xref docutils literal"><span class="pre">True</span></tt> or <tt class="xref docutils literal"><span class="pre">False</span></tt> and will be called with <tt class="docutils literal"><span class="pre">environ</span></tt> and <tt class="docutils literal"><span class="pre">match_dict</span></tt> as arguments. The <tt class="docutils literal"><span class="pre">match_dict</span></tt> is a dictionary with all the routing variables for the request. Any modifications your function makes to the <tt class="docutils literal"><span class="pre">match_dict</span></tt> will be picked up by Routes and used as the routing variables from that point on.</dd>
+<dt><tt class="docutils literal"><span class="pre">sub_domain</span></tt></dt>
+<dd>If this is present, it should be either <tt class="xref docutils literal"><span class="pre">True</span></tt> (which will match any subdomain) or a Python list of subdomain strings, one of which must match the subdomain used in the request for the route to match.</dd>
+</dl>
+<p>These three types of conditions can all be used together in the same route by specifying each argument to the <tt class="docutils literal"><span class="pre">conditions</span></tt> dictionary, but I’ll discuss them each in turn.</p>
+<p id="index-1335">Let’s deal with the <tt class="docutils literal"><span class="pre">method</span></tt> option first. This allows you to match a URL based on the HTTP method the request was made with. One problem with testing examples using the <tt class="docutils literal"><span class="pre">method</span></tt> condition is that the match depends on information from the WSGI environment, which is usually set during a request. Since there isn’t a real HTTP request for this test code, you have to emulate it, so in the following examples you set <tt class="docutils literal"><span class="pre">map.environ</span></tt> with fake environment information to test how the matching works. Obviously, you wouldn’t do this in your own code. The example also sets up a new <tt class="docutils literal"><span class="pre">controller_scan()</span></tt> function which only accepts the value <tt class="docutils literal"><span class="pre">user</span></tt> for the controller:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">routes</span> <span class="kn">import</span> <span class="n">Mapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">controller_scan</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">]</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimization</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/user/new/preview&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;preview&#39;</span><span class="p">,</span>
+<span class="gp">... </span>     <span class="n">conditions</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;POST&#39;</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># The method to be either GET or HEAD</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/user/list&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;list&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">conditions</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;HEAD&#39;</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">environ</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;REQUEST_METHOD&#39;</span><span class="p">:</span><span class="s">&#39;POST&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/new/preview&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;preview&#39;, &#39;controller&#39;: u&#39;user&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/list&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">environ</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;REQUEST_METHOD&#39;</span><span class="p">:</span><span class="s">&#39;GET&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/new/preview&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/list&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;list&#39;, &#39;controller&#39;: u&#39;user&#39;}</span>
+</pre></div>
+</div>
+<p>As you can see, the <tt class="docutils literal"><span class="pre">method</span></tt> condition works as expected, allowing the routes to match only when the request contains the correct request method.</p>
+<p id="index-1336">Now let’s look at the <tt class="docutils literal"><span class="pre">function</span></tt> condition. This condition is extremely powerful because it effectively allows you to write custom code to extend Routes’ functionality. The function can return <tt class="xref docutils literal"><span class="pre">True</span></tt> to indicate the route matches or <tt class="xref docutils literal"><span class="pre">False</span></tt> if it doesn’t. The function also has full access to the WSGI environment and the dictionary of routing variables, which have already been matched, so the function is free to modify or add to them as well.</p>
+<p id="index-1337">Here’s an example of a function that extracts the action to be called from the <tt class="docutils literal"><span class="pre">X-ACTION</span></tt> HTTP header in the request and compares it to allowed values:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">webob</span> <span class="kn">import</span> <span class="n">Request</span>
+<span class="k">def</span> <span class="nf">get_action</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+
+    <span class="c"># Create a Pylons-style request object from the environment for</span>
+    <span class="c"># easier manipulation</span>
+    <span class="n">req</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="n">environ</span><span class="p">)</span>
+
+    <span class="n">action</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;X-ACTION&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">action</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;call&#39;</span><span class="p">,</span> <span class="s">&#39;get&#39;</span><span class="p">,</span> <span class="s">&#39;view&#39;</span><span class="p">]:</span>
+        <span class="n">result</span><span class="p">[</span><span class="s">&#39;action&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">action</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="k">return</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>You wouldn’t often design this sort of functionality into your routes if you were creating your own application from scratch, but having such low-level access to the underlying details of the request is very powerful and can be useful when writing a Pylons application to replace legacy code.</p>
+<p>Here is another use that might be useful in your application, this time to treat the referrer as an ordinary routing variable:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">referals</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+    <span class="n">result</span><span class="p">[</span><span class="s">&#39;referer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;HTTP_REFERER&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>You could use this function in a route like this to add the referrer to the matched routing variables:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/{controller}/{action}/{id}&#39;</span><span class="p">,</span> <span class="n">conditions</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">function</span><span class="o">=</span><span class="n">referals</span><span class="p">))</span>
+</pre></div>
+</div>
+<p id="index-1338">Now let’s think about subdomains. These are easiest to demonstrate with examples, and once again you have to create a fake HTTP request environment for your examples to emulate requests coming from different subdomains.</p>
+<p id="index-1339">First let’s set up the <tt class="docutils literal"><span class="pre">map</span></tt> object. Notice that you specify <tt class="docutils literal"><span class="pre">map.sub_domains=True</span></tt> to enable subdomain support:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">routes</span> <span class="kn">import</span> <span class="n">Mapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">controller_scan</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">]</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimization</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">sub_domains</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>Now let’s set up two routes. The first will accept any subdomain and produce an <tt class="docutils literal"><span class="pre">action</span></tt> routing variable with a value <tt class="docutils literal"><span class="pre">any</span></tt>, and the second will accept only the subdomains <tt class="docutils literal"><span class="pre">foo</span></tt> and <tt class="docutils literal"><span class="pre">bar</span></tt> and will produce an <tt class="docutils literal"><span class="pre">action</span></tt> routing variable <tt class="docutils literal"><span class="pre">certain</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/user/any&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;any&#39;</span><span class="p">,</span>
+<span class="gp">... </span><span class="n">conditions</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;sub_domain&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/user/certain&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;certain&#39;</span><span class="p">,</span>
+<span class="gp">... </span><span class="n">conditions</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;sub_domain&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+<p>Now let’s attempt some matches, emulating different requests by setting different <tt class="docutils literal"><span class="pre">environ</span></tt> dictionaries. First let’s emulate a domain <tt class="docutils literal"><span class="pre">foo.example.com</span></tt> and test two URLs. The first will test what happens when <tt class="docutils literal"><span class="pre">sub_domain</span></tt> is set to <tt class="xref docutils literal"><span class="pre">True</span></tt>, and the second will test what happens when it is restricted to <tt class="docutils literal"><span class="pre">['foo',</span> <span class="pre">'bar']</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">environ</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;HTTP_HOST&#39;</span><span class="p">:</span><span class="s">&#39;foo.example.com&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/any&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;any&#39;, &#39;controller&#39;: u&#39;user&#39;, &#39;sub_domain&#39;: &#39;foo&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/certain&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;certain&#39;, &#39;controller&#39;: u&#39;user&#39;, &#39;sub_domain&#39;: &#39;foo&#39;}</span>
+</pre></div>
+</div>
+<p id="index-1340">As you can see, both the routes match because <tt class="docutils literal"><span class="pre">foo</span></tt> is a valid subdomain for either condition. Notice how <tt class="docutils literal"><span class="pre">'sub_domain':</span> <span class="pre">'foo'</span></tt> is added to the matched routing variables.</p>
+<p>Now let’s try the domain <tt class="docutils literal"><span class="pre">not.example.com</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">environ</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;HTTP_HOST&#39;</span><span class="p">:</span><span class="s">&#39;not.example.com&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/any&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;any&#39;, &#39;controller&#39;: u&#39;user&#39;, &#39;sub_domain&#39;: &#39;not&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/certain&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<p id="index-1341">This time, since <tt class="docutils literal"><span class="pre">not</span></tt> is not one of the allowed domains for the second route, only the first example works. Let’s see what happens if no subdomain is specified in the request:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">environ</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;HTTP_HOST&#39;</span><span class="p">:</span><span class="s">&#39;example.com&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/any&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/certain&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<p>As you can see, neither of the routes matches.</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">To be able to use matching based on subdomain, you must set the <tt class="docutils literal"><span class="pre">map``’s</span> <span class="pre">``sub_domains</span></tt> attribute to <tt class="xref docutils literal"><span class="pre">True</span></tt>. Otherwise, none of the routes checking the subdomain conditions will match.</p>
+</div>
+<p id="index-1342">To avoid matching common aliases to your main domain like <tt class="docutils literal"><span class="pre">www</span></tt>, the subdomain support can be set to ignore certain specified subdomains. Here’s an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">routes</span> <span class="kn">import</span> <span class="n">Mapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">controller_scan</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">]</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="n">controller_scan</span><span class="o">=</span><span class="n">controller_scan</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">minimization</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Remember to turn on sub-domain support</span>
+<span class="gp">... </span><span class="nb">map</span><span class="o">.</span><span class="n">sub_domains</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Ignore the ``www`` sub-domain</span>
+<span class="gp">... </span><span class="nb">map</span><span class="o">.</span><span class="n">sub_domains_ignore</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;www&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/user/any&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;any&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">conditions</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">sub_domain</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/user/certain&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;certain&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">conditions</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">sub_domain</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;www&#39;</span><span class="p">,</span> <span class="s">&#39;foo&#39;</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">environ</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;HTTP_HOST&#39;</span><span class="p">:</span><span class="s">&#39;foo.example.com&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/any&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;any&#39;, &#39;controller&#39;: u&#39;user&#39;, &#39;sub_domain&#39;: &#39;foo&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/certain&#39;</span><span class="p">)</span>
+<span class="go">{&#39;action&#39;: u&#39;certain&#39;, &#39;controller&#39;: u&#39;user&#39;, &#39;sub_domain&#39;: &#39;foo&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="o">.</span><span class="n">environ</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;HTTP_HOST&#39;</span><span class="p">:</span><span class="s">&#39;www.example.com&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/any&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">map</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/user/certain&#39;</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<p id="index-1343">You can see that requests to the <tt class="docutils literal"><span class="pre">www</span></tt> subdomain are not matched even if one of the conditions specifies that the subdomain <tt class="docutils literal"><span class="pre">www</span></tt> should be matched. Now let’s look at how <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> handles subdomains.</p>
+<p id="index-1344">When subdomain support is on, the <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> function will accept a <tt class="docutils literal"><span class="pre">sub_domain</span></tt> keyword argument. Routes then ensures that the generated URL has the subdomain indicated. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">controller</span><span class="o">=</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;certain&#39;</span><span class="p">,</span> <span class="n">sub_domain</span><span class="o">=</span><span class="s">&#39;foo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would generate the following URL but it will only work during a Pylons request, not from the interactive Python session we&#8217;ve been using so far in this chapter:</p>
+<div class="highlight-python"><pre>http://foo.example.com/user/certain</pre>
+</div>
+</div>
+<div class="section" id="filter-functions">
+<h3>Filter Functions<a class="headerlink" href="#filter-functions" title="Permalink to this headline">¶</a></h3>
+<p id="index-1345">Named routes can have functions associated with them that will operate on the arguments used during generation. Filter functions don’t work with implicit or explicit routes because the filter function itself can affect the route that actually gets chosen, so the only way to be explicit about which route to use is to specify it with a name.</p>
+<p>To highlight the problem filter functions solve, consider this route:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">map</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;/archives/{year}/{month}/{day}&#39;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="s">&#39;archives&#39;</span><span class="p">,</span>
+          <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mf">2008</span><span class="p">,</span>
+          <span class="n">requirements</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="s">&#39;\d{2,4}&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="s">&#39;\d{1,2}&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Generating a URL for this will require a month and day argument and a year argument if you don’t want to use 2008. Imagine this route links to a story and that your model has a story object with <tt class="docutils literal"><span class="pre">year</span></tt>, <tt class="docutils literal"><span class="pre">month</span></tt>, and <tt class="docutils literal"><span class="pre">day</span></tt> attributes. You could generate a URL for the story like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">story</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">story</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">story</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1346">This isn’t terribly convenient and can be brittle if for some reason you need to change the <tt class="docutils literal"><span class="pre">story</span></tt> object’s interface. It would be useful to be able to pass the <tt class="docutils literal"><span class="pre">story</span></tt> object directly to <tt class="docutils literal"><span class="pre">h.url_for()</span></tt> and have Routes extract the information it requires automatically. You can do this with a filter function.</p>
+<p>Here’s what the filter function for the <tt class="docutils literal"><span class="pre">story</span></tt> object might look like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">story_expand</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+    <span class="c"># Only alter args if a story keyword arg is present</span>
+    <span class="k">if</span> <span class="s">&#39;story&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="n">story</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;story&#39;</span><span class="p">)</span>
+    <span class="n">result</span><span class="p">[</span><span class="s">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">story</span><span class="o">.</span><span class="n">year</span>
+    <span class="n">result</span><span class="p">[</span><span class="s">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">story</span><span class="o">.</span><span class="n">month</span>
+    <span class="n">result</span><span class="p">[</span><span class="s">&#39;day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">story</span><span class="o">.</span><span class="n">day</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>You can then create a named route with a <tt class="docutils literal"><span class="pre">_filter</span></tt> argument like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">m</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;archives&#39;</span><span class="p">,</span> <span class="s">&#39;/archives/{year}/{month}/{day}&#39;</span><span class="p">,</span>
+          <span class="n">controller</span><span class="o">=</span><span class="s">&#39;archives&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mf">2004</span><span class="p">,</span>
+          <span class="n">requirements</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="s">&#39;\d{2,4}&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="s">&#39;\d{1,2}&#39;</span><span class="p">),</span>
+          <span class="n">_filter</span><span class="o">=</span><span class="n">story_expand</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This filter function will be used when using the named route <tt class="docutils literal"><span class="pre">archives</span></tt>. If a <tt class="docutils literal"><span class="pre">story</span></tt> keyword argument is present, it will use that and alter the keyword arguments used to generate the actual route.</p>
+<p>If you have a <tt class="docutils literal"><span class="pre">story</span></tt> object with those attributes, you would now be able to generate a URL like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s">&#39;archives&#39;</span><span class="p">,</span> <span class="n">story</span><span class="o">=</span><span class="n">my_story</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1347">As well as making it substantially easier to generate the URL, you can also easily change how the arguments are pulled out of the <tt class="docutils literal"><span class="pre">story</span></tt> object simply by changing the filter function if the <tt class="docutils literal"><span class="pre">story</span></tt> object interface were ever to change.</p>
+<p id="index-1348">Although filter functions can be very powerful, you might decide against using them in your application because they can also make it less obvious what is happening to generate your URLs.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>You’ve now seen all the main features of Routes and how you can take advantage of them to perform some very complex URL mappings as simply as possible or to integrate with legacy systems. You also saw how some of Routes legacy features such as route minimization, route memory, and implicit defaults can cause problems you might not have expected, and you now know how to avoid using these features in your application. Although route minimization is disabled by default in new Pylons applications, route memory and implicit defaults are not, so it is recommended you set <tt class="docutils literal"><span class="pre">explicit=True</span></tt> as an argument to <tt class="docutils literal"><span class="pre">Mapper()</span></tt> in your project’s <tt class="docutils literal"><span class="pre">config/routing.py</span></tt> file.</p>
+<p id="index-1349">In Chapter 14, you’ll look at Routes again to see how you can use its features to improve the SimpleSite application.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Chapter 9: URLs, Routing and Dispatch</a><ul>
+<li><a class="reference external" href="#pylons-routing-in-detail">Pylons Routing in Detail</a><ul>
+<li><a class="reference external" href="#pylons-dispatch">Pylons Dispatch</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#routes-in-detail">Routes in Detail</a><ul>
+<li><a class="reference external" href="#route-parts">Route Parts</a></li>
+<li><a class="reference external" href="#default-variables">Default Variables</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#generating-urls">Generating URLs</a><ul>
+<li><a class="reference external" href="#named-routes">Named Routes</a></li>
+<li><a class="reference external" href="#static-named-routes">Static Named Routes</a></li>
+<li><a class="reference external" href="#internal-static-routes">Internal Static Routes</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#choosing-good-urls">Choosing Good URLs</a></li>
+<li><a class="reference external" href="#unnecessary-routes-features">Unnecessary Routes Features</a><ul>
+<li><a class="reference external" href="#route-minimization">Route Minimization</a></li>
+<li><a class="reference external" href="#route-memory">Route Memory</a></li>
+<li><a class="reference external" href="#implicit-defaults">Implicit Defaults</a></li>
+<li><a class="reference external" href="#best-practice">Best Practice</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#advanced-url-routing">Advanced URL Routing</a><ul>
+<li><a class="reference external" href="#requirements">Requirements</a></li>
+<li><a class="reference external" href="#conditions">Conditions</a></li>
+<li><a class="reference external" href="#filter-functions">Filter Functions</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="starting-the-simplesite-tutorial.html"
+                                  title="previous chapter">Chapter 8: Starting the SimpleSite Tutorial</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="unicode.html"
+                                  title="next chapter">Chapter 10: Unicode</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/urls-routing-and-dispatch.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="http://pylonsbook.com/en/1.0/search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="unicode.html" title="Chapter 10: Unicode"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="starting-the-simplesite-tutorial.html" title="Chapter 8: Starting the SimpleSite Tutorial"
+             >previous</a> |</li>
+        <li><a href="index.html">Pylons Book v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, James Gardner.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+
+<!-- Mirrored from pylonsbook.com/en/1.0/urls-routing-and-dispatch.html by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 11 Jun 2009 15:42:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

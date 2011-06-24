@@ -1,0 +1,8 @@
+#Allegro PCB Router v16-3-85 made 2009/11/03 at 11:55:32
+#Host 
+#ROUTING STATUS <<< f:/tdp4/trunk/circuit/allegro\gumstix_expansion_v1_4.dsn >>>
+Start  Time: Report Time: Tue Feb 08 00:49:17 2011
+
+Nets         =       37   Connections         =      101
+Current Wire =        0   Reroute wires       =      141
+Completion   =   73.27%   Unconnections       =        1

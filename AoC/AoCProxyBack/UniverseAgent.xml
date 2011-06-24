@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<packets>
+
+	<interface name="UniverseAgent" />
+
+	<packet opcode="0" name="InitiateAuthentication" description="">
+		<field name="DevName" type="string"></field>
+		<field name="Username" type="string"></field>
+		<field name="GameID" type="UBInt32"></field>
+	</packet>
+	
+	<packet opcode="1" name="AnswerChallenge" description="">
+		<field name="AnswerChallenge" type="string"></field>
+	</packet>
+	
+	<packet opcode="2" name="ClientDisconnected" description="">
+		<field name="ConnectionID" type="UBInt64"></field>
+	</packet>
+
+</packets>

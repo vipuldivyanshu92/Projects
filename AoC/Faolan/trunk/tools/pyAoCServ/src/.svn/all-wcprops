@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/faolanproject/!svn/ver/32/trunk/tools/pyAoCServ/src
+END
+CSPlayerServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/faolanproject/!svn/ver/32/trunk/tools/pyAoCServ/src/CSPlayerServer.py
+END
+DimensionServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/faolanproject/!svn/ver/32/trunk/tools/pyAoCServ/src/DimensionServer.py
+END
+PlayerServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/faolanproject/!svn/ver/32/trunk/tools/pyAoCServ/src/PlayerServer.py
+END
+UniverseServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/faolanproject/!svn/ver/32/trunk/tools/pyAoCServ/src/UniverseServer.py
+END

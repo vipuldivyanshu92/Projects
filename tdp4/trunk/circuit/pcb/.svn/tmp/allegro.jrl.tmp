@@ -1,0 +1,67 @@
+\t (00:00:01) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:01) 
+
+\t (00:00:01) Opening existing drawing...
+\d (00:00:01) Database opened: F:/tdp4/trunk/circuit/pcb/dip4_conn.dra
+\i (00:00:01) trapsize 84
+\i (00:00:01) trapsize 80
+\i (00:00:02) trapsize 67
+\i (00:00:02) trapsize 80
+\i (00:00:02) placementedit 
+\i (00:00:09) open 
+\i (00:00:15) fillin "switch.dra"
+\t (00:00:15) Opening existing drawing...
+\i (00:00:15) trapsize 114
+\d (00:00:15) Database opened: F:/tdp4/trunk/circuit/pcb/switch.dra
+\i (00:00:15) placementedit 
+\i (00:00:15) pick grid 7.542 1.522
+\t (00:00:15) last pick:  7.620  2.540
+\i (00:00:17) pick grid 6.402 4.691
+\t (00:00:17) last pick:  7.620  5.080
+\i (00:00:19) setwindow form.find
+\i (00:00:19) FORM find all_off  
+\i (00:00:20) FORM find text YES 
+\i (00:00:20) setwindow pcb
+\i (00:00:20) pick grid 11.988 4.668
+\t (00:00:20) last pick:  12.700  5.080
+\i (00:00:21) pick grid 4.168 2.479
+\t (00:00:21) last pick:  5.080  2.540
+\i (00:00:21) move 
+\t (00:00:21) last pick:  4.220  2.260
+\t (00:00:21) Pick new location for the element(s).
+\i (00:00:22) text edit 
+\i (00:00:24) setwindow form.textedit
+\i (00:00:24) FORM textedit str 2 
+\i (00:00:24) setwindow pcb
+\i (00:00:24) pick 0.000 0.000
+\t (00:00:24) Pick text to edit.
+\i (00:00:24) setwindow pcb
+\i (00:00:24) placementedit 
+\i (00:00:29) pick grid -4.314 -2.013
+\t (00:00:29) last pick:  -5.080  -2.540
+\i (00:00:29) move 
+\t (00:00:29) last pick:  -4.220  -2.260
+\t (00:00:29) Pick new location for the element(s).
+\i (00:00:30) prepopup -4.314 -2.013
+\i (00:00:31) text edit 
+\i (00:00:36) setwindow form.textedit
+\i (00:00:36) FORM textedit str 54 
+\i (00:00:36) setwindow pcb
+\i (00:00:36) pick 0.000 0.000
+\t (00:00:36) Pick text to edit.
+\i (00:00:36) setwindow pcb
+\i (00:00:36) placementedit 
+\i (00:00:38) text edit 
+\i (00:00:39) setwindow form.textedit
+\i (00:00:39) FORM textedit str 4 
+\i (00:00:39) setwindow pcb
+\i (00:00:39) pick 0.000 0.000
+\t (00:00:39) Pick text to edit.
+\i (00:00:39) setwindow pcb
+\i (00:00:39) placementedit 
+\i (00:00:41) save 
+\f (00:00:41) F:/tdp4/trunk/circuit/pcb/switch.dra: File Exists. Overwrite? 
+\i (00:00:42) fillin yes 
+\t (00:00:42) Symbol 'switch.psm' created.
+\i (00:00:42) placementedit 
+\i (00:23:16) exit 

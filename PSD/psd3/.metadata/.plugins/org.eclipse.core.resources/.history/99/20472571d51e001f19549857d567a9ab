@@ -1,0 +1,21 @@
+package applicationLayer;
+
+public interface BranchUser {
+	
+	public String getFirstName();
+	
+	public void setFirstName(String fn);
+	
+	public void setLastName(String ln);
+	
+	public String getLastName();
+	
+	public boolean isStaff();
+	
+	public int getId();
+	
+	public void setId();
+	
+	public Privilege getPrivilege();
+	
+}

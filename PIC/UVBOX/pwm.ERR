@@ -1,0 +1,3 @@
+Message[302] K:\PIC\UVBOX\PWM.ASM 16 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] K:\PIC\UVBOX\PWM.ASM 17 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] K:\PIC\UVBOX\PWM.ASM 34 : Register in operand not in bank 0.  Ensure that bank bits are correct.

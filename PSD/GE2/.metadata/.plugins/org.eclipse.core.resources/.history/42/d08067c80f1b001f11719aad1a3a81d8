@@ -1,0 +1,14 @@
+
+public class UserStorageFacade {
+	private static UserStorageFacade _instance = null;
+	
+	private UserStorageFacade() {
+	}
+	
+	public static UserStorageFacade getInstance() {
+		if (_instance == null)
+			_instance = new UserStorageFacade();
+		
+		return _instance;
+	}
+}

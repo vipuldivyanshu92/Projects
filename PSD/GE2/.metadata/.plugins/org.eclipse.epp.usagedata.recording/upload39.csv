@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"Unhandled event loop exception",1267300004502
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.text.contentAssist.proposals",1267300006327
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.text.contentAssist.proposals",1267300007606
+error,log,,,"Unhandled event loop exception",1267300009260
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.delete",1267300019088
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.delete",1267300019244
+error,log,,,"Unhandled event loop exception",1267300021319
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267300022988
+error,log,,,"Unhandled event loop exception",1267300029056
+error,log,,,"Unhandled event loop exception",1267300032956
+error,log,,,"Unhandled event loop exception",1267300035655
+error,log,,,"Unhandled event loop exception",1267300044438
+error,log,,,"Unhandled event loop exception",1267300049056
+error,log,,,"Unhandled event loop exception",1267300054110
+error,log,,,"Unhandled event loop exception",1267300059991
+error,log,,,"Unhandled event loop exception",1267300064515
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.text.contentAssist.proposals",1267300082143
+error,log,,,"Unhandled event loop exception",1267300085653
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.delete",1267300089585
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267300090255
+error,log,,,"Unhandled event loop exception",1267300091659
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineStart",1267300093235
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267300093485
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267300093609
+error,log,,,"Unhandled event loop exception",1267300094343

@@ -1,0 +1,66 @@
+\t (00:00:01) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:01) 
+
+\t (00:00:03) Opening existing drawing...
+\d (00:00:03) Database opened: I:/tdp4/trunk/circuit/final/allegro/gumstix_expansion_v2r10_bottommask.brd
+\t (00:00:03) Grids are drawn 64.00, 64.00 apart for enhanced viewability.
+\i (00:00:03) trapsize 4173
+\i (00:00:03) trapsize 4039
+\i (00:00:03) trapsize 3983
+\i (00:00:04) trapsize 3228
+\i (00:00:04) trapsize 3228
+\i (00:00:04) generaledit 
+\i (00:00:10) open 
+\i (00:00:20) fillin "I:\tdp4\trunk\circuit\pcb\header_line_4.dra"
+\i (00:00:20) cd "I:\tdp4\trunk\circuit\pcb"
+\t (00:00:20) Opening existing drawing...
+\i (00:00:20) trapsize 131
+\i (00:00:20) trapsize 135
+\i (00:00:20) trapsize 138
+\i (00:00:20) trapsize 138
+\d (00:00:20) Database opened: I:/tdp4/trunk/circuit/pcb/header_line_4.dra
+\i (00:00:20) generaledit 
+\i (00:00:44) pick grid 5.231 4.473
+\t (00:00:44) last pick:  5.080  5.080
+\i (00:01:12) new 
+\i (00:01:33) newdrawfillin "dip28.dra" "Package Symbol (Wizard)"
+\t (00:01:33) Starting new drawing...
+\w (00:01:33) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 2000,2000
+\i (00:01:33) trapsize 201
+\i (00:01:33) trapsize 201
+\i (00:01:33) package symbol wizard 
+\i (00:01:33) generaledit 
+\i (00:01:35) setwindow form.sym_wizard
+\i (00:01:35) FORM sym_wizard wiz_next  
+   (00:01:35) Loading cmds.cxt 
+   (00:01:35) Loading axlcore.cxt 
+\i (00:02:19) FORM sym_wizard load_template  
+\t (00:02:19) Opening existing drawing...
+\t (00:02:19) Grids are drawn 400, 400 apart for enhanced viewability.
+\i (00:02:19) setwindow pcb
+\i (00:02:19) trapsize 228
+\d (00:02:19) Database opened: D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (00:02:20) setwindow form.sym_wizard
+\i (00:02:20) FORM sym_wizard wiz_next  
+\i (00:02:22) FORM sym_wizard pack_units Millimeter 
+\i (00:02:23) FORM sym_wizard pack_units_create Millimeter 
+\i (00:02:24) FORM sym_wizard wiz_next  
+\i (00:02:26) FORM sym_wizard dip_pin_count 28 
+\i (00:03:28) FORM sym_wizard dip_len 10.920 
+\i (00:04:02) FORM sym_wizard dip_width 7.880 
+\i (00:04:18) FORM sym_wizard dip_e1 10.920 
+\i (00:04:43) FORM sym_wizard dip_len 34.700 
+\i (00:04:44) FORM sym_wizard wiz_next  
+\i (00:04:45) FORM sym_wizard default_pad_browse  
+\f (00:04:45) Package Symbol Wizard Padstack Browser
+\t (00:04:49) No valid name selected.
+\i (00:04:52) fillin "menu_cancel"
+\i (00:04:57) FORM sym_wizard wiz_back  
+\i (00:05:17) FORM sym_wizard cancel  
+\t (00:05:17) Starting new drawing...
+\i (00:05:17) setwindow pcb
+\i (00:05:17) trapsize 177
+\i (00:05:17) trapsize 208
+\i (00:05:17) trapsize 208
+\i (00:05:18) generaledit 
+\i (00:05:19) exit 

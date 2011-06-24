@@ -1,0 +1,190 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Shapes;
+using System.Timers;
+using System.Threading;
+using System.Windows.Threading;
+using AI4_AE1.ShapeTool;
+
+namespace AI4_AE1
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        private IShapeTool selectedTool;
+        private List<UIElement> snapshot = new List<UIElement>();
+        private Agent agent;
+        private List<UIElement> tempElements = new List<UIElement>();
+
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            TransformGroup group = new TransformGroup();
+            ScaleTransform scalet = new ScaleTransform();
+            group.Children.Add(scalet);
+
+            scrollViewer1.RenderTransform = group;
+        }
+
+        private void canvas1_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Canvas canvas = (Canvas)sender;
+            if (selectedTool != null)
+                selectedTool.Start = e.GetPosition(canvas);
+
+            canvas.CaptureMouse();
+        }
+
+        private void canvas1_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+            Canvas canvas = (Canvas)sender;
+            Point p = e.GetPosition(canvas);
+
+            if (selectedTool != null && selectedTool.Start != null)
+            {
+
+                selectedTool.update(p, Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift),
+                    Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl));
+
+                // Remove old snapshot
+                foreach (UIElement elem in snapshot)
+                    canvas.Children.Remove(elem);
+
+                // Add new
+                foreach (Segment s in selectedTool.Segments)
+                {
+                    snapshot.Add(drawSegment(s, Brushes.Black));
+                }
+            }
+        }
+
+        private void canvas1_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Canvas canvas = (Canvas)sender;
+
+            if (selectedTool != null && selectedTool.Start != null && selectedTool.Segments != null)
+            {
+                Environment.Instance.Segments.AddRange(selectedTool.Segments);
+
+                snapshot.Clear();
+                canvas.ReleaseMouseCapture();
+                selectedTool.finalize();
+                selectedTool = (IShapeTool)Activator.CreateInstance(selectedTool.GetType());
+            }
+        }
+
+        private UIElement drawSegment(Segment s, SolidColorBrush color)
+        {
+            Line line = new Line();
+
+            line.X1 = s.Start.X;
+            line.Y1 = s.Start.Y;
+            line.X2 = s.End.X;
+            line.Y2 = s.End.Y;
+            line.Stroke = color;
+
+            canvas1.Children.Add(line);
+
+            return line;
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            agent = new Agent();
+            Thread thread = new Thread(new ThreadStart(agent.run));
+            thread.Start();
+
+            System.Timers.Timer t = new System.Timers.Timer(100);
+            t.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            t.Enabled = true;
+
+            System.Timers.Timer t2 = new System.Timers.Timer(100);
+            t2.Elapsed += new ElapsedEventHandler(OnTimedEvent2);
+            t2.Enabled = true;
+        }
+
+        private void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            DispatcherOperation dispatcherOp = canvas1.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+                new Action(delegate()
+                    {
+                        Rectangle rect = new Rectangle();
+                        rect.Width = 5;
+                        rect.Height = 5;
+                        rect.Fill = Brushes.Green;
+                        rect.Stroke = Brushes.Green;
+                        Canvas.SetTop(rect, Environment.Instance.AgentPosition.Y);
+                        Canvas.SetLeft(rect, Environment.Instance.AgentPosition.X);
+
+                        foreach (UIElement elem in tempElements)
+                            canvas1.Children.Remove(elem);
+                        tempElements = new List<UIElement>();
+                        
+                        tempElements.Add(agent.ShortRangeSensor.getUIElement());
+                        tempElements.Add(agent.LongRangeSensor.getUIElement());
+                        tempElements.Add(rect);
+
+                        foreach (UIElement elem in tempElements)
+                            canvas1.Children.Add(elem);
+                    }
+            ));
+        }
+
+        private void OnTimedEvent2(object source, ElapsedEventArgs e)
+        {
+            DispatcherOperation dispatcherOp = canvas2.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+                new Action(delegate()
+                {
+                    canvas2.Children.Clear();
+
+                    foreach (TwoDNode node in agent.Nodes)
+                    {
+                        if (node.Value != null)
+                        {
+                            Line line = new Line();
+                            line.Stroke = Brushes.Black;
+                            line.X1 = ((Point)node.Value).X;
+                            line.Y1 = ((Point)node.Value).Y;
+                            line.X2 = node.Key.X;
+                            line.Y2 = node.Key.Y;
+
+                            canvas2.Children.Add(line);
+                        }
+                    }
+                }
+            ));
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            selectedTool = new LineTool();
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            selectedTool = new RectangleTool();
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            selectedTool = new EllipseTool();
+        }
+
+        private void canvas1_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            TransformGroup transformGroup = (TransformGroup)canvas1.RenderTransform;
+            ScaleTransform transform = (ScaleTransform)transformGroup.Children[0];
+
+            double zoom = e.Delta > 0 ? 0.2 : -0.2;
+            transform.ScaleX += zoom;
+            transform.ScaleY += zoom;
+        }
+    }
+}

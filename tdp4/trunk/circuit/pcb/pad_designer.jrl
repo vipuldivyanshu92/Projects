@@ -1,0 +1,7 @@
+\t (00:00:00) pad_designer 16.3 S023 (v16-3-85BM) i86
+\t (00:00:00) 
+
+\i (00:00:02) setwindow form.padedit
+\i (00:00:02) FORM padedit layers  
+\i (00:00:16) FORM padedit grid row filmmask_top 
+\i (00:00:49) pse_exit

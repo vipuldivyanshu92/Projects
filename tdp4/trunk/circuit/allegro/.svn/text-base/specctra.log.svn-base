@@ -1,0 +1,59 @@
+# 
+# ===============================================================================
+#                               Allegro PCB Router                               
+# Copyright 1990-2006 Cadence Design Systems, Inc.  All Rights Reserved.
+# ===============================================================================
+# 
+# Software licensed for sale by Cadence Design Systems, Inc.
+# Current time = Tue Feb 08 00:49:16 2011
+# 
+# Allegro PCB Router v16-3-85 made 2009/11/03 at 11:55:32
+# Running on: uranus, OS Version: WindowsNT 6.1.7600, Architecture: Intel Pentium II, III, or 4
+# Licensing: The program will not obey any unlicensed rules
+# No graphics will be displayed.
+# Design Name f:/tdp4/trunk/circuit/allegro\gumstix_expansion_v1_4.dsn
+# Batch File Name: pasde.do
+# Did File Name: f:/tdp4/trunk/circuit/allegro/specctra.did
+# Current time = Tue Feb 08 00:49:16 2011
+# PCB f:/tdp4/trunk/circuit/allegro
+# Master Unit set up as: MIL 1000
+# PCB Limits xlo=-2090.0000 ylo=-1380.0000 xhi=2090.0000 yhi=1265.0000
+# Total 12 Images Consolidated.
+# Via VIA z=1, 2 xlo=-12.0000 ylo=-12.0000 xhi= 12.0000 yhi= 12.0000
+# 
+#    VIA     TOP  BOTTOM
+# 
+#    TOP  ------   VIA  
+# BOTTOM   VIA    ------
+# 
+# Wires Processed 141, Vias Processed 19
+# <<WARNING:>> 1 redundant wires and vias were deleted
+# Using colormap in design file.
+# Layers Processed: Signal Layers 2
+# Components Placed 25, Images Processed 38, Padstacks Processed 17
+# Nets Processed 37, Net Terminals 157
+# PCB Area=8740000.000  EIC=21  Area/EIC=416190.476  SMDs=18
+# Total Pin Count: 305
+# Signal Connections Created 1
+# 
+# Design Rules --------------------------------------------
+# Via Grid 0.0100 with offset 0.0000
+# Layer TOP Horz Signal Wire Grid 0.0100 with offset 0.0000, Width= 9.0000, Clearance= 9.0000
+# Layer BOTTOM Vert Signal Wire Grid 0.0100 with offset 0.0000, Width= 9.0000, Clearance= 9.0000
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# 
+# Wiring Statistics ----------------- f:/tdp4/trunk/circuit/allegro\gumstix_expansion_v1_4.dsn
+# Nets 37 Connections 101 Unroutes 1
+# Signal Layers 2 Power Layers 0
+# Wire Junctions 39, at vias 17 Total Vias 19
+# Percent Connected   73.27
+# Manhattan Length 64198.8100 Horizontal 33593.2180 Vertical 30605.5920
+# Routed Length 76125.6968 Horizontal 38398.9300 Vertical 43117.9000
+# Ratio Actual / Manhattan   1.1858
+# Unconnected Length 465.7000 Horizontal 395.5600 Vertical  70.1400
+# Total Conflicts: 59 (Cross: 0, Clear: 59, Xtalk: 0, Length: 0, Polygon Clear: 0 )
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:01
+# Loading Do File pasde.do ...
+# Loading Do File f:/tdp4/trunk/circuit/allegro\gumstix_expansion_v1_4_rules.do ...
+# Colormap Written to File _notify.std
+# Enter command <quit

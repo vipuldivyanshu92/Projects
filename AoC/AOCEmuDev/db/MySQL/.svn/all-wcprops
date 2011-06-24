@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/aocemu/!svn/ver/21/trunk/db/MySQL
+END
+dbCreate.sql
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/aocemu/!svn/ver/20/trunk/db/MySQL/dbCreate.sql
+END
+dbInsert.sql
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/aocemu/!svn/ver/21/trunk/db/MySQL/dbInsert.sql
+END

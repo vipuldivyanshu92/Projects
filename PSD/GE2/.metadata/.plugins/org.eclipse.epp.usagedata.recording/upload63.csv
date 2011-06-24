@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"Unhandled event loop exception",1267305188129
+error,log,,,"Unhandled event loop exception",1267305197910
+error,log,,,"Unhandled event loop exception",1267305212839
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.text.contentAssist.proposals",1267305215148
+error,log,,,"Unhandled event loop exception",1267305217535
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1267305228314
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305252510
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305254180
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1267305254211
+activated,editor,com.cloudgarden.jigloo,4.6.0,"com.cloudgarden.jigloo.editors.FormEditor",1267305442137
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1267305442293
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1267305444025
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1267305450889
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1267305482744
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305487970
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305488064
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1267305494694
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305512088
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267305523398
+opened,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1267305529685
+activated,editor,org.eclipse.jdt.ui,3.5.1.r351_v20090821-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1267305529794
+activated,editor,com.cloudgarden.jigloo,4.6.0,"com.cloudgarden.jigloo.editors.FormEditor",1267305530980
+error,log,,,"Unhandled event loop exception",1267305557219
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.goto.lineEnd",1267305557390
+executed,command,org.eclipse.ui.workbench.texteditor,3.5.0.v20090603,"org.eclipse.ui.edit.text.select.lineStart",1267305560292

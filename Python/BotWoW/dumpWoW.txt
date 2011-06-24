@@ -1,0 +1,14 @@
+< 00000000 00 07 29 00 57 6f 57 00 02 03 03 77 1e 36 38 78 # ..).WoW....w.68x
+< 00000010 00 6e 69 57 00 52 46 72 66 3c 00 00 00 7f 00 00 # .niW.RFrf<......
+< 00000020 01 0b 4e 45 43 52 4f 41 4c 42 45 52 54          # ..NECROALBERT
+
+00 // Opcode
+07 // Error
+29 00 // Packet Size
+57 6f 57 00 // "WoW" need to be reversed
+02 // version(1)
+03 // version(2)
+03 // version(3)
+77 1e // 1E 77 = 7799 need to be reversed
+36 38 78 00 // "x86" in reverse
+6e 69 57 00 // "Win" in reverse

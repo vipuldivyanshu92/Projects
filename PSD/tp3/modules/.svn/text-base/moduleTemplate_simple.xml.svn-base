@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<module>
+	<name>Test Module</name>
+	<description>Just a example to layout a module</description>
+	<author>Simon JOUET</author>
+	<creationDate>November 2009</creationDate>
+	<modifiedDate>5 November 2009</modifiedDate>
+	<version>1.0</version>
+
+	<!-- Module CAN interface properties -->
+	<CAN>
+		<IDfields>
+			<top type="decimal">8</top>
+			<middle type="binary">100</middle>
+			<low type="mask">010</low>
+		</IDfields>
+	
+		<format>8B</format>
+	</CAN>
+	
+	<!-- Module GUI properties -->
+	<GUI>
+		<width>100</width>
+		<height>100</height>
+		<method>TimeGraphic</method>
+		<params>
+			<param name="Yunit">mph</param>
+		</params>
+	</GUI>
+	
+	<!-- Module dependencies, by example images -->
+	<files>
+		<filename name="foo">foo.png</filename>
+	</files>
+</module>

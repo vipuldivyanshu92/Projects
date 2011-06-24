@@ -1,0 +1,421 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F627 ]
+"8 F:\PIC\RS232\main.c
+[v F298 `(i  1 t 2 ]
+"3 bmul.c
+[v ___bmul `(uc  1 e 1 0 ]
+"5 C:\Program Files\PICC\sources\abdiv.c
+[v ___abdiv `(c  1 e 1 0 ]
+"5 C:\Program Files\PICC\sources\abmod.c
+[v ___abmod `(c  1 e 1 0 ]
+"34 C:\Program Files\PICC\sources\abtoft.c
+[v ___abtoft `(f  1 e 3 0 ]
+"5 C:\Program Files\PICC\sources\aldiv.c
+[v ___aldiv `(l  1 e 4 0 ]
+"5 C:\Program Files\PICC\sources\almod.c
+[v ___almod `(l  1 e 4 0 ]
+"43 C:\Program Files\PICC\sources\altoft.c
+[v ___altoft `(f  1 e 3 0 ]
+"5 C:\Program Files\PICC\sources\atdiv.c
+[v ___atdiv `(m  1 e 3 0 ]
+"5 C:\Program Files\PICC\sources\atmod.c
+[v ___atmod `(m  1 e 3 0 ]
+"38 C:\Program Files\PICC\sources\attoft.c
+[v ___attoft `(f  1 e 3 0 ]
+"5 C:\Program Files\PICC\sources\awdiv.c
+[v ___awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\PICC\sources\awmod.c
+[v ___awmod `(i  1 e 2 0 ]
+"33 C:\Program Files\PICC\sources\awtoft.c
+[v ___awtoft `(f  1 e 3 0 ]
+"63 C:\Program Files\PICC\sources\float.c
+[v ___ftpack `(f  1 e 3 0 ]
+"87 C:\Program Files\PICC\sources\ftadd.c
+[v ___ftadd `(f  1 e 3 0 ]
+"50 C:\Program Files\PICC\sources\ftdiv.c
+[v ___ftdiv `(f  1 e 3 0 ]
+"5 C:\Program Files\PICC\sources\ftge.c
+[v ___ftge `(b  1 e 0 0 ]
+"52 C:\Program Files\PICC\sources\ftmul.c
+[v ___ftmul `(f  1 e 3 0 ]
+"16 C:\Program Files\PICC\sources\ftneg.c
+[v ___ftneg `(f  1 e 3 0 ]
+"17 C:\Program Files\PICC\sources\ftsub.c
+[v ___ftsub `(f  1 e 3 0 ]
+"45 C:\Program Files\PICC\sources\fttol.c
+[v ___fttol `(l  1 e 4 0 ]
+"5 C:\Program Files\PICC\sources\lbdiv.c
+[v ___lbdiv `(uc  1 e 1 0 ]
+"5 C:\Program Files\PICC\sources\lbmod.c
+[v ___lbmod `(uc  1 e 1 0 ]
+"28 C:\Program Files\PICC\sources\lbtoft.c
+[v ___lbtoft `(f  1 e 3 0 ]
+"5 C:\Program Files\PICC\sources\lldiv.c
+[v ___lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files\PICC\sources\llmod.c
+[v ___llmod `(ul  1 e 4 0 ]
+"36 C:\Program Files\PICC\sources\lltoft.c
+[v ___lltoft `(f  1 e 3 0 ]
+"3 C:\Program Files\PICC\sources\lmul.c
+[v ___lmul `(ul  1 e 4 0 ]
+"5 C:\Program Files\PICC\sources\ltdiv.c
+[v ___ltdiv `(um  1 e 3 0 ]
+"5 C:\Program Files\PICC\sources\ltmod.c
+[v ___ltmod `(um  1 e 3 0 ]
+"31 C:\Program Files\PICC\sources\lttoft.c
+[v ___lttoft `(f  1 e 3 0 ]
+"5 C:\Program Files\PICC\sources\lwdiv.c
+[v ___lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\PICC\sources\lwmod.c
+[v ___lwmod `(ui  1 e 2 0 ]
+"29 C:\Program Files\PICC\sources\lwtoft.c
+[v ___lwtoft `(f  1 e 3 0 ]
+"3 C:\Program Files\PICC\sources\tmul.c
+[v ___tmul `(um  1 e 3 0 ]
+"3 C:\Program Files\PICC\sources\wmul.c
+[v ___wmul `(ui  1 e 2 0 ]
+"8 F:\PIC\RS232\main.c
+[v _isr `I(i  1 e 2 0 ]
+"28
+[v _reset `(v  1 e 0 0 ]
+"53
+[v _main `(v  1 e 0 0 ]
+"13 C:\Program Files\PICC\include\pic16f6x.h
+[v _INDF `Vuc  1 e 1 @0 ]
+"14
+[v _TMR0 `Vuc  1 e 1 @1 ]
+"15
+[v _PCL `Vuc  1 e 1 @2 ]
+"16
+[v _STATUS `Vuc  1 e 1 @3 ]
+"17
+[v _FSR `Vuc  1 e 1 @4 ]
+"18
+[v _PORTA `Vuc  1 e 1 @5 ]
+"19
+[v _PORTB `Vuc  1 e 1 @6 ]
+"20
+[v _PCLATH `Vuc  1 e 1 @10 ]
+"21
+[v _INTCON `Vuc  1 e 1 @11 ]
+"22
+[v _PIR1 `Vuc  1 e 1 @12 ]
+"23
+[v _TMR1L `Vuc  1 e 1 @14 ]
+"24
+[v _TMR1H `Vuc  1 e 1 @15 ]
+"25
+[v _T1CON `Vuc  1 e 1 @16 ]
+"26
+[v _TMR2 `Vuc  1 e 1 @17 ]
+"27
+[v _T2CON `Vuc  1 e 1 @18 ]
+"28
+[v _CCPR1L `Vuc  1 e 1 @21 ]
+"29
+[v _CCPR1H `Vuc  1 e 1 @22 ]
+"30
+[v _CCP1CON `Vuc  1 e 1 @23 ]
+"31
+[v _RCSTA `Vuc  1 e 1 @24 ]
+"32
+[v _TXREG `Vuc  1 e 1 @25 ]
+"33
+[v _RCREG `Vuc  1 e 1 @26 ]
+"34
+[v _CMCON `Vuc  1 e 1 @31 ]
+"37
+[v _OPTION `Vuc  1 e 1 @129 ]
+"38
+[v _TRISA `Vuc  1 e 1 @133 ]
+"39
+[v _TRISB `Vuc  1 e 1 @134 ]
+"40
+[v _PIE1 `Vuc  1 e 1 @140 ]
+"41
+[v _PCON `Vuc  1 e 1 @142 ]
+"42
+[v _PR2 `Vuc  1 e 1 @146 ]
+"43
+[v _TXSTA `Vuc  1 e 1 @152 ]
+"44
+[v _SPBRG `Vuc  1 e 1 @153 ]
+"45
+[v _EEDATA `Vuc  1 e 1 @154 ]
+"46
+[v _EEADR `Vuc  1 e 1 @155 ]
+"47
+[v _EECON1 `Vuc  1 e 1 @156 ]
+"48
+[v _EECON2 `Vuc  1 e 1 @157 ]
+"49
+[v _VRCON `Vuc  1 e 1 @159 ]
+"52
+[v _IRP `Vb  1 e 0 @31 ]
+"53
+[v _RP1 `Vb  1 e 0 @30 ]
+"54
+[v _RP0 `Vb  1 e 0 @29 ]
+"55
+[v _TO `Vb  1 e 0 @28 ]
+"56
+[v _PD `Vb  1 e 0 @27 ]
+"57
+[v _ZERO `Vb  1 e 0 @26 ]
+"58
+[v _DC `Vb  1 e 0 @25 ]
+"59
+[v _CARRY `Vb  1 e 0 @24 ]
+"62
+[v _RA7 `Vb  1 e 0 @47 ]
+"63
+[v _RA6 `Vb  1 e 0 @46 ]
+"64
+[v _RA5 `Vb  1 e 0 @45 ]
+"65
+[v _RA4 `Vb  1 e 0 @44 ]
+"66
+[v _RA3 `Vb  1 e 0 @43 ]
+"67
+[v _RA2 `Vb  1 e 0 @42 ]
+"68
+[v _RA1 `Vb  1 e 0 @41 ]
+"69
+[v _RA0 `Vb  1 e 0 @40 ]
+"72
+[v _RB7 `Vb  1 e 0 @55 ]
+"73
+[v _RB6 `Vb  1 e 0 @54 ]
+"74
+[v _RB5 `Vb  1 e 0 @53 ]
+"75
+[v _RB4 `Vb  1 e 0 @52 ]
+"76
+[v _RB3 `Vb  1 e 0 @51 ]
+"77
+[v _RB2 `Vb  1 e 0 @50 ]
+"78
+[v _RB1 `Vb  1 e 0 @49 ]
+"79
+[v _RB0 `Vb  1 e 0 @48 ]
+"82
+[v _GIE `Vb  1 e 0 @95 ]
+"83
+[v _PEIE `Vb  1 e 0 @94 ]
+"84
+[v _T0IE `Vb  1 e 0 @93 ]
+"85
+[v _INTE `Vb  1 e 0 @92 ]
+"86
+[v _RBIE `Vb  1 e 0 @91 ]
+"87
+[v _T0IF `Vb  1 e 0 @90 ]
+"88
+[v _INTF `Vb  1 e 0 @89 ]
+"89
+[v _RBIF `Vb  1 e 0 @88 ]
+"92
+[v _EEIF `Vb  1 e 0 @103 ]
+"93
+[v _CMIF `Vb  1 e 0 @102 ]
+"94
+[v _RCIF `Vb  1 e 0 @101 ]
+"95
+[v _TXIF `Vb  1 e 0 @100 ]
+"96
+[v _CCP1IF `Vb  1 e 0 @98 ]
+"97
+[v _TMR2IF `Vb  1 e 0 @97 ]
+"98
+[v _TMR1IF `Vb  1 e 0 @96 ]
+"101
+[v _T1CKPS1 `Vb  1 e 0 @133 ]
+"102
+[v _T1CKPS0 `Vb  1 e 0 @132 ]
+"103
+[v _T1OSCEN `Vb  1 e 0 @131 ]
+"104
+[v _T1SYNC `Vb  1 e 0 @130 ]
+"105
+[v _TMR1CS `Vb  1 e 0 @129 ]
+"106
+[v _TMR1ON `Vb  1 e 0 @128 ]
+"109
+[v _TOUTPS3 `Vb  1 e 0 @150 ]
+"110
+[v _TOUTPS2 `Vb  1 e 0 @149 ]
+"111
+[v _TOUTPS1 `Vb  1 e 0 @148 ]
+"112
+[v _TOUTPS0 `Vb  1 e 0 @147 ]
+"113
+[v _TMR2ON `Vb  1 e 0 @146 ]
+"114
+[v _T2CKPS1 `Vb  1 e 0 @145 ]
+"115
+[v _T2CKPS0 `Vb  1 e 0 @144 ]
+"118
+[v _CCP1X `Vb  1 e 0 @189 ]
+"119
+[v _CCP1Y `Vb  1 e 0 @188 ]
+"120
+[v _CCP1M3 `Vb  1 e 0 @187 ]
+"121
+[v _CCP1M2 `Vb  1 e 0 @186 ]
+"122
+[v _CCP1M1 `Vb  1 e 0 @185 ]
+"123
+[v _CCP1M0 `Vb  1 e 0 @184 ]
+"126
+[v _SPEN `Vb  1 e 0 @199 ]
+"127
+[v _RX9 `Vb  1 e 0 @198 ]
+"128
+[v _SREN `Vb  1 e 0 @197 ]
+"129
+[v _CREN `Vb  1 e 0 @196 ]
+"130
+[v _ADEN `Vb  1 e 0 @195 ]
+"131
+[v _FERR `Vb  1 e 0 @194 ]
+"132
+[v _OERR `Vb  1 e 0 @193 ]
+"133
+[v _RX9D `Vb  1 e 0 @192 ]
+"136
+[v _C2OUT `Vb  1 e 0 @255 ]
+"137
+[v _C1OUT `Vb  1 e 0 @254 ]
+"138
+[v _C2INV `Vb  1 e 0 @253 ]
+"139
+[v _C1INV `Vb  1 e 0 @252 ]
+"140
+[v _CIS `Vb  1 e 0 @251 ]
+"141
+[v _CM2 `Vb  1 e 0 @250 ]
+"142
+[v _CM1 `Vb  1 e 0 @249 ]
+"143
+[v _CM0 `Vb  1 e 0 @248 ]
+"146
+[v _RBPU `Vb  1 e 0 @1039 ]
+"147
+[v _INTEDG `Vb  1 e 0 @1038 ]
+"148
+[v _T0CS `Vb  1 e 0 @1037 ]
+"149
+[v _T0SE `Vb  1 e 0 @1036 ]
+"150
+[v _PSA `Vb  1 e 0 @1035 ]
+"151
+[v _PS2 `Vb  1 e 0 @1034 ]
+"152
+[v _PS1 `Vb  1 e 0 @1033 ]
+"153
+[v _PS0 `Vb  1 e 0 @1032 ]
+"156
+[v _TRISA7 `Vb  1 e 0 @1071 ]
+"157
+[v _TRISA6 `Vb  1 e 0 @1070 ]
+"158
+[v _TRISA4 `Vb  1 e 0 @1068 ]
+"159
+[v _TRISA3 `Vb  1 e 0 @1067 ]
+"160
+[v _TRISA2 `Vb  1 e 0 @1066 ]
+"161
+[v _TRISA1 `Vb  1 e 0 @1065 ]
+"162
+[v _TRISA0 `Vb  1 e 0 @1064 ]
+"165
+[v _TRISB7 `Vb  1 e 0 @1079 ]
+"166
+[v _TRISB6 `Vb  1 e 0 @1078 ]
+"167
+[v _TRISB5 `Vb  1 e 0 @1077 ]
+"168
+[v _TRISB4 `Vb  1 e 0 @1076 ]
+"169
+[v _TRISB3 `Vb  1 e 0 @1075 ]
+"170
+[v _TRISB2 `Vb  1 e 0 @1074 ]
+"171
+[v _TRISB1 `Vb  1 e 0 @1073 ]
+"172
+[v _TRISB0 `Vb  1 e 0 @1072 ]
+"175
+[v _EEIE `Vb  1 e 0 @1127 ]
+"176
+[v _CMIE `Vb  1 e 0 @1126 ]
+"177
+[v _RCIE `Vb  1 e 0 @1125 ]
+"178
+[v _TXIE `Vb  1 e 0 @1124 ]
+"179
+[v _CCP1IE `Vb  1 e 0 @1122 ]
+"180
+[v _TMR2IE `Vb  1 e 0 @1121 ]
+"181
+[v _TMR1IE `Vb  1 e 0 @1120 ]
+"184
+[v _OSCF `Vb  1 e 0 @1139 ]
+"185
+[v _POR `Vb  1 e 0 @1137 ]
+"186
+[v _BOR `Vb  1 e 0 @1136 ]
+"189
+[v _CSRC `Vb  1 e 0 @1223 ]
+"190
+[v _TX9 `Vb  1 e 0 @1222 ]
+"191
+[v _TXEN `Vb  1 e 0 @1221 ]
+"192
+[v _SYNC `Vb  1 e 0 @1220 ]
+"193
+[v _BRGH `Vb  1 e 0 @1218 ]
+"194
+[v _TRMT `Vb  1 e 0 @1217 ]
+"195
+[v _TX9D `Vb  1 e 0 @1216 ]
+"198
+[v _WRERR `Vb  1 e 0 @1251 ]
+"199
+[v _WREN `Vb  1 e 0 @1250 ]
+"200
+[v _WR `Vb  1 e 0 @1249 ]
+"201
+[v _RD `Vb  1 e 0 @1248 ]
+"204
+[v _VREN `Vb  1 e 0 @1279 ]
+"205
+[v _VROE `Vb  1 e 0 @1278 ]
+"206
+[v _VRR `Vb  1 e 0 @1277 ]
+"207
+[v _VR3 `Vb  1 e 0 @1275 ]
+"208
+[v _VR2 `Vb  1 e 0 @1274 ]
+"209
+[v _VR1 `Vb  1 e 0 @1273 ]
+"210
+[v _VR0 `Vb  1 e 0 @1272 ]
+"5 F:\PIC\RS232\main.c
+[v _transmit `uc  1 e 1 0 ]
+"53
+[v _main `(v  1 e 0 0 ]
+{
+"63
+} 0
+"28
+[v _reset `(v  1 e 0 0 ]
+{
+"50
+} 0
+"8
+[v _isr `I(i  1 e 2 0 ]
+{
+"25
+} 0

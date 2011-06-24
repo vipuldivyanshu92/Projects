@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/consortium/!svn/ver/2/trunk/examples/sqlite/sqliteTest
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/consortium/!svn/ver/2/trunk/examples/sqlite/sqliteTest/.classpath
+END
+test.db
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/consortium/!svn/ver/2/trunk/examples/sqlite/sqliteTest/test.db
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/consortium/!svn/ver/2/trunk/examples/sqlite/sqliteTest/.project
+END

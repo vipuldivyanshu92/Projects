@@ -1,0 +1,7 @@
+ST_HEADER = ('<HH', '')
+ST_AUTH_CHALLENGE = ('<I', '')
+ST_AUTH_SESSION = ('', '<HHII%dsxI20sI')
+ST_AUTH_REPONSE = ('<BIBIB', '')
+ST_CHAR_ENUM = ('<Hxx', '<B', '<Q', '<BBBBBBBBBIIfffIBBBBBIII', '<IB')
+ST_CHAR_LOGIN = ('<HxxQ', '')
+ST_MESSAGECHAT = ('<BI', '')

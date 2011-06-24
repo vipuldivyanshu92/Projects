@@ -1,0 +1,21 @@
+import uk.ac.gla.dcs.psd3.ay2009.project.*;
+
+public class UserStorageFacade {
+	private static UserStorageFacade _instance = null;
+	private CentralLibClient _libClient;
+	
+	private UserStorageFacade() {
+	}
+	
+	public static UserStorageFacade getInstance() {
+		if (_instance == null)
+			_instance = new UserStorageFacade();
+		
+		return _instance;
+	}
+	
+	public String getUserById(int id, Object value) {
+		CentralLibClientImpl c = new CentralLibClientImpl();
+		c.
+	}
+}

@@ -1,0 +1,46 @@
+
+ROM used: 296 (1%)
+          296 (1%) including unused fragments
+
+          0 Average locations per line
+          5 Average locations per statement
+
+RAM used: 29 (1%) at main() level
+          29 (1%) worst case
+
+Stack used: 2 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  200    61 100  main.c
+  529     0   0  D:\PICC\devices\18F25K80.h
+----- -----
+  729    61 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     10   2   0    17  0.8  timer0_isr
+0     62  10   0   245  1.8  mcu_init
+0     54   9   4   104  2.1  MAIN
+
+Program metrics:
+    Functions               3
+    Statements              61
+    Comments                149
+    Volume (V)              468
+    Difficilty (D)          5.2
+    Effort to implement (E) 2418
+    Time to implement (T)   2 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    46
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000AC   166  0  
+000AE-07FFE   126  32468  
+
+
+

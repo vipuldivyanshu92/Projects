@@ -1,0 +1,10 @@
+H:\Projects\C#\XMLParser\XMLParser\obj\Debug\ResolveAssemblyReference.cache
+H:\Projects\C#\XMLParser\XMLParser\bin\Debug\XMLParser.exe
+H:\Projects\C#\XMLParser\XMLParser\bin\Debug\XMLParser.pdb
+H:\Projects\C#\XMLParser\XMLParser\obj\Debug\XMLParser.exe
+H:\Projects\C#\XMLParser\XMLParser\obj\Debug\XMLParser.pdb
+H:\Projects\PSD\tp3\source\XMLParser\XMLParser\obj\Debug\XMLParser.exe
+H:\Projects\PSD\tp3\source\XMLParser\XMLParser\obj\Debug\XMLParser.pdb
+H:\Projects\PSD\tp3\source\XMLParser\XMLParser\bin\Debug\XMLParser.exe
+H:\Projects\PSD\tp3\source\XMLParser\XMLParser\bin\Debug\XMLParser.pdb
+H:\Projects\PSD\tp3\source\XMLParser\XMLParser\obj\Debug\ResolveAssemblyReference.cache

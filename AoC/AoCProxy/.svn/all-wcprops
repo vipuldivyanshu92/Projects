@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/faolanproject/!svn/ver/16/trunk/tools/AoCProxy
+END
+AoCProxy.kpf
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/faolanproject/!svn/ver/15/trunk/tools/AoCProxy/AoCProxy.kpf
+END
+StdProxy.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/faolanproject/!svn/ver/16/trunk/tools/AoCProxy/StdProxy.py
+END
+tools.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/faolanproject/!svn/ver/16/trunk/tools/AoCProxy/tools.py
+END
+GlobalProxy.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/faolanproject/!svn/ver/16/trunk/tools/AoCProxy/GlobalProxy.py
+END

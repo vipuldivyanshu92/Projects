@@ -1,0 +1,45 @@
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   1  |
+|------------------------------------------------------------------------------|
+|  i:/aquarium/allegro/circuit_r2.brd                                          |
+|                                                    Fri Apr 29 17:54:35 2011  |
+|------------------------------------------------------------------------------|
+| COMPONENT DEFINITION added to board drawing                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    device type                                                               |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ SWITCH_SWITCH_SMD_SWITCH
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   2  |
+|------------------------------------------------------------------------------|
+|  i:/aquarium/allegro/circuit_r2.brd                                          |
+|                                                    Fri Apr 29 17:54:35 2011  |
+|------------------------------------------------------------------------------|
+| COMPONENTS CHANGED from one device type to another in board drawing          |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        | new device type     |   x   |   y   |  old  device type  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ S1                  SWITCH_SWITCH_SMD_SWITCH                 SWITCH_SWITCH_SMD_SWITCH
+ S2                  SWITCH_SWITCH_SMD_SWITCH                 SWITCH_SWITCH_SMD_SWITCH
+ S3                  SWITCH_SWITCH_SMD_SWITCH                 SWITCH_SWITCH_SMD_SWITCH
+ S4                  SWITCH_SWITCH_SMD_SWITCH                 SWITCH_SWITCH_SMD_SWITCH
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   3  |
+|------------------------------------------------------------------------------|
+|  i:/aquarium/allegro/circuit_r2.brd                                          |
+|                                                    Fri Apr 29 17:54:35 2011  |
+|------------------------------------------------------------------------------|
+| SLOT PROPERTIES added to board drawing                                       |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   slot_id    |   x   |   y   |   property   |             value              |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ S1.4                           PRIM_FILE      .\pstchip.dat
+ S2.4                           PRIM_FILE      .\pstchip.dat
+ S3.4                           PRIM_FILE      .\pstchip.dat
+ S4.4                           PRIM_FILE      .\pstchip.dat
+|------------------------------------------------------------------------------|
+|   total ECO changes reported  9                                              |
+|------------------------------------------------------------------------------|

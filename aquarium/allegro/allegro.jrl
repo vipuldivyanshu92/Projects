@@ -1,0 +1,196 @@
+\t (00:00:04) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:04) 
+
+\t (00:00:05) Opening existing drawing...
+\d (00:00:06) Database opened: I:/aquarium/allegro/circuit_lightr1.brd
+\i (00:00:06) trapsize 1797
+\i (00:00:06) trapsize 1739
+\i (00:00:06) trapsize 1715
+\i (00:00:06) trapsize 1390
+\i (00:00:06) trapsize 1390
+\i (00:00:07) generaledit 
+\i (00:00:12) new 
+\i (00:00:43) newdrawfillin "tqfp44.dra" "Package Symbol (Wizard)"
+\t (00:00:43) Starting new drawing...
+\i (00:00:43) trapsize 4310
+\i (00:00:43) trapsize 4432
+\i (00:00:43) trapsize 4545
+\i (00:00:43) trapsize 5689
+\i (00:00:43) trapsize 5689
+\i (00:00:43) package symbol wizard 
+\i (00:00:44) generaledit 
+   (00:00:46) Loading cmds.cxt 
+   (00:00:46) Loading axlcore.cxt 
+\i (00:00:46) setwindow form.sym_wizard
+\i (00:00:46) FORM sym_wizard soic YES 
+\i (00:00:47) FORM sym_wizard plcc YES 
+\i (00:00:48) FORM sym_wizard bga YES 
+\i (00:00:48) FORM sym_wizard plcc YES 
+\i (00:00:49) FORM sym_wizard rca_smd YES 
+\i (00:00:50) FORM sym_wizard plcc YES 
+\i (00:00:51) FORM sym_wizard wiz_next  
+\i (00:00:52) FORM sym_wizard load_template  
+\t (00:00:52) Opening existing drawing...
+\t (00:00:52) Grids are drawn 400, 400 apart for enhanced viewability.
+\i (00:00:52) setwindow pcb
+\i (00:00:52) trapsize 228
+\d (00:00:52) Database opened: D:/Cadence/SPB_16.3/share/pcb/pcb_lib/symbols/template/sym_template.dra
+\i (00:00:57) setwindow form.sym_wizard
+\i (00:00:57) FORM sym_wizard wiz_next  
+\i (00:01:00) FORM sym_wizard pack_units Millimeter 
+\i (00:01:03) FORM sym_wizard pack_units_create Millimeter 
+\i (00:01:05) FORM sym_wizard wiz_next  
+\i (00:01:10) FORM sym_wizard qfp_pin1_corner YES 
+\i (00:01:32) FORM sym_wizard qfp_e 0.800 
+\i (00:01:32) FORM sym_wizard wiz_next  
+\i (00:01:57) FORM sym_wizard qfp_e1 11.400 
+\i (00:01:58) FORM sym_wizard qfp_e2 11.400 
+\i (00:02:37) FORM sym_wizard qfp_e1 12.000 
+\i (00:02:37) FORM sym_wizard qfp_e2 12.000 
+\i (00:02:45) FORM sym_wizard qfp_width 10.000 
+\i (00:02:46) FORM sym_wizard qfp_len 10.000 
+\i (00:02:46) FORM sym_wizard wiz_next  
+\i (00:03:51) FORM sym_wizard default_pad_browse  
+\f (00:03:51) Package Symbol Wizard Padstack Browser
+\t (00:03:59) No valid name selected.
+\i (00:04:00) fillin "Tqfp44"
+\i (00:04:01) FORM sym_wizard wiz_next  
+\i (00:04:04) FORM sym_wizard wiz_next  
+\i (00:04:05) FORM sym_wizard wiz_finish  
+\w (00:04:05) WARNING(SPMHUT-48): Scaled value has been rounded off.
+\t (00:04:05) Grids are drawn 10.160, 10.160 apart for enhanced viewability.
+\i (00:04:05) setwindow pcb
+\i (00:04:05) trapsize 5780
+\t (00:04:05) Performing DRC...
+\t (00:04:05) No DRC errors detected.
+\w (00:04:05) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 15240,15240
+\w (00:04:05) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 30480,30480
+\w (00:04:05) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 60960,60960
+\w (00:04:05) WARNING(SPMHDB-62): Large extents ... sector size enlarged to: 121920,121920
+\i (00:04:05) trapsize 5780
+\w (00:04:05) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 8128,8128
+\i (00:04:05) trapsize 816
+\w (00:04:05) WARNING(SPMHDB-63): Small extents ... sector size decreased to: 1083,1083
+\i (00:04:05) trapsize 109
+\i (00:04:05) trapsize 109
+\t (00:04:05) Creating package symbol 'I:/aquarium/footprints/tqfp44.psm'.
+\t (00:04:05) Starting Create symbol...
+\i (00:04:06) generaledit 
+\i (00:04:08) roam start
+\i (00:04:08) roam x -32
+\i (00:04:08) roam x -32
+\i (00:04:08) roam x -32
+\i (00:04:08) roam x -16
+\i (00:04:09) roam end
+\i (00:04:12) roam start
+\i (00:04:12) roam x -16
+\i (00:04:12) roam y 32
+\i (00:04:13) roam end
+\i (00:04:13) zoom out 1 
+\i (00:04:13) setwindow pcb
+\i (00:04:13) zoom out 9.012 -1.209
+\i (00:04:13) trapsize 218
+\i (00:04:14) zoom in 1 
+\i (00:04:14) setwindow pcb
+\i (00:04:14) zoom in 8.229 -1.601
+\i (00:04:14) trapsize 109
+\i (00:04:15) roam start
+\i (00:04:15) roam x -96
+\i (00:04:15) roam x -48
+\i (00:04:15) roam x -32
+\i (00:04:15) roam end
+\i (00:04:22) plot 
+\i (00:04:24) plotwint initialize "Laser Pro LL2"
+\i (00:04:24) plotwint orientation 2
+\i (00:04:24) plotwint papername "A4"
+\i (00:04:24) plotwint copies 1
+\i (00:04:24) plotwint defaultsource 4
+\i (00:04:24) plotwint printquality 600
+\i (00:04:24) plotwint duplex 1
+\i (00:04:24) plotwint execute
+\i (00:05:17) plot 
+\i (00:05:21) plot preview 
+\i (00:05:21) trapsize 103
+\i (00:05:23) exit 
+\f (00:05:23) Do you want to save the changes you made to I:/aquarium/footprints/tqfp44.dra?
+\i (00:05:25) fillin menu_cancel 
+\i (00:05:25) generaledit 
+\i (00:05:26) trapsize 109
+\i (00:05:29) plot setup 
+\i (00:05:31) setwindow form.fpfileplotsetup
+\i (00:05:31) FORM fpfileplotsetup fpplotscaling YES 
+\i (00:05:32) FORM fpfileplotsetup done  
+\i (00:05:32) setwindow pcb
+\i (00:05:32) generaledit 
+\i (00:05:35) plot 
+\i (00:05:36) plotwint initialize "Laser Pro LL2"
+\i (00:05:36) plotwint execute
+\i (00:06:13) plot 
+\i (00:06:14) plotwint initialize "Laser Pro LL2"
+\i (00:06:14) plotwint execute
+\i (00:07:03) pick grid 9.774 0.706
+\t (00:07:03) last pick:  10.160  0.000
+\i (00:07:06) plot setup 
+\i (00:07:20) setwindow form.fpfileplotsetup
+\i (00:07:20) FORM fpfileplotsetup cancel  
+\i (00:07:20) setwindow pcb
+\i (00:07:20) generaledit 
+\i (00:07:22) save 
+\f (00:07:22) I:/aquarium/footprints/tqfp44.dra: File Exists. Overwrite? 
+\i (00:07:23) fillin yes 
+\t (00:07:23) Symbol 'tqfp44.psm' created.
+\i (00:07:23) generaledit 
+\i (00:07:33) plot setup 
+\i (00:07:36) setwindow form.fpfileplotsetup
+\i (00:07:36) FORM fpfileplotsetup fpplotautocenter NO 
+\i (00:07:37) FORM fpfileplotsetup done  
+\i (00:07:37) setwindow pcb
+\i (00:07:37) generaledit 
+\i (00:07:40) color192 
+\i (00:07:40) setwindow cvf.dialog
+\i (00:07:40) cvf layer_mode
+\i (00:07:40) setwindow pcb
+\i (00:07:40) generaledit 
+\i (00:07:43) setwindow cvf.dialog
+\i (00:07:43) cvf layer_tree_item 'Display'
+\i (00:07:45) cvf layer_tree_item 'Conductor' 'Stack-Up'
+\i (00:07:51) cvf layers_visible stack-up pin/top FALSE
+\i (00:07:52) cvf layers_visible stack-up via/top FALSE
+\i (00:07:52) cvf layers_visible stack-up etch/top FALSE
+\i (00:07:53) cvf layers_visible stack-up anti_etch/top FALSE
+\i (00:07:54) cvf layers_visible stack-up drc/top FALSE
+\i (00:07:55) cvf apply
+\i (00:07:59) cvf layers_visible stack-up pin/top TRUE
+\i (00:08:00) cvf layers_visible stack-up etch/top TRUE
+\i (00:08:01) cvf layers_visible stack-up via/top TRUE
+\i (00:08:01) cvf layers_visible stack-up drc/top TRUE
+\i (00:08:02) cvf layers_visible stack-up anti_etch/top TRUE
+\i (00:08:03) cvf apply
+\i (00:08:06) cvf layer_tree_item 'Non-Conductor' 'Stack-Up'
+\i (00:08:07) cvf layer_tree_item 'Conductor' 'Stack-Up'
+\i (00:08:09) cvf global_invisible
+\i (00:08:10) cvf apply
+\i (00:08:13) cvf select_color_cell 8
+\i (00:08:16) cvf layers_visible stack-up pin/top TRUE
+\i (00:08:17) cvf layers_color stack-up pin/top 9
+\i (00:08:18) cvf apply
+\i (00:08:22) cvf layer_tree_item 'Non-Conductor' 'Stack-Up'
+\i (00:08:26) cvf layers_visible stack-up pin/soldermask_top TRUE
+\i (00:08:26) cvf layers_color stack-up pin/soldermask_top 9
+\i (00:08:28) cvf apply
+\i (00:08:32) cvf layers_color stack-up pin/filmmasktop 9
+\i (00:08:32) cvf layers_visible stack-up pin/filmmasktop TRUE
+\i (00:08:33) cvf apply
+\i (00:08:39) cvf layers_color stack-up pin/pastemask_top 9
+\i (00:08:41) cvf apply
+\i (00:08:43) cvf layer_tree_item 'Conductor' 'Stack-Up'
+\i (00:08:44) cvf layer_tree_item 'Stack-Up'
+\i (00:08:48) cvf okay
+\i (00:08:50) setwindow pcb
+\i (00:08:50) plot 
+\i (00:08:51) plotwint initialize "Laser Pro LL2"
+\i (00:08:51) plotwint execute
+\i (00:10:44) trapsize 181
+\i (00:10:44) exit 
+\f (00:10:44) Do you want to save the changes you made to I:/aquarium/footprints/tqfp44.dra?
+\i (00:10:47) fillin no 

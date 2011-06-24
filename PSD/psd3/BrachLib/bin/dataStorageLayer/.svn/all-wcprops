@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/psd3/!svn/ver/13/BrachLib/bin/dataStorageLayer
+END
+BookStorageFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/psd3/!svn/ver/13/BrachLib/bin/dataStorageLayer/BookStorageFacade.class
+END
+BranchStorageInterface.class
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/psd3/!svn/ver/13/BrachLib/bin/dataStorageLayer/BranchStorageInterface.class
+END
+UserStorageFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/psd3/!svn/ver/13/BrachLib/bin/dataStorageLayer/UserStorageFacade.class
+END

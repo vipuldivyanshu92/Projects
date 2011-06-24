@@ -1,0 +1,23 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    CREATE SYMBOL                                                    )
+(                                                                     )
+(    Drawing          : LM2592.dra                                    )
+(    Software Version : 16.3p003                                      )
+(    Date/Time        : Sun Apr 17 14:51:13 2011                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Create Symbol of type: PACKAGE
+    Directory = I:/tdp4/trunk/circuit/pcb
+    Name      = lm2592.psm
+    User      = Adraen
+    Machine   = URANUS
+
+
+Create symbol started.
+ 
+
+Create symbol completed.
+

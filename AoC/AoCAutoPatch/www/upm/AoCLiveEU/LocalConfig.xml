@@ -1,0 +1,8 @@
+<HttpPatchAddr> http://127.0.0.1/upm </HttpPatchAddr>
+<ClientHttpPatchAddr> http://127.0.0.1/upm </ClientHttpPatchAddr>
+<ControlHttpPatchAddr> http://127.0.0.1/upm </ControlHttpPatchAddr>
+<HttpPatchFolder> AoCLiveEU </HttpPatchFolder>
+<UniverseAddr> 127.0.0.1:7000 </UniverseAddr>
+<DevName> conan </DevName>
+<UniverseVersion> 2 </UniverseVersion>
+<PatchVersion> xf44f92b132e76ddb913c27fafc1a9216 </PatchVersion>

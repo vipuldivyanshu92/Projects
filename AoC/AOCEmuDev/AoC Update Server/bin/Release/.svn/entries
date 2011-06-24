@@ -1,0 +1,82 @@
+9
+
+dir
+21
+http://svn2.assembla.com/svn/aocemu/trunk/AoC%20Update%20Server/bin/Release
+http://svn2.assembla.com/svn/aocemu
+
+
+
+2008-06-11T06:40:57.430372Z
+17
+fruni
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+843fd666-81f2-4710-8602-7759cdb5ad05
+
+AoC Update Server.pdb
+file
+
+
+
+
+2008-06-17T19:02:45.838355Z
+cd5fbf4a560a69ae2467dfa88c37d723
+2008-06-10T09:43:54.462530Z
+16
+fruni
+has-props
+
+AoC Update Server.vshost.exe
+file
+
+
+
+
+2008-06-17T19:02:45.841355Z
+d9086aab959707dd1a8643f3df70db9d
+2008-06-11T06:40:57.430372Z
+17
+fruni
+has-props
+
+Root
+dir
+
+Readme.txt
+file
+
+
+
+
+2008-06-17T19:02:45.843355Z
+3bfcfe327368959d3da62d8ef5e4ce6e
+2008-06-10T09:43:54.462530Z
+16
+fruni
+
+AoC Update Server.exe
+file
+
+
+
+
+2008-06-17T19:02:45.845355Z
+2998dce4608f41dcff4c22a3c5ab2800
+2008-06-10T09:43:54.462530Z
+16
+fruni
+has-props
+

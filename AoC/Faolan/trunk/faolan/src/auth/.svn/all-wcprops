@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/faolanproject/!svn/ver/27/trunk/faolan/src/auth
+END
+win-main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/faolanproject/!svn/ver/27/trunk/faolan/src/auth/win-main.cpp
+END
+UniverseConnection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/faolanproject/!svn/ver/24/trunk/faolan/src/auth/UniverseConnection.cpp
+END
+InterConnection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/faolanproject/!svn/ver/24/trunk/faolan/src/auth/InterConnection.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/faolanproject/!svn/ver/21/trunk/faolan/src/auth/main.cpp
+END
+UniverseConnection.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/faolanproject/!svn/ver/27/trunk/faolan/src/auth/UniverseConnection.h
+END
+InterConnection.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/faolanproject/!svn/ver/26/trunk/faolan/src/auth/InterConnection.h
+END
+UniverseConfiguration.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/faolanproject/!svn/ver/27/trunk/faolan/src/auth/UniverseConfiguration.cpp
+END
+UniverseConfiguration.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/faolanproject/!svn/ver/24/trunk/faolan/src/auth/UniverseConfiguration.h
+END

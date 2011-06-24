@@ -1,0 +1,21 @@
+package applicationLayer;
+
+public class InactivityTimer {
+	private static InactivityTimer instance = null;
+	private static final int defaultExpirationTime = 5*60;
+	private int expirationTime;
+	
+	private InactivityTimer() {
+	}
+	
+	public static InactivityTimer getInstance() {
+		if (instance == null)
+			instance = new InactivityTimer();
+		return instance;
+	}
+	
+	private void logout(){
+		
+	}
+	
+}

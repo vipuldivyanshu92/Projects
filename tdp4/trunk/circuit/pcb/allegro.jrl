@@ -1,0 +1,122 @@
+\t (00:00:01) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:01) 
+
+\t (00:00:03) Opening existing drawing...
+\d (00:00:03) Database opened: I:/tdp4/trunk/circuit/pcb/1014.dra
+\i (00:00:03) trapsize 6150
+\i (00:00:03) trapsize 5952
+\i (00:00:03) trapsize 5869
+\i (00:00:03) trapsize 4894
+\i (00:00:03) trapsize 4894
+\i (00:00:04) generaledit 
+\i (00:00:05) open 
+\i (00:00:14) fillin "I:\aquarium\footprints\buzzer.dra"
+\i (00:00:14) cd "I:\aquarium\footprints"
+\t (00:00:14) Opening existing drawing...
+\i (00:00:14) trapsize 1138
+\d (00:00:14) Database opened: I:/aquarium/footprints/buzzer.dra
+\i (00:00:14) generaledit 
+\i (00:00:15) zoom out 1 
+\i (00:00:15) setwindow pcb
+\i (00:00:15) zoom out 12038.8 9876.8
+\i (00:00:15) trapsize 1138
+\i (00:00:15) zoom out 1 
+\i (00:00:15) setwindow pcb
+\i (00:00:15) zoom out 12038.8 9876.8
+\i (00:00:15) trapsize 1138
+\i (00:00:15) zoom out 1 
+\i (00:00:15) setwindow pcb
+\i (00:00:15) zoom out 12038.8 9854.1
+\i (00:00:15) trapsize 1138
+\i (00:00:16) zoom in 1 
+\i (00:00:16) setwindow pcb
+\i (00:00:16) zoom in 12016.1 9831.3
+\i (00:00:16) trapsize 569
+\i (00:00:30) open 
+\i (00:02:24) fillin "I:\tdp4\trunk\circuit\pcb\dip3.dra"
+\i (00:02:24) cd "I:\tdp4\trunk\circuit\pcb"
+\t (00:02:24) Opening existing drawing...
+\i (00:02:24) trapsize 80
+\d (00:02:24) Database opened: I:/tdp4/trunk/circuit/pcb/dip3.dra
+\i (00:02:24) generaledit 
+\i (00:02:43) plot 
+\i (00:05:36) plotwint initialize "Laser Pro LL2"
+\i (00:05:36) plotwint orientation 1
+\i (00:05:36) plotwint papername "A4"
+\i (00:05:36) plotwint copies 1
+\i (00:05:36) plotwint defaultsource 7
+\i (00:05:36) plotwint printquality 600
+\i (00:05:36) plotwint duplex 1
+\i (00:05:36) plotwint execute
+\i (00:06:04) plot setup 
+\i (00:06:08) setwindow form.fpfileplotsetup
+\i (00:06:08) FORM fpfileplotsetup cancel  
+\i (00:06:08) setwindow pcb
+\i (00:06:08) generaledit 
+\i (00:09:16) open 
+\i (00:09:19) fillin "dip6_conn.dra"
+\t (00:09:19) Opening existing drawing...
+\i (00:09:19) trapsize 68
+\d (00:09:19) Database opened: I:/tdp4/trunk/circuit/pcb/dip6_conn.dra
+\i (00:09:19) generaledit 
+\i (00:09:24) plot 
+\i (00:09:25) plotwint initialize "Laser Pro LL2"
+\i (00:09:25) plotwint execute
+\i (00:10:04) open 
+\i (00:10:06) fillin "menu_cancel"
+\i (00:10:07) generaledit 
+\i (00:10:08) plot setup 
+\i (00:10:13) setwindow form.fpfileplotsetup
+\i (00:10:13) FORM fpfileplotsetup fpplotsheetcontents YES 
+\i (00:10:14) FORM fpfileplotsetup done  
+\i (00:10:14) setwindow pcb
+\i (00:10:14) generaledit 
+\i (00:10:17) plot 
+\i (00:10:43) open 
+\i (00:10:48) fillin "menu_cancel"
+\i (00:10:48) generaledit 
+\i (00:10:52) open 
+\i (00:11:03) fillin "I:\tdp4\trunk\circuit\final\allegro\gumstix_expansion_v2r10.brd"
+\i (00:11:03) cd "I:\tdp4\trunk\circuit\final\allegro"
+\t (00:11:03) Opening existing drawing...
+\t (00:11:03) Grids are drawn 64.00, 64.00 apart for enhanced viewability.
+\t (00:11:03) Grids are drawn 16.00, 16.00 apart for enhanced viewability.
+\i (00:11:03) trapsize 1459
+\i (00:11:03) trapsize 1454
+\i (00:11:03) trapsize 1454
+\d (00:11:03) Database opened: I:/tdp4/trunk/circuit/final/allegro/gumstix_expansion_v2r10.brd
+\i (00:11:04) generaledit 
+\i (00:11:05) open 
+\i (00:11:08) fillin "gumstix_expansion_v2r10_topmask.brd"
+\t (00:11:08) Opening existing drawing...
+\t (00:11:08) Grids are drawn 64.00, 64.00 apart for enhanced viewability.
+\i (00:11:08) trapsize 2908
+\d (00:11:08) Database opened: I:/tdp4/trunk/circuit/final/allegro/gumstix_expansion_v2r10_topmask.brd
+\i (00:11:08) generaledit 
+\i (00:11:10) roam start
+\i (00:11:10) roam y 64
+\i (00:11:10) roam y 32
+\i (00:11:10) roam y 32
+\i (00:11:10) roam y 32
+\i (00:11:10) roam x -16
+\i (00:11:10) roam y 32
+\i (00:11:10) roam y 48
+\i (00:11:10) roam x 64
+\i (00:11:10) roam y 64
+\i (00:11:10) roam x 48
+\i (00:11:10) roam y 48
+\i (00:11:10) roam x 48
+\i (00:11:10) roam y 48
+\i (00:11:10) roam x 32
+\i (00:11:10) roam y 16
+\i (00:11:11) roam x -32
+\i (00:11:11) roam y -16
+\i (00:11:11) roam x -16
+\i (00:11:11) roam x -16
+\i (00:11:11) roam y -16
+\i (00:11:11) roam x -16
+\i (00:11:11) roam end
+\i (00:11:13) plot 
+\i (00:11:18) plotwint initialize "Laser Pro LL2"
+\i (00:11:18) plotwint execute
+\i (00:11:52) exit 

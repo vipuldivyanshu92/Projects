@@ -1,0 +1,29 @@
+*** Error 18 "I:\aquarium\testccs\ecan.h" Line 59(14,69): File can not be opened
+    Not in "D:\PICC\devices\p18cxxx.h"
+    Not in "D:\PICC\drivers\p18cxxx.h"
+    Not in "I:\aquarium\testccs\p18cxxx.h"
+    Not in project "I:\aquarium\testccs\p18cxxx.h"
+*** Error 28 "I:\aquarium\testccs\ecan.h" Line 77(27,28): Expecting an identifier
+*** Error 43 "I:\aquarium\testccs\ecan.h" Line 77(28,29): Expecting a declaration
+*** Error 43 "I:\aquarium\testccs\ecan.h" Line 77(29,30): Expecting a declaration
+*** Error 43 "I:\aquarium\testccs\ecan.h" Line 77(35,36): Expecting a declaration
+*** Error 43 "I:\aquarium\testccs\ecan.h" Line 77(36,37): Expecting a declaration
+*** Error 48 "I:\aquarium\testccs\ecan.h" Line 77(38,42): Expecting a (
+*** Error 28 "I:\aquarium\testccs\ecan.h" Line 78(27,28): Expecting an identifier
+*** Error 48 "I:\aquarium\testccs\ecan.h" Line 205(6,10): Expecting a (
+*** Error 43 "I:\aquarium\testccs\ecan.h" Line 205(21,22): Expecting a declaration
+*** Error 28 "I:\aquarium\testccs\ecan.h" Line 206(27,28): Expecting an identifier
+*** Error 48 "I:\aquarium\testccs\ecan.h" Line 206(28,32): Expecting a (
+--- Info 300 "I:\aquarium\testccs\ecan.h" Line 171(3,20): More info:   First Declaration of ECAN_TX_MSG_FLAGS
+*** Error 31 "I:\aquarium\testccs\ecan.h" Line 208(40,57): Identifier is already used in this scope
+*** Error 43 "I:\aquarium\testccs\ecan.h" Line 208(48,49): Expecting a declaration
+*** Error 43 "I:\aquarium\testccs\ecan.h" Line 208(49,50): Expecting a declaration
+*** Error 48 "I:\aquarium\testccs\ecan.h" Line 312(6,10): Expecting a (
+*** Error 43 "I:\aquarium\testccs\ecan.h" Line 312(24,25): Expecting a declaration
+--- Info 300 "I:\aquarium\testccs\ecan.h" Line 205(37,39): More info:   First Declaration of id
+*** Error 31 "I:\aquarium\testccs\ecan.h" Line 312(41,43): Identifier is already used in this scope
+*** Error 28 "I:\aquarium\testccs\ecan.h" Line 314(30,31): Expecting an identifier
+*** Error 48 "I:\aquarium\testccs\ecan.h" Line 314(31,38): Expecting a (
+*** Error 36 "I:\aquarium\testccs\ecan.h" Line 315(44,52): Expecting a ; or ,
+*** Error 43 "I:\aquarium\testccs\ecan.h" Line 315(53,54): Expecting a declaration
+      22 Errors,  0 Warnings.

@@ -1,0 +1,128 @@
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   1  |
+|------------------------------------------------------------------------------|
+|  I:/aquarium/allegro/circuit_r3.brd                                          |
+|                                                    Fri Apr 29 18:19:15 2011  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  5.0V         pins ADDED TO this existing net (pins not previously on any net)
+                                 J3.5            1010.00  524.00
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  GND          pins MOVED FROM this net (to net name listed on right)
+                                 J3.3            1010.00  724.00
+                                                                            PB3
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 J3.6            1010.00  424.00
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N00324       net RENAMED (to net name listed on right)           N19061       
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N00557       net RENAMED (to net name listed on right)           N19149       
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N00563       net RENAMED (to net name listed on right)           N19153       
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N01048       net RENAMED (to net name listed on right)           N19289       
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N01068       net RENAMED (to net name listed on right)           N19293       
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N01447       net RENAMED (to net name listed on right)           N19389       
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N03103       net RENAMED (to net name listed on right)           N19563       
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N04312       pins DELETED FROM this net (all pins deleted)
+                                 U3.15            650.00  150.00
+               pins MOVED FROM this net (to net name listed on right)
+                                 J3.1            1010.00  924.00
+                                                                            PB1
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N04319       pins DELETED FROM this net (all pins deleted)
+                                 U3.14            650.00 -150.00
+               pins MOVED FROM this net (to net name listed on right)
+                                 J3.2            1010.00  824.00
+                                                                            PB2
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N05390       net RENAMED (to net name listed on right)           N19811       
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N07024       net RENAMED (to net name listed on right)           N19909       
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N114110      net RENAMED (to net name listed on right)           N203550      
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N119310      net RENAMED (to net name listed on right)           N204030      
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  PB4          pins ADDED TO this existing net (pins not previously on any net)
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   2  |
+|------------------------------------------------------------------------------|
+|  I:/aquarium/allegro/circuit_r3.brd                                          |
+|                                                    Fri Apr 29 18:19:15 2011  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+                                 J3.4            1010.00  624.00
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   3  |
+|------------------------------------------------------------------------------|
+|  I:/aquarium/allegro/circuit_r3.brd                                          |
+|                                                    Fri Apr 29 18:19:15 2011  |
+|------------------------------------------------------------------------------|
+| COMPONENT DEFINITION added to board drawing                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    device type                                                               |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ CON6_HEADER_LINE_6_KEYB
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   4  |
+|------------------------------------------------------------------------------|
+|  I:/aquarium/allegro/circuit_r3.brd                                          |
+|                                                    Fri Apr 29 18:19:15 2011  |
+|------------------------------------------------------------------------------|
+| COMPONENTS DELETED from board drawing                                        |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        |    device type      |   x   |   y                        |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ R10                 R_RESISTOR_10K         776.00    0.00
+ R11                 R_RESISTOR_10K         500.00  320.00
+ R12                 R_RESISTOR_10K         768.00  744.00
+ R13                 R_RESISTOR_10K         160.00  767.00
+ R14                 R_RESISTOR_10K        -329.00 1077.00
+ R15                 R_RESISTOR_10K         157.00  895.00
+ S1                  SWITCH_SWITCH_SMD_SWITCH  546.00  758.00
+ S2                  SWITCH_SWITCH_SMD_SWITCH  145.00  554.00
+ S3                  SWITCH_SWITCH_SMD_SWITCH -266.00  767.00
+ S4                  SWITCH_SWITCH_SMD_SWITCH  139.00 1104.00
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   5  |
+|------------------------------------------------------------------------------|
+|  I:/aquarium/allegro/circuit_r3.brd                                          |
+|                                                    Fri Apr 29 18:19:15 2011  |
+|------------------------------------------------------------------------------|
+| COMPONENTS CHANGED from one device type to another in board drawing          |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        | new device type     |   x   |   y   |  old  device type  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ J3                  CON6_HEADER_LINE_6_KEYB 1010.00  674.00 CON3_HEADER_LINE_3_I2C
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   6  |
+|------------------------------------------------------------------------------|
+|  I:/aquarium/allegro/circuit_r3.brd                                          |
+|                                                    Fri Apr 29 18:19:15 2011  |
+|------------------------------------------------------------------------------|
+| SLOT PROPERTIES added to board drawing                                       |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   slot_id    |   x   |   y   |   property   |             value              |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ J3.6           1010.00  674.00 PRIM_FILE      .\pstchip.dat
+|------------------------------------------------------------------------------|
+|   total ECO changes reported  32                                             |
+|------------------------------------------------------------------------------|

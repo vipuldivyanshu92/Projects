@@ -1,0 +1,1 @@
+-w -s "k:\VHDL\GameGear\library.cfg"  -j "k:\VHDL\GameGear\devcart\projlib.cfg"  -d "k:\VHDL\GameGear\devcart\compile"   -work devcart  -O3 -e 100 -2002 "k:\VHDL\GameGear\devcart\src\mapper.vhd" 

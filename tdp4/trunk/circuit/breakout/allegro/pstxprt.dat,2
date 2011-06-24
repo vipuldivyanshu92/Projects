@@ -1,0 +1,150 @@
+FILE_TYPE = EXPANDEDPARTLIST;
+{ Using PSTWRITER 16.3.0 p002Feb-21-2011 at 18:34:51 }
+DIRECTIVES
+ PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
+ ROOT_DRAWING='GUMSTIX_BREAKOUT';
+ POST_TIME='Nov 17 2009 03:09:43';
+ SOURCE_TOOL='CAPTURE_WRITER';
+END_DIRECTIVES;
+
+PART_NAME
+ C1 'C_ELECT_0_SMDCAP_1N':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS1144@GUMSTIX_BREAKOUT.C_ELECT_0.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins1144@gumstix_breakout.\c_elect_0.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins1144@gumstix_breakout.\c_elect_0.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2 'C_ELECT_0_SMDCAP_4.7U':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS1164@GUMSTIX_BREAKOUT.C_ELECT_0.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins1164@gumstix_breakout.\c_elect_0.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins1164@gumstix_breakout.\c_elect_0.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C3 'C_ELECT_0_SMDCAP_4.7U':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS1346@GUMSTIX_BREAKOUT.C_ELECT_0.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins1346@gumstix_breakout.\c_elect_0.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins1346@gumstix_breakout.\c_elect_0.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C4 'C_ELECT_0_SMDCAP_4.7U':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS1621@GUMSTIX_BREAKOUT.C_ELECT_0.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins1621@gumstix_breakout.\c_elect_0.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins1621@gumstix_breakout.\c_elect_0.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J1 'GUMSTIX_J4_GUMSTIX_GUMSTIX_J4':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS162@SYMBOLS.GUMSTIX_J4.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins162@symbols.\gumstix_j4.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins162@symbols.\gumstix_j4.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J2 'GUMSTIX_J1_GUMSTIX_GUMSTIX_J1':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS463@SYMBOLS.GUMSTIX_J1.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins463@symbols.\gumstix_j1.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins463@symbols.\gumstix_j1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J3 'CON6_USBA_CON6':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS999@CONNECTOR.CON6.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins999@connector.\con6.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins999@connector.\con6.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J4 'CON6_USBA_CON6':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS1023@CONNECTOR.CON6.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins1023@connector.\con6.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins1023@connector.\con6.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J5 'CON9_MUSBA_TSMT_CON9':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS1070@CONNECTOR.CON9.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins1070@connector.\con9.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins1070@connector.\con9.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J6 'CON6_DIP6_CONN_CON6':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS2208@CONNECTOR.CON6.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins2208@connector.\con6.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins2208@connector.\con6.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J7 'CON3_DIP3_CON3':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS2371@CONNECTOR.CON3.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins2371@connector.\con3.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins2371@connector.\con3.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J8 'CON6_DIP6_CONN_CON6':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS2765@CONNECTOR.CON6.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins2765@connector.\con6.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins2765@connector.\con6.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J9 'CON4_DIP4_CONN_CON4':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS2996@CONNECTOR.CON4.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins2996@connector.\con4.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins2996@connector.\con4.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ S1 'SWITCH_SWITCH_SWITCH':;
+
+SECTION_NUMBER 1
+ '@GUMSTIX_BREAKOUT.SCHEMATIC1(SCH_1):INS697@SYMBOLS.SWITCH.NORMAL(CHIPS)':
+ C_PATH='@gumstix_breakout.schematic1(sch_1):ins697@symbols.\switch.normal\(chips)',
+ P_PATH='@gumstix_breakout.schematic1(sch_1):page1_ins697@symbols.\switch.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+END.

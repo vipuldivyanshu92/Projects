@@ -1,0 +1,3 @@
+360
+~E 1 "./src/mapper.vhd" 11 mapper_entity
+~A 1 "./src/mapper.vhd" 20 mapper_behaviour

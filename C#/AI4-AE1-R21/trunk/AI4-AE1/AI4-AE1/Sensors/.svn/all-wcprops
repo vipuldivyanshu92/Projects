@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/adraen/!svn/ver/17/trunk/AI4-AE1/AI4-AE1/Sensors
+END
+ProximitySensor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/adraen/!svn/ver/17/trunk/AI4-AE1/AI4-AE1/Sensors/ProximitySensor.cs
+END
+IProximitySensor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/adraen/!svn/ver/17/trunk/AI4-AE1/AI4-AE1/Sensors/IProximitySensor.cs
+END

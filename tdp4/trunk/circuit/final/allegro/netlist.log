@@ -1,0 +1,42 @@
+{ Using PSTWRITER 16.3.0 p002Apr-26-2011 at 07:53:50 }
+
+#1 Warning [ALG0047] "No_connect" property on Pin "U2.6" ignored for U2: SCHEMATIC1, SN74 (3.70, 1.50). Connecting pin to net "GPIO166_IR_TXD3_5V".
+#2 Warning [ALG0047] "No_connect" property on Pin "U2.43" ignored for U2: SCHEMATIC1, SN74 (3.70, 1.50). Connecting pin to net "GPIO166_IR_TXD3_1.8V".
+#3 Warning [ALG0047] "No_connect" property on Pin "U1.22" ignored for U1: SCHEMATIC1, S08 (3.50, 2.20). Connecting pin to net "N63291".
+#4 Warning [ALG0047] "No_connect" property on Pin "U1.24" ignored for U1: SCHEMATIC1, S08 (3.50, 2.20). Connecting pin to net "N63295".
+#5 Warning [ALG0047] "No_connect" property on Pin "U1.7" ignored for U1: SCHEMATIC1, S08 (3.50, 2.20). Connecting pin to net "SPI_INTERRUPT_5V".
+#6 Warning [ALG0047] "No_connect" property on Pin "U1.4" ignored for U1: SCHEMATIC1, S08 (3.50, 2.20). Connecting pin to net "N57412".
+#7 Warning [ALG0016] Part Name "DIODE SCHOTTKY_SOD323F_DIODE SCHOTTKY" is renamed to "DIODE SCHOTTKY_SOD323F_DIODE SC".
+#8 Warning [ALG0051] Pin "VSYSTEM" is renamed to "VSYSTEM#1" as visible power pin of same name already exists in Package GUMSTIX_J4 , J1: SCHEMATIC1, GUMSTIX (5.40, 0.60).
+#9 Warning [ALG0051] Pin "VSYSTEM" is renamed to "VSYSTEM#2" as visible power pin of same name already exists in Package GUMSTIX_J4 , J1: SCHEMATIC1, GUMSTIX (5.40, 0.60).
+#10 Warning [ALG0051] Pin "GND" is renamed to "GND#3" as visible power pin of same name already exists in Package GUMSTIX_J4 , J1: SCHEMATIC1, GUMSTIX (5.40, 0.60).
+#11 Warning [ALG0051] Pin "GND" is renamed to "GND#33" as visible power pin of same name already exists in Package GUMSTIX_J4 , J1: SCHEMATIC1, GUMSTIX (5.40, 0.60).
+#12 Warning [ALG0051] Pin "VSYSTEM" is renamed to "VSYSTEM#67" as visible power pin of same name already exists in Package GUMSTIX_J1 , J2: SCHEMATIC1, GUMSTIX (1.40, 0.60).
+#13 Warning [ALG0051] Pin "VSYSTEM" is renamed to "VSYSTEM#66" as visible power pin of same name already exists in Package GUMSTIX_J1 , J2: SCHEMATIC1, GUMSTIX (1.40, 0.60).
+#14 Warning [ALG0051] Pin "GND" is renamed to "GND#56" as visible power pin of same name already exists in Package GUMSTIX_J1 , J2: SCHEMATIC1, GUMSTIX (1.40, 0.60).
+#15 Warning [ALG0051] Pin "GND" is renamed to "GND#70" as visible power pin of same name already exists in Package GUMSTIX_J1 , J2: SCHEMATIC1, GUMSTIX (1.40, 0.60).
+#16 Warning [ALG0016] Part Name "CONN MOD 6-6_J_BACKGROUND_HEADER_BACKGROUND HEADER" is renamed to "CONN MOD 6-6_J_BACKGROUND_HEADE".
+#17 Warning [ALG0016] Part Name "SN74LVC16T245_SN74DGG_SN74LVC16T245" is renamed to "SN74LVC16T245_SN74DGG_SN74LVC16".
+#18 Warning [ALG0051] Pin "GND" is renamed to "GND#4" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#19 Warning [ALG0051] Pin "Vccb" is renamed to "VCCB#7" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#20 Warning [ALG0051] Pin "GND" is renamed to "GND#10" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#21 Warning [ALG0051] Pin "GND" is renamed to "GND#15" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#22 Warning [ALG0051] Pin "Vccb" is renamed to "VCCB#18" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#23 Warning [ALG0051] Pin "GND" is renamed to "GND#21" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#24 Warning [ALG0051] Pin "GND" is renamed to "GND#45" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#25 Warning [ALG0051] Pin "Vcca" is renamed to "VCCA#42" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#26 Warning [ALG0051] Pin "GND" is renamed to "GND#39" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#27 Warning [ALG0051] Pin "GND" is renamed to "GND#34" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#28 Warning [ALG0051] Pin "Vcca" is renamed to "VCCA#31" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#29 Warning [ALG0051] Pin "GND" is renamed to "GND#28" as visible power pin of same name already exists in Package SN74LVC16T245 , U2: SCHEMATIC1, SN74 (3.70, 1.50).
+#30 Warning [ALG0016] Part Name "OSCILLATOR_OSCILLATOR_OSCILLATOR" is renamed to "OSCILLATOR_OSCILLATOR_OSCILLATO".
+Scanning netlist files ...
+
+Loading... e:\tdp4\trunk\circuit\final\allegro/pstchip.dat
+
+Loading... e:\tdp4\trunk\circuit\final\allegro/pstchip.dat
+
+Loading... e:\tdp4\trunk\circuit\final\allegro/pstxprt.dat
+
+Loading... e:\tdp4\trunk\circuit\final\allegro/pstxnet.dat
+packaging the design view...

@@ -1,0 +1,26 @@
+! Test address input used by TestAddressFile and TestAddressList
+! TestAddressFile simply relies upon the existence of this file
+! TestAddressList loads the addresses from the file and adds to an AddressList
+!
+! First a set of addresses that are unique
+Smith, Alan
+1 High Street, Manchester
+M1 1AA
+Jones, Robert
+23 Oak Street, Cardiff
+CF12 5SZ
+Kerr, Angus
+15/2 Magdala Crescent, Edinburgh
+EH12 5BD
+!
+! Now some addresses that duplicate those above
+!
+Jones, Marion
+23 Oak Street, Cardiff
+CF12 5SZ
+Smith
+High Street, Manchester
+M1 1AA
+Kerr, Fraser
+11 Magdala Crescent, Edinburgh
+EH12 5BD

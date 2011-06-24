@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 21
+/svn/!svn/ver/3/trunk
+END
+ConfigReader.py
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/trunk/ConfigReader.py
+END
+World_Structures.py
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/5/trunk/World_Structures.py
+END
+Realm_Errors.py
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/trunk/Realm_Errors.py
+END
+Realm_OpCodes.py
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/2/trunk/Realm_OpCodes.py
+END
+AsyncRealm.py
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/trunk/AsyncRealm.py
+END
+bot.conf
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/2/trunk/bot.conf
+END
+SharedFunc.py
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/trunk/SharedFunc.py
+END
+Realm_Structures.py
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/Realm_Structures.py
+END
+World_Errors.py
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/2/trunk/World_Errors.py
+END
+World_OpCodes.py
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/5/trunk/World_OpCodes.py
+END
+Main.py
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/2/trunk/Main.py
+END
+AsyncWorld.py
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/5/trunk/AsyncWorld.py
+END

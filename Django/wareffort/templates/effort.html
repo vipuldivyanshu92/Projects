@@ -1,0 +1,48 @@
+{% extends "global.html" %}
+
+{% block content %}
+
+<div id="barTotal">
+	<div class="bar_container">
+		<div class="bar_left"></div>
+		<div class="bar_center" style="width: 500px;">
+			<div class="bar_progress" style="width: {{ stats.totalpercent }}%;"></div>
+			<div class="bar_text">
+				<div class="bar_name">Avancement total</div>
+				<div class="bar_track">{{ stats.totalpercent }}%</div>
+			</div>
+		</div>
+		<div class="bar_right"></div>
+	</div>
+</div>
+
+{% for catkey, catvalue in categories.items %}
+	<!-- print the name of the category -->
+	<div class="category">
+		<div class="category_top">
+			<div class="category_title_outer">
+				<div class="category_title_inner">
+					<span class="category_title">{{ catvalue.name }}</span>
+				</div>
+			</div>
+		</div>
+		<!-- print the aims of this category -->
+		<div class="category_middle">
+		{% for aimkey, aimvalue in catvalue.aims.items %}			
+			<div class="bar_chalk_title">{{ aimvalue.name }}</div>
+			<div class="bar_chalk">
+				<div class="bar_chalk_limit"></div>
+				<div class="bar_chalk_progress_outer">
+					<div class="bar_chalk_progress" style="width: {{ aimvalue.pcachieved }}%;"></div>
+				</div>
+				<div class="bar_chalk_limit"></div>
+				
+				<div class="bar_chalk_indicator">{{ aimvalue.nbingame }}/{{ aimvalue.nbrequired }}</div>
+			</div>			
+		{% endfor %}
+		</div>
+		<div class="category_bottom"></div>
+	</div>
+{% endfor %}
+
+{% endblock %}

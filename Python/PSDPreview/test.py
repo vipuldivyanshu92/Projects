@@ -1,0 +1,1 @@
+from PythonMagick import *

@@ -1,0 +1,122 @@
+9
+
+dir
+21
+http://svn2.assembla.com/svn/aocemu/trunk/AoC%20Update%20Server
+http://svn2.assembla.com/svn/aocemu
+
+
+
+2008-06-11T06:40:57.430372Z
+17
+fruni
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+843fd666-81f2-4710-8602-7759cdb5ad05
+
+AoC Update Server.suo
+file
+
+
+
+
+2008-06-17T19:06:33.261355Z
+e8edca7bf9ee8b8d0120d4e7f8eb94de
+2008-06-11T06:40:57.430372Z
+17
+fruni
+has-props
+
+AoC Update Server.sln
+file
+
+
+
+
+2008-06-17T19:06:33.271355Z
+4019572e3c2e1bf326f36ac84fed8ad0
+2008-06-10T09:43:54.462530Z
+16
+fruni
+
+bin
+dir
+
+WebServer.cs
+file
+
+
+
+
+2008-06-17T19:06:33.273355Z
+cea2707155f21f86f249da7538ccd4ad
+2008-06-10T09:43:54.462530Z
+16
+fruni
+
+obj
+dir
+
+HttpServer.cs
+file
+
+
+
+
+2008-06-17T19:06:33.275355Z
+e69c8f9a011dac266594d253e6911f71
+2008-06-10T09:43:54.462530Z
+16
+fruni
+
+AoC Update Server.csproj
+file
+
+
+
+
+2008-06-17T19:06:33.276355Z
+d23e4f0ac0b99d0fb2f0a86320a9259d
+2008-06-10T09:43:54.462530Z
+16
+fruni
+
+Program.cs
+file
+
+
+
+
+2008-06-17T19:06:33.277355Z
+65bb879c9b048e82bd63188f60d1492e
+2008-06-10T09:43:54.462530Z
+16
+fruni
+
+Properties
+dir
+
+HttpRequest.cs
+file
+
+
+
+
+2008-06-17T19:06:33.279355Z
+05fe880b0871b7c342768ce271162347
+2008-06-10T09:43:54.462530Z
+16
+fruni
+

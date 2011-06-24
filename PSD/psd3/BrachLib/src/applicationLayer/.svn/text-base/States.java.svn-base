@@ -1,0 +1,9 @@
+package applicationLayer;
+public enum States {
+	REQUESTRETURN,
+	LENT,
+	WITHKEEPER,
+	INTRANSITTOCENTRAL,
+	INTRANSITTOBRANCH,
+	INCENTRAL
+}

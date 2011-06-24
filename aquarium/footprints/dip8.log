@@ -1,0 +1,23 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    CREATE SYMBOL                                                    )
+(                                                                     )
+(    Drawing          : dip8.dra                                      )
+(    Software Version : 16.3p003                                      )
+(    Date/Time        : Fri Apr 29 15:29:47 2011                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Create Symbol of type: PACKAGE
+    Directory = I:/aquarium/footprints
+    Name      = dip8.psm
+    User      = Adraen
+    Machine   = URANUS
+
+
+Create symbol started.
+ 
+
+Create symbol completed.
+

@@ -1,0 +1,25 @@
+{ Using PSTWRITER 16.3.0 p002Mar-15-2011 at 16:04:51 }
+
+#1 Warning [ALG0016] Part Name "SN74LVC16T245_SN74_DGG_SN74LVC16T245" is renamed to "SN74LVC16T245_SN74_DGG_SN74LVC1".
+#2 Warning [ALG0051] Pin "GND" is renamed to "GND#4" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+#3 Warning [ALG0051] Pin "Vccb" is renamed to "VCCB#7" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+#4 Warning [ALG0051] Pin "GND" is renamed to "GND#10" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+#5 Warning [ALG0051] Pin "GND" is renamed to "GND#15" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+#6 Warning [ALG0051] Pin "Vccb" is renamed to "VCCB#18" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+#7 Warning [ALG0051] Pin "GND" is renamed to "GND#21" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+#8 Warning [ALG0051] Pin "GND" is renamed to "GND#45" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+#9 Warning [ALG0051] Pin "Vcca" is renamed to "VCCA#42" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+#10 Warning [ALG0051] Pin "GND" is renamed to "GND#39" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+#11 Warning [ALG0051] Pin "GND" is renamed to "GND#34" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+#12 Warning [ALG0051] Pin "Vcca" is renamed to "VCCA#31" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+#13 Warning [ALG0051] Pin "GND" is renamed to "GND#28" as visible power pin of same name already exists in Package SN74LVC16T245 , U1: SCHEMATIC1, PAGE1 (4.10, 1.70).
+Scanning netlist files ...
+
+Loading... g:\tdp4\trunk\circuit\allegro/pstchip.dat
+
+Loading... g:\tdp4\trunk\circuit\allegro/pstchip.dat
+
+Loading... g:\tdp4\trunk\circuit\allegro/pstxprt.dat
+
+Loading... g:\tdp4\trunk\circuit\allegro/pstxnet.dat
+packaging the design view...

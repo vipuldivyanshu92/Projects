@@ -1,0 +1,5 @@
+WARNING DAGGEN_0523: "The source is compiled without the -dbg switch. Line breakpoints and code coverage will not be available." 
+MESSAGE "File: k:\VHDL\GameGear\devcart\src\mapper.vhd" 
+MESSAGE "Compile Entity "MAPPER_entity"" 
+MESSAGE "Compile Architecture "MAPPER_behaviour" of Entity "MAPPER_entity"" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]" 

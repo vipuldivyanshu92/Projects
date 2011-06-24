@@ -1,0 +1,5 @@
+H:\Projects\C#\RegExpTP3\RegExpTP3\obj\Debug\ResolveAssemblyReference.cache
+H:\Projects\C#\RegExpTP3\RegExpTP3\bin\Debug\RegExpTP3.exe
+H:\Projects\C#\RegExpTP3\RegExpTP3\bin\Debug\RegExpTP3.pdb
+H:\Projects\C#\RegExpTP3\RegExpTP3\obj\Debug\RegExpTP3.exe
+H:\Projects\C#\RegExpTP3\RegExpTP3\obj\Debug\RegExpTP3.pdb

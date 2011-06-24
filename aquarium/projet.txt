@@ -1,0 +1,35 @@
+LCD Display: 1847952
+LDO Voltage Regulator: 1831945
+Buzzer: 1756602
+
+Led on
+
+push buttons
+
+
+Vo = (R2 / R1 + R2)Vi
+
+
+
+
+R3 120
+R6 330
+R2 470
+R7 1k
+R8 4.3k
+R4 4.7k
+R1 10k
+R9 10k
+R5 Potentiometer 20k
+
+
+C1 10u tantalum (16v)
+C2 100n
+C3 100n
+C4 4.7u
+C5 10u
+
+D1
+
+
+Buzzer / Voyant

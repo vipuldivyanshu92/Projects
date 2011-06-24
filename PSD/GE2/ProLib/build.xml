@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="PSD3_LibClient">
+    <property environment="env"/>
+
+	<path id="PSD3_LibClient.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/junit4.jar"/>
+        <pathelement location="lib/log4j.jar"/>
+        <pathelement location="lib/marc4j.jar"/>
+        <pathelement location="lib/mysql.jar"/>
+        <pathelement location="lib/l4jconf.jar"/>
+        <pathelement location="lib/sqlbeans.jar"/>
+    </path>
+	
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src" excludes="**/*.launch, **/*.java"/>
+        </copy>
+    </target>
+    
+	<target name="clean">
+        <delete dir="bin"/>
+    </target>
+	
+    <target depends="clean" name="cleanall"/>
+    
+    <target depends="init" name="build">
+        <javac  destdir="bin">
+            <src path="src"/>
+            <classpath refid="PSD3_LibClient.classpath"/>
+        </javac>
+    </target>
+    
+    <target depends="build" name="build-jar">
+        <jar destfile="psd3.jar" manifest="config/distrib/MANIFEST.MF">
+      		<FileSet dir="bin"/>
+      	</jar>
+    </target>
+	
+</project>

@@ -1,0 +1,13 @@
+{ Using PSTWRITER 16.3.0 p002Apr-29-2011 at 18:19:14 }
+
+#1 Warning [ALG0047] "No_connect" property on Pin "J3.6" ignored for J3: SCHEMATIC1, PAGE1 (3.80, 5.10). Connecting pin to net "GND".
+Scanning netlist files ...
+
+Loading... i:\aquarium\allegro/pstchip.dat
+
+Loading... i:\aquarium\allegro/pstchip.dat
+
+Loading... i:\aquarium\allegro/pstxprt.dat
+
+Loading... i:\aquarium\allegro/pstxnet.dat
+packaging the design view...

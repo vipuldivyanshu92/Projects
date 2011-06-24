@@ -1,0 +1,74 @@
+\t (00:00:27) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:27) 
+
+\t (00:00:31) Opening existing drawing...
+\d (00:00:31) Database opened: G:/tdp4/trunk/circuit/breakout/allegro/gumstix_breakout_bottommask.brd
+\i (00:00:31) trapsize 2418
+\i (00:00:32) trapsize 2340
+\i (00:00:32) trapsize 2307
+\i (00:00:32) trapsize 1924
+\i (00:00:32) trapsize 2045
+\i (00:00:35) generaledit 
+\i (00:00:38) open 
+\i (00:00:53) fillin "G:\tdp4\trunk\circuit\pcb\1210.dra"
+\i (00:00:53) cd "G:\tdp4\trunk\circuit\pcb"
+\t (00:00:54) Opening existing drawing...
+\i (00:00:54) trapsize 86
+\i (00:00:54) trapsize 86
+\d (00:00:54) Database opened: G:/tdp4/trunk/circuit/pcb/1210.dra
+\i (00:00:54) generaledit 
+\i (00:00:57) plot 
+\i (00:01:13) plotwint initialize "Rankine329-2"
+\i (00:01:13) plotwint orientation 1
+\i (00:01:13) plotwint papername "Letter"
+\i (00:01:13) plotwint copies 1
+\i (00:01:13) plotwint defaultsource 15
+\i (00:01:13) plotwint printquality 600
+\i (00:01:13) plotwint color 2
+\i (00:01:13) plotwint duplex 1
+\i (00:01:13) plotwint execute
+\e (00:02:11) Command not found: xhilite
+\i (00:02:11) xname_flush 
+\i (00:02:11) done 
+\i (00:02:12) generaledit 
+\e (00:02:12) Command not found: xdehilite
+\i (00:02:12) xname_flush 
+\i (00:02:12) done 
+\i (00:02:12) generaledit 
+\e (00:02:13) Command not found: xhilite
+\i (00:02:13) xname_flush 
+\i (00:02:13) done 
+\i (00:02:13) generaledit 
+\e (00:02:16) Command not found: xdehilite
+\i (00:02:16) xname_flush 
+\i (00:02:16) done 
+\i (00:02:16) generaledit 
+\e (00:02:29) Command not found: xhilite
+\i (00:02:29) xname_flush 
+\i (00:02:29) done 
+\i (00:02:29) generaledit 
+\e (00:02:32) Command not found: xdehilite
+\i (00:02:32) xname_flush 
+\i (00:02:32) done 
+\i (00:02:32) generaledit 
+\e (00:02:33) Command not found: xhilite
+\i (00:02:33) xname_flush 
+\i (00:02:33) done 
+\i (00:02:33) generaledit 
+\e (00:02:35) Command not found: xhilite
+\i (00:02:35) xname_flush 
+\i (00:02:35) done 
+\i (00:02:35) generaledit 
+\e (00:02:35) Command not found: xdehilite
+\i (00:02:35) xname_flush 
+\i (00:02:35) done 
+\i (00:02:35) generaledit 
+\e (00:02:36) Command not found: xhilite
+\i (00:02:36) xname_flush 
+\i (00:02:36) done 
+\i (00:02:36) generaledit 
+\e (00:02:38) Command not found: xdehilite
+\i (00:02:38) xname_flush 
+\i (00:02:38) done 
+\i (00:02:38) generaledit 
+\i (00:06:34) exit 

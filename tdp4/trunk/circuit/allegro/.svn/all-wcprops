@@ -1,0 +1,341 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/tdp4/!svn/ver/53/trunk/circuit/allegro
+END
+pstchip.dat,2
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstchip.dat,2
+END
+sn74_breakout2.brd
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/sn74_breakout2.brd
+END
+pstchip.dat,3
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstchip.dat,3
+END
+bestsave.w
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/bestsave.w
+END
+eco.txt,1
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/eco.txt,1
+END
+specctra.log
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/specctra.log
+END
+refresh_padstack.log,1
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/refresh_padstack.log,1
+END
+refresh_padstack.log,2
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/refresh_padstack.log,2
+END
+refresh_padstack.log,3
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/refresh_padstack.log,3
+END
+batch_drc.log
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/batch_drc.log
+END
+sn74_breakout_top_mask.brd
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/tdp4/!svn/ver/53/trunk/circuit/allegro/sn74_breakout_top_mask.brd
+END
+pstxprt.dat
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstxprt.dat
+END
+signoise.log,1
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/signoise.log,1
+END
+sn74_breakout.brd
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/sn74_breakout.brd
+END
+quickplace.log,1
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/quickplace.log,1
+END
+quickplace.log,2
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/quickplace.log,2
+END
+specctra.did,1
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/specctra.did,1
+END
+quickplace.log,3
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/quickplace.log,3
+END
+place.log,1
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/place.log,1
+END
+netlist.log
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/netlist.log
+END
+netrev.lst
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/netrev.lst
+END
+allegro.jrl,1
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/53/trunk/circuit/allegro/allegro.jrl,1
+END
+param_read.log
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/param_read.log
+END
+pstxnet.dat
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstxnet.dat
+END
+interconn.iml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/interconn.iml
+END
+gumstix_expansion_v1_1.brd
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/gumstix_expansion_v1_1.brd
+END
+specctra.log,1
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/specctra.log,1
+END
+gumstix_expansion_v1_2.brd
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/gumstix_expansion_v1_2.brd
+END
+pstchip.dat
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstchip.dat
+END
+specctra.log,2
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/specctra.log,2
+END
+gumstix_expansion_v1_3.brd
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/gumstix_expansion_v1_3.brd
+END
+specctra.log,3
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/specctra.log,3
+END
+gumstix_expansion_v1_4.brd
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/gumstix_expansion_v1_4.brd
+END
+eco.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/eco.txt
+END
+pxlBA.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pxlBA.txt
+END
+batch_drc.log,1
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/batch_drc.log,1
+END
+batch_drc.log,2
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/batch_drc.log,2
+END
+pstxprt.dat,1
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstxprt.dat,1
+END
+refresh_padstack.log
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/refresh_padstack.log
+END
+pstxprt.dat,2
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstxprt.dat,2
+END
+pstxprt.dat,3
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstxprt.dat,3
+END
+sn74_breakout_bottom_mask.brd
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/tdp4/!svn/ver/53/trunk/circuit/allegro/sn74_breakout_bottom_mask.brd
+END
+monitor.sts
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/monitor.sts
+END
+gumstix_expansion_v1.brd
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/gumstix_expansion_v1.brd
+END
+signoise.log
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/signoise.log
+END
+quickplace.log
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/quickplace.log
+END
+specctra.did
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/specctra.did
+END
+place.log
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/place.log
+END
+master.tag
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/master.tag
+END
+param_read.log,1
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/param_read.log,1
+END
+pstxnet.dat,1
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstxnet.dat,1
+END
+param_read.log,2
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/param_read.log,2
+END
+pstxnet.dat,2
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstxnet.dat,2
+END
+pstxnet.dat,3
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstxnet.dat,3
+END
+allegro.jrl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/tdp4/!svn/ver/53/trunk/circuit/allegro/allegro.jrl
+END
+pstchip.dat,1
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/tdp4/!svn/ver/24/trunk/circuit/allegro/pstchip.dat,1
+END

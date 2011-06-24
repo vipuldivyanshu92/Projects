@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+
+<packets>
+
+	<interface name="PlayerInterface" />
+	
+	<packet opcode="0" name="LoginConnectReady" description="">
+		<field name="GameAddr1" type="UBInt8"></field>
+		<field name="GameAddr2" type="UBInt8"></field>
+		<field name="GameAddr3" type="UBInt8"></field>
+		<field name="GameAddr4" type="UBInt8"></field>
+		<field name="GameAddrPort" type="UBInt16"></field>
+		<field name="ClientAgent1" type="UBInt8"></field>
+		<field name="ClientAgent2" type="UBInt8"></field>
+		<field name="ClientAgent3" type="UBInt8"></field>
+		<field name="ClientAgent4" type="UBInt8"></field>
+		<field name="ClientAgentPort" type="UBInt16"></field>
+		<field name="Cookie" type="UBInt32"></field>
+		<field name="ClientCharacterID" type="UBInt32"></field>
+	</packet>
+
+	<packet opcode="1" name="UpdateDimensionStatus" description="">
+		<field name="Status" type="UBInt32"></field>
+	</packet>
+	
+	<packet opcode="2" name="LoginConnectReady" description="">
+		<field name="Status" type="UBInt32"></field>
+	</packet>
+
+0x02 : PlayerInterface::LoginConnectReady
+int(char)	i_nGameAddr
+int(char)	i_nClientAgentAddr
+int			nCookie
+int*		cClientCharacterID
+int*		cPF (PlayField?)
+
+0x03 : PlayerInterface::CSServerConnectReady
+int(char)	i_nAddress
+int			nCookie
+int*		cClientCharacterID
+
+0x04 : PlayerInterface::UpdateClientPlayerData
+char*	cClientPlayerData
+
+0x05 : PlayerInterface::SetDimensionList
+char*	cDimensionList
+
+0x06 : PlayerInterface::SetStats
+char*	cStatsStr
+
+0x07 : PlayerInterface::SuggestNicknameResult
+char*	cSuggestionName
+
+0x08 : PlayerInterface::PlayerSetupComplete
+int		nAuthStatus
+int*	cClientID
+
+0x09 : PlayerInterface::LoginQueuePosition
+int		i_nDimensionID
+int		i_nCharID
+int		i_nQueuePosition
+
+0x0A : PlayerInterface::LoginProblem
+int 	eStatus
+
+0x0B : PlayerInterface::TeleportProblem
+char*	cReason

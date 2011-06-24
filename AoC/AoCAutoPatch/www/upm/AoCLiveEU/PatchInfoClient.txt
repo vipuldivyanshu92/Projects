@@ -1,0 +1,5 @@
+RootHash=a6528ebd40905f5033e650cc00fffdae
+PatchVersion=xf44f92b132e76ddb913c27fafc1a9216
+PatcherSetupHash=ced6afda9b719c8e359003f8d984f763
+RDBHash=d30ce2a044e889bee06eebca37743a24
+RDBHash-5=582240968f07bc7e1d65093660899a53

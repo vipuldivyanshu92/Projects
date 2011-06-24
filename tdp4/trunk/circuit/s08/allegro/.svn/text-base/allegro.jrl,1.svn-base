@@ -1,0 +1,609 @@
+\t (00:00:06) allegro 16.3 p006 (v16-3-85F) i86
+\t (00:00:06) 
+
+\t (00:00:10) Opening existing drawing...
+\d (00:00:10) Database opened: G:/tdp4/trunk/circuit/s08/allegro/s08-2.brd
+\i (00:00:11) trapsize 2582
+\i (00:00:11) trapsize 2457
+\i (00:00:11) trapsize 2406
+\i (00:00:11) trapsize 1852
+\i (00:00:11) trapsize 2063
+\i (00:00:12) generaledit 
+\i (00:00:15) setwindow form.find
+\i (00:00:15) FORM find all_on  
+\i (00:00:15) setwindow pcb
+\i (00:00:15) pick grid 911.00 779.84
+\t (00:00:15) last pick:  911.00  780.00
+\i (00:00:17) pick grid 638.67 676.69
+\t (00:00:17) last pick:  639.00  677.00
+\i (00:00:17) zoom in 1 
+\i (00:00:17) setwindow pcb
+\i (00:00:17) zoom in 638.67 676.69
+\i (00:00:17) trapsize 1032
+\i (00:00:18) zoom in 1 
+\i (00:00:18) setwindow pcb
+\i (00:00:18) zoom in 638.68 676.69
+\i (00:00:18) trapsize 516
+\i (00:00:18) zoom out 1 
+\i (00:00:18) setwindow pcb
+\i (00:00:18) zoom out 638.68 676.69
+\i (00:00:18) trapsize 1032
+\i (00:00:20) setwindow form.find
+\i (00:00:20) FORM find all_off  
+\i (00:00:20) FORM find nets YES 
+\i (00:00:21) setwindow pcb
+\i (00:00:21) pick grid 913.07 575.60
+\t (00:00:21) last pick:  913.00  576.00
+\i (00:00:21) roam start
+\i (00:00:21) roam x -128
+\i (00:00:22) roam x -48
+\i (00:00:22) roam x -16
+\i (00:00:22) roam x -32
+\i (00:00:22) roam x -48
+\i (00:00:22) roam x -48
+\i (00:00:22) roam x -48
+\i (00:00:22) roam x -32
+\i (00:00:22) roam y -16
+\i (00:00:22) roam end
+\i (00:00:23) pick grid -802.40 556.95
+\t (00:00:23) last pick:  -802.00  557.00
+\i (00:00:25) pick grid -804.46 552.82
+\t (00:00:25) last pick:  -804.00  553.00
+\i (00:00:26) pick grid -736.38 550.76
+\t (00:00:26) last pick:  -736.00  551.00
+\i (00:00:27) delete 
+\t (00:00:27) Selected item not valid for current operation, ignored: Net "Reset"
+\t (00:00:27) No valid items selected for the current operation, exiting.
+\i (00:00:27) generaledit 
+\i (00:00:29) zoom out 1 
+\i (00:00:29) setwindow pcb
+\i (00:00:29) zoom out -241.24 666.29
+\i (00:00:29) trapsize 2063
+\i (00:00:31) pick grid -1128.37 567.26
+\t (00:00:31) last pick:  -1128.00  567.00
+\i (00:00:32) zoom in 1 
+\i (00:00:32) setwindow pcb
+\i (00:00:32) zoom in -765.27 587.89
+\i (00:00:32) trapsize 1032
+\i (00:00:32) zoom in 1 
+\i (00:00:32) setwindow pcb
+\i (00:00:32) zoom in -752.88 589.96
+\i (00:00:32) trapsize 516
+\i (00:00:33) pick grid -732.25 589.96
+\t (00:00:33) last pick:  -732.00  590.00
+\i (00:00:34) zoom out 1 
+\i (00:00:34) setwindow pcb
+\i (00:00:34) zoom out -732.25 589.96
+\i (00:00:34) trapsize 1032
+\i (00:00:37) pick grid -810.65 583.78
+\t (00:00:37) last pick:  -811.00  584.00
+\i (00:00:38) pick grid -804.46 583.78
+\t (00:00:38) last pick:  -804.00  584.00
+\i (00:00:38) pick grid dbl -804.46 583.78
+\t (00:00:38) last pick:  -804.00  584.00
+\i (00:00:39) prepopup -804.46 583.78
+\i (00:00:46) pick grid -1281.03 509.51
+\t (00:00:46) last pick:  -1281.00  510.00
+\i (00:00:47) pick grid -1016.96 746.76
+\t (00:00:47) last pick:  -1017.00  747.00
+\i (00:00:48) pick grid -740.51 639.48
+\t (00:00:48) last pick:  -741.00  639.00
+\i (00:00:49) pick grid -651.79 598.22
+\t (00:00:49) last pick:  -652.00  598.00
+\i (00:00:50) zoom out 1 
+\i (00:00:50) setwindow pcb
+\i (00:00:50) zoom out -651.79 598.22
+\i (00:00:50) trapsize 2063
+\i (00:00:50) zoom in 1 
+\i (00:00:50) setwindow pcb
+\i (00:00:50) zoom in -651.80 598.21
+\i (00:00:50) trapsize 1032
+\i (00:00:52) pick grid -806.52 618.85
+\t (00:00:52) last pick:  -807.00  619.00
+\i (00:00:52) zoom out 1 
+\i (00:00:52) setwindow pcb
+\i (00:00:52) zoom out -806.52 618.85
+\i (00:00:52) trapsize 2063
+\i (00:00:52) zoom in 1 
+\i (00:00:53) setwindow pcb
+\i (00:00:53) zoom in -806.53 618.85
+\i (00:00:53) trapsize 1032
+\i (00:00:53) roam start
+\i (00:00:53) roam y -80
+\i (00:00:54) roam y -16
+\i (00:00:54) roam y -32
+\i (00:00:54) roam y 16
+\i (00:00:55) roam y 16
+\i (00:00:55) roam y 16
+\i (00:00:55) roam end
+\i (00:01:15) pick grid -1165.50 777.69
+\t (00:01:15) last pick:  -1165.00  778.00
+\i (00:01:16) trapsize 745
+\i (00:01:23) pick grid -1152.39 660.99
+\t (00:01:23) last pick:  -1152.00  661.00
+\i (00:01:28) zoom world 
+\i (00:01:29) trapsize 5689
+\i (00:01:30) zoom in 1 
+\i (00:01:30) setwindow pcb
+\i (00:01:30) zoom in -2678.04 2235.95
+\i (00:01:30) trapsize 2845
+\i (00:01:30) zoom in 1 
+\i (00:01:30) setwindow pcb
+\i (00:01:30) zoom in -2598.39 2184.75
+\i (00:01:30) trapsize 1422
+\i (00:01:31) roam start
+\i (00:01:31) roam x 48
+\i (00:01:31) roam y 96
+\i (00:01:31) roam x 48
+\i (00:01:31) roam y 48
+\i (00:01:31) roam y 16
+\i (00:01:31) roam x 32
+\i (00:01:31) roam y 32
+\i (00:01:31) roam x 32
+\i (00:01:31) roam y 32
+\i (00:01:31) roam x 32
+\i (00:01:31) roam y 32
+\i (00:01:31) roam x 32
+\i (00:01:31) roam y 16
+\i (00:01:31) roam x 80
+\i (00:01:31) roam y 48
+\i (00:01:31) roam x 128
+\i (00:01:31) roam y 80
+\i (00:01:31) roam x 80
+\i (00:01:31) roam y 48
+\i (00:01:31) roam x 64
+\i (00:01:31) roam y 64
+\i (00:01:31) roam x 32
+\i (00:01:31) roam y 32
+\i (00:01:31) roam x -32
+\i (00:01:31) roam y -16
+\i (00:01:31) roam x -96
+\i (00:01:31) roam y -32
+\i (00:01:31) roam x -64
+\i (00:01:31) roam y -16
+\i (00:01:32) roam end
+\i (00:01:32) zoom in 1 
+\i (00:01:32) setwindow pcb
+\i (00:01:32) zoom in -851.74 540.49
+\i (00:01:32) trapsize 711
+\i (00:01:32) zoom in 1 
+\i (00:01:32) setwindow pcb
+\i (00:01:32) zoom in -846.05 594.54
+\i (00:01:32) trapsize 356
+\i (00:01:33) roam start
+\i (00:01:33) roam y -80
+\i (00:01:33) roam y -16
+\i (00:01:33) roam y -16
+\i (00:01:33) roam y -32
+\i (00:01:33) roam x -16
+\i (00:01:33) roam y -32
+\i (00:01:33) roam end
+\i (00:01:33) zoom out 1 
+\i (00:01:33) setwindow pcb
+\i (00:01:33) zoom out -860.96 731.12
+\i (00:01:33) trapsize 711
+\i (00:01:34) pick grid -802.64 714.06
+\t (00:01:34) last pick:  -803.00  714.00
+\i (00:01:41) redraw 
+\i (00:01:45) zoom out 1 
+\i (00:01:45) setwindow pcb
+\i (00:01:45) zoom out -845.31 623.03
+\i (00:01:45) trapsize 1422
+\i (00:01:46) pick grid 833.08 617.34
+\t (00:01:46) last pick:  833.00  617.00
+\i (00:01:47) zoom out 1 
+\i (00:01:47) setwindow pcb
+\i (00:01:47) zoom out 810.33 531.99
+\i (00:01:47) trapsize 2845
+\i (00:01:48) roam start
+\i (00:01:48) roam x 32
+\i (00:01:48) roam x 32
+\i (00:01:48) roam x 32
+\i (00:01:48) roam x 16
+\i (00:01:49) roam end
+\i (00:01:49) zoom in 1 
+\i (00:01:49) setwindow pcb
+\i (00:01:49) zoom in 1242.04 -725.38
+\i (00:01:49) trapsize 1422
+\i (00:01:50) roam start
+\i (00:01:50) roam x -16
+\i (00:01:50) roam y -64
+\i (00:01:50) roam x -16
+\i (00:01:50) roam y -16
+\i (00:01:50) roam y -16
+\i (00:01:50) roam x -16
+\i (00:01:50) roam y -16
+\i (00:01:50) roam end
+\i (00:02:13) zoom in 1 
+\i (00:02:13) setwindow pcb
+\i (00:02:13) zoom in 354.48 719.77
+\i (00:02:13) trapsize 711
+\i (00:02:14) zoom out 1 
+\i (00:02:14) setwindow pcb
+\i (00:02:14) zoom out 249.23 718.35
+\i (00:02:14) trapsize 1422
+\i (00:02:15) roam start
+\i (00:02:15) roam x -32
+\i (00:02:16) roam x -48
+\i (00:02:16) roam end
+\i (00:02:41) pick grid -476.18 564.73
+\t (00:02:41) last pick:  -476.00  565.00
+\i (00:02:42) zoom in 1 
+\i (00:02:42) setwindow pcb
+\i (00:02:42) zoom in -817.55 553.35
+\i (00:02:42) trapsize 711
+\i (00:02:44) drag_start grid -803.33 559.04
+\i (00:02:44) drag_stop -840.31 560.46
+\i (00:02:46) redraw 
+\i (00:02:47) pick grid -846.00 638.69
+\t (00:02:47) last pick:  -846.00  639.00
+\i (00:02:47) zoom out 1 
+\i (00:02:47) setwindow pcb
+\i (00:02:47) zoom out -846.00 627.31
+\i (00:02:47) trapsize 1422
+\i (00:02:48) pick grid -1056.50 544.82
+\t (00:02:48) last pick:  -1056.00  545.00
+\i (00:02:53) setwindow form.find
+\i (00:02:53) FORM find all_on  
+\i (00:02:56) setwindow pcb
+\i (00:02:56) pick grid -1633.99 194.92
+\t (00:02:56) last pick:  -1634.00  195.00
+\i (00:02:57) prepopup -1645.37 268.88
+\i (00:02:59) pop dyn_option_select 'Application Mode@:@General Edit' 
+\i (00:02:59) generaledit 
+\i (00:02:59) pick grid -1013.83 641.54
+\t (00:02:59) last pick:  -1014.00  642.00
+\i (00:03:00) zoom in 1 
+\i (00:03:00) setwindow pcb
+\i (00:03:00) zoom in -777.72 840.67
+\i (00:03:00) trapsize 711
+\i (00:03:01) pick grid -800.48 756.75
+\t (00:03:01) last pick:  -800.00  757.00
+\i (00:03:02) zoom in 1 
+\i (00:03:02) setwindow pcb
+\i (00:03:02) zoom in -800.48 756.75
+\i (00:03:02) trapsize 356
+\i (00:03:02) zoom out 1 
+\i (00:03:02) setwindow pcb
+\i (00:03:02) zoom out -800.48 756.75
+\i (00:03:02) trapsize 711
+\i (00:03:03) pick grid -890.10 746.80
+\t (00:03:03) last pick:  -890.00  747.00
+\i (00:03:03) prepopup -890.10 746.80
+\i (00:03:04) pop dyn_option_select 'Application Mode@:@Etch Edit' 
+\i (00:03:04) etchedit 
+\i (00:03:05) pick grid -1198.75 816.50
+\t (00:03:05) last pick:  -1199.00  817.00
+\i (00:03:06) pick grid -806.18 792.32
+\t (00:03:06) last pick:  -806.00  792.00
+\i (00:03:06) slide 
+\t (00:03:06) Waiting for the destination pick.
+\i (00:03:07) undo 
+\i (00:03:07) trapsize 711
+\i (00:03:08) etchedit 
+\i (00:03:08) prepopup -946.99 776.67
+\i (00:03:09) pop dyn_option_select 'Application Mode@:@General Edit' 
+\i (00:03:09) generaledit 
+\i (00:03:09) prepopup -1282.67 782.36
+\i (00:03:14) pop dyn_option_select 'Customize@:@Enable Single Click Execution' 
+\i (00:03:15) pick grid -796.22 758.18
+\t (00:03:15) last pick:  -796.00  758.00
+\i (00:03:16) prepopup -946.99 755.34
+\i (00:03:20) pop dyn_option_select 'Customize@:@Enable Single Click Execution' 
+\i (00:03:21) prepopup -1306.85 810.81
+\i (00:03:25) pick grid -988.24 770.99
+\t (00:03:25) last pick:  -988.00  771.00
+\i (00:03:25) zoom out 1 
+\i (00:03:25) setwindow pcb
+\i (00:03:25) zoom out -1006.73 739.69
+\i (00:03:25) trapsize 1422
+\i (00:09:07) open 
+\i (00:09:12) fillin "G:\tdp4\trunk\circuit\breakout\allegro\gumstix_breakout.brd"
+\i (00:09:12) cd "G:\tdp4\trunk\circuit\breakout\allegro"
+\t (00:09:12) Opening existing drawing...
+\i (00:09:12) trapsize 2045
+\d (00:09:13) Database opened: G:/tdp4/trunk/circuit/breakout/allegro/gumstix_breakout.brd
+\i (00:09:13) generaledit 
+\i (00:09:15) zoom out 1 
+\i (00:09:15) setwindow pcb
+\i (00:09:15) zoom out 1296.73 1799.12
+\i (00:09:15) trapsize 4091
+\i (00:09:16) roam start
+\i (00:09:16) roam x -32
+\i (00:09:16) roam y -32
+\i (00:09:16) roam x -16
+\i (00:09:17) roam end
+\i (00:09:17) zoom in 1 
+\i (00:09:17) setwindow pcb
+\i (00:09:17) zoom in 480.50 1485.06
+\i (00:09:17) trapsize 2045
+\i (00:09:18) roam start
+\i (00:09:18) roam x -32
+\i (00:09:18) roam y 64
+\i (00:09:18) roam x -16
+\i (00:09:18) roam x -16
+\i (00:09:18) roam y 32
+\i (00:09:18) roam x -16
+\i (00:09:18) roam y 32
+\i (00:09:19) roam end
+\i (00:09:29) ncdrill legend 
+\i (00:09:47) setwindow form.nc_drilllegend
+\i (00:09:47) FORM nc_drilllegend done  
+   (00:09:48) Loading mfg.cxt 
+   (00:09:48) Loading axlcore.cxt 
+\i (00:09:51) setwindow pcb
+\i (00:09:51) zoom out 1 
+\i (00:09:51) setwindow pcb
+\i (00:09:51) zoom out -157.64 -200.28
+\i (00:09:51) trapsize 4091
+\i (00:09:52) zoom in 1 
+\i (00:09:52) setwindow pcb
+\i (00:09:52) zoom in -2.20 -200.28
+\i (00:09:52) trapsize 2045
+\i (00:10:01) ncdrill legend 
+\i (00:10:12) pick grid 1.89 8.34
+\t (00:10:12) last pick:  2.00  8.00
+\t (00:10:12) NCLegend generation successfull
+
+   (00:10:12) *Error* for: Final value must be integer - nil
+\i (00:10:15) setwindow form.nc_drilllegend
+\i (00:10:15) FORM nc_drilllegend cancel  
+\i (00:10:16) setwindow pcb
+\i (00:10:16) generaledit 
+\i (00:11:35) ncdrill customization 
+\i (00:11:35) generaledit 
+\i (00:11:44) setwindow form.nc_drillcustomization
+\i (00:11:44) FORM nc_drillcustomization validate  
+\i (00:11:46) FORM nc_drillcustomization done  
+\i (00:11:54) setwindow pcb
+\i (00:11:54) ncdrill legend 
+\i (00:12:03) setwindow form.nc_drilllegend
+\i (00:12:03) FORM nc_drilllegend done  
+\i (00:12:08) setwindow pcb
+\i (00:12:08) zoom out 1 
+\i (00:12:08) setwindow pcb
+\i (00:12:08) zoom out -55.38 -707.52
+\i (00:12:08) trapsize 4091
+\i (00:12:10) pick grid -1740.72 -1648.36
+\t (00:12:10) last pick:  -1741.00  -1648.00
+\t (00:12:10) NCLegend generation successfull
+
+\i (00:12:11) done 
+\i (00:12:11) generaledit 
+\i (00:12:12) zoom out 1 
+\i (00:12:12) setwindow pcb
+\i (00:12:12) zoom out 754.57 -1263.84
+\i (00:12:12) trapsize 5689
+\i (00:12:13) roam start
+\i (00:12:14) roam end
+\i (00:12:15) zoom in 1 
+\i (00:12:15) setwindow pcb
+\i (00:12:15) zoom in 1657.30 -529.12
+\i (00:12:15) trapsize 2845
+\i (00:12:15) zoom in 1 
+\i (00:12:15) setwindow pcb
+\i (00:12:15) zoom in 1685.74 -443.78
+\i (00:12:15) trapsize 1422
+\i (00:12:16) zoom in 1 
+\i (00:12:16) setwindow pcb
+\i (00:12:16) zoom in 1677.21 -440.93
+\i (00:12:16) trapsize 711
+\i (00:12:16) zoom out 1 
+\i (00:12:16) setwindow pcb
+\i (00:12:16) zoom out 1645.92 -452.31
+\i (00:12:16) trapsize 1422
+\i (00:12:16) zoom out 1 
+\i (00:12:16) setwindow pcb
+\i (00:12:16) zoom out 1705.67 -480.76
+\i (00:12:16) trapsize 2845
+\i (00:12:17) zoom in 1 
+\i (00:12:17) setwindow pcb
+\i (00:12:17) zoom in 1802.39 -662.82
+\i (00:12:17) trapsize 1422
+\i (00:12:17) zoom in 1 
+\i (00:12:17) setwindow pcb
+\i (00:12:17) zoom in 1591.88 -554.72
+\i (00:12:17) trapsize 711
+\i (00:12:18) zoom out 1 
+\i (00:12:18) setwindow pcb
+\i (00:12:18) zoom out 1581.92 -530.54
+\i (00:12:18) trapsize 1422
+\i (00:12:18) roam start
+\i (00:12:18) roam x -16
+\i (00:12:18) roam y 80
+\i (00:12:19) roam x -32
+\i (00:12:19) roam x -16
+\i (00:12:19) roam y 48
+\i (00:12:19) roam x -16
+\i (00:12:19) roam y 48
+\i (00:12:19) roam x -16
+\i (00:12:19) roam y 32
+\i (00:12:19) roam y 32
+\i (00:12:19) roam y 32
+\i (00:12:19) roam y 16
+\i (00:12:19) roam y 16
+\i (00:12:20) roam x -16
+\i (00:12:20) roam y 16
+\i (00:12:20) roam x -16
+\i (00:12:20) roam y 16
+\i (00:12:20) roam x -80
+\i (00:12:20) roam y 32
+\i (00:12:20) roam x -64
+\i (00:12:20) roam y 32
+\i (00:12:20) roam x -32
+\i (00:12:20) roam y 16
+\i (00:12:20) roam end
+\i (00:12:20) zoom out 1 
+\i (00:12:20) setwindow pcb
+\i (00:12:20) zoom out 1116.80 -1860.44
+\i (00:12:20) trapsize 2845
+\i (00:12:21) roam start
+\i (00:12:21) roam y 32
+\i (00:12:21) roam x 16
+\i (00:12:21) roam y 16
+\i (00:12:22) roam x 16
+\i (00:12:22) roam y 48
+\i (00:12:22) roam x 16
+\i (00:12:22) roam y 16
+\i (00:12:22) roam x -16
+\i (00:12:23) roam end
+\i (00:12:27) zoom out 1 
+\i (00:12:27) setwindow pcb
+\i (00:12:27) zoom out 3085.34 -1996.99
+\i (00:12:27) trapsize 5689
+\i (00:12:28) roam start
+\i (00:12:29) roam end
+\i (00:12:30) zoom in 1 
+\i (00:12:30) setwindow pcb
+\i (00:12:30) zoom in -2006.69 -1746.65
+\i (00:12:30) trapsize 2845
+\i (00:12:31) drag_start grid -1739.28 -1655.62
+\i (00:12:31) move 
+\t (00:12:31) last pick:  -1739.00  -1656.00
+\t (00:12:31) Element has no origin, using pick.
+\t (00:12:31) Pick new location for the element(s).
+\i (00:12:31) drag_stop grid -1836.00 -1638.55
+\i (00:12:31) generaledit 
+\i (00:12:32) pick grid -1744.97 -1644.24
+\t (00:12:32) last pick:  -1745.00  -1644.00
+\i (00:12:33) drag_start grid -1904.28 -1558.90
+\i (00:12:34) drag_stop -1073.62 -2213.18
+\i (00:12:35) zoom out 1 
+\i (00:12:35) setwindow pcb
+\i (00:12:35) zoom out 1623.16 -756.69
+\i (00:12:35) trapsize 5689
+\i (00:12:36) roam start
+\i (00:12:36) roam end
+\i (00:12:37) pick grid 4012.72 -290.16
+\t (00:12:37) last pick:  4013.00  -290.00
+\i (00:12:39) pick grid 3705.49 187.75
+\t (00:12:39) last pick:  3705.00  188.00
+\i (00:12:40) zoom in 1 
+\i (00:12:40) setwindow pcb
+\i (00:12:40) zoom in 3170.68 -483.60
+\i (00:12:40) trapsize 2845
+\i (00:12:41) zoom out 1 
+\i (00:12:41) setwindow pcb
+\i (00:12:41) zoom out 2769.08 96.72
+\i (00:12:41) trapsize 5689
+\i (00:12:45) pick grid 178.05 -2622.82
+\t (00:12:45) last pick:  178.00  -2623.00
+\i (00:12:53) zoom in 1 
+\i (00:12:53) setwindow pcb
+\i (00:12:53) zoom in -265.73 -1564.59
+\i (00:12:53) trapsize 2845
+\i (00:13:07) zoom out 1 
+\i (00:13:07) setwindow pcb
+\i (00:13:07) zoom out 314.59 -739.62
+\i (00:13:07) trapsize 5689
+\i (00:13:07) zoom in 1 
+\i (00:13:07) setwindow pcb
+\i (00:13:07) zoom in 2123.83 -1314.26
+\i (00:13:07) trapsize 2845
+\i (00:13:08) zoom out 1 
+\i (00:13:08) setwindow pcb
+\i (00:13:08) zoom out 2578.99 -1228.92
+\i (00:13:08) trapsize 5689
+\i (00:13:09) pick grid 3568.94 -449.46
+\t (00:13:09) last pick:  3569.00  -449.00
+\i (00:13:11) drag_start grid 3409.64 950.14
+\i (00:13:11) drag_stop 1839.36 2053.88
+\i (00:13:18) plot 
+\i (00:13:21) plotwint initialize "Rankine329-2"
+\i (00:13:21) plotwint orientation 1
+\i (00:13:21) plotwint papername "Letter"
+\i (00:13:21) plotwint copies 1
+\i (00:13:21) plotwint defaultsource 15
+\i (00:13:21) plotwint printquality 600
+\i (00:13:21) plotwint color 2
+\i (00:13:21) plotwint duplex 1
+\i (00:13:21) plotwint execute
+\i (00:20:35) pick grid -3099.06 -699.80
+\t (00:20:35) last pick:  -3099.00  -700.00
+\i (00:20:40) ncdrill legend 
+\i (00:20:44) setwindow form.nc_drilllegend
+\i (00:20:44) FORM nc_drilllegend done  
+\i (00:20:48) setwindow pcb
+\i (00:20:48) pick grid -2086.34 3851.74
+\t (00:20:48) last pick:  -2086.00  3852.00
+\t (00:20:48) NCLegend generation successfull
+
+\i (00:20:48) done 
+\i (00:20:48) generaledit 
+\i (00:20:54) pick grid -2029.45 3544.51
+\t (00:20:54) last pick:  -2029.00  3545.00
+\i (00:20:54) pick grid -2029.45 3544.51
+\t (00:20:54) last pick:  -2029.00  3545.00
+\i (00:20:54) pick grid dbl -2029.45 3544.51
+\t (00:20:54) last pick:  -2029.00  3545.00
+\i (00:20:56) drag_start grid -1972.56 -1598.73
+\i (00:20:56) drag_stop 234.94 -3225.90
+\i (00:20:56) pick grid 212.18 -3077.98
+\t (00:20:56) last pick:  212.00  -3078.00
+\i (00:20:56) pick grid dbl 212.18 -3077.98
+\t (00:20:56) last pick:  212.00  -3078.00
+\i (00:20:57) prepopup -618.47 -2088.02
+\i (00:20:58) pick grid -811.91 -2372.49
+\t (00:20:58) last pick:  -812.00  -2372.00
+\i (00:20:58) pick grid -823.29 -2292.84
+\t (00:20:58) last pick:  -823.00  -2293.00
+\i (00:20:58) prepopup -823.29 -2224.56
+\i (00:20:59) pick grid -925.70 -2133.53
+\t (00:20:59) last pick:  -926.00  -2134.00
+\i (00:20:59) prepopup -925.70 -2133.53
+\i (00:21:00) pop dyn_option_select @:@Delete 
+\i (00:21:00) delete 
+\i (00:21:00) generaledit 
+\i (00:21:01) pick grid -925.70 -2133.53
+\t (00:21:01) last pick:  -926.00  -2134.00
+\i (00:21:02) drag_start grid -937.08 -2144.91
+\i (00:21:02) slide 
+\t (00:21:02) Selected item not valid for current operation, ignored: Vertical Line Segment "Manufacturing/Nclegend-1-2"
+\t (00:21:02) No valid items selected for the current operation, exiting.
+\i (00:21:02) generaledit 
+\i (00:21:03) drag_stop grid -1938.42 -1837.68
+\i (00:21:04) pick grid -2006.69 -1587.35
+\t (00:21:04) last pick:  -2007.00  -1587.00
+\i (00:21:09) pick grid 4809.24 267.40
+\t (00:21:09) last pick:  4809.00  267.00
+\i (00:21:14) pick grid 3671.35 2179.05
+\t (00:21:14) last pick:  3671.00  2179.00
+\i (00:21:15) drag_start grid 3113.79 -1405.29
+\i (00:21:16) drag_stop 280.46 -2998.33
+\i (00:21:16) pick grid 303.21 -2782.13
+\t (00:21:16) last pick:  303.00  -2782.00
+\i (00:21:16) pick grid dbl 303.21 -2782.13
+\t (00:21:16) last pick:  303.00  -2782.00
+\i (00:21:16) pick grid 303.21 -2782.13
+\t (00:21:16) last pick:  303.00  -2782.00
+\i (00:21:32) pick grid -4737.62 688.42
+\t (00:21:32) last pick:  -4738.00  688.00
+\i (00:21:33) delete 
+\i (00:21:33) drag_start grid -2245.65 -1530.45
+\i (00:21:34) drag_stop 200.80 -2930.05
+\i (00:21:34) pick grid 200.80 -2918.67
+\t (00:21:34) last pick:  201.00  -2919.00
+\i (00:21:34) pick grid 200.80 -2952.81
+\t (00:21:34) last pick:  201.00  -2953.00
+\t (00:21:34) Line "Manufacturing/Nclegend-1-2"
+\i (00:21:35) pick grid 200.80 -2998.33
+\t (00:21:35) last pick:  201.00  -2998.00
+\i (00:21:35) pick grid dbl 200.80 -2998.33
+\t (00:21:35) last pick:  201.00  -2998.00
+\i (00:21:35) delete 
+\i (00:21:36) pick grid 200.80 -2998.33
+\t (00:21:36) last pick:  201.00  -2998.00
+\i (00:21:36) pick grid dbl 200.80 -2998.33
+\t (00:21:36) last pick:  201.00  -2998.00
+\i (00:21:36) delete 
+\i (00:21:37) delete 
+\i (00:21:37) delete 
+\i (00:21:37) delete 
+\i (00:21:37) delete 
+\i (00:21:37) delete 
+\i (00:21:37) delete 
+\i (00:21:38) delete 
+\i (00:21:38) delete 
+\i (00:21:38) exit 
+\f (00:21:39) Do you want to save the changes you made to gumstix_breakout.brd?
+\i (00:21:39) fillin no 

@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="AE1_WPF.NodeUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="50"
+             Width="50" Height="50">
+    <Grid>
+        <Ellipse Name="ellipse" Width="30" Height="30" Fill="Black" Stroke="black" VerticalAlignment="Top" />
+        <TextBlock Name="label" FontSize="12" Foreground="Black" Text="Label" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+    </Grid>
+</UserControl>
