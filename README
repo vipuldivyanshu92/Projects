@@ -1,0 +1,103 @@
+Adraen > Trunk >
+	AI4-AE1: Artificial Intelligence "hoover" robot simulator with wall following algorithm
+	ANC4: RIP Network table propagation
+	AuctionSystem: auction distributed system ... not great
+
+AoC >
+	AoCAutoPatch: Modify the public encryption in AoC (IIRC)
+	AoCEmuDev > tools > AoCProxy: Proxy ... Don't really remember how it works
+	AoCParam: Used to dump the parameters to the software
+	AocProxy: Same as the one above from the names ...
+	AocProxyBack: Proxy with live packet parrsing from XML description
+	Faolan: Again some AoC work, Realm server emulator and again a proxy XD
+	PatchAo: Memory editor to replace the public key in memory, used to bypass checksum validation
+	pyaocc: only god knows what this is doing ...
+	pyAoCServ: Probably the same as the one in Faolan...
+
+BotWoW >
+	Different revisions of the world of warcraft client, designed for older versions of wow but was fun to 	 
+		implement the SRP6 algorithm for password authentication :)
+		
+C# >
+	AI4-AE1: Should be one of the revision of the one listed above...
+	AI4-AE1-R21: Revision 21 of thr SVN (lol)
+	LOLStatusFaker: Inject a fake respnde from the server in the launcher to bypass the server status busy
+	MaskCreator: Do Nothing never understood the PCB editor file format ...
+	MobileAgent: Windows mobile properties stuff
+	MobileRC_POC: Proof of concept for remote control application
+	PIC18Emulator: Emulator for PIC18 got the disassembler working looking to implement the control algorithm (genetic algorithm (could be fun))
+	RCServer: Remote Control Server (? no idea)
+	RemoteServer: Not much just udp packet broadcasting for network advertisement and service identification
+	SSLServer: Basic SSLServer using SSLStream and TcpListener
+	TestGadget: Attempt to write a windows widget with Silverlight, epic failure due to 64bits issue (don't waiste your time)
+
+CA4 >
+	RISC Architecure in Haskell Hydra based on Jtod implementation
+	
+CS >
+	SRP: SRP6 implementation don't rember how much got implemented
+
+Design >
+	Avalon: Wareffort design propably is somewhere else with the django code ...
+
+Django >
+	blog: no idea
+	wareffort: war effort using the django framework for the this anniversary of avalon
+	
+Interpreter >
+	Probably one of the first year exercise ...
+	
+Java >
+	DAS:  AuctionSystem probably the same as the one before ... maybe a different revision
+	OOSE: Object oriented software engineering stuff ...
+	SrPLib: SRP implementation in java .. don't know what's working
+	testSSL: SSL stuff in java ?
+	WoW: wow bot in java ... can even remember writing this code must be empty ...
+	
+LabExam2 >
+	First year T9 like stuff
+	
+PACMAN > Python implementation of pacman quite buggy due to no locking on the drawing canvas ... probably not much work to get it working
+		Useful if you need an implementation of A* in python ... never been implemented in the game but available in pathfinding3.py
+		
+PIC >
+	RS232: Test for Rs232 communication with pic16 micro
+	Uvbox: basic software for pulse with modulation insulation of pcbs ... was fun to write in asm however never took time to finish the hardware
+	
+PSD >
+	Professional software dev. don't even want to explain this
+	
+Pylons >
+	python Pylons attemps to rewrite avalon site, think i got stuff working can't remember
+	
+Python >
+	avalon : ... something mvc related ?
+	botwow: same version as above ?
+	PSDPreview: attempt to parse adobe psd format in python to create a TRAC module
+	pyDGProxy: demigod proxy ...
+	pyDGServ: demigod server ... i think nothing works for this and the proxy ... should take a look
+	pywowc: again a wow client ...
+	pywowcold: old version (lol)
+	pywowctwised: attempt to port the client to twisted (python framework)
+	SSLTest: ... SSL stuff ?
+	test: probably was useful at some point
+	WDBparse: parse cache files from wow
+	wowproxy: wow proxy for newer version that uses ARC4 encryption with xor with HMAC key retrieval from the client :D awesome winAPI call from python
+
+pywowc >
+	python wow client probably one of the multiple version that already showed up thousands of time
+	
+Reverse Engineering>
+	some packet dumps of demigod i think
+	
+submission1_2 >
+	second year stuff
+	
+tdp4 >
+	fourth year team project quite a lot of code including driver code, SPI communication, SDL stuff and circuit design
+	
+VHDL >
+	Gamegear: rewrote the gamegear cartridge paging system ... if someone want to try it at some point on an fpga ^^, should be close to fully working
+	
+	
+TODO: some of the C projects are missing ... should add them later if i can find them (Hashtable, web client, web server)
