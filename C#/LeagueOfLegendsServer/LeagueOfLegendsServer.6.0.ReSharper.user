@@ -1,0 +1,342 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="DF8C8186-346E-421E-A785-D934F8778D9E/f:Program.cs" caret="84" fromTop="4" />
+      <File id="9F7A1150-0B64-4CC3-85B3-59406227F5AF/f:App.config" caret="153" fromTop="0" />
+      <File id="DA025AB0-E60E-46FE-83F0-7C6E8118E212/f:Program.cs" caret="1699" fromTop="35" />
+      <File id="9F7A1150-0B64-4CC3-85B3-59406227F5AF/f:SslHandler.cs" caret="848" fromTop="19" />
+      <File id="9F7A1150-0B64-4CC3-85B3-59406227F5AF/f:SslListener.cs" caret="723" fromTop="1" />
+      <File id="9F7A1150-0B64-4CC3-85B3-59406227F5AF/f:SslServer.cs" caret="242" fromTop="11" />
+      <File id="94B7B6CA-F227-4DAA-A8DB-D859E566D09B/f:Program.cs" caret="251" fromTop="12" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="4741" fromTop="26" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="4672" fromTop="15" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="5333" fromTop="31" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="4955" fromTop="18" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="4105" fromTop="22" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="4817" fromTop="27" />
+      <File id="94B7B6CA-F227-4DAA-A8DB-D859E566D09B/f:Program.cs" caret="444" fromTop="12" />
+      <File id="94B7B6CA-F227-4DAA-A8DB-D859E566D09B/f:Program.cs" caret="442" fromTop="14" />
+      <File id="94B7B6CA-F227-4DAA-A8DB-D859E566D09B/f:Program.cs" caret="249" fromTop="11" />
+      <File id="94B7B6CA-F227-4DAA-A8DB-D859E566D09B/f:Program.cs" caret="732" fromTop="23" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="1418" fromTop="21" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="5267" fromTop="34" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="1515" fromTop="7" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="4141" fromTop="32" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="4304" fromTop="37" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="3749" fromTop="22" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="2439" fromTop="19" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="3662" fromTop="27" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="2816" fromTop="17" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="406" fromTop="16" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="507" fromTop="20" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="13" fromTop="0" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="1206" fromTop="25" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="1729" fromTop="24" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="2053" fromTop="23" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="3374" fromTop="35" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="2645" fromTop="7" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="4064" fromTop="26" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="3182" fromTop="15" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="3155" fromTop="14" />
+      <File id="C6025E50-503F-403E-892B-4DDE2D6F7978/f:SslProxy.cs" caret="2286" fromTop="18" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="public" priority="670" />
+      <Item value="int" priority="158" />
+      <Item value="prop" priority="63" />
+      <Item value="bool" priority="256" />
+      <Item value="SslListener`0" priority="127" />
+      <Item value="string" priority="63" />
+      <Item value="store" priority="31" />
+      <Item value="X509FindType`0" priority="31" />
+      <Item value="certificate" priority="250" />
+      <Item value="certificates" priority="63" />
+      <Item value="if" priority="159" />
+      <Item value="throw" priority="31" />
+      <Item value="new" priority="1087" />
+      <Item value="certificateName" priority="31" />
+      <Item value="Port" priority="31" />
+      <Item value="void" priority="351" />
+      <Item value="X509Certificate2`0" priority="191" />
+      <Item value="this" priority="896" />
+      <Item value="port" priority="95" />
+      <Item value="private" priority="287" />
+      <Item value="readonly" priority="63" />
+      <Item value="SslHandler`0" priority="63" />
+      <Item value="TcpClient`0" priority="90" />
+      <Item value="client" priority="319" />
+      <Item value="var" priority="575" />
+      <Item value="SslHandler" priority="28" />
+      <Item value="ThreadStaticAttribute" priority="57" />
+      <Item value="AssemblyLoadEventHandler`0" priority="32" />
+      <Item value="Running" priority="159" />
+      <Item value="handlers" priority="127" />
+      <Item value="List&lt;SslHandler&gt;" priority="28" />
+      <Item value="x" priority="159" />
+      <Item value="true" priority="127" />
+      <Item value="while" priority="95" />
+      <Item value="buffer" priority="191" />
+      <Item value="Length" priority="53" />
+      <Item value="false" priority="127" />
+      <Item value="handler" priority="63" />
+      <Item value="SslListener" priority="28" />
+      <Item value="SSLServer" priority="32" />
+      <Item value="server" priority="64" />
+      <Item value="serverThread" priority="122" />
+      <Item value="Console`0" priority="511" />
+      <Item value="try" priority="95" />
+      <Item value="catch" priority="95" />
+      <Item value="ThreadAbortException`0" priority="31" />
+      <Item value="Thread`0" priority="95" />
+      <Item value="thread" priority="31" />
+      <Item value="Trace`0" priority="127" />
+      <Item value="TraceListener`0" priority="26" />
+      <Item value="TextWriterTraceListener" priority="28" />
+      <Item value="chars" priority="31" />
+      <Item value="ToString`0" priority="26" />
+      <Item value="ManagementClass" priority="57" />
+      <Item value="using" priority="30" />
+      <Item value="System" priority="30" />
+      <Item value="Management" priority="26" />
+      <Item value="ManagementClass`0" priority="26" />
+      <Item value="foreach" priority="127" />
+      <Item value="mo" priority="159" />
+      <Item value="as" priority="63" />
+      <Item value="Boolean`0" priority="32" />
+      <Item value="ManagementObject`0" priority="63" />
+      <Item value="ManagementBaseObject`0" priority="31" />
+      <Item value="newDNS" priority="31" />
+      <Item value="class" priority="126" />
+      <Item value="UdpListener`0" priority="31" />
+      <Item value="UdpListener" priority="57" />
+      <Item value="listener" priority="160" />
+      <Item value="UdpServer`0" priority="31" />
+      <Item value="socket" priority="191" />
+      <Item value="Socket" priority="28" />
+      <Item value="AddressFamily`0" priority="31" />
+      <Item value="SocketType`0" priority="31" />
+      <Item value="ProtocolType`0" priority="31" />
+      <Item value="IPEndPoint" priority="28" />
+      <Item value="IPAddress`0" priority="63" />
+      <Item value="const" priority="31" />
+      <Item value="Dns`0" priority="31" />
+      <Item value="ipAddress" priority="31" />
+      <Item value="byte" priority="87" />
+      <Item value="listeningThread" priority="63" />
+      <Item value="ConsoleKeyInfo`0" priority="63" />
+      <Item value="cki" priority="31" />
+      <Item value="ConsoleKey`0" priority="31" />
+      <Item value="str" priority="31" />
+      <Item value="String`0" priority="31" />
+      <Item value="Proxify`0" priority="31" />
+      <Item value="TcpListener`0" priority="31" />
+      <Item value="TcpClient" priority="57" />
+      <Item value="remote" priority="63" />
+      <Item value="clientStream" priority="31" />
+      <Item value="SslStream" priority="115" />
+      <Item value="SslStream`0" priority="95" />
+      <Item value="certificate2" priority="65" />
+      <Item value="for" priority="31" />
+      <Item value="IndexOutOfRangeException`0" priority="31" />
+      <Item value="i" priority="95" />
+      <Item value="len" priority="127" />
+      <Item value="Stream`0" priority="63" />
+      <Item value="Authenticate`0" priority="31" />
+      <Item value="Thread" priority="86" />
+      <Item value="Transfer`0" priority="32" />
+      <Item value="ThreadStart" priority="28" />
+      <Item value="ProxyPipe`0" priority="31" />
+      <Item value="src" priority="31" />
+      <Item value="dst" priority="31" />
+      <Item value="ProxyPipe" priority="57" />
+      <Item value="localToRemote" priority="64" />
+      <Item value="RemoteCertificateValidationCallback`0" priority="32" />
+      <Item value="remoteToLocal" priority="31" />
+      <Item value="Proxify" priority="28" />
+      <Item value="proxy" priority="31" />
+      <Item value="ex" priority="63" />
+      <Item value="SslProtocols`0" priority="26" />
+      <Item value="sslStream" priority="96" />
+      <Item value="RemoteCertificateValidationCallback" priority="28" />
+      <Item value="return" priority="127" />
+      <Item value="CertificateValidationCallback`0" priority="32" />
+      <Item value="Exception`0" priority="31" />
+      <Item value="verbose" priority="31" />
+      <Item value="ASCIIEncoding`0" priority="31" />
+      <Item value="decoder" priority="31" />
+      <Item value="Encoding`0" priority="31" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Security.Cryptography.X509Certificates.X509Store">
+      <Item value="Certificates" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Security.Cryptography.X509Certificates.X509Certificate2Collection">
+      <Item value="Find`0" priority="26" />
+      <Item value="Indexer" priority="53" />
+      <Item value="Count" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Security.Cryptography.X509Certificates.X509FindType">
+      <Item value="FindBySubjectName" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SSLServer.SslListener">
+      <Item value="Port" priority="26" />
+      <Item value="Start`0" priority="27" />
+      <Item value="Stop`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SSLServer.SslHandler">
+      <Item value="client" priority="26" />
+      <Item value="certificate" priority="80" />
+      <Item value="Handle`0" priority="28" />
+      <Item value="Stop`0" priority="103" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Thread">
+      <Item value="Start`0" priority="189" />
+      <Item value="Join`0" priority="53" />
+      <Item value="Abort`0" priority="80" />
+      <Item value="ToString`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Select`2" priority="26" />
+      <Item value="ForEach`0" priority="53" />
+      <Item value="Add`0" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="320" />
+      <Item value="ReadKey`0" priority="53" />
+      <Item value="Out" priority="26" />
+      <Item value="ReadLine`0" priority="26" />
+      <Item value="Write`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Trace">
+      <Item value="TraceInformation`0" priority="49" />
+      <Item value="AutoFlush" priority="26" />
+      <Item value="Write`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread">
+      <Item value="CurrentThread" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.TcpClient">
+      <Item value="Client" priority="26" />
+      <Item value="GetStream`0" priority="161" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.Socket">
+      <Item value="RemoteEndPoint" priority="53" />
+      <Item value="Accept`0" priority="53" />
+      <Item value="Listen`0" priority="26" />
+      <Item value="Receive`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Diagnostics.TraceListenerCollection">
+      <Item value="Add`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Trim`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Management.ManagementClass">
+      <Item value="GetInstances`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Boolean">
+      <Item value="TryParse`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="Equals`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Management.ManagementObject">
+      <Item value="GetMethodParameters`0" priority="22" />
+      <Item value="InvokeMethod`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DnsPoisoning.UdpListener">
+      <Item value="Start`0" priority="54" />
+      <Item value="listener" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.Sockets.AddressFamily">
+      <Item value="InterNetwork" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.Sockets.SocketType">
+      <Item value="Dgram" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.Sockets.ProtocolType">
+      <Item value="Udp" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.IPAddress">
+      <Item value="Any" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.Dns">
+      <Item value="GetHostAddresses`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ConsoleKeyInfo">
+      <Item value="Key" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.ConsoleKey">
+      <Item value="Enter" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SslProxy.SslListener+Proxify">
+      <Item value="client" priority="80" />
+      <Item value="remote" priority="26" />
+      <Item value="local" priority="81" />
+      <Item value="localSsl" priority="103" />
+      <Item value="remoteSsl" priority="161" />
+      <Item value="certificate" priority="26" />
+      <Item value="Transfer`0" priority="27" />
+      <Item value="Execute`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.NetworkStream">
+      <Item value="Read`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Security.SslStream">
+      <Item value="AuthenticateAsServer`0" priority="26" />
+      <Item value="AuthenticateAsClient`0" priority="53" />
+      <Item value="Read`0" priority="26" />
+      <Item value="Write`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SslProxy.SslListener+Proxify+ProxyPipe">
+      <Item value="src" priority="26" />
+      <Item value="dst" priority="26" />
+      <Item value="Transfer`0" priority="51" />
+      <Item value="verbose" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="Message" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Security.Authentication.SslProtocols">
+      <Item value="Default" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.ASCIIEncoding">
+      <Item value="ASCII" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.Encoding">
+      <Item value="GetDecoder`0" priority="26" />
+      <Item value="GetString`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.Decoder">
+      <Item value="Convert`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.Encoding">
+      <Item value="ASCII" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

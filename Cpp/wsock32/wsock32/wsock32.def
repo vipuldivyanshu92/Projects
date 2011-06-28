@@ -1,0 +1,5 @@
+LIBRARY wsock32.dll
+
+EXPORTS
+
+gethostbyname=mygethostbyname @52

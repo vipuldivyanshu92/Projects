@@ -1,0 +1,33 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="5E55C2C8-58BE-4BC0-A126-713F96031858/f:ws2_32.cpp" caret="15535" fromTop="50" />
+      <File id="5E55C2C8-58BE-4BC0-A126-713F96031858/f:ws2_32.def" caret="68" fromTop="5" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="5E55C2C8-58BE-4BC0-A126-713F96031858/f:ws2_32.cpp" caret="12197" fromTop="15" />
+      <File id="5E55C2C8-58BE-4BC0-A126-713F96031858/f:ws2_32.cpp" caret="105" fromTop="5" />
+      <File id="5E55C2C8-58BE-4BC0-A126-713F96031858/f:ws2_32.cpp" caret="14121" fromTop="19" />
+      <File id="5E55C2C8-58BE-4BC0-A126-713F96031858/f:ws2_32.cpp" caret="15535" fromTop="38" />
+      <File id="5E55C2C8-58BE-4BC0-A126-713F96031858/f:ws2_32.def" caret="66" fromTop="4" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

@@ -1,0 +1,5 @@
+I:\C#\LeagueOfLegendsServer\SslProxy\bin\Debug\SslProxy.exe
+I:\C#\LeagueOfLegendsServer\SslProxy\bin\Debug\SslProxy.pdb
+I:\C#\LeagueOfLegendsServer\SslProxy\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\C#\LeagueOfLegendsServer\SslProxy\obj\x86\Debug\SslProxy.exe
+I:\C#\LeagueOfLegendsServer\SslProxy\obj\x86\Debug\SslProxy.pdb

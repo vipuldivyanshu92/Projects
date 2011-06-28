@@ -1,0 +1,136 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:MainWindow.xaml" caret="0" fromTop="0" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:MainWindow.xaml.cs" caret="394" fromTop="11" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="3819" fromTop="80" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:MainWindow.xaml.cs" caret="0" fromTop="0" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="104" fromTop="1" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="334" fromTop="10" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="345" fromTop="12" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="3817" fromTop="38" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="3398" fromTop="27" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="3790" fromTop="41" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:MainWindow.xaml.cs" caret="782" fromTop="25" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="3558" fromTop="19" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="3071" fromTop="22" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="3071" fromTop="13" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="3071" fromTop="11" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="3071" fromTop="22" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="259" fromTop="11" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="3165" fromTop="25" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="2948" fromTop="16" />
+      <File id="645FEEA4-061F-454E-B16F-FBC888B8AAC5/f:HttpServer.cs" caret="1980" fromTop="23" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="public" priority="222" />
+      <Item value="void" priority="95" />
+      <Item value="int" priority="126" />
+      <Item value="listener" priority="128" />
+      <Item value="new" priority="287" />
+      <Item value="TcpListener" priority="28" />
+      <Item value="private" priority="31" />
+      <Item value="const" priority="31" />
+      <Item value="IPAddress`0" priority="31" />
+      <Item value="TcpClient`0" priority="63" />
+      <Item value="using" priority="94" />
+      <Item value="Thread" priority="57" />
+      <Item value="ThreadStart" priority="57" />
+      <Item value="ServiceClient`0" priority="32" />
+      <Item value="class" priority="30" />
+      <Item value="this" priority="63" />
+      <Item value="client" priority="159" />
+      <Item value="HttpHandler`0" priority="31" />
+      <Item value="var" priority="223" />
+      <Item value="bool" priority="62" />
+      <Item value="prop" priority="63" />
+      <Item value="while" priority="63" />
+      <Item value="Running" priority="63" />
+      <Item value="HttpHandler" priority="28" />
+      <Item value="tcpClient" priority="31" />
+      <Item value="handler" priority="32" />
+      <Item value="StreamReader" priority="28" />
+      <Item value="reader" priority="31" />
+      <Item value="string" priority="63" />
+      <Item value="HttpListener" priority="29" />
+      <Item value="HttpListener`0" priority="31" />
+      <Item value="port" priority="31" />
+      <Item value="true" priority="31" />
+      <Item value="StreamWriter" priority="87" />
+      <Item value="writer" priority="191" />
+      <Item value="Encoding`0" priority="95" />
+      <Item value="utf8Writer" priority="63" />
+      <Item value="response" priority="31" />
+      <Item value="asciiReader" priority="31" />
+      <Item value="try" priority="31" />
+      <Item value="catch" priority="31" />
+      <Item value="AbandonedMutexException`0" priority="31" />
+      <Item value="ex" priority="31" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.IPAddress">
+      <Item value="Any" priority="49" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.TcpListener">
+      <Item value="Start`0" priority="26" />
+      <Item value="AcceptTcpClient`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:LOLStatusFaker.HttpHandler">
+      <Item value="ServiceClient`0" priority="23" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Thread">
+      <Item value="Start`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.TcpClient">
+      <Item value="Connected" priority="26" />
+      <Item value="GetStream`0" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamReader">
+      <Item value="ReadLine`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:LOLStatusFaker.HttpListener">
+      <Item value="Port" priority="26" />
+      <Item value="Run`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamWriter">
+      <Item value="WriteLine`0" priority="134" />
+      <Item value="Encoding" priority="26" />
+      <Item value="Write`0" priority="26" />
+      <Item value="Flush`0" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.Encoding">
+      <Item value="ASCII" priority="76" />
+      <Item value="UTF8" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Trace">
+      <Item value="WriteLine`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="Message" priority="27" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

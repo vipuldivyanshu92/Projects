@@ -1,0 +1,5 @@
+I:\C#\LeagueOfLegendsServer\LeagueOfLegendsServer\bin\Debug\LeagueOfLegendsServer.exe
+I:\C#\LeagueOfLegendsServer\LeagueOfLegendsServer\bin\Debug\LeagueOfLegendsServer.pdb
+I:\C#\LeagueOfLegendsServer\LeagueOfLegendsServer\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\C#\LeagueOfLegendsServer\LeagueOfLegendsServer\obj\x86\Debug\LeagueOfLegendsServer.exe
+I:\C#\LeagueOfLegendsServer\LeagueOfLegendsServer\obj\x86\Debug\LeagueOfLegendsServer.pdb

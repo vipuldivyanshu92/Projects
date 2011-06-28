@@ -1,0 +1,7 @@
+<Modules>
+  <Module PersistentId="DF8C8186-346E-421E-A785-D934F8778D9E" ModuleId="LeagueOfLegendsServer" />
+  <Module PersistentId="9F7A1150-0B64-4CC3-85B3-59406227F5AF" ModuleId="SSLServer" />
+  <Module PersistentId="C6025E50-503F-403E-892B-4DDE2D6F7978" ModuleId="SslProxy" />
+  <Module PersistentId="DA025AB0-E60E-46FE-83F0-7C6E8118E212" ModuleId="DnsPoisoning" />
+  <Module PersistentId="94B7B6CA-F227-4DAA-A8DB-D859E566D09B" ModuleId="SslClient" />
+</Modules>

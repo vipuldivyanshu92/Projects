@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueOfLegendsServer", "LeagueOfLegendsServer\LeagueOfLegendsServer.csproj", "{DF8C8186-346E-421E-A785-D934F8778D9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSLServer", "SSLServer\SSLServer.csproj", "{9F7A1150-0B64-4CC3-85B3-59406227F5AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SslProxy", "SslProxy\SslProxy.csproj", "{C6025E50-503F-403E-892B-4DDE2D6F7978}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnsPoisoning", "DnsPoisoning\DnsPoisoning.csproj", "{DA025AB0-E60E-46FE-83F0-7C6E8118E212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SslClient", "SslClient\SslClient.csproj", "{94B7B6CA-F227-4DAA-A8DB-D859E566D09B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF8C8186-346E-421E-A785-D934F8778D9E}.Debug|x86.ActiveCfg = Debug|x86
+		{DF8C8186-346E-421E-A785-D934F8778D9E}.Debug|x86.Build.0 = Debug|x86
+		{DF8C8186-346E-421E-A785-D934F8778D9E}.Release|x86.ActiveCfg = Release|x86
+		{DF8C8186-346E-421E-A785-D934F8778D9E}.Release|x86.Build.0 = Release|x86
+		{9F7A1150-0B64-4CC3-85B3-59406227F5AF}.Debug|x86.ActiveCfg = Debug|x86
+		{9F7A1150-0B64-4CC3-85B3-59406227F5AF}.Debug|x86.Build.0 = Debug|x86
+		{9F7A1150-0B64-4CC3-85B3-59406227F5AF}.Release|x86.ActiveCfg = Release|x86
+		{9F7A1150-0B64-4CC3-85B3-59406227F5AF}.Release|x86.Build.0 = Release|x86
+		{C6025E50-503F-403E-892B-4DDE2D6F7978}.Debug|x86.ActiveCfg = Debug|x86
+		{C6025E50-503F-403E-892B-4DDE2D6F7978}.Debug|x86.Build.0 = Debug|x86
+		{C6025E50-503F-403E-892B-4DDE2D6F7978}.Release|x86.ActiveCfg = Release|x86
+		{C6025E50-503F-403E-892B-4DDE2D6F7978}.Release|x86.Build.0 = Release|x86
+		{DA025AB0-E60E-46FE-83F0-7C6E8118E212}.Debug|x86.ActiveCfg = Debug|x86
+		{DA025AB0-E60E-46FE-83F0-7C6E8118E212}.Debug|x86.Build.0 = Debug|x86
+		{DA025AB0-E60E-46FE-83F0-7C6E8118E212}.Release|x86.ActiveCfg = Release|x86
+		{DA025AB0-E60E-46FE-83F0-7C6E8118E212}.Release|x86.Build.0 = Release|x86
+		{94B7B6CA-F227-4DAA-A8DB-D859E566D09B}.Debug|x86.ActiveCfg = Debug|x86
+		{94B7B6CA-F227-4DAA-A8DB-D859E566D09B}.Debug|x86.Build.0 = Debug|x86
+		{94B7B6CA-F227-4DAA-A8DB-D859E566D09B}.Release|x86.ActiveCfg = Release|x86
+		{94B7B6CA-F227-4DAA-A8DB-D859E566D09B}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
