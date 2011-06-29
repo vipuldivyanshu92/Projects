@@ -6,9 +6,11 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace SslProxy
 {
+    using System.Linq;
+
     class SslListener
     {
-        public int Port { get; private set; }
+        public int Port { get; set; }
 
         public X509Certificate2 Certificate { get; set; }
 
@@ -21,13 +23,13 @@ namespace SslProxy
 
         private static bool ValidateArgs(string[] args)
         {
-            if (args.Length != 4)
+            if (args.Length < 3)
                 return false;
 
             try
             {
-                IPAddress.Parse(args[0]);
-                IPAddress.Parse(args[1]);
+                Dns.GetHostAddresses(args[0]);
+                Dns.GetHostAddresses(args[1]);
                 int.Parse(args[2]);
                 return true;
             }
@@ -45,17 +47,20 @@ namespace SslProxy
                 return;
             }
 
-            // Open the Local Machine certificate store
-            var store = new X509Store(StoreLocation.LocalMachine);
-            store.Open(OpenFlags.ReadOnly);
-            var certificates = store.Certificates.Find(X509FindType.FindBySubjectName, args[3], true);
+            X509Certificate2Collection certificates = null;
+            if (args.Length == 4)
+            {
+                // Open the Local Machine certificate store
+                var store = new X509Store(StoreLocation.LocalMachine);
+                store.Open(OpenFlags.ReadOnly);
+                certificates = store.Certificates.Find(X509FindType.FindBySubjectName, args[3], true);
 
-            // Check if any valid certificate has been found
-            if (certificates.Count == 0)
-                Console.WriteLine("Unable to load the certificate " + args[3]);
+                // Check if any valid certificate has been found
+                if (certificates.Count == 0) Console.WriteLine("Unable to load the certificate " + args[3]);
+            }
 
             // Create the listener
-            var listener = new TcpListener(IPAddress.Parse(args[0]), int.Parse(args[2]));
+            var listener = new TcpListener(Dns.GetHostAddresses(args[0]).First(), int.Parse(args[2]));
             listener.Start();
 
             // Informative message
@@ -69,7 +74,13 @@ namespace SslProxy
                 // The Handler should take care of the work from now
                 int port = int.Parse(args[2]);
                 var remote = new TcpClient(args[1], port);
-                var proxy = new SslProxifier(client.GetStream(), remote.GetStream(), certificates[0]);
+                RawProxifier proxy;
+
+                if (certificates == null) 
+                    proxy = new RawProxifier(client.GetStream(), remote.GetStream());
+                else
+                    proxy = new SslProxifier(client.GetStream(), remote.GetStream(), certificates[0]);
+
                 proxy.Execute();
             }
         }
