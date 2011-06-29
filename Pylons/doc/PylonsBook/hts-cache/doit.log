@@ -1,8 +1,0 @@
--qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f0#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2008], %s -->" -%l "en, en, *" http://pylonsbook.com/en/1.0/index.html -O1 "E:\\Projects\\Pylons\\doc\\PylonsBook" +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
-File generated automatically on Thu, 11 Jun 2009 16:40:47, do NOT edit
-
-To update a mirror, just launch httrack without any parameters
-The existing cache will be used (and modified)
-To have other options, retype all parameters and launch HTTrack
-To continue an interrupted mirror, just launch httrack without any parameters
-

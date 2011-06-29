@@ -1,6 +1,0 @@
-## Use these settings to connect to the mysql service on carney
-username=psd3e
-password=heavensoPeneD
-dbname=psd3e
-driver=com.mysql.jdbc.Driver
-url=jdbc:mysql://carney.dcs.gla.ac.uk:3306

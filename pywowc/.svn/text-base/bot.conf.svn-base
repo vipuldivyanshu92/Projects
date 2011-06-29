@@ -1,8 +1,0 @@
-# User Informations
-username = AccountName
-password = AccountPassword
-
-# Server Informations
-realmname = Realm
-realmaddress = localhost
-character = pywowc

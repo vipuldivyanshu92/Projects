@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete 1 element(s) from project &apos;BrachLib&apos;&#x0D;&#x0A;- Original project: &apos;BrachLib&apos;&#x0D;&#x0A;- Original element: &apos;BrachLib/src/ngui&apos;" description="Delete element" element1="/src&lt;ngui" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1267296590666" subPackages="false" version="1.0"/>
-</session>

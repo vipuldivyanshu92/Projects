@@ -1,2 +1,0 @@
-Main-Class: uk.ac.gla.dcs.psd3.ay2009.project.setup.SetupDB
-Class-Path: lib/sqlbeans.jar lib/marc4j.jar lib/mysql.jar lib/l4jconf.jar lib/log4j.jar
