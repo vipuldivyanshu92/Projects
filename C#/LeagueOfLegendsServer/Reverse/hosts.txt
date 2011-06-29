@@ -1,0 +1,5 @@
+prod.eu.lol.riotgames.com : 64.7.194.221 : TLS
+ll.leagueoflegends.com : 216.52.241.153 : TLS
+eu.leagueoflegends.com : 64.7.194.247 : HTTP
+lq.eu.lol.riotgames.com : 64.7.194.28 : TLS
+chat.eu.lol.riotgames.com : 4.7.194.112 : Jabber (?)

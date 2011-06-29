@@ -1,12 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using System.Net.Security;
 using System.Net.Sockets;
-using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading;
 
 namespace SslProxy
 {
@@ -16,130 +12,54 @@ namespace SslProxy
 
         public X509Certificate2 Certificate { get; set; }
 
-        public SslListener(int port, string certificateName)
+        private static void Usage()
         {
-            Port = port;
-
-            // Open the Local Machine certificate store
-            var store = new X509Store(StoreLocation.LocalMachine);
-            store.Open(OpenFlags.ReadOnly);
-            var certificates = store.Certificates.Find(X509FindType.FindBySubjectName, certificateName, true);
-
-            //
-            if (certificates.Count == 0)
-                throw new ArgumentException("Unable to find certificate :" + certificateName);
-
-            Certificate = certificates[0];
+            Console.Write("Usage: ");
+            Console.WriteLine(Path.GetFileNameWithoutExtension(Environment.GetCommandLineArgs()[0])
+                + " <listening_address> <remote_address> <port> [<certificate_name>]");
         }
 
-        public class Proxify
+        private static bool ValidateArgs(string[] args)
         {
-            private readonly SslStream localSsl;
-            private readonly SslStream remoteSsl;
-            private readonly X509Certificate certificate;
+            if (args.Length != 4)
+                return false;
 
-            static bool CertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+            try
             {
+                IPAddress.Parse(args[0]);
+                IPAddress.Parse(args[1]);
+                int.Parse(args[2]);
                 return true;
             }
-
-            public Proxify(TcpClient local, string remoteAddress, X509Certificate certificate)
+            catch (Exception)
             {
-                this.certificate = certificate;
-
-                var remote = new TcpClient(remoteAddress, 443);
-
-                localSsl = new SslStream(local.GetStream());
-                remoteSsl = new SslStream(remote.GetStream(), false, CertificateValidationCallback);
-            }
-
-            public void Execute()
-            {
-                // Do both sides authentication
-
-                if (Authenticate())
-                {
-                    var localToRemote = new ProxyPipe(localSsl, remoteSsl, true);
-                    var localToRemoteThread = new Thread(localToRemote.Transfer);
-                    localToRemoteThread.Start();
-
-                    var remoteToLocal = new ProxyPipe(remoteSsl, localSsl, true);
-                    var remoteToLocalThread = new Thread(remoteToLocal.Transfer);
-                    remoteToLocalThread.Start();
-                }
-            }
-
-            private class ProxyPipe
-            {
-                private readonly Stream src;
-                private readonly Stream dst;
-                private readonly bool verbose;
-
-                public ProxyPipe(Stream src, Stream dst, bool verbose)
-                {
-                    this.src = src;
-                    this.dst = dst;
-                    this.verbose = verbose;
-                }
-
-                public void Transfer()
-                {
-                    var buffer = new byte[2048];
-
-                    try
-                    {
-                        int len;
-                        while ((len = src.Read(buffer, 0, buffer.Length)) > 0)
-                        {
-                            if (verbose)
-                            {
-                                var content = Encoding.ASCII.GetString(buffer, 0, len);
-                                Console.WriteLine(content);
-                            }
-                            dst.Write(buffer, 0, len);
-                        }
-                    } 
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                }
-            }
-
-            private bool Authenticate()
-            {
-                try
-                {
-                    // Create the local SSL authentication
-                    localSsl.AuthenticateAsServer(certificate, false, SslProtocols.Default, true);
-
-                    // Create the remote SSL authentication
-                    remoteSsl.AuthenticateAsClient("Remote");
-
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    return false;
-                }
+                return false;
             }
         }
 
         static void Main(string[] args)
         {
+            if (!ValidateArgs(args))
+            {
+                Usage();
+                return;
+            }
+
             // Open the Local Machine certificate store
             var store = new X509Store(StoreLocation.LocalMachine);
             store.Open(OpenFlags.ReadOnly);
-            var certificates = store.Certificates.Find(X509FindType.FindBySubjectName, "localhost", true);
+            var certificates = store.Certificates.Find(X509FindType.FindBySubjectName, args[3], true);
 
-            //
+            // Check if any valid certificate has been found
             if (certificates.Count == 0)
-                throw new ArgumentException("Unable to find certificate");
+                Console.WriteLine("Unable to load the certificate " + args[3]);
 
             // Create the listener
-            var listener = new TcpListener(IPAddress.Any, 443);
+            var listener = new TcpListener(IPAddress.Parse(args[0]), int.Parse(args[2]));
             listener.Start();
+
+            // Informative message
+            Console.Write("Listening on {0}:{2} and forwarding to {1}:{2}\n", args[0], args[1], args[2]);
 
             while (true)
             {
@@ -147,10 +67,11 @@ namespace SslProxy
                 var client = listener.AcceptTcpClient();
 
                 // The Handler should take care of the work from now
-                var proxy = new Proxify(client, "64.7.194.113", certificates[0]);
+                int port = int.Parse(args[2]);
+                var remote = new TcpClient(args[1], port);
+                var proxy = new SslProxifier(client.GetStream(), remote.GetStream(), certificates[0]);
                 proxy.Execute();
             }
-            
         }
     }
 }

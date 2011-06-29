@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RawProxifier.cs" />
+    <Compile Include="RawProxyPipe.cs" />
+    <Compile Include="SslProxifier.cs" />
     <Compile Include="SslProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
