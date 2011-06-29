@@ -1,5 +1,0 @@
-I:\C#\PIC18Emulator\PIC18Emulator\bin\Debug\PIC18Emulator.exe
-I:\C#\PIC18Emulator\PIC18Emulator\bin\Debug\PIC18Emulator.pdb
-I:\C#\PIC18Emulator\PIC18Emulator\obj\x86\Debug\ResolveAssemblyReference.cache
-I:\C#\PIC18Emulator\PIC18Emulator\obj\x86\Debug\PIC18Emulator.exe
-I:\C#\PIC18Emulator\PIC18Emulator\obj\x86\Debug\PIC18Emulator.pdb

@@ -1,7 +1,0 @@
-H:\Projects\C#\SRP\SRP\obj\x86\Debug\ResolveAssemblyReference.cache
-H:\Projects\C#\SRP\SRP\bin\Debug\SRPTest.exe
-H:\Projects\C#\SRP\SRP\bin\Debug\SRPTest.pdb
-H:\Projects\C#\SRP\SRP\obj\x86\Debug\SRPTest.exe
-H:\Projects\C#\SRP\SRP\obj\x86\Debug\SRPTest.pdb
-E:\Projects\CS\SRP\SRP\obj\x86\Debug\SRPTest.exe
-E:\Projects\CS\SRP\SRP\obj\x86\Debug\SRPTest.pdb

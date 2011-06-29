@@ -24,6 +24,7 @@
 *.sdf
 *.opensdf
 *.cache
+*.pdb
 ipch/
 obj/
 [Bb]in

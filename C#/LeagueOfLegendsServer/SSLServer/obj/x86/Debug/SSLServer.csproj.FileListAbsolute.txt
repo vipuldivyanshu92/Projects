@@ -1,6 +1,0 @@
-I:\C#\LeagueOfLegendsServer\SSLServer\bin\Debug\SSLServer.exe
-I:\C#\LeagueOfLegendsServer\SSLServer\bin\Debug\SSLServer.pdb
-I:\C#\LeagueOfLegendsServer\SSLServer\obj\x86\Debug\ResolveAssemblyReference.cache
-I:\C#\LeagueOfLegendsServer\SSLServer\obj\x86\Debug\SSLServer.exe
-I:\C#\LeagueOfLegendsServer\SSLServer\obj\x86\Debug\SSLServer.pdb
-I:\C#\LeagueOfLegendsServer\SSLServer\bin\Debug\SSLServer.exe.config

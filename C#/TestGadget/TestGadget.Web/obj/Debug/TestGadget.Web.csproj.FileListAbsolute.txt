@@ -1,5 +1,0 @@
-I:\C#\TestGadget\TestGadget.Web\bin\TestGadget.Web.dll
-I:\C#\TestGadget\TestGadget.Web\bin\TestGadget.Web.pdb
-I:\C#\TestGadget\TestGadget.Web\obj\Debug\ResolveAssemblyReference.cache
-I:\C#\TestGadget\TestGadget.Web\obj\Debug\TestGadget.Web.dll
-I:\C#\TestGadget\TestGadget.Web\obj\Debug\TestGadget.Web.pdb
