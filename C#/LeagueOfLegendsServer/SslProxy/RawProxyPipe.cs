@@ -4,6 +4,8 @@ using System.Text;
 
 namespace SslProxy
 {
+    using System.Diagnostics;
+
     public class RawProxyPipe
     {
         private readonly Stream src;
@@ -29,6 +31,7 @@ namespace SslProxy
                     if (verbose)
                     {
                         var content = Encoding.ASCII.GetString(buffer, 0, len);
+                        Trace.WriteLine(content);
                         Console.WriteLine(content);
                     }
                     dst.Write(buffer, 0, len);
